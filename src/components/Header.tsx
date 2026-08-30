@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Search, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ModeToggle } from "./ModeToggle";
 
 const navItems = [
   { label: "Blog", href: "/blog" },
@@ -32,10 +33,14 @@ const Header = () => {
           </nav>
         </div>
 
-        <div className="flex items-center gap-3">
-          <button className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground">
+        <div className="flex items-center gap-2">
+          <button
+            aria-label="Search"
+            className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+          >
             <Search className="h-5 w-5" />
           </button>
+          <ModeToggle />
           <a
             href="#newsletter"
             className="hidden sm:inline-flex items-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105 active:scale-95"
@@ -43,6 +48,7 @@ const Header = () => {
             Subscribe
           </a>
           <button
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
             className="md:hidden rounded-lg p-2 text-muted-foreground hover:bg-secondary"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
