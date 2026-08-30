@@ -1,5 +1,7 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const NotFound = () => {
   const location = useLocation();
@@ -9,14 +11,25 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
-        <a href="/" className="text-primary underline hover:text-primary/90">
-          Return to Home
-        </a>
+    <div className="min-h-screen bg-background flex flex-col justify-between">
+      <Header />
+      <div className="container py-20 text-center space-y-4">
+        <span className="text-xs uppercase font-sans-ui tracking-wider text-saffron font-bold">
+          404 Error · Page Not Found
+        </span>
+        <h1 className="text-4xl md:text-5xl font-bold font-serif text-foreground">
+          Document or Chronicle Missing
+        </h1>
+        <p className="text-muted-foreground font-serif max-w-md mx-auto">
+          The requested page or research document could not be located. It may have been archived or moved.
+        </p>
+        <div className="pt-4">
+          <Link to="/" className="inline-block rounded-md bg-primary px-6 py-2.5 text-sm font-semibold font-sans-ui text-primary-foreground shadow-sm hover:scale-105 active:scale-95 transition-transform">
+            Return to Homepage
+          </Link>
+        </div>
       </div>
+      <Footer />
     </div>
   );
 };

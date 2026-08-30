@@ -1,32 +1,84 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NewsletterSection from "@/components/NewsletterSection";
-import { FileText, Download, BookOpen, BarChart3, Layout, Video } from "lucide-react";
+import { FileText, Download, BookOpen, BarChart3, Scale, GraduationCap, CheckCircle2 } from "lucide-react";
 
 const resources = [
-  { title: "The Complete RevOps Playbook", type: "eBook", description: "A 75-page guide covering everything from pipeline management to cross-functional alignment. Includes real case studies from Stripe, HubSpot, and Notion.", downloads: "8,450+", icon: BookOpen },
-  { title: "Marketing Strategy Templates Bundle", type: "Templates", description: "12 ready-to-use templates for content calendars, campaign briefs, buyer personas, and competitive analysis. Compatible with Google Sheets and Notion.", downloads: "12,300+", icon: Layout },
-  { title: "2026 State of Content Marketing Report", type: "Report", description: "Data from 2,500+ marketers on budgets, AI adoption, channel performance, and emerging trends. 48 pages of charts and actionable insights.", downloads: "6,800+", icon: BarChart3 },
-  { title: "SEO Audit Checklist", type: "Checklist", description: "A comprehensive 50-point checklist for technical SEO, on-page optimization, and content quality. Used by agencies managing 100+ client sites.", downloads: "15,200+", icon: FileText },
-  { title: "Content Repurposing Masterclass", type: "Video Course", description: "6-part video series showing how to turn a single blog post into 20+ pieces of content across platforms. Includes Canva and Descript workflows.", downloads: "4,100+", icon: Video },
-  { title: "Customer Journey Mapping Kit", type: "Templates", description: "Miro and FigJam templates for mapping B2B customer journeys. Includes touchpoint analysis, emotion tracking, and opportunity identification.", downloads: "9,700+", icon: Layout },
+  {
+    title: "Constitutional Concordance: Bunreacht na hÉireann & Part IV",
+    type: "Legal Treatise",
+    description: "Side-by-side comparative legal analysis of Article 45 (Directive Principles of Social Policy) and India's Articles 36–51, including Constituent Assembly debate transcripts.",
+    downloads: "2,450+",
+    icon: Scale,
+  },
+  {
+    title: "Timeline of Ireland–India Relations (1857–2026)",
+    type: "Chronicle Pack",
+    description: "Chronological reference of diplomatic, literary, and political milestones from the 1857 revolt and 1913 Dublin Lockout to 2026 bilateral agreements.",
+    downloads: "4,300+",
+    icon: BookOpen,
+  },
+  {
+    title: "CSO Demographic & Healthcare Workforce Report",
+    type: "Statistical Brief",
+    description: "Compiled CSO Census data, Medical Council registrations, and NMBI statistics detailing the Indian diaspora's footprint across Irish counties and hospitals.",
+    downloads: "3,800+",
+    icon: BarChart3,
+  },
+  {
+    title: "Third-Level Graduate Scheme (Stamp 1G) Policy Guide",
+    type: "Policy Brief",
+    description: "Comprehensive guide for non-EU students navigating postgraduate degrees, 24-month graduate work permissions, and Critical Skills Employment Permits in Ireland.",
+    downloads: "6,200+",
+    icon: GraduationCap,
+  },
+  {
+    title: "Bilateral Trade & Aviation Finance Data Pack (2020–2026)",
+    type: "Trade Brief",
+    description: "Key metrics on Ireland–India trade in pharmaceuticals, tech services, and Dublin-managed aircraft leasing portfolios serving Indian airlines.",
+    downloads: "1,950+",
+    icon: FileText,
+  },
+  {
+    title: "Vexillology & Republican Symbols Guide",
+    type: "Visual Guide",
+    description: "High-resolution graphic assets, historical notes on flag evolution, and comparative heraldry of the Irish and Indian tricolours.",
+    downloads: "3,100+",
+    icon: BookOpen,
+  },
 ];
 
 const Resources = () => {
+  const [downloadedItem, setDownloadedItem] = useState<string | null>(null);
+
+  const handleDownload = (title: string) => {
+    setDownloadedItem(title);
+    setTimeout(() => setDownloadedItem(null), 3000);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        <section className="container py-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground">Resources</h1>
-            <p className="mt-2 text-muted-foreground max-w-2xl">Free templates, guides, reports, and tools to level up your marketing, sales, and customer success operations.</p>
+        <section className="container py-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-2">
+            <span className="text-xs uppercase tracking-wider font-sans-ui font-bold text-primary">
+              Open Research &amp; Archival Tools
+            </span>
+            <h1 className="text-3xl md:text-5xl font-bold text-foreground font-serif">
+              Resources &amp; Data Packs
+            </h1>
+            <p className="mt-2 text-muted-foreground text-base max-w-2xl font-serif">
+              Freely available datasets, constitutional concordances, policy briefs, and historical chronicles compiled by Deliberately Éire.
+            </p>
           </motion.div>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {resources.map((resource, i) => {
               const Icon = resource.icon;
+              const isDownloaded = downloadedItem === resource.title;
               return (
                 <motion.div
                   key={resource.title}
@@ -34,20 +86,40 @@ const Resources = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08 }}
                   whileHover={{ y: -4 }}
-                  className="rounded-xl border-2 border-primary/30 bg-card p-6 space-y-4 flex flex-col"
+                  className="rounded-xl border border-border bg-card p-6 space-y-4 flex flex-col justify-between shadow-sm hover:border-primary/40 transition-colors"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                      <Icon className="h-5 w-5 text-primary" />
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                        <Icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <span className="text-xs font-semibold font-sans-ui text-primary bg-primary/10 px-2.5 py-1 rounded-full">
+                        {resource.type}
+                      </span>
                     </div>
-                    <span className="text-xs font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-full">{resource.type}</span>
+                    <h2 className="text-lg font-bold text-foreground font-serif leading-snug">{resource.title}</h2>
+                    <p className="text-xs md:text-sm text-muted-foreground font-serif leading-relaxed">{resource.description}</p>
                   </div>
-                  <h2 className="text-lg font-bold text-foreground">{resource.title}</h2>
-                  <p className="text-sm text-muted-foreground flex-1">{resource.description}</p>
-                  <div className="flex items-center justify-between pt-2">
-                    <span className="text-xs text-muted-foreground flex items-center gap-1"><Download className="h-3.5 w-3.5" />{resource.downloads} downloads</span>
-                    <button className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105 active:scale-95">
-                      Get Free
+                  
+                  <div className="flex items-center justify-between pt-3 border-t border-border/50 font-sans-ui">
+                    <span className="text-xs text-muted-foreground flex items-center gap-1">
+                      <Download className="h-3.5 w-3.5" />{resource.downloads} downloads
+                    </span>
+                    <button
+                      onClick={() => handleDownload(resource.title)}
+                      className={`rounded-md px-3.5 py-1.5 text-xs font-semibold transition-all ${
+                        isDownloaded
+                          ? "bg-primary/20 text-primary border border-primary/30 flex items-center gap-1"
+                          : "bg-primary text-primary-foreground hover:scale-105 active:scale-95 shadow-sm"
+                      }`}
+                    >
+                      {isDownloaded ? (
+                        <>
+                          <CheckCircle2 className="h-3.5 w-3.5" /> Downloading
+                        </>
+                      ) : (
+                        "Access PDF"
+                      )}
                     </button>
                   </div>
                 </motion.div>

@@ -14,7 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Satoshi", "system-ui", "sans-serif"],
+        serif: ["Source Serif 4", "Bitstream Charter", "Charter", "Georgia", "serif"],
+        sans: ["Plus Jakarta Sans", "Satoshi", "system-ui", "sans-serif"],
+        deva: ["Noto Serif Devanagari", "Lohit Devanagari", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -25,6 +27,14 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+        },
+        saffron: {
+          DEFAULT: "hsl(var(--saffron))",
+          foreground: "hsl(var(--saffron-foreground))",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          foreground: "hsl(var(--gold-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

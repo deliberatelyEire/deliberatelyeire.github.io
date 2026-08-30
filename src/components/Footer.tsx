@@ -1,19 +1,56 @@
+import { Link } from "react-router-dom";
+import logoImg from "@/assets/logo.png";
+
 const Footer = () => {
   return (
-    <footer className="border-t border-border bg-secondary/50">
-      <div className="container py-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-sm font-bold text-foreground">
-            Content<span className="text-primary">Hub</span>
+    <footer className="border-t border-border bg-card/60">
+      <div className="container py-12">
+        {/* Bilingual Mottos Band */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-8 border-b border-border">
+          <div className="space-y-1">
+            <p className="font-deva text-xl md:text-2xl font-bold text-foreground tracking-wide">
+              सर्वे भवन्तु सुखिनः
+            </p>
+            <p className="text-xs text-muted-foreground font-sans-ui italic">
+              "May all beings be happy, healthy, and free from harm"
+            </p>
           </div>
-          <div className="flex gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">About</a>
-            <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Terms</a>
-            <a href="#" className="hover:text-foreground transition-colors">Contact</a>
+          <div className="space-y-1 md:text-right">
+            <p className="text-lg md:text-xl font-bold text-foreground font-serif italic text-primary">
+              Is ar scáth a chéile a mhaireann na daoine
+            </p>
+            <p className="text-xs text-muted-foreground font-sans-ui italic">
+              "Under each other's shelter, the people flourish"
+            </p>
           </div>
-          <p className="text-xs text-muted-foreground">
-            © 2026 Content Hub. All rights reserved.
+        </div>
+
+        {/* Main Footer Row */}
+        <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-3">
+            <div className="h-8 w-8 rounded-full overflow-hidden border border-border shrink-0">
+              <img src={logoImg} alt="Deliberately Éire Logo" className="h-full w-full object-cover" />
+            </div>
+            <div>
+              <span className="text-base font-bold text-foreground font-serif">
+                Deliberately <span className="text-primary">Éire</span>
+              </span>
+              <span className="text-xs text-muted-foreground font-sans-ui block">
+                @DeliberatelyÉire · Ties older than either republic
+              </span>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-6 text-sm font-sans-ui text-muted-foreground">
+            <Link to="/blog" className="hover:text-primary transition-colors">Articles</Link>
+            <Link to="/newsletters" className="hover:text-primary transition-colors">Newsletters</Link>
+            <Link to="/resources" className="hover:text-primary transition-colors">Resources &amp; Data</Link>
+            <Link to="/podcasts" className="hover:text-primary transition-colors">Podcasts</Link>
+            <a href="https://x.com/DeliberatelyEire" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">X (@DeliberatelyÉire)</a>
+          </div>
+
+          <p className="text-xs text-muted-foreground font-sans-ui">
+            © {new Date().getFullYear()} Deliberately Éire. Independent &amp; Open Research.
           </p>
         </div>
       </div>
