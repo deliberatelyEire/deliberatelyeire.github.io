@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Search, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ModeToggle } from "./ModeToggle";
 
 const navItems = [
   { label: "Blog", href: "/blog" },
