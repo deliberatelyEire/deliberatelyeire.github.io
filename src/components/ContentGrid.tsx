@@ -1,9 +1,27 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { getAllPosts } from "@/lib/posts";
+import { BookOpen } from "lucide-react";
 
 const ContentGrid = () => {
-  const posts = getAllPosts().slice(1, 5); // Show latest publications after featured
+  const allPosts = getAllPosts();
+  const posts = allPosts.slice(1, 5); // Show latest publications after featured
+
+  if (allPosts.length === 0) {
+    return (
+      <section className="container py-12">
+        <div className="rounded-xl border border-dashed border-border p-10 text-center space-y-3 bg-card/50">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 mx-auto text-primary">
+            <BookOpen className="h-6 w-6" />
+          </div>
+          <h3 className="text-xl font-bold font-serif text-foreground">Archival Publications in Preparation</h3>
+          <p className="text-sm font-serif text-muted-foreground max-w-md mx-auto">
+            Our upcoming research chronicles and demographic briefs will appear here. Add Markdown files to <code className="text-xs bg-muted px-1.5 py-0.5 rounded font-mono">src/content/posts/</code> to publish.
+          </p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="container py-8">

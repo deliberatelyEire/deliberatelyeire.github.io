@@ -75,52 +75,73 @@ const Blog = () => {
           </div>
 
           {/* Articles Grid */}
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <AnimatePresence mode="popLayout">
-              {filteredArticles.map((post, i) => (
-                <motion.article
-                  key={post.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.25, delay: i * 0.04 }}
-                  whileHover={{ y: -4 }}
-                  className="group flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-shadow hover:shadow-lg"
-                >
-                  <Link to={`/article/${post.slug || post.id}`} className="block">
-                    <div className="overflow-hidden rounded-lg border border-border/60 bg-secondary/30">
-                      <img
-                        src={post.cover}
-                        alt={post.title}
-                        className="w-full aspect-[16/10] object-cover transition-transform duration-300 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="mt-4 space-y-2">
-                      <div className="flex items-center justify-between font-sans-ui text-xs">
-                        <span className="font-semibold text-primary">{post.category}</span>
-                        {post.readTime && (
-                          <span className="text-muted-foreground flex items-center gap-1">
-                            <Clock className="h-3 w-3" /> {post.readTime}
-                          </span>
-                        )}
+          <div className="mt-10">
+            {filteredArticles.length === 0 ? (
+              <div className="rounded-xl border border-dashed border-border p-12 text-center space-y-3 bg-card/40 my-8">
+                <h3 className="text-xl font-bold font-serif text-foreground">No Articles Published Yet</h3>
+                <p className="text-sm font-serif text-muted-foreground max-w-md mx-auto">
+                  {activeCategory === "All"
+                    ? "Chronicles, archival essays, and demographic studies are in preparation. Drop your Markdown files in src/content/posts/ to publish."
+                    : `No articles currently published under "${activeCategory}". Select another category or check back soon.`}
+                </p>
+                {activeCategory !== "All" && (
+                  <button
+                    onClick={() => handleSelectCategory("All")}
+                    className="inline-block mt-2 text-xs font-semibold text-primary underline"
+                  >
+                    View All Categories
+                  </button>
+                )}
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <AnimatePresence mode="popLayout">
+                  {filteredArticles.map((post, i) => (
+                    <motion.article
+                      key={post.id}
+                      layout
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.25, delay: i * 0.04 }}
+                      whileHover={{ y: -4 }}
+                      className="group flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-shadow hover:shadow-lg"
+                    >
+                      <Link to={`/article/${post.slug || post.id}`} className="block">
+                        <div className="overflow-hidden rounded-lg border border-border/60 bg-secondary/30">
+                          <img
+                            src={post.cover}
+                            alt={post.title}
+                            className="w-full aspect-[16/10] object-cover transition-transform duration-300 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="mt-4 space-y-2">
+                          <div className="flex items-center justify-between font-sans-ui text-xs">
+                            <span className="font-semibold text-primary">{post.category}</span>
+                            {post.readTime && (
+                              <span className="text-muted-foreground flex items-center gap-1">
+                                <Clock className="h-3 w-3" /> {post.readTime}
+                              </span>
+                            )}
+                          </div>
+                          <h2 className="text-base md:text-lg font-bold leading-snug text-foreground group-hover:text-primary transition-colors font-serif line-clamp-2">
+                            {post.title}
+                          </h2>
+                          <p className="text-xs md:text-sm text-muted-foreground line-clamp-3 font-serif">
+                            {post.excerpt}
+                          </p>
+                        </div>
+                      </Link>
+                      <div className="flex items-center justify-between text-xs font-sans-ui text-muted-foreground pt-4 mt-3 border-t border-border/60">
+                        <span className="font-semibold text-foreground">{post.author}</span>
+                        <span>{post.date}</span>
                       </div>
-                      <h2 className="text-base md:text-lg font-bold leading-snug text-foreground group-hover:text-primary transition-colors font-serif line-clamp-2">
-                        {post.title}
-                      </h2>
-                      <p className="text-xs md:text-sm text-muted-foreground line-clamp-3 font-serif">
-                        {post.excerpt}
-                      </p>
-                    </div>
-                  </Link>
-                  <div className="flex items-center justify-between text-xs font-sans-ui text-muted-foreground pt-4 mt-3 border-t border-border/60">
-                    <span className="font-semibold text-foreground">{post.author}</span>
-                    <span>{post.date}</span>
-                  </div>
-                </motion.article>
-              ))}
-            </AnimatePresence>
+                    </motion.article>
+                  ))}
+                </AnimatePresence>
+              </div>
+            )}
           </div>
         </section>
         <NewsletterSection />

@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import TopicClusters from "@/components/TopicClusters";
+// Hidden until there are enough posts to fill the thematic pillars.
+// import TopicClusters from "@/components/TopicClusters";
 import ContentGrid from "@/components/ContentGrid";
 import NewsletterSection from "@/components/NewsletterSection";
 import Footer from "@/components/Footer";
@@ -11,7 +12,7 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <TopicClusters />
+        {/* <TopicClusters /> */}
         <ContentGrid />
         <NewsletterSection />
       </main>

@@ -1,0 +1,28 @@
+---
+id: "my-first-article"
+title: "Article Title"
+excerpt: "A short 1-2 sentence preview for cards and search."
+author: "Author Name"
+role: "Historical / Policy Studies"
+date: "Sept 16, 2026"
+category: "Constitutional History"
+readTime: "7 min read"
+cover: "cover.jpg"
+sources: "Primary archives or official documents cited."
+featured: true
+order: 1
+---
+
+Your introduction paragraph starts here.
+
+## Section Heading
+
+Body content written in Markdown format.
+
+## Using Images
+
+Reference images in the same folder using relative paths:
+![Image alt text](./image-name.jpg)
+
+> "A memorable quote or primary document extract."
+> — Attribution

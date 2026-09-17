@@ -84,6 +84,17 @@ const Article = () => {
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
+                  img: ({ src, alt }) => {
+                    // Resolve relative image paths - src should already be resolved by posts.ts
+                    return (
+                      <img
+                        src={src || ""}
+                        alt={alt || ""}
+                        className="w-full rounded-lg my-6 border border-border"
+                        loading="lazy"
+                      />
+                    );
+                  },
                   h1: ({ children }) => (
                     <h1 className="text-3xl md:text-4xl font-bold text-foreground font-serif mt-10 mb-4 pb-2 border-b border-border/60">
                       {children}

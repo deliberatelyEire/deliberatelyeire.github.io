@@ -71,25 +71,58 @@ function parseFrontmatter(fileContent: string): { metadata: Record<string, any>;
   return { metadata, content: bodyContent };
 }
 
-// Automatically discover all .md files in src/content/posts
+// Bundle every image that lives alongside a post, keyed by folder then filename
+function getPostImages(): Record<string, Record<string, string>> {
+  const modules = import.meta.glob<{ default: string }>(
+    "/src/content/posts/*/*.{svg,png,jpg,jpeg,gif,webp}",
+    { eager: true }
+  );
+
+  const byFolder: Record<string, Record<string, string>> = {};
+
+  for (const [imagePath, moduleData] of Object.entries(modules)) {
+    const parts = imagePath.split("/");
+    const fileName = parts.pop() || "";
+    const folder = parts.pop() || "";
+    const url = typeof moduleData === "string" ? moduleData : moduleData.default;
+
+    if (!byFolder[folder]) byFolder[folder] = {};
+    byFolder[folder][fileName] = url;
+  }
+
+  return byFolder;
+}
+
+// Automatically discover all index.md files in src/content/posts/*/
 export function getAllPosts(): MarkdownPost[] {
-  const modules = import.meta.glob<{ default: string }>("/src/content/posts/*.md", {
+  const modules = import.meta.glob<{ default: string }>("/src/content/posts/*/index.md", {
     query: "?raw",
     eager: true,
   });
 
+  const imagesByFolder = getPostImages();
   const posts: MarkdownPost[] = [];
 
   for (const [path, moduleData] of Object.entries(modules)) {
     const rawText = typeof moduleData === "string" ? moduleData : (moduleData as any).default || "";
-    const filename = path.split("/").pop() || "";
-    const slug = filename.replace(/\.md$/, "");
+    const pathParts = path.split("/");
+    const slug = pathParts[pathParts.length - 2]; // folder name is the slug
+    const postImages = imagesByFolder[slug] || {};
 
-    const { metadata, content } = parseFrontmatter(rawText);
+    const { metadata, content: rawContent } = parseFrontmatter(rawText);
+
+    // Rewrite ![alt](./file.svg) to the bundled asset URL
+    const content = rawContent.replace(
+      /(!\[[^\]]*\]\()\.\/([^)]+)\)/g,
+      (match, prefix, fileName) => {
+        const url = postImages[fileName.trim()];
+        return url ? `${prefix}${url})` : match;
+      }
+    );
 
     // Resolve cover image
     const rawCover = metadata.cover || "";
-    const resolvedCover = imageMap[rawCover] || rawCover || tiesImg;
+    const resolvedCover = postImages[rawCover] || imageMap[rawCover] || rawCover || tiesImg;
 
     posts.push({
       id: metadata.id || slug,
