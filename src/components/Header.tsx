@@ -5,11 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ModeToggle } from "./ModeToggle";
 import logoImg from "@/assets/logo.png";
 
+// Newsletters, Resources and Podcasts are hidden until they hold real content.
+// Their pages and routes are intact; restore the entries below to bring them back.
 const navItems = [
   { label: "Articles", href: "/blog" },
-  { label: "Newsletters", href: "/newsletters" },
-  { label: "Resources & Data", href: "/resources" },
-  { label: "Podcasts", href: "/podcasts" },
+  // { label: "Newsletters", href: "/newsletters" },
+  // { label: "Resources & Data", href: "/resources" },
+  // { label: "Podcasts", href: "/podcasts" },
 ];
 
 const Header = () => {
@@ -25,11 +27,11 @@ const Header = () => {
         <div className="flex items-center gap-8">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="h-9 w-9 rounded-full overflow-hidden border border-border/80 shrink-0 bg-background shadow-sm">
-              <img src={logoImg} alt="Deliberately Éire Diya Mark" className="h-full w-full object-cover" />
+              <img src={logoImg} alt="Delibrately Éire Diya Mark" className="h-full w-full object-cover" />
             </div>
             <div className="flex flex-col">
               <span className="text-lg md:text-xl font-bold tracking-tight text-foreground font-serif leading-none">
-                Deliberately <span className="text-primary font-bold">Éire</span>
+                Delibrately <span className="text-primary font-bold">Éire</span>
               </span>
               <span className="text-[10px] text-muted-foreground font-sans-ui tracking-wider uppercase font-semibold">
                 Ireland &amp; India Ties

@@ -129,7 +129,7 @@ export function getAllPosts(): MarkdownPost[] {
       slug: slug,
       title: metadata.title || "Untitled Article",
       excerpt: metadata.excerpt || "",
-      author: metadata.author || "Deliberately Éire Research",
+      author: metadata.author || "Delibrately Éire Research",
       role: metadata.role || "Research & Analysis",
       date: metadata.date || "2026",
       category: metadata.category || "General",

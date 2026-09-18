@@ -29,28 +29,29 @@ const Footer = () => {
         <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <div className="h-8 w-8 rounded-full overflow-hidden border border-border shrink-0">
-              <img src={logoImg} alt="Deliberately Éire Logo" className="h-full w-full object-cover" />
+              <img src={logoImg} alt="Delibrately Éire Logo" className="h-full w-full object-cover" />
             </div>
             <div>
               <span className="text-base font-bold text-foreground font-serif">
-                Deliberately <span className="text-primary">Éire</span>
+                Delibrately <span className="text-primary">Éire</span>
               </span>
               <span className="text-xs text-muted-foreground font-sans-ui block">
-                @DeliberatelyÉire · Ties older than either republic
+                @delibratelyEire · Ties older than either republic
               </span>
             </div>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 text-sm font-sans-ui text-muted-foreground">
             <Link to="/blog" className="hover:text-primary transition-colors">Articles</Link>
+            {/* Hidden until they hold real content; pages and routes are intact.
             <Link to="/newsletters" className="hover:text-primary transition-colors">Newsletters</Link>
             <Link to="/resources" className="hover:text-primary transition-colors">Resources &amp; Data</Link>
-            <Link to="/podcasts" className="hover:text-primary transition-colors">Podcasts</Link>
-            <a href="https://x.com/DeliberatelyEire" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">X (@DeliberatelyÉire)</a>
+            <Link to="/podcasts" className="hover:text-primary transition-colors">Podcasts</Link> */}
+            <a href="https://x.com/delibratelyEire" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">X (@delibratelyEire)</a>
           </div>
 
           <p className="text-xs text-muted-foreground font-sans-ui">
-            © {new Date().getFullYear()} Deliberately Éire. Independent &amp; Open Research.
+            © {new Date().getFullYear()} Delibrately Éire. Independent &amp; Open Research.
           </p>
         </div>
       </div>

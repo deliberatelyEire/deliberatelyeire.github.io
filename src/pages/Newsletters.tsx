@@ -66,7 +66,7 @@ const Newsletters = () => {
               </div>
               <h1 className="text-3xl md:text-5xl font-bold font-serif">Curated Research Dispatches</h1>
               <p className="mt-3 text-primary-foreground/85 text-base md:text-lg font-serif">
-                Deliberately Éire publications delivered directly to your inbox. Select the research streams most relevant to your interests.
+                Delibrately Éire publications delivered directly to your inbox. Select the research streams most relevant to your interests.
               </p>
             </motion.div>
           </div>

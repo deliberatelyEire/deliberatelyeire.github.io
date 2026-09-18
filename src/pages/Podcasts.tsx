@@ -88,7 +88,7 @@ const Podcasts = () => {
                 Audio Archive &amp; Scholarly Interviews
               </span>
               <h1 className="text-3xl md:text-5xl font-bold text-foreground font-serif">
-                The Deliberately Éire Conversations
+                The Delibrately Éire Conversations
               </h1>
               <p className="mt-1 text-muted-foreground font-serif text-sm md:text-base">
                 In-depth dialogues with historians, diplomats, legal scholars, and diaspora leaders examining Ireland–India connections.
@@ -150,7 +150,7 @@ const Podcasts = () => {
 
                     {isPlaying && (
                       <div className="pt-2 flex items-center gap-2 text-xs font-sans-ui text-primary font-semibold animate-pulse">
-                        <span>▶ Audio stream playing · Deliberately Éire Audio Player</span>
+                        <span>▶ Audio stream playing · Delibrately Éire Audio Player</span>
                       </div>
                     )}
                   </div>

@@ -71,7 +71,7 @@ const Resources = () => {
               Resources &amp; Data Packs
             </h1>
             <p className="mt-2 text-muted-foreground text-base max-w-2xl font-serif">
-              Freely available datasets, constitutional concordances, policy briefs, and historical chronicles compiled by Deliberately Éire.
+              Freely available datasets, constitutional concordances, policy briefs, and historical chronicles compiled by Delibrately Éire.
             </p>
           </motion.div>
 
