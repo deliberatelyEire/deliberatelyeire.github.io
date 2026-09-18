@@ -27,7 +27,7 @@ const HeroSection = () => {
               Unearthing the Shared History, Policy &amp; Culture of Ireland &amp; India
             </h1>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-serif max-w-xl">
-              Welcome to <strong className="text-foreground">Delibrately Éire</strong>. An independent publication dedicated to comparative constitutional statecraft, archival chronicles, diaspora statistics, and literary kindred spirits.
+              Welcome to <strong className="text-foreground">Deliberately Éire</strong>. An independent publication dedicated to comparative constitutional statecraft, archival chronicles, diaspora statistics, and literary kindred spirits.
             </p>
             <div className="pt-2 flex flex-wrap items-center gap-3 font-sans-ui">
               <a
@@ -53,7 +53,7 @@ const HeroSection = () => {
           >
             <img
               src={heroImg}
-              alt="Delibrately Éire - Ireland and India Ties"
+              alt="Deliberately Éire - Ireland and India Ties"
               className="w-full aspect-[16/10] object-cover"
             />
           </motion.div>

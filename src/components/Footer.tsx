@@ -29,11 +29,11 @@ const Footer = () => {
         <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <div className="h-8 w-8 rounded-full overflow-hidden border border-border shrink-0">
-              <img src={logoImg} alt="Delibrately Éire Logo" className="h-full w-full object-cover" />
+              <img src={logoImg} alt="Deliberately Éire Logo" className="h-full w-full object-cover" />
             </div>
             <div>
               <span className="text-base font-bold text-foreground font-serif">
-                Delibrately <span className="text-primary">Éire</span>
+                Deliberately <span className="text-primary">Éire</span>
               </span>
               <span className="text-xs text-muted-foreground font-sans-ui block">
                 @delibratelyEire · Ties older than either republic
@@ -51,7 +51,7 @@ const Footer = () => {
           </div>
 
           <p className="text-xs text-muted-foreground font-sans-ui">
-            © {new Date().getFullYear()} Delibrately Éire. Independent &amp; Open Research.
+            © {new Date().getFullYear()} Deliberately Éire. Independent &amp; Open Research.
           </p>
         </div>
       </div>

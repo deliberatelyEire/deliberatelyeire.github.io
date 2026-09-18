@@ -42,7 +42,7 @@ const NewsletterSection = () => {
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
           subject: "New Dispatch sign-up",
-          from_name: "Delibrately Éire",
+          from_name: "Deliberately Éire",
           email,
         }),
       });
@@ -75,7 +75,7 @@ const NewsletterSection = () => {
             </div>
           </div>
           <span className="text-xs uppercase tracking-widest font-sans-ui font-semibold text-primary-foreground/90 bg-primary-foreground/10 px-3 py-1 rounded-full inline-block">
-            Delibrately Éire Dispatch
+            Deliberately Éire Dispatch
           </span>
           <h2 className="text-3xl md:text-4xl font-bold font-serif">
             Ties older than either republic.

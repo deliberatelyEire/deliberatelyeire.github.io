@@ -2,7 +2,7 @@
 id: "ireland-citizenship-pathways-2026"
 title: "Is Five Years Truly Five Years? Soon, Perhaps Eight"
 excerpt: "Ireland asks a skilled worker for five years, the fastest in Europe alongside France. It asks a PhD researcher for nine. A Cabinet proposal would make the base eight."
-author: "Delibrately Éire Research"
+author: "Deliberately Éire Research"
 role: "Immigration Policy Analysis"
 date: "Sept 17, 2026"
 category: "Modern Diaspora"

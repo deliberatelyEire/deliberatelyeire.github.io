@@ -172,7 +172,7 @@ const Article = () => {
             {/* Dispatch Subscription Box */}
             <div className="mt-10 rounded-xl bg-card border-2 border-primary/25 p-8 text-center space-y-3">
               <span className="text-xs uppercase tracking-wider font-sans-ui font-semibold text-primary">
-                Delibrately Éire Community
+                Deliberately Éire Community
               </span>
               <h3 className="text-2xl font-bold text-foreground font-serif">Want the next dispatch?</h3>
               <p className="text-sm text-muted-foreground font-serif max-w-md mx-auto">
