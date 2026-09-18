@@ -2,12 +2,15 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, CheckCircle2, ShieldCheck, Loader2, AlertCircle } from "lucide-react";
 
-// Web3Forms access key. This is a PUBLISHABLE key by design: it ships in the
-// client bundle and only allows a submission to reach the inbox it is
-// registered to. It is not a secret and does not need to live in an env var.
-// Get one (free) at https://web3forms.com, paste it below, and the form goes live.
-// While it is empty the form reports an error instead of faking success.
-const WEB3FORMS_ACCESS_KEY = "f05d2acb-5936-4f88-ae0d-62d7b530c389";
+// Web3Forms access key. Loaded from VITE_WEB3FORMS_ACCESS_KEY env var.
+// This is a PUBLISHABLE key by design: it ships in the client bundle and
+// only allows a submission to reach the registered inbox. It is safe to
+// publish but should not be committed to git.
+//
+// Setup: copy .env.example to .env.local and paste your access key.
+// Get a key at https://web3forms.com (free, takes ~1 minute).
+// While empty, the form reports "not configured yet" instead of faking success.
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
