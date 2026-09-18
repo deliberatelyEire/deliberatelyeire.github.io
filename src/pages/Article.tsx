@@ -172,15 +172,15 @@ const Article = () => {
             {/* Dispatch Subscription Box */}
             <div className="mt-10 rounded-xl bg-card border-2 border-primary/25 p-8 text-center space-y-3">
               <span className="text-xs uppercase tracking-wider font-sans-ui font-semibold text-primary">
-                Deliberately Éire Community
+                Delibrately Éire Community
               </span>
-              <h3 className="text-2xl font-bold text-foreground font-serif">Want further archival dispatches?</h3>
+              <h3 className="text-2xl font-bold text-foreground font-serif">Want the next dispatch?</h3>
               <p className="text-sm text-muted-foreground font-serif max-w-md mx-auto">
-                Join our weekly publication exploring diplomatic records, constitutional milestones, and living diaspora research.
+                Leave your address and hear when new work on diplomatic records, constitutional milestones, and living diaspora research is published.
               </p>
               <div className="pt-2">
                 <a href="#newsletter" className="inline-block rounded-md bg-primary px-6 py-2.5 text-sm font-semibold font-sans-ui text-primary-foreground shadow-sm transition-transform hover:scale-105 active:scale-95">
-                  Subscribe to Weekly Dispatch
+                  Subscribe to the Dispatch
                 </a>
               </div>
             </div>
