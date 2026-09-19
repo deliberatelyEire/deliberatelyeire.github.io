@@ -43,6 +43,7 @@ const Footer = () => {
 
           <div className="flex flex-wrap justify-center gap-6 text-sm font-sans-ui text-muted-foreground">
             <Link to="/blog" className="hover:text-primary transition-colors">Articles</Link>
+            <Link to="/about" className="hover:text-primary transition-colors">About</Link>
             {/* Hidden until they hold real content; pages and routes are intact.
             <Link to="/newsletters" className="hover:text-primary transition-colors">Newsletters</Link>
             <Link to="/resources" className="hover:text-primary transition-colors">Resources &amp; Data</Link>

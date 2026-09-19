@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { useEffect } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -13,6 +14,90 @@ const Article = () => {
   const article = (id ? getPostByIdOrSlug(id) : undefined) || getFeaturedPost();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
+
+  // Update meta tags and schema markup for SEO
+  useEffect(() => {
+    if (!article) return;
+
+    const baseUrl = "https://deliberatelyeire.github.io";
+    const articleUrl = `${baseUrl}/article/${article.slug || article.id}`;
+
+    // Update document title
+    document.title = `${article.title} — Deliberately Éire`;
+
+    // Helper to update or create meta tag
+    const updateMeta = (name: string, content: string, property?: boolean) => {
+      const attr = property ? "property" : "name";
+      let tag = document.querySelector(`meta[${attr}="${name}"]`);
+      if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute(attr, name);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute("content", content);
+    };
+
+    // Update OG and Twitter meta tags
+    updateMeta("og:title", article.title, true);
+    updateMeta("og:description", article.excerpt, true);
+    updateMeta("og:image", article.cover, true);
+    updateMeta("og:url", articleUrl, true);
+    updateMeta("og:type", "article", true);
+    updateMeta("article:published_time", new Date(article.date).toISOString(), true);
+    updateMeta("description", article.excerpt);
+    updateMeta("twitter:title", article.title);
+    updateMeta("twitter:description", article.excerpt);
+    updateMeta("twitter:image", article.cover);
+
+    // Add canonical tag
+    let canonical = document.querySelector("link[rel='canonical']") as HTMLLinkElement;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = articleUrl;
+
+    // Add BlogPosting schema markup
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": article.title,
+      "description": article.excerpt,
+      "image": article.cover,
+      "datePublished": new Date(article.date).toISOString(),
+      "author": {
+        "@type": "Organization",
+        "name": article.author,
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Deliberately Éire",
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${baseUrl}/logo.png`,
+        },
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": articleUrl,
+      },
+    };
+
+    let schemaScript = document.querySelector("script[type='application/ld+json'][data-article-schema]") as HTMLScriptElement;
+    if (!schemaScript) {
+      schemaScript = document.createElement("script");
+      schemaScript.type = "application/ld+json";
+      schemaScript.setAttribute("data-article-schema", "true");
+      document.head.appendChild(schemaScript);
+    }
+    schemaScript.textContent = JSON.stringify(schema);
+
+    return () => {
+      // Cleanup: remove article-specific meta tags when component unmounts
+      // Keep them for now as they'll be overwritten on next article load
+    };
+  }, [article]);
 
   if (!article) {
     return (

@@ -9,6 +9,7 @@ import Newsletters from "./pages/Newsletters";
 import Resources from "./pages/Resources";
 import Podcasts from "./pages/Podcasts";
 import Article from "./pages/Article";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/about" element={<About />} />
           <Route path="/newsletters" element={<Newsletters />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/podcasts" element={<Podcasts />} />

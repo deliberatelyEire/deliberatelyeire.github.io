@@ -31,13 +31,13 @@ Every figure in this article is also provisional. In September 2026 the Irish Ca
 
 ![Skilled workers: time to citizenship, showing Ireland and France tied at five years, Germany at five, the UK at six, and Austria and Portugal at ten](./workers.svg)
 
-For someone who arrives on an employment permit, whether Stamp 1 or a critical skills permit, Ireland asks five years. That is the fastest figure on the chart, tied with France, which counts ordinary residence on a work permit at the same five. Germany matches it through the settlement permit path. The United Kingdom asks six, structured as five years' residence plus twelve months holding settled status, dropping to five for someone married to a British citizen. Austria and Portugal both ask ten, with Austria falling to six for applicants who reach B2 German.
+For someone who arrives on an employment permit, whether Stamp 1 or a critical skills permit, Ireland asks five years. That is the fastest figure on the chart, tied with France, which counts ordinary residence on a work permit at the same five. Germany matches it through the settlement permit path. The [United Kingdom](https://www.gov.uk/british-citizenship) asks six, structured as five years' residence plus twelve months holding settled status, dropping to five for someone married to a British citizen. Austria and Portugal both ask ten, with Austria falling to six for applicants who reach [B2 German](https://www.bmi.gv.at/en/index.html).
 
 The dashed bar is the warning. Under the 2026 proposal that five becomes eight, which would drop Ireland from the front of this group to a position of its own: slower than the five-year cluster, still short of the ten.
 
 So a worker comparing Dublin against Paris, Berlin, London, Vienna and Lisbon finds Ireland in the leading group, not trailing it. For now. That is worth saying plainly, because the rest of this article is about a penalty, and the penalty is narrow. It does not apply to the person who came here to work.
 
-Where Ireland does lose ground is after the application goes in. An Irish naturalisation decision takes twelve to nineteen months. A German one takes four to eight weeks. The remaining four sit between six and twelve. Ireland asks for the same five years as Germany, then takes roughly ten times as long to answer, so the real distance between the two is closer to a year than the bars suggest.
+Where Ireland does lose ground is after the application goes in. An [Irish naturalisation](https://www.dfa.ie/citizenship/) decision takes twelve to nineteen months. A [German one](https://www.bamf.bund.de/EN/Themen/Integration/Einbuergerung/einbuergerung_node.html) takes four to eight weeks. The remaining four sit between six and twelve. Ireland asks for the same five years as [Germany](https://www.bamf.bund.de/EN/Themen/Fachkraeftegewinnung/fachkraeftegewinnung_node.html), then takes roughly ten times as long to answer, so the real distance between the two is closer to a year than the bars suggest.
 
 ## PhD Researchers: Nine Years
 
