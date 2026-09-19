@@ -37,7 +37,7 @@ The dashed bar is the warning. Under the 2026 proposal that five becomes eight, 
 
 So a worker comparing Dublin against Paris, Berlin, London, Vienna and Lisbon finds Ireland in the leading group, not trailing it. For now. That is worth saying plainly, because the rest of this article is about a penalty, and the penalty is narrow. It does not apply to the person who came here to work.
 
-Where Ireland does lose ground is after the application goes in. An [Irish naturalisation](https://www.dfa.ie/citizenship/) decision takes twelve to nineteen months. A [German one](https://www.bamf.bund.de/EN/Themen/Integration/Einbuergerung/einbuergerung_node.html) takes four to eight weeks. The remaining four sit between six and twelve. Ireland asks for the same five years as [Germany](https://www.bamf.bund.de/EN/Themen/Fachkraeftegewinnung/fachkraeftegewinnung_node.html), then takes roughly ten times as long to answer, so the real distance between the two is closer to a year than the bars suggest.
+Where Ireland does lose ground is after the application goes in. An [Irish naturalisation](https://www.dfa.ie/citizenship/) decision takes twelve to nineteen months. A [German one](https://www.bamf.bund.de/EN/Themen/Integration/Einbuergerung/einbuergerung_node.html) takes six to thirty-six months depending on the federal state, with most applications taking eight to twenty-four months. The remaining four sit between six and twelve. Ireland asks for the same five years as [Germany](https://www.bamf.bund.de/EN/Themen/Fachkraeftegewinnung/fachkraeftegewinnung_node.html), then takes substantially longer to answer, so the real distance between the two widens once the application is filed.
 
 ## PhD Researchers: Nine Years
 
@@ -65,15 +65,15 @@ The chart describes Ireland's penalty here as light, and that is the right word.
 
 ## Spouses of Citizens: Three Years
 
-![Spouses of citizens: time to citizenship, showing Ireland, Germany, the UK and Portugal at three years, France at five and Austria at ten for non-EU spouses](./spouse.svg)
+![Spouses of citizens: time to citizenship, showing Ireland, Germany, and the UK at three years, France at five, Portugal at ten, and Austria at ten for non-EU spouses](./spouse.svg)
 
 This is Ireland's fastest door, and it is genuinely fast. Three years, with Stamp 4 permission granted from the start, meaning the residence that counts begins immediately rather than after some qualifying period.
 
-Germany asks three. The UK asks three, with immediate settled status and the quickest processing on any of these charts at two to six months. Portugal asks three under its 2026 law. France asks five and offers no acceleration for marriage at all, the one comparator clearly slower than Ireland here.
+Germany asks three. The UK asks three, with immediate settled status and processing typically completing within six months. France asks five and offers no acceleration for marriage at all. Austria splits: three years for a spouse of an EU or EEA citizen, ten years for non-EU spouses (the chart names Indian nationals specifically), a seven-year difference decided by nationality rather than by anything the couple did.
 
-Austria splits. A spouse of an EU or EEA citizen reaches three years. A non-EU spouse (the chart names Indian nationals specifically) faces the standard ten. For couples where one partner holds a third-country passport, that is a seven-year difference decided by nationality rather than by anything the couple did.
+Portugal, historically three years, moved to ten under its revised 2026 Nationality Law, effective 19 May. That change happened after this article's publication date and reflects a broader tightening of Portugal's naturalisation rules.
 
-This is also the one route the proposal leaves ambiguous. The spouse chart carries no dashed bar for Ireland, and notes only that the 2026 reform targets general naturalisation, and that its effect on the spousal route is not yet specified. Three years may well hold. The proposal, as published, does not address it either way.
+Ireland's spousal route is the one the Cabinet proposal leaves ambiguous. The 2026 reform targets general naturalisation, and its effect on the spousal path is not yet specified. Three years may well hold. The proposal, as published, does not address it either way.
 
 All six jurisdictions require proof of a genuine marriage. Nobody is waving anyone through.
 
