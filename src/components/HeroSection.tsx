@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 import { getAllPosts, getFeaturedPost } from "@/lib/posts";
 import heroImg from "@/assets/ireland-india-ties.jpg";
 import { BookOpen, ArrowRight, Clock, Feather, Sparkles, Twitter } from "lucide-react";
@@ -143,21 +142,9 @@ const HeroSection = () => {
               <Twitter className="h-4 w-4" />
               Follow @delibratelyEire
             </a>
-            <div
-              className="twitter-embed rounded-lg overflow-hidden border border-border/50 bg-black/5"
-              style={{ minHeight: "300px" }}
-            >
-              <iframe
-                src="https://platform.twitter.com/embed/Timeline.html?args=%7B%22screen_name%22:%22delibratelyEire%22,%22chrome%22:%22noheader,nofooter%22,%22width%22:380,%22height%22:400%7D"
-                style={{
-                  width: "100%",
-                  height: "400px",
-                  border: "none",
-                  borderRadius: "8px",
-                }}
-                title="X Feed from @delibratelyEire"
-              />
-            </div>
+            <p className="text-xs text-muted-foreground font-sans-ui pt-2">
+              New threads on citizenship pathways, policy analysis, and research findings published regularly.
+            </p>
           </div>
         </motion.aside>
       </div>
