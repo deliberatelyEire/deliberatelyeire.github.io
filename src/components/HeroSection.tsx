@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { getAllPosts, getFeaturedPost } from "@/lib/posts";
 import heroImg from "@/assets/ireland-india-ties.jpg";
-import { BookOpen, ArrowRight, Clock, Feather, Sparkles, Twitter } from "lucide-react";
+import { BookOpen, ArrowRight, Clock, Feather, Sparkles, Share2 } from "lucide-react";
 
 const HeroSection = () => {
   const allPosts = getAllPosts();
@@ -111,7 +111,7 @@ const HeroSection = () => {
           </motion.article>
         </Link>
 
-        {/* X Feed Sidebar */}
+        {/* X Updates Sidebar */}
         <motion.aside
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -120,13 +120,13 @@ const HeroSection = () => {
         >
           <div className="flex items-center justify-between pb-3 border-b border-border">
             <div className="flex items-center gap-2">
-              <Twitter className="h-5 w-5 text-[#1DA1F2]" />
+              <Share2 className="h-5 w-5 text-primary" />
               <h2 className="text-lg font-bold text-foreground font-serif">
-                Live Updates
+                X Updates
               </h2>
             </div>
-            <span className="text-xs font-semibold font-sans-ui text-saffron uppercase tracking-wider">
-              X Feed
+            <span className="text-xs font-semibold font-sans-ui text-primary uppercase tracking-wider">
+              Follow
             </span>
           </div>
           <div className="space-y-4">
@@ -137,9 +137,9 @@ const HeroSection = () => {
               href="https://x.com/delibratelyEire"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 w-full justify-center rounded-md bg-[#1DA1F2] hover:bg-[#1a8cd8] px-4 py-2.5 text-sm font-semibold text-white transition-colors"
+              className="inline-flex items-center gap-2 w-full justify-center rounded-md bg-primary hover:bg-primary/90 px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors"
             >
-              <Twitter className="h-4 w-4" />
+              <Share2 className="h-4 w-4" />
               Follow @delibratelyEire
             </a>
             <p className="text-xs text-muted-foreground font-sans-ui pt-2">
