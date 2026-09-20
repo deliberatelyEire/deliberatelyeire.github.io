@@ -1,8 +1,26 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const About = () => {
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    const obfuscated = "krkyvq.rzvu@tznvy.pbz";
+    const decoded = obfuscated.split("").map((char) => {
+      const code = char.charCodeAt(0);
+      if (char >= "a" && char <= "z") {
+        return String.fromCharCode(((code - 97 + 13) % 26) + 97);
+      }
+      if (char >= "A" && char <= "Z") {
+        return String.fromCharCode(((code - 65 + 13) % 26) + 65);
+      }
+      return char;
+    }).join("");
+    setEmail(decoded);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -45,9 +63,11 @@ const About = () => {
                 <h2 className="text-2xl font-bold text-foreground font-serif">Contact</h2>
                 <p>
                   Have a question, correction, or research idea? Reach out at{" "}
-                  <a href="mailto:deliberately.eire@gmail.com" className="text-primary hover:underline font-semibold">
-                    deliberately.eire@gmail.com
-                  </a>
+                  {email && (
+                    <a href={`mailto:${email}`} className="text-primary hover:underline font-semibold">
+                      {email}
+                    </a>
+                  )}
                 </p>
               </div>
 
