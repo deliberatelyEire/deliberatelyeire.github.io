@@ -45,8 +45,8 @@ const About = () => {
                 <h2 className="text-2xl font-bold text-foreground font-serif">Contact</h2>
                 <p>
                   Have a question, correction, or research idea? Reach out at{" "}
-                  <a href="mailto:hello@deliberatelyeire.github.io" className="text-primary hover:underline font-semibold">
-                    hello@deliberatelyeire.github.io
+                  <a href="mailto:deliberately.eire@gmail.com" className="text-primary hover:underline font-semibold">
+                    deliberately.eire@gmail.com
                   </a>
                 </p>
               </div>
