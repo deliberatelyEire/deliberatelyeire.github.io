@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import { getAllPosts, getFeaturedPost } from "@/lib/posts";
 import heroImg from "@/assets/ireland-india-ties.jpg";
-import { BookOpen, ArrowRight, Clock, Feather, Sparkles } from "lucide-react";
+import { BookOpen, ArrowRight, Clock, Feather, Sparkles, Twitter } from "lucide-react";
 
 const HeroSection = () => {
   const allPosts = getAllPosts();
@@ -111,7 +112,7 @@ const HeroSection = () => {
           </motion.article>
         </Link>
 
-        {/* Featured Posts Sidebar */}
+        {/* X Feed Sidebar */}
         <motion.aside
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -119,31 +120,45 @@ const HeroSection = () => {
           className="rounded-xl border border-border bg-card p-6 shadow-sm"
         >
           <div className="flex items-center justify-between pb-3 border-b border-border">
-            <h2 className="text-lg font-bold text-foreground font-serif">
-              Chronicles &amp; Key Essays
-            </h2>
+            <div className="flex items-center gap-2">
+              <Twitter className="h-5 w-5 text-[#1DA1F2]" />
+              <h2 className="text-lg font-bold text-foreground font-serif">
+                Live Updates
+              </h2>
+            </div>
             <span className="text-xs font-semibold font-sans-ui text-saffron uppercase tracking-wider">
-              Essential
+              X Feed
             </span>
           </div>
-          <ul className="divide-y divide-border">
-            {featuredPosts.map((post) => (
-              <li key={post.id} className="py-3.5 group cursor-pointer">
-                <Link to={`/article/${post.slug || post.id}`} className="block space-y-1.5">
-                  <span className="text-[11px] font-sans-ui font-semibold text-primary uppercase tracking-wide">
-                    {post.category}
-                  </span>
-                  <h3 className="text-sm font-bold text-foreground leading-snug group-hover:text-primary transition-colors font-serif">
-                    {post.title}
-                  </h3>
-                  <div className="flex items-center justify-between text-xs font-sans-ui text-muted-foreground pt-1">
-                    <span>{post.author}</span>
-                    <span>{post.date}</span>
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="space-y-4">
+            <p className="text-sm text-muted-foreground font-serif leading-relaxed pt-2">
+              Follow us on X for real-time updates on Irish immigration policy, comparative citizenship analysis, and research insights.
+            </p>
+            <a
+              href="https://x.com/delibratelyEire"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 w-full justify-center rounded-md bg-[#1DA1F2] hover:bg-[#1a8cd8] px-4 py-2.5 text-sm font-semibold text-white transition-colors"
+            >
+              <Twitter className="h-4 w-4" />
+              Follow @delibratelyEire
+            </a>
+            <div
+              className="twitter-embed rounded-lg overflow-hidden border border-border/50 bg-black/5"
+              style={{ minHeight: "300px" }}
+            >
+              <iframe
+                src="https://platform.twitter.com/embed/Timeline.html?args=%7B%22screen_name%22:%22delibratelyEire%22,%22chrome%22:%22noheader,nofooter%22,%22width%22:380,%22height%22:400%7D"
+                style={{
+                  width: "100%",
+                  height: "400px",
+                  border: "none",
+                  borderRadius: "8px",
+                }}
+                title="X Feed from @delibratelyEire"
+              />
+            </div>
+          </div>
         </motion.aside>
       </div>
     </section>
