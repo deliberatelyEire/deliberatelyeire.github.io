@@ -1,427 +1,162 @@
-# Remix of Content Hub
+# Deliberately Éire
 
-**Use inspiration from the screenshot**
-# Content Hub
+Comparative Irish immigration policy research & analysis.
 
+An independent publication dedicated to comparative constitutional statecraft, archival chronicles, diaspora statistics, and literary kindred spirits between Ireland and India.
 
+---
 
+## 📊 Project Overview
 
-Site Name: Content Hub
+This site publishes data-driven analysis of Irish citizenship and naturalisation pathways, comparing Ireland against international counterparts (France, Germany, UK, Austria, Portugal). Each article features interactive SVG charts visualising time-to-citizenship for different visitor categories.
 
-Tagline: ___________
+**Current focus**: Irish citizenship pathways analysis — comparing skilled workers, PhD researchers, master's graduates, and spouses of citizens across six countries.
 
+---
 
-
-
-## Design System
-
-
-
-
-Base: shadcn/ui neutral (oklch)
-
-Primary: systemBlue (#0071e3 / #009aff)
-
-Destructive: systemRed (#e30000 / #ff453a)
-
-
-
-
-Tint usage: bg-primary/30, border-primary/50, text-primary/70
-
-
-
-
-Typography:
-
-  Heading: Satoshi (fontshare.com)
-
-  Body: Satoshi (fontshare.com)
-
-  Weights: 700 headings, 400 body
-
-
-
-
-```css
-
-:root {
-
-  --radius: 0.625rem;
-
-  --background: oklch(1 0 0);
-
-  --foreground: oklch(0.145 0 0);
-
-  --card: oklch(1 0 0);
-
-  --card-foreground: oklch(0.145 0 0);
-
-  --popover: oklch(1 0 0);
-
-  --popover-foreground: oklch(0.145 0 0);
-
-  --secondary: oklch(0.97 0 0);
-
-  --secondary-foreground: oklch(0.205 0 0);
-
-  --muted: oklch(0.97 0 0);
-
-  --muted-foreground: oklch(0.556 0 0);
-
-  --border: oklch(0.922 0 0);
-
-  --input: oklch(0.922 0 0);
-
-  --ring: oklch(0.708 0 0);
-
-
-
-
-  --primary: #0071e3;
-
-  --primary-foreground: #fff;
-
-
-
-
-  --destructive: #e30000;
-
-  --destructive-foreground: #fff;
-
-}
-
-
-
-
-.dark {
-
-  --background: oklch(0.145 0 0);
-
-  --foreground: oklch(0.985 0 0);
-
-  --card: oklch(0.205 0 0);
-
-  --card-foreground: oklch(0.985 0 0);
-
-  --popover: oklch(0.269 0 0);
-
-  --popover-foreground: oklch(0.985 0 0);
-
-  --secondary: oklch(0.269 0 0);
-
-  --secondary-foreground: oklch(0.985 0 0);
-
-  --muted: oklch(0.269 0 0);
-
-  --muted-foreground: oklch(0.708 0 0);
-
-  --border: oklch(1 0 0 / 10%);
-
-  --input: oklch(1 0 0 / 15%);
-
-  --ring: oklch(0.556 0 0);
-
-
-
-
-  --primary: #009aff;
-
-  --primary-foreground: #fff;
-
-
-
-
-  --destructive: #ff453a;
-
-  --destructive-foreground: #fff;
-
-}
+## 🏗️ Architecture
 
 ```
-
-
-
-
-## 1. Product Overview
-
-
-
-
-A modern content marketing hub designed to showcase thought leadership, educational resources, and industry insights for B2B audiences. The platform serves as a central repository for articles, case studies, guides, and whitepapers, strategically organized to guide visitors through the buyer's journey while capturing qualified leads. Built with Vite, React, Framer Motion, Tailwind CSS, and shadcn/ui components.
-
-
-
-
-## 2. Key Features & Requirements
-
-
-
-
-### Homepage / Content Discovery
-
-
-
-
-**Requirements:**
-
-- Feature hero section highlighting the latest or most important article
-
-- Display curated content grid organized by relevance and recency
-
-- Show topic cluster navigation for quick access to themed content
-
-- Provide trending articles section
-
-
-
-
-**Mock Data:**
-
-- **Hero Featured Post:** "The Complete Guide to Revenue Operations" by Jessica Martinez, VP of Marketing
-
-- **Topic Clusters:** Marketing Strategy (47), Sales Enablement (38), Customer Success (42), Product Management (35)
-
-
-
-
-**Visual Requirements:**
-
-- Hero section with full-width gradient background bg-gradient-to-br from-primary to-primary/80 overlaying featured image
-
-- Hero content with large heading text-4xl md:text-5xl font-bold text-primary-foreground
-
-- Article cards in responsive grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
-
-- Each card with rounded corners rounded-xl, bg-card, and subtle shadow shadow-md hover:shadow-xl
-
-- Card hover effect using Framer Motion: lift up 4px with expanded shadow
-
-
-
-
-### Article Listing & Filtering
-
-
-
-
-**Requirements:**
-
-- Display all articles in paginated grid with infinite scroll
-
-- Implement multi-faceted filtering by category, content type, and industry
-
-- Show active filter badges that can be removed individually
-
-
-
-
-**Visual Requirements:**
-
-- Filter sidebar on desktop w-64 fixed width, collapsible drawer on mobile
-
-- Filter groups with section headers text-sm font-semibold text-foreground mb-3
-
-- Active filters displayed as removable pills bg-primary/20 text-primary px-3 py-1 rounded-full
-
-- Framer Motion animation when filters are applied: fade out old results, fade in new
-
-
-
-
-### Individual Article View
-
-
-
-
-**Requirements:**
-
-- Display full article content with optimized reading experience
-
-- Show table of contents for articles over 1000 words
-
-- Include author bio card with photo and social links
-
-- Add inline CTA modules every 3-4 paragraphs
-
-
-
-
-**Visual Requirements:**
-
-- Centered article container max-w-3xl mx-auto px-6
-
-- Large, readable typography text-lg leading-relaxed text-foreground
-
-- Table of contents in sticky sidebar on desktop sticky top-24
-
-- Author bio card with circular avatar rounded-full w-16 h-16
-
-- Progress bar fixed to top fixed top-0 left-0 w-full h-1 bg-primary
-
-- Inline CTA cards with distinct background bg-primary/10 p-6 rounded-xl border-2 border-primary/30
-
-
-
-
-### Lead Magnets & Gated Content
-
-
-
-
-**Requirements:**
-
-- Embed downloadable resources within relevant articles
-
-- Display gated content cards with preview and form
-
-- Minimize form fields (email only for most offers)
-
-- Include trust signals (download count, ratings)
-
-
-
-
-**Mock Data:**
-
-- **eBook:** "The Complete RevOps Playbook" - 75 pages, 8,450+ downloads
-
-- **Template Bundle:** "Marketing Strategy Templates" - 12,300+ downloads
-
-
-
-
-**Visual Requirements:**
-
-- Gated content cards with distinct styling bg-card border-2 border-primary/30 p-6 rounded-xl shadow-lg
-
-- Form with single email input border-2 border-border rounded-lg px-4 py-3
-
-- CTA button bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold
-
-- Success state after submission with download link
-
-
-
-
-### Newsletter Signup
-
-
-
-
-**Requirements:**
-
-- Display newsletter signup prominently in multiple locations
-
-- Show benefits of subscribing clearly
-
-- Include social proof (subscriber count)
-
-
-
-
-**Visual Requirements:**
-
-- Hero section variant with full-width background bg-primary text-primary-foreground py-16
-
-- Form layout: email input next to submit button on desktop, stacked on mobile
-
-- Social proof displayed with user avatars in overlapping circles
-
-- Success message with checkmark icon
-
-
-
-
-### Exit-Intent Popup
-
-
-
-
-**Requirements:**
-
-- Detect when user's mouse moves toward browser close
-
-- Display compelling offer to retain attention
-
-- Provide easy close option
-
-
-
-
-**Visual Requirements:**
-
-- Modal overlay bg-foreground/50 backdrop-blur-sm
-
-- Modal card bg-card rounded-2xl shadow-2xl p-8
-
-- Framer Motion entrance: scale from 0.9 to 1, fade in
-
-
-
-
-## 3. Animation Specifications
-
-
-
-
-**Page Transitions:**
-
-- Fade In: initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}
-
-- Slide Up: initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-
-
-
-
-**Card Interactions:**
-
-- Hover Lift: whileHover={{ y: -4, scale: 1.02 }} transition={{ duration: 0.2 }}
-
-- Press Effect: whileTap={{ scale: 0.98 }}
-
-
-
-
-**Scroll Animations:**
-
-- Progress Bar: style={{ scaleX: scrollYProgress }}
-
-- Fade In On Scroll: whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 20 }}
-
-
-
-
-## 4. Responsive Design
-
-
-
-
-**Breakpoints:**
-
-- Mobile: < 768px - Single column, full-width cards
-
-- Tablet: 768px - 1023px - Two-column grid
-
-- Desktop: 1024px+ - Three-column grid, persistent sidebar
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/5d9b953c-377f-4503-969f-be2e7344ba39).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+src/
+  ├─ components/      # React UI components (shadcn/ui based)
+  ├─ content/posts/   # Markdown articles with YAML frontmatter
+  ├─ data/citizenship/  # CSV data sources for chart generation
+  └─ lib/posts.ts     # Post discovery & content loader
+scripts/
+  ├─ generate_citizenship_charts.py  # CSV → SVG chart generation
+  ├─ generate_framed_charts.py       # Post-visuals framed chart generation
+  └─ prerender.mjs                    # Static site prerendering
+public/
+  └─ article/                     # Sitemap & Open Graph assets
+```
+
+**Data pipeline**: CSV data → Python script → SVG charts → embedded in markdown articles → served via Vite + React
+
+---
+
+## 📈 Chart Types
+
+Six SVG charts are generated from CSV data, each comparing five countries:
+
+| Chart | Data Source | Category |
+|-------|------------|----------|
+| `workers.svg` | `data/citizenship/workers.csv` | Skilled workers on employment permits |
+| `phd.svg` | `data/citizenship/phd.csv` | PhD researchers (Stamp 2) |
+| `masters_student.svg` | `data/citizenship/masters.csv` | Master's graduates (Stamp 2) |
+| `spouse.svg` | `data/citizenship/spouses.csv` | Spouses of Irish citizens |
+
+**Each CSV has columns**: `Country`, `Discarded_Years`, `Requirement_Years`, `Expedited_Years`, `Expedited_Condition`, `Processing_Min_Months`, `Processing_Max_Months`, `Notes`
+
+**Key data points tracked**:
+- Years discarded (e.g., Ireland discards all Stamp 2 years for students)
+- Standard residence requirement years
+- Expedited pathways (e.g., Austria's B2 German → 6 years)
+- Processing times (application decision duration)
+
+**2026 Proposal**: Irish Cabinet approved raising general residence from 5y → 8y (not yet enacted). Charts show dashed-bar projections.
+
+---
+
+## 📁 Content Structure
+
+Articles live in `src/content/posts/<slug>/index.md` with YAML frontmatter:
+
+```yaml
+id: "ireland-citizenship-pathways-2026"
+title: "Is Five Years Truly Five Years? Soon, Perhaps Eight"
+excerpt: "Ireland asks a skilled worker for five years, the fastest in Europe alongside France."
+author: "Deliberately Éire Research"
+role: "Immigration Policy Analysis"
+date: "Sept 17, 2026"
+category: "Modern Diaspora"
+readTime: "8 min read"
+cover: "workers.svg"
+sources: "DFA, MEA, DGFiP, BAMF, BMI, Home Office, SEF (2026)"
+featured: true
+order: 1
+```
+
+**Automatically parsed fields**: `id`, `slug`, `title`, `excerpt`, `author`, `role`, `date`, `category`, `readTime`, `cover`, `sources`, `featured`, `order`.
+
+Images are resolved via `import.meta.glob` from `src/content/posts/<slug>/` and the `src/assets/` map.
+
+---
+
+## 🛠️ Development
+
+### Prerequisites
+- Node.js 18+ (with npm or bun)
+- Python 3.x (for chart generation)
+
+### Setup
+```sh
+git clone <repository-url>
+cd delibratelyeire.github.io
+npm i        # or: bun install
+```
+
+### Development Mode
+```sh
+npm run dev   # starts Vite dev server at http://localhost:8080
+```
+
+### Regenerate Charts
+If CSV data changes, regenerate SVGs:
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+python3 scripts/generate_citizenship_charts.py
 ```
+
+This reads `data/citizenship/*.csv` and writes SVG files to `src/content/posts/ireland-citizenship/`.
+
+### Build
+```sh
+npm run build   # Vite build → static dist/
+npm run preview # preview the build locally
+```
+
+### Lint & Test
+```sh
+npm run lint   # ESLint
+npm run test   # Vitest
+```
+
+---
+
+## 🌐 Deployment
+
+This is configured as a GitHub Pages site. The `postbuild` script in `package.json` copies `dist/index.html` to `dist/404.html` and runs the prerender script.
+
+---
+
+## 📊 Technology Stack
+
+- **Runtime**: Vite + React 18 + TypeScript
+- **Styling**: Tailwind CSS 3.4 with oklch color scheme
+- **UI components**: shadcn/ui (Radix UI primitives)
+- **Animations**: Framer Motion 12
+- **Data viz**: Custom Python SVG generation (Bitstream Charter font)
+- **Content**: Markdown with YAML frontmatter
+- **Query**: @tanstack/react-query
+- **Form handling**: React Hook Form + Zod validation
+- **Charts**: SVG with manual layout (no external charting library)
+
+---
+
+## 👥 Authors & Contributors
+
+- **Deliberately Éire Research** — Immigration policy analysis
+- Comparative research across Irish, French, German, British, Austrian, and Portuguese naturalisation law
+
+---
+
+## 🔗 Related
+
+- [X (@delibratelyEire)](https://x.com/delibratelyEire) — Real-time policy updates
+- [Blog](/blog) — All articles
+- [Resources](/resources) — Data and reports
+- [About](/about) — Publication information
+
+---
+
+*Originally bootstrapped with Lovable, now maintained as an independent Vite/React project. Data sources: Irish Department of Foreign Affairs, German BAMF, French MEA, UK Home Office, Italian BMI, and Irish Cabinet proposals (2026).*
