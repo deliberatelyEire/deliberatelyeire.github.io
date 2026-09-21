@@ -27,7 +27,7 @@
 <text x="1102" y="268" font-size="18" font-weight="700" fill="#0B0C0E">12y*</text>
 <text x="404" y="357" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">France</text>
 <rect x="420" y="335" width="504" height="26" rx="2" fill="#5D5E63"/>
-<text x="940" y="357" font-size="24" font-weight="700" fill="#5D5E63">5y</text>
+<text x="940" y="357" font-size="24" font-weight="700" fill="#5D5E63">9y</text>
 <text x="1280" y="356" font-size="18" fill="#5D5E63">All doctoral time counts (9y from arrival)</text>
 <text x="1280" y="373" font-size="14" fill="#8B8C8F">Processing: 18–24 months</text>
 <rect x="420" y="356" width="336" height="26" rx="2" fill="none" stroke="#0B0C0E" stroke-width="2" stroke-dasharray="5,4"/>
@@ -35,14 +35,14 @@
 <text x="1280" y="395" font-size="16" fill="#5D5E63">if collaborative research with French institutions</text>
 <text x="404" y="419" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Germany</text>
 <rect x="420" y="397" width="504" height="26" rx="2" fill="#5D5E63"/>
-<text x="940" y="419" font-size="24" font-weight="700" fill="#5D5E63">5y</text>
+<text x="940" y="419" font-size="24" font-weight="700" fill="#5D5E63">9y</text>
 <text x="1280" y="418" font-size="18" fill="#5D5E63">All time counts via settlement permit (9y from arrival)</text>
 <text x="1280" y="435" font-size="14" fill="#8B8C8F">Processing: 4–8 weeks</text>
 <text x="404" y="481" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Austria</text>
 <rect x="420" y="459" width="224" height="26" rx="2" fill="#D8D2C6"/>
 <rect x="644" y="459" width="560" height="26" rx="2" fill="#5D5E63"/>
-<text x="1220" y="481" font-size="24" font-weight="700" fill="#5D5E63">10y</text>
-<text x="1280" y="480" font-size="18" fill="#5D5E63">Standard 10-year track</text>
+<text x="1220" y="481" font-size="24" font-weight="700" fill="#5D5E63">14y</text>
+<text x="1280" y="480" font-size="18" fill="#5D5E63">14y total (4y PhD + 10y requirement)</text>
 <text x="1280" y="497" font-size="14" fill="#8B8C8F">Processing: 6–12 months</text>
 <rect x="420" y="480" width="224" height="26" rx="2" fill="#D8D2C6"/>
 <rect x="644" y="480" width="336" height="26" rx="2" fill="none" stroke="#0B0C0E" stroke-width="2" stroke-dasharray="5,4"/>
@@ -58,8 +58,8 @@
 <text x="404" y="605" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Portugal</text>
 <rect x="420" y="583" width="224" height="26" rx="2" fill="#D8D2C6"/>
 <rect x="644" y="583" width="560" height="26" rx="2" fill="#5D5E63"/>
-<text x="1220" y="605" font-size="24" font-weight="700" fill="#5D5E63">10y</text>
-<text x="1280" y="604" font-size="18" fill="#5D5E63">10-year third-country standard</text>
+<text x="1220" y="605" font-size="24" font-weight="700" fill="#5D5E63">14y</text>
+<text x="1280" y="604" font-size="18" fill="#5D5E63">14y total (4y PhD + 10y requirement)</text>
 <text x="1280" y="621" font-size="14" fill="#8B8C8F">Processing: 6–12 months</text>
 <text x="88" y="680" font-size="18" fill="#5D5E63">Ireland&#8217;s penalty is unique: four years on Stamp 2 discarded. Processing: 12–19 months.</text>
 <text x="88" y="706" font-size="18" fill="#5D5E63">Germany, France, Portugal count all time equally. Processing: 4–8 weeks (Germany), 6–12 months (others).</text>
