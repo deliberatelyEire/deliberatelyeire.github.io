@@ -27,7 +27,10 @@
 <text x="404" y="357" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">France</text>
 <rect x="420" y="335" width="280" height="26" rx="2" fill="#5D5E63"/>
 <text x="716" y="357" font-size="24" font-weight="700" fill="#5D5E63">5y</text>
-<text x="1160" y="356" font-size="18" fill="#5D5E63">All doctoral time counts</text>
+<text x="1160" y="356" font-size="18" fill="#5D5E63">Standard path, all doctoral time counts</text>
+<rect x="420" y="356" width="112" height="26" rx="2" fill="none" stroke="#0B0C0E" stroke-width="2" stroke-dasharray="5,4"/>
+<text x="532" y="375" font-size="18" font-weight="700" fill="#0B0C0E">2y</text>
+<text x="1160" y="375" font-size="16" fill="#5D5E63">if collaborative research with French institutions</text>
 <text x="404" y="419" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Germany</text>
 <rect x="420" y="397" width="280" height="26" rx="2" fill="#5D5E63"/>
 <text x="716" y="419" font-size="24" font-weight="700" fill="#5D5E63">5y</text>
