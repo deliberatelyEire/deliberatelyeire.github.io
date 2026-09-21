@@ -20,7 +20,7 @@ Neither of them did anything wrong. The gap comes from a single administrative r
 Every figure in this article is also provisional. In September 2026 the Irish Cabinet approved a proposal to raise the general residence requirement from five years to eight. That is the dashed bar on each chart below. It has not been enacted. If it is, it adds three years to almost every number here, and changes none of the reasoning behind them.
 
 > **Key Takeaways**
-> - For skilled workers, Ireland asks five years, tied with France as the fastest of the six countries compared, and matched by Germany.
+> - For skilled workers, Ireland asks five years, tied with France as the fastest of the five countries compared, and matched by Germany.
 > - Years spent on Stamp 2, the student permission, do not count toward naturalisation. Stamp 1G, the graduate permission, does. Applicants need 1,825 days (approximately 5 years) of reckonable residence.
 > - That single exclusion turns five years into six for a master's graduate and nine for a PhD researcher.
 > - Spouses of Irish citizens reach three years, Ireland's fastest door and among the fastest in Europe.
@@ -29,9 +29,9 @@ Every figure in this article is also provisional. In September 2026 the Irish Ca
 
 ## Workers: The Baseline Clock
 
-![Skilled workers: time to citizenship, showing Ireland and France tied at five years, Germany at five, the UK at six, and Austria and Portugal at ten](./workers.svg)
+![Skilled workers: time to citizenship, showing Ireland and France tied at five years, Germany at five, the UK at six, and Austria at ten](./workers.svg)
 
-For someone who arrives on an employment permit, whether Stamp 1 or a critical skills permit, Ireland asks five years. According to the Irish Nationality and Citizenship Act 1956 (as amended), applicants must have _"lived in Ireland for a minimum of five years, with at least one uninterrupted year right before you apply for citizenship"_ ([Citizens Information](https://www.citizensinformation.ie/en/moving-country/irish-citizenship/becoming-an-irish-citizen-through-naturalisation/)). That is the fastest figure on the chart, tied with France, which counts ordinary residence on a work permit at the same five. Germany matches it through the settlement permit path. The standard requirement was reduced from eight years to five years in the 2024 citizenship reform, effective October 2025, and requires _"sufficient knowledge of German, at least at level B1"_ and _"sufficient knowledge of the legal system, society and way of life in Germany"_ ([Federal Government](https://www.bundesregierung.de/breg-en/news/federal-cabinet-naturalisation-2351972)). The [United Kingdom](https://www.gov.uk/british-citizenship) asks six, structured as five years' residence plus twelve months holding settled status, dropping to five for someone married to a British citizen. Austria and Portugal both ask ten, with Austria falling to six for applicants who reach [B2 German](https://www.bmi.gv.at/en/index.html).
+For someone who arrives on an employment permit, whether Stamp 1 or a critical skills permit, Ireland asks five years. According to the Irish Nationality and Citizenship Act 1956 (as amended), applicants must have _"lived in Ireland for a minimum of five years, with at least one uninterrupted year right before you apply for citizenship"_ ([Citizens Information](https://www.citizensinformation.ie/en/moving-country/irish-citizenship/becoming-an-irish-citizen-through-naturalisation/)). That is the fastest figure on the chart, tied with France, which counts ordinary residence on a work permit at the same five. Germany matches it through the settlement permit path. The standard requirement was reduced from eight years to five years in the 2024 citizenship reform, effective October 2025, and requires _"sufficient knowledge of German, at least at level B1"_ and _"sufficient knowledge of the legal system, society and way of life in Germany"_ ([Federal Government](https://www.bundesregierung.de/breg-en/news/federal-cabinet-naturalisation-2351972)). The [United Kingdom](https://www.gov.uk/british-citizenship) asks six, structured as five years' residence plus twelve months holding settled status, dropping to five for someone married to a British citizen. Austria asks ten, falling to six for applicants who reach [B2 German](https://www.bmi.gv.at/en/index.html).
 
 Sources: [Ireland Critical Skills Employment Permit](https://www.citizensinformation.ie/en/moving-country/working-in-ireland/employment-permits/green-card-permits/) · [German Settlement Permit](https://www.bamf.de/EN/Themen/Integration/ZugewanderteTeilnehmende/Einbuergerung/einbuergerung.html) · [Austria Citizenship Requirements](https://www.migration.gv.at/en/living-and-working-in-austria/integration-and-citizenship/citizenship/)
 
@@ -43,11 +43,11 @@ Where Ireland does lose ground is after the application goes in. An [Irish natur
 
 ## PhD Researchers: Nine Years
 
-![PhD students: time to citizenship, showing Ireland at nine years against five in France and Germany, seven in the UK and ten in Austria and Portugal](./phd.svg)
+![PhD students: time to citizenship, showing Ireland at nine years against five in France and Germany, seven in the UK and ten in Austria](./phd.svg)
 
 A doctorate in Ireland typically runs four years on Stamp 2. Under the reckonable-residence rule, all four are discarded. The researcher then needs five countable years after the doctorate ends: nine years in total from arrival to eligibility.
 
-France offers a two-year expedited path for PhD graduates from French institutions. According to Savory & Partners, _"PhD students are typically granted a renewable research residence permit, valid for the entire duration of their studies,"_ and _"Doctoral candidates working in collaboration with French research institutions or state-funded projects may also qualify for expedited naturalization due to their contribution to national research initiatives"_ ([French PhD Citizenship](https://www.savoryandpartners.com/blog/french-citizenship-students-requirements-guide/)). The clock starts after graduation, not during studies. Germany counts doctoral time via the settlement permit path—_"highly qualified scientists can obtain immediate settlement permits under Section 18c (3) German Residence Act without any prior waiting period"_—and asks five years for standard naturalization ([German Settlement Permit](https://se-legal.de/services/immigration-lawyer-germany/settlement-permit-for-highly-qualified-individuals/?lang=en)). The UK asks seven, discarding two years of student visa. Austria asks ten, or six with B2 German ([Austria Citizenship](https://www.migration.gv.at/en/living-and-working-in-austria/integration-and-citizenship/citizenship/)). Portugal asks ten under its standard third-country track, with no special provision for doctoral researchers ([Portugal Citizenship](https://remoteworkeurope.eu/insights/portugal-citizenship-rules/)).
+France offers a two-year expedited path for PhD graduates from French institutions. According to Savory & Partners, _"PhD students are typically granted a renewable research residence permit, valid for the entire duration of their studies,"_ and _"Doctoral candidates working in collaboration with French research institutions or state-funded projects may also qualify for expedited naturalization due to their contribution to national research initiatives"_ ([French PhD Citizenship](https://www.savoryandpartners.com/blog/french-citizenship-students-requirements-guide/)). The clock starts after graduation, not during studies. Germany counts doctoral time via the settlement permit path—_"highly qualified scientists can obtain immediate settlement permits under Section 18c (3) German Residence Act without any prior waiting period"_—and asks five years for standard naturalization ([German Settlement Permit](https://se-legal.de/services/immigration-lawyer-germany/settlement-permit-for-highly-qualified-individuals/?lang=en)). The UK asks seven, discarding two years of student visa. Austria asks ten, or six with B2 German ([Austria Citizenship](https://www.migration.gv.at/en/living-and-working-in-austria/integration-and-citizenship/citizenship/)).
 
 The dashed bar carries that nine to twelve. A researcher starting a doctorate in Dublin today, if the proposal passes before they qualify, would be looking at twelve years from arrival to eligibility, more than Austria's standard ten.
 
@@ -57,23 +57,21 @@ There is a tension here worth naming plainly. Ireland recruits doctoral research
 
 ## Master's Graduates: Six Years
 
-![Master's graduates: time to citizenship, showing Ireland at six years against five in France and Germany, seven in the UK and ten in Austria and Portugal](./masters_student.svg)
+![Master's graduates: time to citizenship, showing Ireland at six years against five in France and Germany, seven in the UK and ten in Austria](./masters_student.svg)
 
 The master's route shows the same rule at a smaller scale. A taught master's is usually one year on Stamp 2. That year is discarded; the Stamp 1G graduate year that follows counts in full. Five countable years plus one discarded year comes to six.
 
-The dashed bar takes that six to nine. Against the comparators the current figure is a middling result rather than a punishing one. France and Germany offer expedited pathways for their graduates ([French Naturalization](https://www.prepacivique.fr/en/guide/french-naturalization)). France additionally requires _"B2-level French, a passing score on the civic exam, stable French-source income, and a clean criminal record"_ with processing typically taking _"18 to 24 months"_ ([French Naturalization Requirements](https://goldenharbors.com/articles/french-citizenship)). The UK asks seven, discarding two years of student visa, so Ireland is actually a year faster than Britain for this group. Austria and Portugal ask ten ([Austria Citizenship](https://www.migration.gv.at/en/living-and-working-in-austria/integration-and-citizenship/citizenship/)).
+The dashed bar takes that six to nine. Against the comparators the current figure is a middling result rather than a punishing one. France and Germany offer expedited pathways for their graduates ([French Naturalization](https://www.prepacivique.fr/en/guide/french-naturalization)). France additionally requires _"B2-level French, a passing score on the civic exam, stable French-source income, and a clean criminal record"_ with processing typically taking _"18 to 24 months"_ ([French Naturalization Requirements](https://goldenharbors.com/articles/french-citizenship)). The UK asks seven, discarding two years of student visa, so Ireland is actually a year faster than Britain for this group. Austria asks ten ([Austria Citizenship](https://www.migration.gv.at/en/living-and-working-in-austria/integration-and-citizenship/citizenship/)).
 
 The chart describes Ireland's penalty here as light, and that is the right word. The lesson is not that studying in Ireland is a mistake. It is that the cost scales directly with how long you study, which is a strange thing for an education system to charge for.
 
 ## Spouses of Citizens: Three Years
 
-![Spouses of citizens: time to citizenship, showing Ireland, Germany, and the UK at three years, France at five, Portugal at ten, and Austria at ten for non-EU spouses](./spouse.svg)
+![Spouses of citizens: time to citizenship, showing Ireland, Germany, and the UK at three years, France at five, and Austria at ten for non-EU spouses](./spouse.svg)
 
 This is Ireland's fastest door, and it is genuinely fast. Three years, with Stamp 4 permission granted from the start, meaning the residence that counts begins immediately rather than after some qualifying period.
 
-Germany asks three ([BAMF Naturalisation](https://www.bamf.de/EN/Themen/Integration/ZugewanderteTeilnehmende/Einbuergerung/einbuergerung.html)). The UK requires five years of continuous residence on a spouse visa to qualify for Indefinite Leave to Remain (ILR/settled status), though processing typically completes within _"six weeks to twelve weeks"_ for the visa stage ([UK Home Office](https://www.gov.uk/british-citizenship)). Applying for naturalisation as a spouse requires marriage of at least three years plus three years residence. France requires five years and offers no acceleration for marriage at all ([French Naturalization](https://www.prepacivique.fr/en/guide/french-naturalization)). Austria splits: three years for a spouse of an EU or EEA citizen, ten years for non-EU spouses (the chart names Indian nationals specifically), a seven-year difference decided by nationality rather than by anything the couple did ([Austria Citizenship](https://www.migration.gv.at/en/living-and-working-in-austria/integration-and-citizenship/citizenship/)).
-
-Portugal, historically three years, moved to ten under its revised 2026 Nationality Law, effective 19 May. The law specifies for non-EU nationals: _"10 anos, no caso de nacionais de outros países"_ — ten years in the case of nationals of other countries — but grants an exception to _"seven years for EU and Portuguese-speaking countries (CPLP) nationals"_ ([Lei Orgânica 1/2026](https://liveinpt.com/guides/portugal-citizenship-law-published-lei-organica-1-2026/)). CPLP nations include Brazil, Angola, Mozambique, Cape Verde, Guinea-Bissau, São Tomé and Príncipe, and Timor-Leste. The law also includes a transitional provision: _"Pending nationality applications filed on or before 18 May 2026 remain under the prior Lei 37/81 regime,"_ meaning applicants who filed before the law took effect are protected under the old 5-year requirement ([Portugal Citizenship Law](https://www.clarkhill.com/news-events/news/portugal-nationality-law-changes-2026-residency-rules/)). That change happened after this article's publication date and reflects a broader tightening of Portugal's naturalisation rules.
+Germany asks three ([BAMF Naturalisation](https://www.bamf.de/EN/Themen/Integration/ZugewanderteTeilnehmende/Einbuergerung/einbuergerung.html)). The UK requires five years of continuous residence on a spouse visa to qualify for Indefinite Leave to Remain (ILR/settled status), though processing typically completes within _"six weeks to twelve weeks"_ for the visa stage ([UK Home Office](https://www.gov.uk/british-citizenship)). Applying for naturalisation as a spouse requires marriage of at least three years plus three years residence. France requires five years but offers an accelerated path: spouses of French citizens can acquire nationality by declaration after four years of marriage, provided they have resided in France. Austria splits: three years for a spouse of an EU or EEA citizen, ten years for non-EU spouses (the chart names Indian nationals specifically), a seven-year difference decided by nationality rather than by anything the couple did ([Austria Citizenship](https://www.migration.gv.at/en/living-and-working-in-austria/integration-and-citizenship/citizenship/)).
 
 Ireland's spousal route is the one the Cabinet proposal leaves ambiguous. The 2026 reform targets general naturalisation, and its effect on the spousal path is not yet specified. Three years may well hold. The proposal, as published, does not address it either way.
 
@@ -103,4 +101,20 @@ The people affected by the Stamp 2 exclusion are not people who tried to shortcu
 
 Ireland's worker pathway is genuinely competitive and its spousal pathway is generous. Both are worth defending. Aligning the study-year rule with them would not require giving up either, only that the clock count the years a doctoral researcher in Galway was, by every other measure, already living here.
 
-*Figures throughout are drawn from the four comparison charts above. Ireland's 2026 reform is a Cabinet proposal rather than enacted law, and the charts mark that uncertainty rather than resolving it.*
+---
+
+## Data Sources
+
+Chart data compiled from:
+
+- **Ireland**: DFA Naturalisation, Citizens Information
+- **France**: DGFIP, Savory & Partners (French Naturalization), Article 21-19 French Civil Code
+- **Germany**: BAMF (Bundesamt für Migration), Federal Government naturalisation 2024 reform
+- **United Kingdom**: UK Home Office, British citizenship requirements
+- **Austria**: BMI (Bundesministerium für Inneres), Austrian Citizenship Act
+
+Processing times verified as of September 2026. All timelines assume continuous residence and fulfilment of ancillary requirements (language, civic knowledge, genuine residence, etc.).
+
+Chart data maintained in `/data/citizenship/` as CSV files and generated programmatically via `scripts/generate_citizenship_charts.py` to ensure consistency across all visualizations.
+
+*Figures throughout are drawn from the comparison charts above. Ireland's 2026 reform is a Cabinet proposal rather than enacted law, and the charts mark that uncertainty rather than resolving it.*
