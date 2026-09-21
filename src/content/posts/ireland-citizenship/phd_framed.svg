@@ -22,19 +22,20 @@
 <text x="1500" text-anchor="end" y="279" font-size="18" fill="#5D5E63">All 4 years on Stamp 2 discarded</text>
 <text x="1500" text-anchor="end" y="297" font-size="14" fill="#8B8C8F">Processing: 12–19 months</text>
 <text x="404" y="364" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">France</text>
-<rect x="420" y="342" width="224" height="26" rx="2" fill="#D8D2C6"/>
+<rect x="420" y="342" width="224" height="26" rx="2" fill="#5D5E63"/>
 <rect x="644" y="342" width="280" height="26" rx="2" fill="#5D5E63"/>
 <text x="944" y="364" font-size="24" font-weight="700" fill="#5D5E63">9y</text>
 <text x="1500" text-anchor="end" y="363" font-size="18" fill="#5D5E63">All 4 doctoral years count</text>
 <text x="1500" text-anchor="end" y="381" font-size="14" fill="#8B8C8F">Processing: 18–24 months</text>
 <text x="404" y="448" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Germany</text>
-<rect x="420" y="426" width="224" height="26" rx="2" fill="#D8D2C6"/>
+<rect x="420" y="426" width="224" height="26" rx="2" fill="#5D5E63"/>
 <rect x="644" y="426" width="280" height="26" rx="2" fill="#5D5E63"/>
 <text x="944" y="448" font-size="24" font-weight="700" fill="#5D5E63">9y</text>
 <text x="1500" text-anchor="end" y="447" font-size="18" fill="#5D5E63">All 4 years count via settlement permit</text>
 <text x="1500" text-anchor="end" y="465" font-size="14" fill="#8B8C8F">Processing: 4–8 months</text>
 <text x="404" y="532" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">UK</text>
-<rect x="420" y="510" width="224" height="26" rx="2" fill="#D8D2C6"/>
+<rect x="420" y="510" width="112" height="26" rx="2" fill="#D8D2C6"/>
+<rect x="532" y="510" width="112" height="26" rx="2" fill="#5D5E63"/>
 <rect x="644" y="510" width="280" height="26" rx="2" fill="#5D5E63"/>
 <text x="944" y="532" font-size="24" font-weight="700" fill="#5D5E63">9y</text>
 <text x="1500" text-anchor="end" y="531" font-size="18" fill="#5D5E63">First 2 years discarded; last 2 count</text>
