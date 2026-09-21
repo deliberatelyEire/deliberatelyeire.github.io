@@ -14,6 +14,7 @@ export interface MarkdownPost {
   author: string;
   role?: string;
   date: string;
+  dateModified?: string;
   category: string;
   readTime?: string;
   cover?: string;
@@ -132,6 +133,7 @@ export function getAllPosts(): MarkdownPost[] {
       author: metadata.author || "Deliberately Éire Research",
       role: metadata.role || "Research & Analysis",
       date: metadata.date || "2026",
+      dateModified: metadata.dateModified || undefined,
       category: metadata.category || "General",
       readTime: metadata.readTime || "5 min read",
       cover: resolvedCover,

@@ -40,14 +40,18 @@ const Article = () => {
     // Update OG and Twitter meta tags
     updateMeta("og:title", article.title, true);
     updateMeta("og:description", article.excerpt, true);
-    updateMeta("og:image", article.cover, true);
+    const coverUrl = article.cover ? new URL(article.cover, baseUrl).href : `${baseUrl}/DelibratelyEire.jpg`;
+    updateMeta("og:image", coverUrl, true);
     updateMeta("og:url", articleUrl, true);
     updateMeta("og:type", "article", true);
     updateMeta("article:published_time", new Date(article.date).toISOString(), true);
+    if (article.dateModified) {
+      updateMeta("article:modified_time", new Date(article.dateModified).toISOString(), true);
+    }
     updateMeta("description", article.excerpt);
     updateMeta("twitter:title", article.title);
     updateMeta("twitter:description", article.excerpt);
-    updateMeta("twitter:image", article.cover);
+    updateMeta("twitter:image", coverUrl);
 
     // Add canonical tag
     let canonical = document.querySelector("link[rel='canonical']") as HTMLLinkElement;
@@ -64,8 +68,11 @@ const Article = () => {
       "@type": "BlogPosting",
       "headline": article.title,
       "description": article.excerpt,
-      "image": article.cover,
+      "image": coverUrl,
       "datePublished": new Date(article.date).toISOString(),
+      ...(article.dateModified
+        ? { dateModified: new Date(article.dateModified).toISOString() }
+        : {}),
       "author": {
         "@type": "Organization",
         "name": article.author,
@@ -73,6 +80,7 @@ const Article = () => {
       "publisher": {
         "@type": "Organization",
         "name": "Deliberately Éire",
+        "url": baseUrl,
         "logo": {
           "@type": "ImageObject",
           "url": `${baseUrl}/logo.png`,
@@ -91,7 +99,16 @@ const Article = () => {
       schemaScript.setAttribute("data-article-schema", "true");
       document.head.appendChild(schemaScript);
     }
-    schemaScript.textContent = JSON.stringify(schema);
+    const breadcrumb = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": baseUrl },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${baseUrl}/blog` },
+        { "@type": "ListItem", "position": 3, "name": article.title, "item": articleUrl },
+      ],
+    };
+    schemaScript.textContent = JSON.stringify([schema, breadcrumb]);
 
     return () => {
       // Cleanup: remove article-specific meta tags when component unmounts
