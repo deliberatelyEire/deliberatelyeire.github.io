@@ -149,12 +149,14 @@ def generate_phd_chart_svg(data, chart_title):
             expedited_width = expedited * PIXELS_PER_YEAR
             box_x = 420
             box_y = y_pos - 22
-            svg.append(f'<line x1="{box_x}" y1="{box_y}" x2="{box_x + expedited_width}" y2="{box_y}" stroke="#5D5E63" stroke-width="1" stroke-dasharray="4,4"/>')
-            svg.append(f'<line x1="{box_x + expedited_width}" y1="{box_y}" x2="{box_x + expedited_width}" y2="{box_y + 26}" stroke="#5D5E63" stroke-width="1" stroke-dasharray="4,4"/>')
-            svg.append(f'<line x1="{box_x + expedited_width}" y1="{box_y + 26}" x2="{box_x}" y2="{box_y + 26}" stroke="#5D5E63" stroke-width="1" stroke-dasharray="4,4"/>')
-            svg.append(f'<line x1="{box_x}" y1="{box_y + 26}" x2="{box_x}" y2="{box_y}" stroke="#5D5E63" stroke-width="1" stroke-dasharray="4,4"/>')
+            # Darker dashed lines (using darker color and thicker stroke)
+            svg.append(f'<line x1="{box_x}" y1="{box_y}" x2="{box_x + expedited_width}" y2="{box_y}" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>')
+            svg.append(f'<line x1="{box_x + expedited_width}" y1="{box_y}" x2="{box_x + expedited_width}" y2="{box_y + 26}" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>')
+            svg.append(f'<line x1="{box_x + expedited_width}" y1="{box_y + 26}" x2="{box_x}" y2="{box_y + 26}" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>')
+            svg.append(f'<line x1="{box_x}" y1="{box_y + 26}" x2="{box_x}" y2="{box_y}" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>')
+            # Add small text label inside the box
             expedited_label = f"{expedited}y*" if country == "Ireland" else f"{expedited}y"
-            svg.append(f'<text x="{box_x + expedited_width + 10}" y="{y_pos}" font-size="20" font-weight="700" fill="#5D5E63">{expedited_label}</text>')
+            svg.append(f'<text x="{box_x + 8}" y="{y_pos + 2}" font-size="11" font-weight="700" fill="#333333">{expedited_label}</text>')
 
         svg.append(f'<text x="1500" text-anchor="end" y="{y_pos - 1}" font-size="18" fill="#5D5E63">{notes}</text>')
 
