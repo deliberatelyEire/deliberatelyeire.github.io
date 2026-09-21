@@ -108,10 +108,10 @@ def generate_phd_chart_svg(data, chart_title):
 
         total = phd_years + requirement_years
         svg.append(f'<text x="{420 + phd_width + req_width + 20}" y="{y_pos}" font-size="24" font-weight="700" fill="{color}">{total}y</text>')
-        svg.append(f'<text x="1280" y="{y_pos - 1}" font-size="18" fill="#5D5E63">{notes}</text>')
+        svg.append(f'<text x="1500" text-anchor="end" y="{y_pos - 1}" font-size="18" fill="#5D5E63">{notes}</text>')
 
         if proc_min and proc_max:
-            svg.append(f'<text x="1280" y="{y_pos + 17}" font-size="14" fill="#8B8C8F">Processing: {proc_min}–{proc_max} months</text>')
+            svg.append(f'<text x="1500" text-anchor="end" y="{y_pos + 17}" font-size="14" fill="#8B8C8F">Processing: {proc_min}–{proc_max} months</text>')
 
         y_pos += CHART_ROW_PITCH
 
