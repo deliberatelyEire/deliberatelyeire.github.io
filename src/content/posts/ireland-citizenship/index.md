@@ -105,16 +105,14 @@ Ireland's worker pathway is genuinely competitive and its spousal pathway is gen
 
 ## Data Sources
 
-Chart data compiled from:
+Chart data drawn from:
 
-- **Ireland**: DFA Naturalisation, Citizens Information
-- **France**: DGFIP, Savory & Partners (French Naturalization), Article 21-19 French Civil Code
-- **Germany**: BAMF (Bundesamt für Migration), Federal Government naturalisation 2024 reform
-- **United Kingdom**: UK Home Office, British citizenship requirements
-- **Austria**: BMI (Bundesministerium für Inneres), Austrian Citizenship Act
+- **Ireland**: [DFA Naturalisation](https://www.dfa.ie/citizenship/naturalisation/), [Citizens Information](https://www.citizensinformation.ie)
+- **France**: [DGFIP](https://www.impots.gouv.fr), Savory & Partners, Article 21-19 French Civil Code
+- **Germany**: [BAMF](https://www.bamf.de), [Federal Government Naturalisation Reform](https://www.bundesregierung.de)
+- **United Kingdom**: [UK Home Office](https://www.gov.uk/british-citizenship)
+- **Austria**: [BMI (Bundesministerium für Inneres)](https://www.bmi.gv.at), Austrian Citizenship Act
 
-Processing times verified as of September 2026. All timelines assume continuous residence and fulfilment of ancillary requirements (language, civic knowledge, genuine residence, etc.).
-
-Chart data maintained in `/data/citizenship/` as CSV files and generated programmatically via `scripts/generate_citizenship_charts.py` to ensure consistency across all visualizations.
+Processing times verified as of September 2026. All timelines assume continuous residence and fulfilment of ancillary requirements (language proficiency, civic knowledge, genuine residence, etc.).
 
 *Figures throughout are drawn from the comparison charts above. Ireland's 2026 reform is a Cabinet proposal rather than enacted law, and the charts mark that uncertainty rather than resolving it.*
