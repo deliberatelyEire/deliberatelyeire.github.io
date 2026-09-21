@@ -13,35 +13,34 @@
 <text x="88" y="880.0" font-size="24.0" fill="#5D5E63">Is ar scáth a chéile a mhaireann na daoine</text>
 <text x="1512" y="845.0" font-size="34.0" font-weight="700" fill="#0B0C0E" text-anchor="end">@DeliberatelyÉire</text>
 <text x="1512" y="878.0" font-size="20.0" fill="#5D5E63" text-anchor="end">Sources: DFA, MEA, BAMF, UK Home Office, BMI (2026)</text>
-<text x="88" y="50" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">PhD STUDENTS: TIME TO CITIZENSHIP</text>
-<text x="404" y="140" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Ireland</text>
-<rect x="420" y="118" width="224" height="26" rx="2" fill="#D8D2C6"/>
-<rect x="644" y="118" width="280" height="26" rx="2" fill="#148708"/>
-<text x="944" y="140" font-size="24" font-weight="700" fill="#148708">9y</text>
-<text x="1280" y="139" font-size="18" fill="#5D5E63">4 years on Stamp 2 discarded; all 4y are non-counted time</text>
-<text x="1280" y="157" font-size="14" fill="#8B8C8F">Processing: 12–19 months</text>
-<text x="404" y="202" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">France</text>
-<rect x="420" y="180" width="224" height="26" rx="2" fill="#D8D2C6"/>
-<rect x="644" y="180" width="280" height="26" rx="2" fill="#5D5E63"/>
-<text x="944" y="202" font-size="24" font-weight="700" fill="#5D5E63">9y</text>
-<text x="1280" y="201" font-size="18" fill="#5D5E63">All 4 doctoral years count</text>
-<text x="1280" y="219" font-size="14" fill="#8B8C8F">Processing: 18–24 months</text>
-<text x="404" y="264" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Germany</text>
-<rect x="420" y="242" width="224" height="26" rx="2" fill="#D8D2C6"/>
-<rect x="644" y="242" width="280" height="26" rx="2" fill="#5D5E63"/>
-<text x="944" y="264" font-size="24" font-weight="700" fill="#5D5E63">9y</text>
-<text x="1280" y="263" font-size="18" fill="#5D5E63">All 4 years count via settlement permit</text>
-<text x="1280" y="281" font-size="14" fill="#8B8C8F">Processing: 4–8 months</text>
-<text x="404" y="326" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">UK</text>
-<rect x="420" y="304" width="224" height="26" rx="2" fill="#D8D2C6"/>
-<rect x="644" y="304" width="280" height="26" rx="2" fill="#5D5E63"/>
-<text x="944" y="326" font-size="24" font-weight="700" fill="#5D5E63">9y</text>
-<text x="1280" y="325" font-size="18" fill="#5D5E63">4-year PhD: first 2 years on student visa (discarded); last 2 years count toward 5-year requirement</text>
-<text x="1280" y="343" font-size="14" fill="#8B8C8F">Processing: 6–12 months</text>
-<text x="404" y="388" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Austria</text>
-<rect x="420" y="366" width="224" height="26" rx="2" fill="#D8D2C6"/>
-<rect x="644" y="366" width="560" height="26" rx="2" fill="#5D5E63"/>
-<text x="1224" y="388" font-size="24" font-weight="700" fill="#5D5E63">14y</text>
-<text x="1280" y="387" font-size="18" fill="#5D5E63">4 years on student visa discarded; no special provision</text>
-<text x="1280" y="405" font-size="14" fill="#8B8C8F">Processing: 6–12 months</text>
+<text x="404" y="214.0" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Ireland</text>
+<rect x="420" y="192.0" width="224" height="26" rx="2" fill="#D8D2C6"/>
+<rect x="644" y="192.0" width="280" height="26" rx="2" fill="#148708"/>
+<text x="944" y="214.0" font-size="24" font-weight="700" fill="#148708">9y</text>
+<text x="1280" y="213.0" font-size="18" fill="#5D5E63">4 years on Stamp 2 discarded; all 4y are non-counted time</text>
+<text x="1280" y="231.0" font-size="14" fill="#8B8C8F">Processing: 12–19 months</text>
+<text x="404" y="276.0" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">France</text>
+<rect x="420" y="254.0" width="224" height="26" rx="2" fill="#D8D2C6"/>
+<rect x="644" y="254.0" width="280" height="26" rx="2" fill="#5D5E63"/>
+<text x="944" y="276.0" font-size="24" font-weight="700" fill="#5D5E63">9y</text>
+<text x="1280" y="275.0" font-size="18" fill="#5D5E63">All 4 doctoral years count</text>
+<text x="1280" y="293.0" font-size="14" fill="#8B8C8F">Processing: 18–24 months</text>
+<text x="404" y="338.0" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Germany</text>
+<rect x="420" y="316.0" width="224" height="26" rx="2" fill="#D8D2C6"/>
+<rect x="644" y="316.0" width="280" height="26" rx="2" fill="#5D5E63"/>
+<text x="944" y="338.0" font-size="24" font-weight="700" fill="#5D5E63">9y</text>
+<text x="1280" y="337.0" font-size="18" fill="#5D5E63">All 4 years count via settlement permit</text>
+<text x="1280" y="355.0" font-size="14" fill="#8B8C8F">Processing: 4–8 months</text>
+<text x="404" y="400.0" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">UK</text>
+<rect x="420" y="378.0" width="224" height="26" rx="2" fill="#D8D2C6"/>
+<rect x="644" y="378.0" width="280" height="26" rx="2" fill="#5D5E63"/>
+<text x="944" y="400.0" font-size="24" font-weight="700" fill="#5D5E63">9y</text>
+<text x="1280" y="399.0" font-size="18" fill="#5D5E63">4-year PhD: first 2 years on student visa (discarded); last 2 years count toward 5-year requirement</text>
+<text x="1280" y="417.0" font-size="14" fill="#8B8C8F">Processing: 6–12 months</text>
+<text x="404" y="462.0" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Austria</text>
+<rect x="420" y="440.0" width="224" height="26" rx="2" fill="#D8D2C6"/>
+<rect x="644" y="440.0" width="560" height="26" rx="2" fill="#5D5E63"/>
+<text x="1224" y="462.0" font-size="24" font-weight="700" fill="#5D5E63">14y</text>
+<text x="1280" y="461.0" font-size="18" fill="#5D5E63">4 years on student visa discarded; no special provision</text>
+<text x="1280" y="479.0" font-size="14" fill="#8B8C8F">Processing: 6–12 months</text>
 </svg>

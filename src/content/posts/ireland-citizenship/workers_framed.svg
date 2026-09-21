@@ -13,20 +13,19 @@
 <text x="88" y="880.0" font-size="24.0" fill="#5D5E63">Is ar scáth a chéile a mhaireann na daoine</text>
 <text x="1512" y="845.0" font-size="34.0" font-weight="700" fill="#0B0C0E" text-anchor="end">@DeliberatelyÉire</text>
 <text x="1512" y="878.0" font-size="20.0" fill="#5D5E63" text-anchor="end">Sources: DFA, BAMF, UK Home Office, BMI (2026)</text>
-<text x="88" y="50" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">SKILLED WORKERS: TIME TO CITIZENSHIP</text>
-<text x="404" y="140" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Ireland</text>
-<rect x="420" y="118" width="280" height="26" rx="2" fill="#5D5E63"/>
-<text x="720" y="140" font-size="24" font-weight="700" fill="#5D5E63">5y</text>
-<text x="404" y="202" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">France</text>
-<rect x="420" y="180" width="280" height="26" rx="2" fill="#5D5E63"/>
-<text x="720" y="202" font-size="24" font-weight="700" fill="#5D5E63">5y</text>
-<text x="404" y="264" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Germany</text>
-<rect x="420" y="242" width="280" height="26" rx="2" fill="#5D5E63"/>
-<text x="720" y="264" font-size="24" font-weight="700" fill="#5D5E63">5y</text>
-<text x="404" y="326" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">UK</text>
-<rect x="420" y="304" width="336" height="26" rx="2" fill="#5D5E63"/>
-<text x="776" y="326" font-size="24" font-weight="700" fill="#5D5E63">6y</text>
-<text x="404" y="388" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Austria</text>
-<rect x="420" y="366" width="560" height="26" rx="2" fill="#5D5E63"/>
-<text x="1000" y="388" font-size="24" font-weight="700" fill="#5D5E63">10y</text>
+<text x="404" y="214.0" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Ireland</text>
+<rect x="420" y="192.0" width="280" height="26" rx="2" fill="#5D5E63"/>
+<text x="720" y="214.0" font-size="24" font-weight="700" fill="#5D5E63">5y</text>
+<text x="404" y="276.0" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">France</text>
+<rect x="420" y="254.0" width="280" height="26" rx="2" fill="#5D5E63"/>
+<text x="720" y="276.0" font-size="24" font-weight="700" fill="#5D5E63">5y</text>
+<text x="404" y="338.0" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Germany</text>
+<rect x="420" y="316.0" width="280" height="26" rx="2" fill="#5D5E63"/>
+<text x="720" y="338.0" font-size="24" font-weight="700" fill="#5D5E63">5y</text>
+<text x="404" y="400.0" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">UK</text>
+<rect x="420" y="378.0" width="336" height="26" rx="2" fill="#5D5E63"/>
+<text x="776" y="400.0" font-size="24" font-weight="700" fill="#5D5E63">6y</text>
+<text x="404" y="462.0" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Austria</text>
+<rect x="420" y="440.0" width="560" height="26" rx="2" fill="#5D5E63"/>
+<text x="1000" y="462.0" font-size="24" font-weight="700" fill="#5D5E63">10y</text>
 </svg>

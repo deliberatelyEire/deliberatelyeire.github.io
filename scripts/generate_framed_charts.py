@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate publication-ready citizenship charts with post-visuals chrome.
 
-Combines CSV data → SVG chart generation → post-visuals framing → PNG export.
+Combines CSV data → SVG chart generation → post-visuals framing → proper layout.
 Each pathway gets a framed graphic with tricolour, diya mark, footer, and sources.
 """
 
@@ -10,7 +10,6 @@ import re
 import subprocess
 import sys
 from pathlib import Path
-from io import StringIO
 
 # Project paths
 SCRIPTS_DIR = Path(__file__).resolve().parent
@@ -20,7 +19,7 @@ OUTPUT_DIR = PROJECT_DIR / "src" / "content" / "posts" / "ireland-citizenship"
 TEMP_DIR = Path("/tmp/citizenship-charts")
 POST_VISUALS_DIR = Path.home() / ".claude" / "skills" / "synced" / "57179235-8abd-44f1-933a-6ad93664feb8_da48fdcd-c46a-415c-ac7b-9f1904cf05f6" / "post-visuals"
 
-# Chart generation constants (from generate_citizenship_charts.py)
+# Chart generation constants
 PIXELS_PER_YEAR = 56
 COLORS = {
     "ireland": "#148708",
@@ -31,6 +30,14 @@ COLORS = {
     "text_muted": "#8B8C8F",
 }
 
+# Frame content bounds (from post-visuals hero canvas)
+CONTENT_LEFT = 88
+CONTENT_RIGHT = 1512
+CONTENT_TOP = 184.0
+CONTENT_BOTTOM = 769.0
+CONTENT_WIDTH = CONTENT_RIGHT - CONTENT_LEFT
+CONTENT_HEIGHT = CONTENT_BOTTOM - CONTENT_TOP
+
 # Pathway configurations
 PATHWAYS = {
     "phd": {
@@ -39,8 +46,6 @@ PATHWAYS = {
         "sources": "DFA, MEA, BAMF, UK Home Office, BMI (2026)",
         "csv": "phd.csv",
         "svg_name": "phd.svg",
-        "png_name": "phd-framed.png",
-        "chart_title": "PhD STUDENTS: TIME TO CITIZENSHIP"
     },
     "workers": {
         "kicker": "WHICH DOOR?",
@@ -48,8 +53,6 @@ PATHWAYS = {
         "sources": "DFA, BAMF, UK Home Office, BMI (2026)",
         "csv": "workers.csv",
         "svg_name": "workers.svg",
-        "png_name": "workers-framed.png",
-        "chart_title": "SKILLED WORKERS: TIME TO CITIZENSHIP"
     },
     "masters": {
         "kicker": "WHICH DOOR?",
@@ -57,8 +60,6 @@ PATHWAYS = {
         "sources": "DFA, MEA, BAMF, UK Home Office, BMI (2026)",
         "csv": "masters.csv",
         "svg_name": "masters_student.svg",
-        "png_name": "masters-framed.png",
-        "chart_title": "MASTER'S GRADUATES: TIME TO CITIZENSHIP"
     },
     "spouses": {
         "kicker": "WHICH DOOR?",
@@ -66,8 +67,6 @@ PATHWAYS = {
         "sources": "DFA, MEA, BAMF, UK Home Office, BMI (2026)",
         "csv": "spouses.csv",
         "svg_name": "spouse.svg",
-        "png_name": "spouse-framed.png",
-        "chart_title": "SPOUSES OF CITIZENS: TIME TO CITIZENSHIP"
     }
 }
 
@@ -83,9 +82,10 @@ def load_csv(filepath):
 def generate_phd_chart_svg(data):
     """Generate PhD timeline SVG chart content."""
     svg = []
-    svg.append('<text x="88" y="50" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">PhD STUDENTS: TIME TO CITIZENSHIP</text>')
 
-    y_pos = 140
+    # Content positioned within frame bounds
+    y_pos = CONTENT_TOP + 30
+
     for row in data:
         country = row["Country"]
         phd_years = int(row["PhD_Years"])
@@ -117,9 +117,8 @@ def generate_phd_chart_svg(data):
 def generate_workers_chart_svg(data):
     """Generate workers timeline SVG chart content."""
     svg = []
-    svg.append('<text x="88" y="50" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">SKILLED WORKERS: TIME TO CITIZENSHIP</text>')
 
-    y_pos = 140
+    y_pos = CONTENT_TOP + 30
     for row in data:
         country = row["Country"]
         requirement = int(row["Requirement_Years"])
@@ -136,9 +135,8 @@ def generate_workers_chart_svg(data):
 def generate_masters_chart_svg(data):
     """Generate masters timeline SVG chart content."""
     svg = []
-    svg.append('<text x="88" y="50" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">MASTER\'S GRADUATES: TIME TO CITIZENSHIP</text>')
 
-    y_pos = 140
+    y_pos = CONTENT_TOP + 30
     for row in data:
         country = row["Country"]
         master_years = int(row.get("Master_Years", 0)) if row.get("Master_Years") else 0
@@ -161,9 +159,8 @@ def generate_masters_chart_svg(data):
 def generate_spouses_chart_svg(data):
     """Generate spouses timeline SVG chart content."""
     svg = []
-    svg.append('<text x="88" y="50" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">SPOUSES OF CITIZENS: TIME TO CITIZENSHIP</text>')
 
-    y_pos = 140
+    y_pos = CONTENT_TOP + 30
     for row in data:
         country = row["Country"]
         requirement = int(row["Requirement_Years"])
@@ -209,20 +206,7 @@ def generate_frame_and_chart(pathway_key, pathway_config):
         print(f"✗ Frame generation failed: {result.stderr}")
         return False
 
-    # Parse content area bounds from frame output
-    bounds_line = [l for l in result.stdout.split('\n') if 'content area' in l]
-    if bounds_line:
-        # Extract: "content area: x 88 to 1512, y 184.0 to 769.0"
-        bounds_str = bounds_line[0]
-        # Simple parsing
-        x_match = re.search(r'x (\d+) to (\d+)', bounds_str)
-        y_match = re.search(r'y ([\d.]+) to ([\d.]+)', bounds_str)
-        if x_match and y_match:
-            content_left = int(x_match.group(1))
-            content_right = int(x_match.group(2))
-            content_top = float(y_match.group(1))
-            content_bottom = float(y_match.group(2))
-            print(f"✓ Content bounds: x {content_left}-{content_right}, y {content_top}-{content_bottom}")
+    print(f"✓ Content bounds: x {CONTENT_LEFT}-{CONTENT_RIGHT}, y {CONTENT_TOP}-{CONTENT_BOTTOM}")
 
     # Generate chart SVG
     if pathway_key == "phd":
@@ -234,7 +218,7 @@ def generate_frame_and_chart(pathway_key, pathway_config):
     elif pathway_key == "spouses":
         chart_svg = generate_spouses_chart_svg(data)
 
-    print(f"✓ Generated chart SVG")
+    print(f"✓ Generated chart SVG (positioned within frame bounds)")
 
     # Read frame SVG
     frame_svg_content = frame_svg_path.read_text()
@@ -282,10 +266,6 @@ def main():
     if success_count == len(PATHWAYS):
         print("\n✓ All charts generated successfully!")
         print(f"\nOutput location: {OUTPUT_DIR}")
-        print("  - phd-framed.png")
-        print("  - workers-framed.png")
-        print("  - masters-framed.png")
-        print("  - spouse-framed.png")
         return 0
     else:
         print(f"\n✗ {len(PATHWAYS) - success_count} pathway(s) failed")
