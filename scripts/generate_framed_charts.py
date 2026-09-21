@@ -89,7 +89,7 @@ def generate_phd_chart_svg(data, chart_title):
     svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y}" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">{chart_title}</text>')
 
     # Color key
-    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="16" fill="#5D5E63">Green: counted toward citizenship. Pale: not counted. Dashed line: processing time after application.</text>')
+    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="16" fill="#5D5E63">Green: counted toward citizenship. Pale: not counted. Dashed box: expedited or proposed alternative timeline.</text>')
 
     # Add vertical reference lines at 5 and 10 years
     line_y_start = CHART_TOP + 10
@@ -142,12 +142,19 @@ def generate_phd_chart_svg(data, chart_title):
         total = phd_years + requirement_years
         svg.append(f'<text x="{420 + phd_width + req_width + 20}" y="{y_pos}" font-size="24" font-weight="700" fill="{color}">{total}y</text>')
 
-        # Add dashed line for processing time (avg of min/max, converted to visual width)
-        if proc_min and proc_max:
-            proc_avg = (int(proc_min) + int(proc_max)) / 2 / 12  # Average months converted to years
-            proc_width = proc_avg * PIXELS_PER_YEAR
-            proc_start_x = 420 + phd_width + req_width
-            svg.append(f'<line x1="{proc_start_x}" y1="{y_pos - 11}" x2="{proc_start_x + proc_width}" y2="{y_pos - 11}" stroke="#5D5E63" stroke-width="2" stroke-dasharray="4,4"/>')
+        # Add dashed box for expedited/proposed alternative timeline
+        expedited_years = row.get("Expedited_Years", "")
+        if expedited_years and expedited_years.strip():
+            expedited = int(expedited_years)
+            expedited_width = expedited * PIXELS_PER_YEAR
+            box_x = 420
+            box_y = y_pos - 22
+            svg.append(f'<line x1="{box_x}" y1="{box_y}" x2="{box_x + expedited_width}" y2="{box_y}" stroke="#5D5E63" stroke-width="1" stroke-dasharray="4,4"/>')
+            svg.append(f'<line x1="{box_x + expedited_width}" y1="{box_y}" x2="{box_x + expedited_width}" y2="{box_y + 26}" stroke="#5D5E63" stroke-width="1" stroke-dasharray="4,4"/>')
+            svg.append(f'<line x1="{box_x + expedited_width}" y1="{box_y + 26}" x2="{box_x}" y2="{box_y + 26}" stroke="#5D5E63" stroke-width="1" stroke-dasharray="4,4"/>')
+            svg.append(f'<line x1="{box_x}" y1="{box_y + 26}" x2="{box_x}" y2="{box_y}" stroke="#5D5E63" stroke-width="1" stroke-dasharray="4,4"/>')
+            expedited_label = f"{expedited}y*" if country == "Ireland" else f"{expedited}y"
+            svg.append(f'<text x="{box_x + expedited_width + 10}" y="{y_pos}" font-size="20" font-weight="700" fill="#5D5E63">{expedited_label}</text>')
 
         svg.append(f'<text x="1500" text-anchor="end" y="{y_pos - 1}" font-size="18" fill="#5D5E63">{notes}</text>')
 
