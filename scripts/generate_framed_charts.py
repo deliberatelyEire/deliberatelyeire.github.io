@@ -89,7 +89,7 @@ def generate_phd_chart_svg(data, chart_title):
     svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y}" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">{chart_title}</text>')
 
     # Color key
-    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="16" fill="#5D5E63">Green: counted toward citizenship. Pale: discarded. Dashed: hypothetical (proposed law).</text>')
+    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="16" fill="#5D5E63">Green: counted toward citizenship. Pale: not counted. Dashed line: processing time after application.</text>')
 
     y_pos = CHART_TOP + 30
     for row in data:
@@ -128,7 +128,7 @@ def generate_workers_chart_svg(data, chart_title):
     svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y}" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">{chart_title}</text>')
 
     # Color key
-    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="16" fill="#5D5E63">Dark: counted toward citizenship. Dashed: hypothetical (proposed law).</text>')
+    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="16" fill="#5D5E63">Dark: counted toward citizenship. Dashed line: processing time after application.</text>')
 
     y_pos = CHART_TOP + 30
     for row in data:
@@ -152,7 +152,7 @@ def generate_masters_chart_svg(data, chart_title):
     svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y}" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">{chart_title}</text>')
 
     # Color key
-    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="16" fill="#5D5E63">Dark: counted toward citizenship. Pale: discarded. Dashed: hypothetical (proposed law).</text>')
+    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="16" fill="#5D5E63">Dark: counted toward citizenship. Pale: not counted. Dashed line: processing time after application.</text>')
 
     y_pos = CHART_TOP + 30
     for row in data:
@@ -182,7 +182,7 @@ def generate_spouses_chart_svg(data, chart_title):
     svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y}" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">{chart_title}</text>')
 
     # Color key
-    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="16" fill="#5D5E63">Green: Ireland. Dark: other countries. Dashed: hypothetical (proposed law).</text>')
+    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="16" fill="#5D5E63">Green: Ireland. Dark: other countries. Dashed line: processing time after application.</text>')
 
     y_pos = CHART_TOP + 30
     for row in data:
