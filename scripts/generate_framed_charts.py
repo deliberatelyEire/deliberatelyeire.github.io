@@ -97,7 +97,8 @@ def generate_phd_chart_svg(data, chart_title):
         proc_min = row.get("Processing_Min_Months", "")
         proc_max = row.get("Processing_Max_Months", "")
 
-        svg.append(f'<text x="404" y="{y_pos}" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">{country}</text>')
+        country_color = "#148708" if country == "Ireland" else "#0B0C0E"
+        svg.append(f'<text x="404" y="{y_pos}" font-size="24" font-weight="700" fill="{country_color}" text-anchor="end">{country}</text>')
 
         phd_width = phd_years * PIXELS_PER_YEAR
         req_width = requirement_years * PIXELS_PER_YEAR
@@ -129,7 +130,8 @@ def generate_workers_chart_svg(data, chart_title):
         requirement = int(row["Requirement_Years"])
         width = requirement * PIXELS_PER_YEAR
 
-        svg.append(f'<text x="404" y="{y_pos}" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">{country}</text>')
+        country_color = "#148708" if country == "Ireland" else "#0B0C0E"
+        svg.append(f'<text x="404" y="{y_pos}" font-size="24" font-weight="700" fill="{country_color}" text-anchor="end">{country}</text>')
         svg.append(f'<rect x="420" y="{y_pos - 22}" width="{width}" height="26" rx="2" fill="#5D5E63"/>')
         svg.append(f'<text x="{420 + width + 20}" y="{y_pos}" font-size="24" font-weight="700" fill="#5D5E63">{requirement}y</text>')
 
@@ -150,7 +152,8 @@ def generate_masters_chart_svg(data, chart_title):
         requirement = int(row["Requirement_Years"])
         total = master_years + requirement if master_years else requirement
 
-        svg.append(f'<text x="404" y="{y_pos}" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">{country}</text>')
+        country_color = "#148708" if country == "Ireland" else "#0B0C0E"
+        svg.append(f'<text x="404" y="{y_pos}" font-size="24" font-weight="700" fill="{country_color}" text-anchor="end">{country}</text>')
 
         if master_years:
             svg.append(f'<rect x="420" y="{y_pos - 22}" width="{master_years * PIXELS_PER_YEAR}" height="26" rx="2" fill="#D8D2C6"/>')
@@ -176,7 +179,8 @@ def generate_spouses_chart_svg(data, chart_title):
         width = requirement * PIXELS_PER_YEAR
         color = "#148708" if country == "Ireland" else "#5D5E63"
 
-        svg.append(f'<text x="404" y="{y_pos}" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">{country}</text>')
+        country_text_color = "#148708" if country == "Ireland" else "#0B0C0E"
+        svg.append(f'<text x="404" y="{y_pos}" font-size="24" font-weight="700" fill="{country_text_color}" text-anchor="end">{country}</text>')
         svg.append(f'<rect x="420" y="{y_pos - 22}" width="{width}" height="26" rx="2" fill="{color}"/>')
         svg.append(f'<text x="{420 + width + 20}" y="{y_pos}" font-size="24" font-weight="700" fill="{color}">{requirement}y</text>')
 
