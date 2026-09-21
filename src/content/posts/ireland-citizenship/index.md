@@ -7,7 +7,7 @@ role: "Immigration Policy Analysis"
 date: "Sept 17, 2026"
 category: "Modern Diaspora"
 readTime: "8 min read"
-cover: "workers.svg"
+cover: "workers_framed.svg"
 sources: "DFA, MEA, DGFiP, BAMF, BMI, Home Office, SEF (2026); Irish Times, Sept 2026"
 featured: true
 order: 1
@@ -29,7 +29,7 @@ Every figure in this article is also provisional. In September 2026 the Irish Ca
 
 ## Workers: The Baseline Clock
 
-![Skilled workers: time to citizenship, showing Ireland and France tied at five years, Germany at five, the UK at six, and Austria at ten](./workers.svg)
+![Skilled workers: time to citizenship, showing Ireland and France tied at five years, Germany at five, the UK at six, and Austria at ten](./workers_framed.svg)
 
 For someone who arrives on an employment permit, whether Stamp 1 or a critical skills permit, Ireland asks five years. According to the Irish Nationality and Citizenship Act 1956 (as amended), applicants must have _"lived in Ireland for a minimum of five years, with at least one uninterrupted year right before you apply for citizenship"_ ([Citizens Information](https://www.citizensinformation.ie/en/moving-country/irish-citizenship/becoming-an-irish-citizen-through-naturalisation/)). That is the fastest figure on the chart, tied with France, which counts ordinary residence on a work permit at the same five. Germany matches it through the settlement permit path. The standard requirement was reduced from eight years to five years in the 2024 citizenship reform, effective October 2025, and requires _"sufficient knowledge of German, at least at level B1"_ and _"sufficient knowledge of the legal system, society and way of life in Germany"_ ([Federal Government](https://www.bundesregierung.de/breg-en/news/federal-cabinet-naturalisation-2351972)). The [United Kingdom](https://www.gov.uk/british-citizenship) asks six, structured as five years' residence plus twelve months holding settled status, dropping to five for someone married to a British citizen. Austria asks ten, falling to six for applicants who reach [B2 German](https://www.bmi.gv.at/en/index.html).
 
@@ -43,7 +43,7 @@ Where Ireland does lose ground is after the application goes in. An [Irish natur
 
 ## PhD Researchers: Nine Years
 
-![PhD students: time to citizenship, showing Ireland at nine years against five in France and Germany, seven in the UK and ten in Austria](./phd.svg)
+![PhD students: time to citizenship, showing Ireland at nine years against five in France and Germany, seven in the UK and ten in Austria](./phd_framed.svg)
 
 A doctorate in Ireland typically runs four years on Stamp 2. Under the reckonable-residence rule, all four are discarded. The researcher then needs five countable years after the doctorate ends: nine years in total from arrival to eligibility.
 
@@ -57,7 +57,7 @@ There is a tension here worth naming plainly. Ireland recruits doctoral research
 
 ## Master's Graduates: Six Years
 
-![Master's graduates: time to citizenship, showing Ireland at six years against five in France and Germany, seven in the UK and ten in Austria](./masters_student.svg)
+![Master's graduates: time to citizenship, showing Ireland at six years against five in France and Germany, seven in the UK and ten in Austria](./masters_framed.svg)
 
 The master's route shows the same rule at a smaller scale. A taught master's is usually one year on Stamp 2. That year is discarded; the Stamp 1G graduate year that follows counts in full. Five countable years plus one discarded year comes to six.
 
@@ -67,7 +67,7 @@ The chart describes Ireland's penalty here as light, and that is the right word.
 
 ## Spouses of Citizens: Three Years
 
-![Spouses of citizens: time to citizenship, showing Ireland, Germany, and the UK at three years, France at five, and Austria at ten for non-EU spouses](./spouse.svg)
+![Spouses of citizens: time to citizenship, showing Ireland, Germany, and the UK at three years, France at five, and Austria at ten for non-EU spouses](./spouses_framed.svg)
 
 This is Ireland's fastest door, and it is genuinely fast. Three years, with Stamp 4 permission granted from the start, meaning the residence that counts begins immediately rather than after some qualifying period.
 
