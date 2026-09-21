@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
 """Generate publication-ready citizenship charts with post-visuals chrome.
 
-Charts maintain internal visual hierarchy (title + content) while frame
-provides branding chrome. Both layers work together for coherent design.
+Every chart is one bar per country on a shared scale (PIXELS_PER_YEAR), so the
+four pathways can be compared against each other. A bar is:
+
+    [ pale: years discarded ][ solid: years the clock actually runs ]
+
+and the total label is discarded + requirement. Years that *count* toward the
+requirement are not additive -- a country that counts doctoral time shows a
+plain requirement-length bar, not requirement + study.
 """
 
 import csv
@@ -10,7 +16,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-# Project paths
 SCRIPTS_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = SCRIPTS_DIR.parent
 DATA_DIR = PROJECT_DIR / "data" / "citizenship"
@@ -18,312 +23,230 @@ OUTPUT_DIR = PROJECT_DIR / "src" / "content" / "posts" / "ireland-citizenship"
 TEMP_DIR = Path("/tmp/citizenship-charts")
 POST_VISUALS_DIR = Path.home() / ".claude" / "skills" / "synced" / "57179235-8abd-44f1-933a-6ad93664feb8_da48fdcd-c46a-415c-ac7b-9f1904cf05f6" / "post-visuals"
 
-# Chart generation constants
 PIXELS_PER_YEAR = 56
+BAR_X = 420
+BAR_H = 26
+LABEL_X = 404          # country names, right-anchored
+NOTE_X = 1500          # notes and processing, right-anchored
+
+# #9C8B76 measures 3.08:1 against the #FAF7F0 paper; #D8D2C6 was 1.41:1 and
+# #A99885 was 2.61:1, both below the 3:1 floor for non-text contrast.
 COLORS = {
     "ireland": "#148708",
-    "grey_light": "#A99885",  # Increased contrast (was #D8D2C6) for WCAG AA 3:1 ratio
-    "grey_dark": "#5D5E63",
-    "text_dark": "#0B0C0E",
-    "text_light": "#5D5E63",
-    "text_muted": "#8B8C8F",
+    "pale": "#9C8B76",
+    "dark": "#5D5E63",
+    "ink": "#0B0C0E",
+    "muted": "#5D5E63",
+    "faint": "#8B8C8F",
+    "hairline": "#D8D2C6",
+    "dashed": "#333333",
 }
 
-# Frame content bounds
-CONTENT_LEFT = 88
-CONTENT_RIGHT = 1512
-CONTENT_TOP = 184.0
-
-# Chart spacing following post-visuals aesthetics
 CHART_TITLE_Y = 200
-CHART_TOP = 250  # Increased gap below title for visual breathing room
-CHART_ROW_PITCH = 84
+LEGEND_Y = 228
+AXIS_LABEL_Y = 248
+AXIS_TOP = 256
+ROW_FIRST_BASELINE = 302
+ROW_PITCH = 84
+FOOTNOTE_Y = 700
+FOOTNOTE_PITCH = 24
 
-# Pathway configurations
+CONTENT_LEFT = 88
+
+SOURCES = "Naturalisation law: IE INCA 1956 · DE StAG · FR Code civil 21-19 · UK Imm. Rules · AT StbG"
+
+LEGEND = ("Pale: years discarded before the clock starts. Solid: years that count. "
+          "Green: Ireland. Dashed: alternative timeline (* = 2026 proposal).")
+
 PATHWAYS = {
     "phd": {
-        "kicker": "WHICH DOOR?",
-        "subtitle": "PhD researchers: time from arrival to eligibility",
-        "sources": "DFA, MEA, BAMF, UK Home Office, BMI (2026)",
+        "subtitle": "PhD researchers",
         "csv": "phd.csv",
-        "chart_title": "PhD STUDENTS: TIME TO CITIZENSHIP"
+        "chart_title": "PhD RESEARCHERS: TIME TO CITIZENSHIP",
+        "footnotes": [
+            "Ireland’s penalty is unique: four full years on Stamp 2 discarded.",
+            "*Cabinet proposal, September 2026, would raise the general requirement from five years to eight. Not enacted.",
+        ],
     },
     "workers": {
-        "kicker": "WHICH DOOR?",
-        "subtitle": "Skilled workers: time from arrival to eligibility",
-        "sources": "DFA, BAMF, UK Home Office, BMI (2026)",
+        "subtitle": "Skilled workers",
         "csv": "workers.csv",
-        "chart_title": "SKILLED WORKERS: TIME TO CITIZENSHIP"
+        "chart_title": "SKILLED WORKERS: TIME TO CITIZENSHIP",
+        "footnotes": [
+            "*Cabinet proposal, September 2026, would raise the general requirement from five years to eight. Not enacted.",
+        ],
     },
     "masters": {
-        "kicker": "WHICH DOOR?",
-        "subtitle": "Master's graduates: time from arrival to eligibility",
-        "sources": "DFA, MEA, BAMF, UK Home Office, BMI (2026)",
+        "subtitle": "Master’s graduates",
         "csv": "masters.csv",
-        "chart_title": "MASTER'S GRADUATES: TIME TO CITIZENSHIP"
+        "chart_title": "MASTER’S GRADUATES: TIME TO CITIZENSHIP",
+        "footnotes": [
+            "A taught master’s is one year on Stamp 2 and is discarded; the Stamp 1G year that follows counts.",
+            "*Cabinet proposal, September 2026, would raise the general requirement from five years to eight. Not enacted.",
+        ],
     },
     "spouses": {
-        "kicker": "WHICH DOOR?",
-        "subtitle": "Spouses of citizens: time from arrival to eligibility",
-        "sources": "DFA, MEA, BAMF, UK Home Office, BMI (2026)",
+        "subtitle": "Spouses of citizens",
         "csv": "spouses.csv",
-        "chart_title": "SPOUSES OF CITIZENS: TIME TO CITIZENSHIP"
-    }
+        "chart_title": "SPOUSES OF CITIZENS: TIME TO CITIZENSHIP",
+        "footnotes": [
+            "The 2026 proposal’s effect on the spousal route has not been specified.",
+        ],
+    },
 }
 
+
 def load_csv(filepath):
-    """Load citizenship data from CSV."""
-    data = []
-    with open(filepath) as f:
-        import csv as csv_module
-        reader = csv_module.DictReader(f)
-        for row in reader:
-            data.append(row)
-    return data
+    with open(filepath, newline="") as f:
+        return list(csv.DictReader(f))
 
-def generate_phd_chart_svg(data, chart_title):
-    """Generate PhD timeline SVG with internal title and chart content."""
+
+def as_int(value, default=0):
+    value = (value or "").strip()
+    return int(value) if value else default
+
+
+def esc(text):
+    return (text or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def generate_chart_svg(data, config):
+    """Render one pathway. Identical geometry rules for all four charts."""
     svg = []
 
-    # Internal chart title (visual hierarchy)
-    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y}" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">{chart_title}</text>')
+    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y}" font-size="22" font-weight="700" '
+               f'fill="{COLORS["muted"]}" letter-spacing="1.4">{esc(config["chart_title"])}</text>')
+    svg.append(f'<text x="{CONTENT_LEFT}" y="{LEGEND_Y}" font-size="18" '
+               f'fill="{COLORS["muted"]}">{esc(LEGEND)}</text>')
 
-    # Color key with improved clarity
-    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="18" fill="#5D5E63">Green: Ireland. Pale: discarded. Dashed – a hypothetical: faster if a condition holds, or proposed law.</text>')
-
-    # Add vertical reference lines at 5 and 10 years
-    line_y_start = CHART_TOP + 10
-    line_y_end = CHART_TOP + 30 + (5 * CHART_ROW_PITCH)  # Extend through all data rows
-    for year_mark in [5, 10]:
-        x_pos = 420 + (year_mark * PIXELS_PER_YEAR)
-        svg.append(f'<line x1="{x_pos}" y1="{line_y_start}" x2="{x_pos}" y2="{line_y_end}" stroke="#D8D2C6" stroke-width="1" stroke-dasharray="2,3"/>')
-
-    y_pos = CHART_TOP + 30
+    rows = []
     for row in data:
-        country = row["Country"]
-        phd_years = int(row["PhD_Years"])
-        requirement_years = int(row["Requirement_Years"])
-        phd_counts = row.get("PhD_Counts", "false").lower()
-        notes = row.get("Notes", "")
-        proc_min = row.get("Processing_Min_Months", "")
-        proc_max = row.get("Processing_Max_Months", "")
+        discarded = as_int(row.get("Discarded_Years"))
+        requirement = as_int(row.get("Requirement_Years"))
+        rows.append({
+            "country": row["Country"],
+            "discarded": discarded,
+            "requirement": requirement,
+            "total": discarded + requirement,
+            "expedited": as_int(row.get("Expedited_Years"), 0),
+            "notes": (row.get("Notes") or "").strip(),
+            "proc_min": (row.get("Processing_Min_Months") or "").strip(),
+            "proc_max": (row.get("Processing_Max_Months") or "").strip(),
+        })
 
-        country_color = "#148708" if country == "Ireland" else "#0B0C0E"
-        svg.append(f'<text x="404" y="{y_pos}" font-size="24" font-weight="700" fill="{country_color}" text-anchor="end">{country}</text>')
+    last_bar_bottom = ROW_FIRST_BASELINE + (len(rows) - 1) * ROW_PITCH - 22 + BAR_H + 18
 
-        phd_width = phd_years * PIXELS_PER_YEAR
-        req_width = requirement_years * PIXELS_PER_YEAR
-        color = "#148708" if country == "Ireland" else "#5D5E63"
-
-        # PhD bar color based on whether years count
-        if phd_counts == "true":
-            phd_bar_color = color  # Green/dark if counted
-        elif phd_counts == "partial":
-            # For UK: first 2 years discarded, last 2 count
-            partial_years = phd_years // 2
-            partial_width = partial_years * PIXELS_PER_YEAR
-            svg.append(f'<rect x="420" y="{y_pos - 22}" width="{partial_width}" height="26" rx="2" fill="{COLORS["grey_light"]}"/>')
-            svg.append(f'<rect x="{420 + partial_width}" y="{y_pos - 22}" width="{partial_width}" height="26" rx="2" fill="{color}"/>')
-            phd_width = phd_width  # Keep full width for offset calculation
-            svg.append(f'<rect x="{420 + phd_width}" y="{y_pos - 22}" width="{req_width}" height="26" rx="2" fill="{color}"/>')
-            total = phd_years + requirement_years
-            svg.append(f'<text x="{420 + phd_width + req_width + 20}" y="{y_pos}" font-size="24" font-weight="700" fill="{color}">{total}y</text>')
-            svg.append(f'<text x="1500" text-anchor="end" y="{y_pos - 1}" font-size="20" fill="#5D5E63">{notes}</text>')
-            if proc_min and proc_max:
-                svg.append(f'<text x="1500" text-anchor="end" y="{y_pos + 18}" font-size="16" fill="#8B8C8F">Processing: {proc_min}–{proc_max} months</text>')
-            y_pos += CHART_ROW_PITCH
+    # Labelled reference lines. An unlabelled gridline tells the reader nothing.
+    widest = max(max(r["total"] for r in rows), max(r["expedited"] for r in rows))
+    for year_mark in (5, 10):
+        if year_mark > widest:
             continue
-        else:
-            phd_bar_color = COLORS["grey_light"]  # Pale if not counted
+        x_pos = BAR_X + year_mark * PIXELS_PER_YEAR
+        svg.append(f'<line x1="{x_pos}" y1="{AXIS_TOP}" x2="{x_pos}" y2="{last_bar_bottom + 4}" '
+                   f'stroke="{COLORS["hairline"]}" stroke-width="1" stroke-dasharray="2,3"/>')
+        svg.append(f'<text x="{x_pos}" y="{AXIS_LABEL_Y}" font-size="14" fill="{COLORS["faint"]}" '
+                   f'text-anchor="middle">{year_mark} years</text>')
 
-        # Add pale or colored bar
-        svg.append(f'<rect x="420" y="{y_pos - 22}" width="{phd_width}" height="26" rx="2" fill="{phd_bar_color}"/>')
+    for index, r in enumerate(rows):
+        baseline = ROW_FIRST_BASELINE + index * ROW_PITCH
+        bar_top = baseline - 22
+        is_ireland = r["country"] == "Ireland"
 
-        svg.append(f'<rect x="{420 + phd_width}" y="{y_pos - 22}" width="{req_width}" height="26" rx="2" fill="{color}"/>')
+        name_color = COLORS["ireland"] if is_ireland else COLORS["ink"]
+        svg.append(f'<text x="{LABEL_X}" y="{baseline}" font-size="24" font-weight="700" '
+                   f'fill="{name_color}" text-anchor="end">{esc(r["country"])}</text>')
 
-        total = phd_years + requirement_years
-        svg.append(f'<text x="{420 + phd_width + req_width + 20}" y="{y_pos}" font-size="24" font-weight="700" fill="{color}">{total}y</text>')
+        solid_color = COLORS["ireland"] if is_ireland else COLORS["dark"]
+        pale_width = r["discarded"] * PIXELS_PER_YEAR
+        solid_width = r["requirement"] * PIXELS_PER_YEAR
 
-        # Add dashed box for expedited/proposed alternative timeline
-        expedited_years = row.get("Expedited_Years", "")
-        if expedited_years and expedited_years.strip():
-            expedited = int(expedited_years)
-            expedited_width = expedited * PIXELS_PER_YEAR
-            box_x = 420
-            box_y = y_pos - 22
-            # Darker dashed lines (using darker color and thicker stroke)
-            svg.append(f'<line x1="{box_x}" y1="{box_y}" x2="{box_x + expedited_width}" y2="{box_y}" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>')
-            svg.append(f'<line x1="{box_x + expedited_width}" y1="{box_y}" x2="{box_x + expedited_width}" y2="{box_y + 26}" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>')
-            svg.append(f'<line x1="{box_x + expedited_width}" y1="{box_y + 26}" x2="{box_x}" y2="{box_y + 26}" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>')
-            svg.append(f'<line x1="{box_x}" y1="{box_y + 26}" x2="{box_x}" y2="{box_y}" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>')
-            # Add small text label inside the box, centered vertically
-            expedited_label = f"{expedited}y*" if country == "Ireland" else f"{expedited}y"
-            svg.append(f'<text x="{box_x + 8}" y="{box_y + 16}" font-size="11" font-weight="700" fill="#333333">{expedited_label}</text>')
+        if pale_width:
+            svg.append(f'<rect x="{BAR_X}" y="{bar_top}" width="{pale_width}" height="{BAR_H}" '
+                       f'rx="2" fill="{COLORS["pale"]}"/>')
 
-        svg.append(f'<text x="1500" text-anchor="end" y="{y_pos - 1}" font-size="20" fill="#5D5E63">{notes}</text>')
+        # Green and grey sit only 1.40:1 apart in luminance, so Ireland carries an
+        # outline as a redundant cue that survives greyscale printing.
+        outline = f' stroke="{COLORS["ink"]}" stroke-width="1.5"' if is_ireland else ""
+        svg.append(f'<rect x="{BAR_X + pale_width}" y="{bar_top}" width="{solid_width}" '
+                   f'height="{BAR_H}" rx="2" fill="{solid_color}"{outline}/>')
 
-        if proc_min and proc_max:
-            svg.append(f'<text x="1500" text-anchor="end" y="{y_pos + 18}" font-size="16" fill="#8B8C8F">Processing: {proc_min}–{proc_max} months</text>')
+        total_x = BAR_X + r["total"] * PIXELS_PER_YEAR + 20
+        svg.append(f'<text x="{total_x}" y="{baseline}" font-size="24" font-weight="700" '
+                   f'fill="{solid_color}">{r["total"]}y</text>')
 
-        y_pos += CHART_ROW_PITCH
+        if r["expedited"]:
+            # The alternative gets its own track below the bar. Overlaid on the bar it
+            # read as a segment of the standard route, and it swallowed the total label.
+            alt_w = r["expedited"] * PIXELS_PER_YEAR
+            alt_top = bar_top + BAR_H + 5
+            svg.append(f'<rect x="{BAR_X}" y="{alt_top}" width="{alt_w}" height="12" '
+                       f'fill="none" stroke="{COLORS["dashed"]}" stroke-width="1.25" '
+                       f'stroke-dasharray="5,3"/>')
+            star = "*" if r["expedited"] > r["total"] else ""
+            svg.append(f'<text x="{BAR_X + alt_w + 10}" y="{alt_top + 11}" font-size="16" '
+                       f'font-weight="700" fill="{COLORS["dashed"]}">{r["expedited"]}y{star}</text>')
 
-    return '\n'.join(svg)
+        if r["notes"]:
+            svg.append(f'<text x="{NOTE_X}" y="{baseline - 1}" font-size="20" '
+                       f'fill="{COLORS["muted"]}" text-anchor="end">{esc(r["notes"])}</text>')
 
-def generate_workers_chart_svg(data, chart_title):
-    """Generate workers timeline SVG with internal title."""
-    svg = []
+        if r["proc_min"] and r["proc_max"]:
+            svg.append(f'<text x="{NOTE_X}" y="{baseline + 18}" font-size="16" '
+                       f'fill="{COLORS["faint"]}" text-anchor="end">'
+                       f'Processing: {esc(r["proc_min"])}–{esc(r["proc_max"])} months</text>')
 
-    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y}" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">{chart_title}</text>')
+    for i, note in enumerate(config["footnotes"]):
+        svg.append(f'<text x="{CONTENT_LEFT}" y="{FOOTNOTE_Y + i * FOOTNOTE_PITCH}" font-size="17" '
+                   f'fill="{COLORS["faint"]}">{esc(note)}</text>')
 
-    # Color key
-    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="18" fill="#5D5E63">Dark: counted toward citizenship.</text>')
+    return "\n".join(svg)
 
-    y_pos = CHART_TOP + 30
-    for row in data:
-        country = row["Country"]
-        requirement = int(row["Requirement_Years"])
-        width = requirement * PIXELS_PER_YEAR
 
-        country_color = "#148708" if country == "Ireland" else "#0B0C0E"
-        svg.append(f'<text x="404" y="{y_pos}" font-size="24" font-weight="700" fill="{country_color}" text-anchor="end">{country}</text>')
-        svg.append(f'<rect x="420" y="{y_pos - 22}" width="{width}" height="26" rx="2" fill="#5D5E63"/>')
-        svg.append(f'<text x="{420 + width + 20}" y="{y_pos}" font-size="24" font-weight="700" fill="#5D5E63">{requirement}y</text>')
+def generate_frame_and_chart(pathway_key, config):
+    print(f"\n{'=' * 60}\nGenerating: {pathway_key}\n{'=' * 60}")
 
-        y_pos += CHART_ROW_PITCH
-
-    return '\n'.join(svg)
-
-def generate_masters_chart_svg(data, chart_title):
-    """Generate masters timeline SVG with internal title."""
-    svg = []
-
-    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y}" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">{chart_title}</text>')
-
-    # Color key
-    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="18" fill="#5D5E63">Dark: counted toward citizenship. Pale: not counted.</text>')
-
-    y_pos = CHART_TOP + 30
-    for row in data:
-        country = row["Country"]
-        master_years = int(row.get("Master_Years", 0)) if row.get("Master_Years") else 0
-        requirement = int(row["Requirement_Years"])
-        total = master_years + requirement if master_years else requirement
-
-        country_color = "#148708" if country == "Ireland" else "#0B0C0E"
-        svg.append(f'<text x="404" y="{y_pos}" font-size="24" font-weight="700" fill="{country_color}" text-anchor="end">{country}</text>')
-
-        if master_years:
-            svg.append(f'<rect x="420" y="{y_pos - 22}" width="{master_years * PIXELS_PER_YEAR}" height="26" rx="2" fill="{COLORS["grey_light"]}"/>')
-            svg.append(f'<rect x="{420 + master_years * PIXELS_PER_YEAR}" y="{y_pos - 22}" width="{requirement * PIXELS_PER_YEAR}" height="26" rx="2" fill="#5D5E63"/>')
-        else:
-            svg.append(f'<rect x="420" y="{y_pos - 22}" width="{requirement * PIXELS_PER_YEAR}" height="26" rx="2" fill="#5D5E63"/>')
-
-        svg.append(f'<text x="{420 + total * PIXELS_PER_YEAR + 20}" y="{y_pos}" font-size="24" font-weight="700" fill="#5D5E63">{total}y</text>')
-        y_pos += CHART_ROW_PITCH
-
-    return '\n'.join(svg)
-
-def generate_spouses_chart_svg(data, chart_title):
-    """Generate spouses timeline SVG with internal title."""
-    svg = []
-
-    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y}" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">{chart_title}</text>')
-
-    # Color key
-    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="18" fill="#5D5E63">Green: Ireland. Dark: other countries.</text>')
-
-    y_pos = CHART_TOP + 30
-    for row in data:
-        country = row["Country"]
-        requirement = int(row["Requirement_Years"])
-        width = requirement * PIXELS_PER_YEAR
-        color = "#148708" if country == "Ireland" else "#5D5E63"
-
-        country_text_color = "#148708" if country == "Ireland" else "#0B0C0E"
-        svg.append(f'<text x="404" y="{y_pos}" font-size="24" font-weight="700" fill="{country_text_color}" text-anchor="end">{country}</text>')
-        svg.append(f'<rect x="420" y="{y_pos - 22}" width="{width}" height="26" rx="2" fill="{color}"/>')
-        svg.append(f'<text x="{420 + width + 20}" y="{y_pos}" font-size="24" font-weight="700" fill="{color}">{requirement}y</text>')
-
-        if row.get("Notes"):
-            svg.append(f'<text x="1160" y="{y_pos - 1}" font-size="18" fill="#5D5E63">{row["Notes"]}</text>')
-
-        y_pos += CHART_ROW_PITCH
-
-    return '\n'.join(svg)
-
-def generate_frame_and_chart(pathway_key, pathway_config):
-    """Generate framed chart with internal visual hierarchy."""
-    print(f"\n{'='*60}")
-    print(f"Generating: {pathway_key}")
-    print(f"{'='*60}")
-
-    csv_path = DATA_DIR / pathway_config["csv"]
-    data = load_csv(csv_path)
-    print(f"✓ Loaded CSV: {csv_path.name}")
+    data = load_csv(DATA_DIR / config["csv"])
+    print(f"✓ Loaded CSV: {config['csv']}")
 
     frame_svg_path = TEMP_DIR / f"{pathway_key}_frame.svg"
-    frame_cmd = [
-        "python3",
-        str(POST_VISUALS_DIR / "scripts" / "frame.py"),
+    result = subprocess.run([
+        "python3", str(POST_VISUALS_DIR / "scripts" / "frame.py"),
         "--canvas", "hero",
-        "--kicker", pathway_config["kicker"],
-        "--subtitle", pathway_config["subtitle"],
-        "--sources", pathway_config["sources"],
-        "--out", str(frame_svg_path)
-    ]
+        "--kicker", "WHICH DOOR?",
+        "--subtitle", config["subtitle"],
+        "--sources", SOURCES,
+        "--out", str(frame_svg_path),
+    ], capture_output=True, text=True)
 
-    result = subprocess.run(frame_cmd, capture_output=True, text=True)
     if result.returncode != 0:
         print(f"✗ Frame generation failed: {result.stderr}")
         return False
 
-    print(f"✓ Frame generated with post-visuals chrome")
+    chart_svg = generate_chart_svg(data, config)
+    framed = frame_svg_path.read_text().replace("<!-- CONTENT -->", chart_svg)
 
-    if pathway_key == "phd":
-        chart_svg = generate_phd_chart_svg(data, pathway_config["chart_title"])
-    elif pathway_key == "workers":
-        chart_svg = generate_workers_chart_svg(data, pathway_config["chart_title"])
-    elif pathway_key == "masters":
-        chart_svg = generate_masters_chart_svg(data, pathway_config["chart_title"])
-    elif pathway_key == "spouses":
-        chart_svg = generate_spouses_chart_svg(data, pathway_config["chart_title"])
+    out = OUTPUT_DIR / f"{pathway_key}_framed.svg"
+    out.write_text(framed)
+    print(f"✓ Generated framed SVG: {out.name}")
 
-    print(f"✓ Generated chart with internal title + content")
-
-    frame_svg_content = frame_svg_path.read_text()
-    framed_svg = frame_svg_content.replace("<!-- CONTENT -->", chart_svg)
-
-    framed_svg_output = OUTPUT_DIR / f"{pathway_key}_framed.svg"
-    framed_svg_output.write_text(framed_svg)
-    print(f"✓ Generated framed SVG: {framed_svg_output.name}")
-
+    totals = ", ".join(f"{r['Country']} {as_int(r.get('Discarded_Years')) + as_int(r.get('Requirement_Years'))}y"
+                       for r in data)
+    print(f"  totals: {totals}")
     return True
 
+
 def main():
-    """Generate all framed charts."""
     TEMP_DIR.mkdir(exist_ok=True)
     OUTPUT_DIR.mkdir(exist_ok=True)
 
-    print("\n" + "="*60)
-    print("CITIZENSHIP CHARTS: CSV → INTERNAL TITLE + POST-VISUALS FRAME")
-    print("="*60)
-
     if not POST_VISUALS_DIR.exists():
-        print(f"\n✗ Post-visuals not found")
+        print("\n✗ Post-visuals not found")
         sys.exit(1)
 
-    print(f"\n✓ Post-visuals found")
+    ok = sum(generate_frame_and_chart(k, v) for k, v in PATHWAYS.items())
+    print(f"\n{'=' * 60}\nSUMMARY: {ok}/{len(PATHWAYS)} completed\n{'=' * 60}\n")
+    return 0 if ok == len(PATHWAYS) else 1
 
-    success_count = 0
-    for pathway_key, pathway_config in PATHWAYS.items():
-        if generate_frame_and_chart(pathway_key, pathway_config):
-            success_count += 1
-
-    print(f"\n{'='*60}")
-    print(f"SUMMARY: {success_count}/{len(PATHWAYS)} completed")
-    print(f"{'='*60}\n")
-
-    return 0 if success_count == len(PATHWAYS) else 1
 
 if __name__ == "__main__":
     sys.exit(main())

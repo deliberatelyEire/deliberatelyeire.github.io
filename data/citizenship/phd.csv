@@ -1,6 +1,6 @@
-Country,PhD_Years,PhD_Counts,Requirement_Years,Expedited_Years,Expedited_Condition,Processing_Min_Months,Processing_Max_Months,Notes
-Ireland,4,false,5,12,Proposed 2026 law,12,19,All 4 years on Stamp 2 discarded
-France,4,true,5,2,Collaborative research with French institutions,18,24,All 4 doctoral years count
-Germany,4,true,5,,Settlement permit path,4,8,All 4 years count via settlement permit
-UK,4,partial,5,,,6,12,First 2 years discarded; last 2 count
-Austria,4,false,10,6,B2 German proficiency,6,12,All 4 years discarded; no special provision
+Country,Discarded_Years,Requirement_Years,Expedited_Years,Expedited_Condition,Processing_Min_Months,Processing_Max_Months,Notes
+Ireland,4,5,12,Proposed 2026 law,12,19,All four Stamp 2 years discarded
+France,0,5,2,Collaborative research with French institutions,18,24,All four doctoral years count
+Germany,0,5,,,4,8,Doctoral years count via settlement permit
+UK,2,5,,,6,12,First two years discarded; last two count
+Austria,0,10,6,B2 German proficiency,6,12,No special provision for researchers

@@ -1,6 +1,6 @@
-Country,Requirement_Years,Expedited_Years,Expedited_Condition,Processing_Min_Months,Processing_Max_Months,Notes
-Ireland,3,,Stamp 4 from the start,2,6,Genuine marriage required
-France,5,4,4 years of marriage,18,24,Can declare citizenship after 4 years marriage
-Germany,3,,Three-year path,2,6,
-UK,3,,Immediate Settled Status,6,12,5 yrs residence + 3 yrs marriage
-Austria,10,3,EU/EEA spouse,6,12,EU spouse: 3y; Non-EU spouse: 10y
+Country,Discarded_Years,Requirement_Years,Expedited_Years,Expedited_Condition,Processing_Min_Months,Processing_Max_Months,Notes
+Ireland,0,3,,,2,6,Stamp 4 from the start
+France,0,5,4,Four years of marriage,18,24,Declaration route after four years married
+Germany,0,3,,,2,6,Three-year spousal path
+UK,0,3,,,6,12,Five years residence + three years marriage
+Austria,0,10,3,EU/EEA spouse,6,12,Non-EU spouse: ten years

@@ -1,6 +1,6 @@
-Country,Requirement_Years,Expedited_Years,Expedited_Condition,Processing_Min_Months,Processing_Max_Months,Notes
-Ireland,5,8,Proposed 2026 law,12,19,
-France,5,,Ordinary residence on work permit,18,24,
-Germany,5,,Settlement permit with B1+ German,6,36,
-UK,6,,5 years residence + 12 months settled status,6,12,5 years if married
-Austria,10,6,B2 German proficiency,6,12,
+Country,Discarded_Years,Requirement_Years,Expedited_Years,Expedited_Condition,Processing_Min_Months,Processing_Max_Months,Notes
+Ireland,0,5,8,Proposed 2026 law,12,19,Fastest here — tied with France
+France,0,5,,,18,24,Ordinary residence on work permit
+Germany,0,5,,,6,36,Settlement permit with B1+ German
+UK,0,6,,,6,12,Five years residence + 12 months settled
+Austria,0,10,6,B2 German proficiency,6,12,Ten years — or six with B2 German

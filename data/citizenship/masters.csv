@@ -1,6 +1,6 @@
-Country,Master_Years,Master_Counts,Requirement_Years,Total_Years,Expedited_Years,Expedited_Condition,Processing_Min_Months,Processing_Max_Months,Notes
-Ireland,1,false,5,6,9,Proposed 2026 law,12,19,1 year on Stamp 2 discarded
-France,1,false,5,6,2,2 years of higher education completed,18,24,2-year fast-track available
-Germany,1,false,5,6,,Expedited pathways available,4,8,
-UK,2,false,5,7,,2 years student visa discarded,6,12,
-Austria,1,false,10,11,,,,Taught master discarded
+Country,Discarded_Years,Requirement_Years,Expedited_Years,Expedited_Condition,Processing_Min_Months,Processing_Max_Months,Notes
+Ireland,1,5,9,Proposed 2026 law,12,19,One Stamp 2 year discarded
+France,0,5,2,Two years of higher education completed,18,24,Two-year fast-track available
+Germany,0,5,,,4,8,Expedited pathways available
+UK,2,5,,,6,12,Two years student visa discarded
+Austria,0,10,,,6,12,No special provision for graduates
