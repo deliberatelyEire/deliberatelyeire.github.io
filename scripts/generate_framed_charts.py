@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Generate publication-ready citizenship charts with post-visuals chrome.
 
-Combines CSV data → SVG chart generation → post-visuals framing → proper layout.
-Each pathway gets a framed graphic with tricolour, diya mark, footer, and sources.
+Uses post-visuals aesthetic principles: generous spacing, clear typography,
+visual hierarchy. Row pitch ~84px follows post-visuals layout guide.
 """
 
 import csv
@@ -35,8 +35,10 @@ CONTENT_LEFT = 88
 CONTENT_RIGHT = 1512
 CONTENT_TOP = 184.0
 CONTENT_BOTTOM = 769.0
-CONTENT_WIDTH = CONTENT_RIGHT - CONTENT_LEFT
-CONTENT_HEIGHT = CONTENT_BOTTOM - CONTENT_TOP
+
+# Chart spacing following post-visuals aesthetics (row pitch ~84px like layouts guide)
+CHART_TOP = 220
+CHART_ROW_PITCH = 84
 
 # Pathway configurations
 PATHWAYS = {
@@ -45,28 +47,24 @@ PATHWAYS = {
         "subtitle": "PhD researchers: time from arrival to eligibility",
         "sources": "DFA, MEA, BAMF, UK Home Office, BMI (2026)",
         "csv": "phd.csv",
-        "svg_name": "phd.svg",
     },
     "workers": {
         "kicker": "WHICH DOOR?",
         "subtitle": "Skilled workers: time from arrival to eligibility",
         "sources": "DFA, BAMF, UK Home Office, BMI (2026)",
         "csv": "workers.csv",
-        "svg_name": "workers.svg",
     },
     "masters": {
         "kicker": "WHICH DOOR?",
         "subtitle": "Master's graduates: time from arrival to eligibility",
         "sources": "DFA, MEA, BAMF, UK Home Office, BMI (2026)",
         "csv": "masters.csv",
-        "svg_name": "masters_student.svg",
     },
     "spouses": {
         "kicker": "WHICH DOOR?",
         "subtitle": "Spouses of citizens: time from arrival to eligibility",
         "sources": "DFA, MEA, BAMF, UK Home Office, BMI (2026)",
         "csv": "spouses.csv",
-        "svg_name": "spouse.svg",
     }
 }
 
@@ -80,11 +78,9 @@ def load_csv(filepath):
     return data
 
 def generate_phd_chart_svg(data):
-    """Generate PhD timeline SVG chart content."""
+    """Generate PhD timeline SVG chart content with post-visuals spacing."""
     svg = []
-
-    # Content positioned within frame bounds
-    y_pos = CONTENT_TOP + 30
+    y_pos = CHART_TOP
 
     for row in data:
         country = row["Country"]
@@ -110,15 +106,15 @@ def generate_phd_chart_svg(data):
         if proc_min and proc_max:
             svg.append(f'<text x="1280" y="{y_pos + 17}" font-size="14" fill="#8B8C8F">Processing: {proc_min}–{proc_max} months</text>')
 
-        y_pos += 62
+        y_pos += CHART_ROW_PITCH
 
     return '\n'.join(svg)
 
 def generate_workers_chart_svg(data):
     """Generate workers timeline SVG chart content."""
     svg = []
+    y_pos = CHART_TOP
 
-    y_pos = CONTENT_TOP + 30
     for row in data:
         country = row["Country"]
         requirement = int(row["Requirement_Years"])
@@ -128,15 +124,15 @@ def generate_workers_chart_svg(data):
         svg.append(f'<rect x="420" y="{y_pos - 22}" width="{width}" height="26" rx="2" fill="#5D5E63"/>')
         svg.append(f'<text x="{420 + width + 20}" y="{y_pos}" font-size="24" font-weight="700" fill="#5D5E63">{requirement}y</text>')
 
-        y_pos += 62
+        y_pos += CHART_ROW_PITCH
 
     return '\n'.join(svg)
 
 def generate_masters_chart_svg(data):
     """Generate masters timeline SVG chart content."""
     svg = []
+    y_pos = CHART_TOP
 
-    y_pos = CONTENT_TOP + 30
     for row in data:
         country = row["Country"]
         master_years = int(row.get("Master_Years", 0)) if row.get("Master_Years") else 0
@@ -152,15 +148,15 @@ def generate_masters_chart_svg(data):
             svg.append(f'<rect x="420" y="{y_pos - 22}" width="{requirement * PIXELS_PER_YEAR}" height="26" rx="2" fill="#5D5E63"/>')
 
         svg.append(f'<text x="{420 + total * PIXELS_PER_YEAR + 20}" y="{y_pos}" font-size="24" font-weight="700" fill="#5D5E63">{total}y</text>')
-        y_pos += 62
+        y_pos += CHART_ROW_PITCH
 
     return '\n'.join(svg)
 
 def generate_spouses_chart_svg(data):
     """Generate spouses timeline SVG chart content."""
     svg = []
+    y_pos = CHART_TOP
 
-    y_pos = CONTENT_TOP + 30
     for row in data:
         country = row["Country"]
         requirement = int(row["Requirement_Years"])
@@ -174,7 +170,7 @@ def generate_spouses_chart_svg(data):
         if row.get("Notes"):
             svg.append(f'<text x="1160" y="{y_pos - 1}" font-size="18" fill="#5D5E63">{row["Notes"]}</text>')
 
-        y_pos += 62
+        y_pos += CHART_ROW_PITCH
 
     return '\n'.join(svg)
 
@@ -184,12 +180,10 @@ def generate_frame_and_chart(pathway_key, pathway_config):
     print(f"Generating: {pathway_key}")
     print(f"{'='*60}")
 
-    # Load CSV data
     csv_path = DATA_DIR / pathway_config["csv"]
     data = load_csv(csv_path)
     print(f"✓ Loaded CSV: {csv_path.name}")
 
-    # Generate frame using post-visuals
     frame_svg_path = TEMP_DIR / f"{pathway_key}_frame.svg"
     frame_cmd = [
         "python3",
@@ -206,9 +200,8 @@ def generate_frame_and_chart(pathway_key, pathway_config):
         print(f"✗ Frame generation failed: {result.stderr}")
         return False
 
-    print(f"✓ Content bounds: x {CONTENT_LEFT}-{CONTENT_RIGHT}, y {CONTENT_TOP}-{CONTENT_BOTTOM}")
+    print(f"✓ Frame generated with post-visuals chrome")
 
-    # Generate chart SVG
     if pathway_key == "phd":
         chart_svg = generate_phd_chart_svg(data)
     elif pathway_key == "workers":
@@ -218,20 +211,15 @@ def generate_frame_and_chart(pathway_key, pathway_config):
     elif pathway_key == "spouses":
         chart_svg = generate_spouses_chart_svg(data)
 
-    print(f"✓ Generated chart SVG (positioned within frame bounds)")
+    print(f"✓ Generated chart (row pitch {CHART_ROW_PITCH}px for spacing)")
 
-    # Read frame SVG
     frame_svg_content = frame_svg_path.read_text()
-
-    # Insert chart into frame
     framed_svg = frame_svg_content.replace("<!-- CONTENT -->", chart_svg)
 
-    # Write framed SVG to output
     framed_svg_output = OUTPUT_DIR / f"{pathway_key}_framed.svg"
     framed_svg_output.write_text(framed_svg)
     print(f"✓ Generated framed SVG: {framed_svg_output.name}")
     print(f"  File size: {framed_svg_output.stat().st_size / 1024:.1f} KB")
-    print(f"  Location: {framed_svg_output}")
 
     return True
 
@@ -242,30 +230,26 @@ def main():
 
     print("\n" + "="*60)
     print("CITIZENSHIP CHARTS: CSV → POST-VISUALS FRAMING")
+    print(f"Chart spacing: start at y={CHART_TOP}, pitch {CHART_ROW_PITCH}px")
     print("="*60)
 
-    # Check post-visuals directory
     if not POST_VISUALS_DIR.exists():
         print(f"\n✗ Post-visuals not found at: {POST_VISUALS_DIR}")
-        print("  Make sure the post-visuals skill is loaded.")
         sys.exit(1)
 
-    print(f"\n✓ Post-visuals found: {POST_VISUALS_DIR}")
+    print(f"\n✓ Post-visuals found")
 
-    # Generate all pathways
     success_count = 0
     for pathway_key, pathway_config in PATHWAYS.items():
         if generate_frame_and_chart(pathway_key, pathway_config):
             success_count += 1
 
-    # Summary
     print(f"\n{'='*60}")
     print(f"SUMMARY: {success_count}/{len(PATHWAYS)} pathways completed")
     print(f"{'='*60}")
 
     if success_count == len(PATHWAYS):
-        print("\n✓ All charts generated successfully!")
-        print(f"\nOutput location: {OUTPUT_DIR}")
+        print("\n✓ All charts generated with post-visuals aesthetics!")
         return 0
     else:
         print(f"\n✗ {len(PATHWAYS) - success_count} pathway(s) failed")
