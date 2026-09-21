@@ -1,6 +1,6 @@
 Country,PhD_Years,PhD_Counts,Requirement_Years,Expedited_Years,Expedited_Condition,Processing_Min_Months,Processing_Max_Months,Notes
-Ireland,4,false,5,12,Proposed 2026 law,12,19,4 years on Stamp 2 discarded; all 4y are non-counted time
+Ireland,4,false,5,12,Proposed 2026 law,12,19,All 4 years on Stamp 2 discarded
 France,4,true,5,2,Collaborative research with French institutions,18,24,All 4 doctoral years count
 Germany,4,true,5,,Settlement permit path,4,8,All 4 years count via settlement permit
-UK,4,partial,5,,,6,12,4-year PhD: first 2 years on student visa (discarded); last 2 years count toward 5-year requirement
-Austria,4,false,10,6,B2 German proficiency,6,12,4 years on student visa discarded; no special provision
+UK,4,partial,5,,,6,12,First 2 years discarded; last 2 count
+Austria,4,false,10,6,B2 German proficiency,6,12,All 4 years discarded; no special provision
