@@ -28,15 +28,6 @@ Every figure in this article is also provisional. In September 2026 the Irish Ca
 > - Ireland's decision takes twelve to nineteen months, slower than the UK or Austria. Only France, and the slowest German municipalities, take longer.
 > - A Cabinet proposal in September 2026 would raise the general requirement from five years to eight. It is not law.
 
-| Pathway | Ireland | Ireland if the 2026 Bill passes | France | Germany | UK | Austria |
-|---|---|---|---|---|---|---|
-| Skilled worker | 5 | 8 | 5 | 5 | 6 | 10 |
-| PhD researcher | 9 | 12 | 5 | 5 | 10 | 10 |
-| Master's graduate | 6 | 9 | 5 | 5 | 7 | 10 |
-| Spouse of a citizen | 3 | not specified | 5 | 3 | 5 | 6 |
-
-Years from arrival to the point an application can be filed. Processing time comes on top; see each section below. Other posts are indexed on the [blog](/blog).
-
 ## Workers: The Baseline Clock
 
 ![Skilled workers: time to citizenship, showing Ireland and France tied at five years, Germany at five, the UK at six, and Austria at ten](./workers_framed.svg)
@@ -125,4 +116,4 @@ Chart data drawn from:
 
 Processing times as published in September 2026; Germany sets them locally and has no single national figure. All timelines assume continuous residence and fulfilment of ancillary requirements (language proficiency, civic knowledge, genuine residence, etc.).
 
-*Figures throughout are drawn from the comparison charts above. Ireland's 2026 reform is a Cabinet proposal rather than enacted law, and the charts mark that uncertainty rather than resolving it.*
+*Figures throughout are drawn from the comparison charts above. Ireland's 2026 reform is a Cabinet proposal rather than enacted law, and the charts mark that uncertainty rather than resolving it. More writing on Ireland and India is on the [blog](/blog).*
