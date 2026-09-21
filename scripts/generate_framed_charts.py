@@ -53,7 +53,7 @@ FOOTNOTE_PITCH = 24
 
 CONTENT_LEFT = 88
 
-SOURCES = "Naturalisation law: IE INCA 1956 · DE StAG · FR Code civil 21-19 · UK Imm. Rules · AT StbG"
+SOURCES = "Naturalisation law: IE INCA 1956 · DE StAG · FR Code civil 21-18 · UK Imm. Rules · AT StbG"
 
 LEGEND = ("Pale: years discarded before the clock starts. Solid: years that count. "
           "Green: Ireland. Dashed: alternative timeline (* = 2026 proposal).")
@@ -64,8 +64,8 @@ PATHWAYS = {
         "csv": "phd.csv",
         "chart_title": "PhD RESEARCHERS: TIME TO CITIZENSHIP",
         "footnotes": [
-            "Ireland’s penalty is unique: four full years on Stamp 2 discarded.",
-            "*Cabinet proposal, September 2026, would raise the general requirement from five years to eight. Not enacted.",
+            "Ireland strikes doctoral years from the reckonable count; the UK lets them count for residence but not for settlement.",
+            "*General Scheme of the Irish Nationality and Citizenship (Amendment) Bill 2026, approved for drafting 9 September 2026. Not enacted.",
         ],
     },
     "workers": {
@@ -73,7 +73,7 @@ PATHWAYS = {
         "csv": "workers.csv",
         "chart_title": "SKILLED WORKERS: TIME TO CITIZENSHIP",
         "footnotes": [
-            "*Cabinet proposal, September 2026, would raise the general requirement from five years to eight. Not enacted.",
+            "*General Scheme of the Irish Nationality and Citizenship (Amendment) Bill 2026, approved for drafting 9 September 2026. Not enacted.",
         ],
     },
     "masters": {
@@ -82,7 +82,7 @@ PATHWAYS = {
         "chart_title": "MASTER’S GRADUATES: TIME TO CITIZENSHIP",
         "footnotes": [
             "A taught master’s is one year on Stamp 2 and is discarded; the Stamp 1G year that follows counts.",
-            "*Cabinet proposal, September 2026, would raise the general requirement from five years to eight. Not enacted.",
+            "*General Scheme of the Irish Nationality and Citizenship (Amendment) Bill 2026, approved for drafting 9 September 2026. Not enacted.",
         ],
     },
     "spouses": {
@@ -90,7 +90,7 @@ PATHWAYS = {
         "csv": "spouses.csv",
         "chart_title": "SPOUSES OF CITIZENS: TIME TO CITIZENSHIP",
         "footnotes": [
-            "The 2026 proposal’s effect on the spousal route has not been specified.",
+            "The 2026 Bill covers ‘most applicants’; its effect on the spousal route is not specified in the General Scheme announcement.",
         ],
     },
 }
@@ -129,6 +129,7 @@ def generate_chart_svg(data, config):
             "requirement": requirement,
             "total": discarded + requirement,
             "expedited": as_int(row.get("Expedited_Years"), 0),
+            "condition": (row.get("Expedited_Condition") or "").strip(),
             "notes": (row.get("Notes") or "").strip(),
             "proc_min": (row.get("Processing_Min_Months") or "").strip(),
             "proc_max": (row.get("Processing_Max_Months") or "").strip(),
@@ -185,6 +186,12 @@ def generate_chart_svg(data, config):
             star = "*" if r["expedited"] > r["total"] else ""
             svg.append(f'<text x="{BAR_X + alt_w + 10}" y="{alt_top + 11}" font-size="16" '
                        f'font-weight="700" fill="{COLORS["dashed"]}">{r["expedited"]}y{star}</text>')
+            # The condition was in every CSV and rendered nowhere, leaving each
+            # dashed track an unexplained number.
+            if r["condition"]:
+                off = 10 + 0.55 * 16 * (len(str(r["expedited"])) + 1 + len(star)) + 10
+                svg.append(f'<text x="{BAR_X + alt_w + off:.0f}" y="{alt_top + 11}" font-size="14" '
+                           f'fill="{COLORS["faint"]}">{esc(r["condition"])}</text>')
 
         if r["notes"]:
             svg.append(f'<text x="{NOTE_X}" y="{baseline - 1}" font-size="20" '

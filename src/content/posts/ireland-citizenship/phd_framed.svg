@@ -12,7 +12,7 @@
 <text x="88" y="838.0" font-family="Lohit Devanagari, Noto Serif Devanagari, serif" font-size="30.0" fill="#0B0C0E">सर्वे भवन्तु सुखिनः</text>
 <text x="88" y="880.0" font-size="24.0" fill="#5D5E63">Is ar scáth a chéile a mhaireann na daoine</text>
 <text x="1512" y="845.0" font-size="34.0" font-weight="700" fill="#0B0C0E" text-anchor="end">@DeliberatelyÉire</text>
-<text x="1512" y="878.0" font-size="20.0" fill="#5D5E63" text-anchor="end">Sources: Naturalisation law: IE INCA 1956 · DE StAG · FR Code civil 21-19 · UK Imm. Rules · AT StbG</text>
+<text x="1512" y="878.0" font-size="20.0" fill="#5D5E63" text-anchor="end">Sources: Naturalisation law: IE INCA 1956 · DE StAG · FR Code civil 21-18 · UK Imm. Rules · AT StbG</text>
 <text x="88" y="200" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">PhD RESEARCHERS: TIME TO CITIZENSHIP</text>
 <text x="88" y="228" font-size="18" fill="#5D5E63">Pale: years discarded before the clock starts. Solid: years that count. Green: Ireland. Dashed: alternative timeline (* = 2026 proposal).</text>
 <line x1="700" y1="256" x2="700" y2="664" stroke="#D8D2C6" stroke-width="1" stroke-dasharray="2,3"/>
@@ -25,6 +25,7 @@
 <text x="944" y="302" font-size="24" font-weight="700" fill="#148708">9y</text>
 <rect x="420" y="311" width="672" height="12" fill="none" stroke="#333333" stroke-width="1.25" stroke-dasharray="5,3"/>
 <text x="1102" y="322" font-size="16" font-weight="700" fill="#333333">12y*</text>
+<text x="1147" y="322" font-size="14" fill="#8B8C8F">Proposed 2026 law</text>
 <text x="1500" y="301" font-size="20" fill="#5D5E63" text-anchor="end">All four Stamp 2 years discarded</text>
 <text x="1500" y="320" font-size="16" fill="#8B8C8F" text-anchor="end">Processing: 12–19 months</text>
 <text x="404" y="386" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">France</text>
@@ -32,6 +33,7 @@
 <text x="720" y="386" font-size="24" font-weight="700" fill="#5D5E63">5y</text>
 <rect x="420" y="395" width="112" height="12" fill="none" stroke="#333333" stroke-width="1.25" stroke-dasharray="5,3"/>
 <text x="542" y="406" font-size="16" font-weight="700" fill="#333333">2y</text>
+<text x="570" y="406" font-size="14" fill="#8B8C8F">Two years of French higher education</text>
 <text x="1500" y="385" font-size="20" fill="#5D5E63" text-anchor="end">All four doctoral years count</text>
 <text x="1500" y="404" font-size="16" fill="#8B8C8F" text-anchor="end">Processing: 18–24 months</text>
 <text x="404" y="470" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Germany</text>
@@ -40,18 +42,22 @@
 <text x="1500" y="469" font-size="20" fill="#5D5E63" text-anchor="end">Doctoral years count via settlement permit</text>
 <text x="1500" y="488" font-size="16" fill="#8B8C8F" text-anchor="end">Processing: 4–8 months</text>
 <text x="404" y="554" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">UK</text>
-<rect x="420" y="532" width="112" height="26" rx="2" fill="#9C8B76"/>
-<rect x="532" y="532" width="280" height="26" rx="2" fill="#5D5E63"/>
-<text x="832" y="554" font-size="24" font-weight="700" fill="#5D5E63">7y</text>
-<text x="1500" y="553" font-size="20" fill="#5D5E63" text-anchor="end">First two years discarded; last two count</text>
+<rect x="420" y="532" width="224" height="26" rx="2" fill="#9C8B76"/>
+<rect x="644" y="532" width="336" height="26" rx="2" fill="#5D5E63"/>
+<text x="1000" y="554" font-size="24" font-weight="700" fill="#5D5E63">10y</text>
+<rect x="420" y="563" width="448" height="12" fill="none" stroke="#333333" stroke-width="1.25" stroke-dasharray="5,3"/>
+<text x="878" y="574" font-size="16" font-weight="700" fill="#333333">8y</text>
+<text x="906" y="574" font-size="14" fill="#8B8C8F">Global Talent route to settlement</text>
+<text x="1500" y="553" font-size="20" fill="#5D5E63" text-anchor="end">Student years build no settlement</text>
 <text x="1500" y="572" font-size="16" fill="#8B8C8F" text-anchor="end">Processing: 6–12 months</text>
 <text x="404" y="638" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Austria</text>
 <rect x="420" y="616" width="560" height="26" rx="2" fill="#5D5E63"/>
 <text x="1000" y="638" font-size="24" font-weight="700" fill="#5D5E63">10y</text>
 <rect x="420" y="647" width="336" height="12" fill="none" stroke="#333333" stroke-width="1.25" stroke-dasharray="5,3"/>
 <text x="766" y="658" font-size="16" font-weight="700" fill="#333333">6y</text>
+<text x="794" y="658" font-size="14" fill="#8B8C8F">B2 German proficiency</text>
 <text x="1500" y="637" font-size="20" fill="#5D5E63" text-anchor="end">No special provision for researchers</text>
 <text x="1500" y="656" font-size="16" fill="#8B8C8F" text-anchor="end">Processing: 6–12 months</text>
-<text x="88" y="700" font-size="17" fill="#8B8C8F">Ireland’s penalty is unique: four full years on Stamp 2 discarded.</text>
-<text x="88" y="724" font-size="17" fill="#8B8C8F">*Cabinet proposal, September 2026, would raise the general requirement from five years to eight. Not enacted.</text>
+<text x="88" y="700" font-size="17" fill="#8B8C8F">Ireland strikes doctoral years from the reckonable count; the UK lets them count for residence but not for settlement.</text>
+<text x="88" y="724" font-size="17" fill="#8B8C8F">*General Scheme of the Irish Nationality and Citizenship (Amendment) Bill 2026, approved for drafting 9 September 2026. Not enacted.</text>
 </svg>
