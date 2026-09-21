@@ -55,8 +55,8 @@ CONTENT_LEFT = 88
 
 SOURCES = "Naturalisation law: IE INCA 1956 · DE StAG · FR Code civil 21-18 · UK Imm. Rules · AT StbG"
 
-LEGEND = ("Pale: years discarded before the clock starts. Solid: years that count. "
-          "Green: Ireland. Dashed: alternative timeline (* = 2026 proposal).")
+LEGEND = ("Pale: years discarded. Solid: years that count. Green: Ireland. "
+          "Dashed: alternative route, with its change in years (* = 2026 proposal).")
 
 PATHWAYS = {
     "phd": {
@@ -183,14 +183,25 @@ def generate_chart_svg(data, config):
             svg.append(f'<rect x="{BAR_X}" y="{alt_top}" width="{alt_w}" height="12" '
                        f'fill="none" stroke="{COLORS["dashed"]}" stroke-width="1.25" '
                        f'stroke-dasharray="5,3"/>')
+            # Signed delta rather than colour. Red/green would collide with green
+            # meaning Ireland, and is the worst pair for colour blindness; the
+            # delta survives greyscale and says the same thing faster.
             star = "*" if r["expedited"] > r["total"] else ""
+            delta = r["expedited"] - r["total"]
+            sign = "+" if delta > 0 else "\u2212"
+            label = f'{r["expedited"]}y{star} ({sign}{abs(delta)})'
             svg.append(f'<text x="{BAR_X + alt_w + 10}" y="{alt_top + 11}" font-size="16" '
-                       f'font-weight="700" fill="{COLORS["dashed"]}">{r["expedited"]}y{star}</text>')
-            # The condition was in every CSV and rendered nowhere, leaving each
-            # dashed track an unexplained number.
+                       f'font-weight="700" fill="{COLORS["dashed"]}">{label}</text>')
             if r["condition"]:
-                off = 10 + 0.55 * 16 * (len(str(r["expedited"])) + 1 + len(star)) + 10
-                svg.append(f'<text x="{BAR_X + alt_w + off:.0f}" y="{alt_top + 11}" font-size="14" '
+                off = 10 + 0.55 * 16 * len(label) + 10
+                cond_x = BAR_X + alt_w + off
+                cond_right = cond_x + 0.5 * 14 * len(r["condition"])
+                if r["proc_min"] and r["proc_max"]:
+                    proc = f'Processing: {r["proc_min"]}\u2013{r["proc_max"]} months'
+                    if cond_right > NOTE_X - 0.5 * 16 * len(proc) - 20:
+                        print(f'  ! {r["country"]}: condition "{r["condition"]}" runs into '
+                              f'the processing column; shorten it in the CSV')
+                svg.append(f'<text x="{cond_x:.0f}" y="{alt_top + 11}" font-size="14" '
                            f'fill="{COLORS["faint"]}">{esc(r["condition"])}</text>')
 
         if r["notes"]:
