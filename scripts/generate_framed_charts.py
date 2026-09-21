@@ -134,6 +134,14 @@ def generate_phd_chart_svg(data, chart_title):
 
         total = phd_years + requirement_years
         svg.append(f'<text x="{420 + phd_width + req_width + 20}" y="{y_pos}" font-size="24" font-weight="700" fill="{color}">{total}y</text>')
+
+        # Add dashed line for processing time (avg of min/max, converted to visual width)
+        if proc_min and proc_max:
+            proc_avg = (int(proc_min) + int(proc_max)) / 2 / 12  # Average months converted to years
+            proc_width = proc_avg * PIXELS_PER_YEAR
+            proc_start_x = 420 + phd_width + req_width
+            svg.append(f'<line x1="{proc_start_x}" y1="{y_pos - 11}" x2="{proc_start_x + proc_width}" y2="{y_pos - 11}" stroke="#5D5E63" stroke-width="2" stroke-dasharray="4,4"/>')
+
         svg.append(f'<text x="1500" text-anchor="end" y="{y_pos - 1}" font-size="18" fill="#5D5E63">{notes}</text>')
 
         if proc_min and proc_max:
