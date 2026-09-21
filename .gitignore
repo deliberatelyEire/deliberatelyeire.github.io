@@ -24,3 +24,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Chart source data (kept locally; scripts/generate_framed_charts.py reads these)
+data/citizenship/*.csv
