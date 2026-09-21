@@ -36,7 +36,7 @@ CONTENT_TOP = 184.0
 
 # Chart spacing following post-visuals aesthetics
 CHART_TITLE_Y = 200
-CHART_TOP = 220
+CHART_TOP = 250  # Increased gap below title for visual breathing room
 CHART_ROW_PITCH = 84
 
 # Pathway configurations
