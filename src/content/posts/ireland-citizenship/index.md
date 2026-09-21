@@ -33,11 +33,13 @@ Every figure in this article is also provisional. In September 2026 the Irish Ca
 
 For someone who arrives on an employment permit, whether Stamp 1 or a critical skills permit, Ireland asks five years. That is the fastest figure on the chart, tied with France, which counts ordinary residence on a work permit at the same five. Germany matches it through the settlement permit path. The [United Kingdom](https://www.gov.uk/british-citizenship) asks six, structured as five years' residence plus twelve months holding settled status, dropping to five for someone married to a British citizen. Austria and Portugal both ask ten, with Austria falling to six for applicants who reach [B2 German](https://www.bmi.gv.at/en/index.html).
 
+Sources: [Ireland Critical Skills Employment Permit](https://www.citizensinformation.ie/en/moving-country/working-in-ireland/employment-permits/green-card-permits/) · [German Settlement Permit](https://www.bamf.de/EN/Themen/Integration/Einbuergerung/einbuergerung_node.html) · [Austria Citizenship Requirements](https://www.migration.gv.at/en/living-and-working-in-austria/integration-and-citizenship/citizenship/)
+
 The dashed bar is the warning. Under the 2026 proposal that five becomes eight, which would drop Ireland from the front of this group to a position of its own: slower than the five-year cluster, still short of the ten.
 
 So a worker comparing Dublin against Paris, Berlin, London, Vienna and Lisbon finds Ireland in the leading group, not trailing it. For now. That is worth saying plainly, because the rest of this article is about a penalty, and the penalty is narrow. It does not apply to the person who came here to work.
 
-Where Ireland does lose ground is after the application goes in. An [Irish naturalisation](https://www.dfa.ie/citizenship/) decision takes twelve to nineteen months. A [German one](https://www.bamf.bund.de/EN/Themen/Integration/Einbuergerung/einbuergerung_node.html) takes six to thirty-six months depending on the federal state, with most applications taking eight to twenty-four months. The remaining four sit between six and twelve. Ireland asks for the same five years as [Germany](https://www.bamf.bund.de/EN/Themen/Fachkraeftegewinnung/fachkraeftegewinnung_node.html), then takes substantially longer to answer, so the real distance between the two widens once the application is filed.
+Where Ireland does lose ground is after the application goes in. An [Irish naturalisation](https://www.dfa.ie/citizenship/) decision takes twelve to nineteen months ([DFA source](https://www.ireland.ie/en/dfa/citizenship/)). A [German one](https://www.bamf.bund.de/EN/Themen/Integration/Einbuergerung/einbuergerung_node.html) takes six to thirty-six months depending on the federal state, with most applications taking eight to twenty-four months ([BAMF source](https://www.bamf.de/EN/Themen/Integration/Einbuergerung/einbuergerung_node.html)). The remaining four sit between six and twelve. Ireland asks for the same five years as [Germany](https://www.bamf.bund.de/EN/Themen/Fachkraeftegewinnung/fachkraeftegewinnung_node.html), then takes substantially longer to answer, so the real distance between the two widens once the application is filed.
 
 ## PhD Researchers: Nine Years
 
@@ -45,7 +47,7 @@ Where Ireland does lose ground is after the application goes in. An [Irish natur
 
 A doctorate in Ireland typically runs four years on Stamp 2. Under the reckonable-residence rule, all four are discarded. The researcher then needs five countable years after the doctorate ends: nine years in total from arrival to eligibility.
 
-France counts all doctoral time and asks five. Germany counts it too, via the settlement permit path, and asks five. The UK asks seven, discarding two years of student visa. Austria asks ten, or six with B2 German. Portugal asks ten under its standard third-country track.
+France offers a two-year expedited path for PhD graduates from French institutions ([French Naturalization](https://www.prepacivique.fr/en/guide/french-naturalization)), with the clock starting after graduation. Germany counts doctoral time via the settlement permit path and asks five ([BAMF Citizenship](https://www.bamf.de/EN/Themen/Integration/Einbuergerung/einbuergerung_node.html)). The UK asks seven, discarding two years of student visa. Austria asks ten, or six with B2 German ([Austria Citizenship](https://www.migration.gv.at/en/living-and-working-in-austria/integration-and-citizenship/citizenship/)). Portugal asks ten under its standard third-country track.
 
 The dashed bar carries that nine to twelve. A researcher starting a doctorate in Dublin today, if the proposal passes before they qualify, would be looking at twelve years from arrival to eligibility, more than Austria's standard ten.
 
@@ -59,7 +61,7 @@ There is a tension here worth naming plainly. Ireland recruits doctoral research
 
 The master's route shows the same rule at a smaller scale. A taught master's is usually one year on Stamp 2. That year is discarded; the Stamp 1G graduate year that follows counts in full. Five countable years plus one discarded year comes to six.
 
-The dashed bar takes that six to nine. Against the comparators the current figure is a middling result rather than a punishing one. France and Germany ask five. The UK asks seven, discarding two years of student visa, so Ireland is actually a year faster than Britain for this group. Austria and Portugal ask ten.
+The dashed bar takes that six to nine. Against the comparators the current figure is a middling result rather than a punishing one. France and Germany offer expedited pathways for their graduates ([French Naturalization](https://www.prepacivique.fr/en/guide/french-naturalization)). The UK asks seven, discarding two years of student visa, so Ireland is actually a year faster than Britain for this group. Austria and Portugal ask ten ([Austria Citizenship](https://www.migration.gv.at/en/living-and-working-in-austria/integration-and-citizenship/citizenship/)).
 
 The chart describes Ireland's penalty here as light, and that is the right word. The lesson is not that studying in Ireland is a mistake. It is that the cost scales directly with how long you study, which is a strange thing for an education system to charge for.
 
@@ -69,9 +71,9 @@ The chart describes Ireland's penalty here as light, and that is the right word.
 
 This is Ireland's fastest door, and it is genuinely fast. Three years, with Stamp 4 permission granted from the start, meaning the residence that counts begins immediately rather than after some qualifying period.
 
-Germany asks three. The UK asks three, with immediate settled status and processing typically completing within six months. France asks five and offers no acceleration for marriage at all. Austria splits: three years for a spouse of an EU or EEA citizen, ten years for non-EU spouses (the chart names Indian nationals specifically), a seven-year difference decided by nationality rather than by anything the couple did.
+Germany asks three ([BAMF Citizenship](https://www.bamf.de/EN/Themen/Integration/Einbuergerung/einbuergerung_node.html)). The UK asks three, with immediate settled status and processing typically completing within six to twelve weeks ([UK Home Office](https://www.gov.uk/british-citizenship)). France asks five and offers no acceleration for marriage at all. Austria splits: three years for a spouse of an EU or EEA citizen, ten years for non-EU spouses (the chart names Indian nationals specifically), a seven-year difference decided by nationality rather than by anything the couple did ([Austria Citizenship](https://www.migration.gv.at/en/living-and-working-in-austria/integration-and-citizenship/citizenship/)).
 
-Portugal, historically three years, moved to ten under its revised 2026 Nationality Law, effective 19 May. That change happened after this article's publication date and reflects a broader tightening of Portugal's naturalisation rules.
+Portugal, historically three years, moved to ten under its revised 2026 Nationality Law, effective 19 May ([Lei Orgânica 1/2026](https://immigrantinvest.com/insider/portugal-approves-citizenship-law/)). That change happened after this article's publication date and reflects a broader tightening of Portugal's naturalisation rules.
 
 Ireland's spousal route is the one the Cabinet proposal leaves ambiguous. The 2026 reform targets general naturalisation, and its effect on the spousal path is not yet specified. Three years may well hold. The proposal, as published, does not address it either way.
 
