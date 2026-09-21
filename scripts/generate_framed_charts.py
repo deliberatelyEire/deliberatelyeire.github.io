@@ -91,6 +91,13 @@ def generate_phd_chart_svg(data, chart_title):
     # Color key
     svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="16" fill="#5D5E63">Green: counted toward citizenship. Pale: not counted. Dashed line: processing time after application.</text>')
 
+    # Add vertical reference lines at 5 and 10 years
+    line_y_start = CHART_TOP + 10
+    line_y_end = CHART_TOP + 30 + (5 * CHART_ROW_PITCH)  # Extend through all data rows
+    for year_mark in [5, 10]:
+        x_pos = 420 + (year_mark * PIXELS_PER_YEAR)
+        svg.append(f'<line x1="{x_pos}" y1="{line_y_start}" x2="{x_pos}" y2="{line_y_end}" stroke="#D8D2C6" stroke-width="1" stroke-dasharray="2,3"/>')
+
     y_pos = CHART_TOP + 30
     for row in data:
         country = row["Country"]
