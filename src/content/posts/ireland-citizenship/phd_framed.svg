@@ -25,7 +25,7 @@
 <line x1="1092" y1="258" x2="1092" y2="284" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
 <line x1="1092" y1="284" x2="420" y2="284" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
 <line x1="420" y1="284" x2="420" y2="258" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
-<text x="428" y="282" font-size="11" font-weight="700" fill="#333333">12y*</text>
+<text x="428" y="274" font-size="11" font-weight="700" fill="#333333">12y*</text>
 <text x="1500" text-anchor="end" y="279" font-size="20" fill="#5D5E63">All 4 years on Stamp 2 discarded</text>
 <text x="1500" text-anchor="end" y="298" font-size="16" fill="#8B8C8F">Processing: 12–19 months</text>
 <text x="404" y="364" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">France</text>
@@ -36,7 +36,7 @@
 <line x1="532" y1="342" x2="532" y2="368" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
 <line x1="532" y1="368" x2="420" y2="368" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
 <line x1="420" y1="368" x2="420" y2="342" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
-<text x="428" y="366" font-size="11" font-weight="700" fill="#333333">2y</text>
+<text x="428" y="358" font-size="11" font-weight="700" fill="#333333">2y</text>
 <text x="1500" text-anchor="end" y="363" font-size="20" fill="#5D5E63">All 4 doctoral years count</text>
 <text x="1500" text-anchor="end" y="382" font-size="16" fill="#8B8C8F">Processing: 18–24 months</text>
 <text x="404" y="448" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Germany</text>
@@ -60,7 +60,7 @@
 <line x1="756" y1="594" x2="756" y2="620" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
 <line x1="756" y1="620" x2="420" y2="620" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
 <line x1="420" y1="620" x2="420" y2="594" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
-<text x="428" y="618" font-size="11" font-weight="700" fill="#333333">6y</text>
+<text x="428" y="610" font-size="11" font-weight="700" fill="#333333">6y</text>
 <text x="1500" text-anchor="end" y="615" font-size="20" fill="#5D5E63">All 4 years discarded; no special provision</text>
 <text x="1500" text-anchor="end" y="634" font-size="16" fill="#8B8C8F">Processing: 6–12 months</text>
 </svg>
