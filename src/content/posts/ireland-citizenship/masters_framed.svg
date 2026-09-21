@@ -13,26 +13,36 @@
 <text x="88" y="880.0" font-size="24.0" fill="#5D5E63">Is ar scáth a chéile a mhaireann na daoine</text>
 <text x="1512" y="845.0" font-size="34.0" font-weight="700" fill="#0B0C0E" text-anchor="end">@DeliberatelyÉire</text>
 <text x="1512" y="878.0" font-size="20.0" fill="#5D5E63" text-anchor="end">Sources: DFA, MEA, BAMF, UK Home Office, BMI (2026)</text>
+<defs>
+<pattern id="diagonal-stripes-m" patternUnits="userSpaceOnUse" width="8" height="8">
+<path d="M-2,2 l4,-4 M0,8 l8,-8 M6,10 l4,-4" stroke="#8B8C8F" stroke-width="1.5" opacity="0.7"/>
+</pattern>
+</defs>
 <text x="88" y="200" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">MASTER'S GRADUATES: TIME TO CITIZENSHIP</text>
-<text x="88" y="228" font-size="16" fill="#5D5E63">Dark: counted toward citizenship. Pale: not counted. Dashed line: processing time after application.</text>
+<text x="88" y="228" font-size="18" fill="#5D5E63">Dark: counted toward citizenship. Striped: not counted.</text>
 <text x="404" y="280" font-size="24" font-weight="700" fill="#148708" text-anchor="end">Ireland</text>
-<rect x="420" y="258" width="56" height="26" rx="2" fill="#D8D2C6"/>
+<rect x="420" y="258" width="56" height="26" rx="2" fill="#A99885" stroke="#8B8C8F" stroke-width="1"/>
+<rect x="420" y="258" width="56" height="26" rx="2" fill="url(#diagonal-stripes-m)" opacity="0.5"/>
 <rect x="476" y="258" width="280" height="26" rx="2" fill="#5D5E63"/>
 <text x="776" y="280" font-size="24" font-weight="700" fill="#5D5E63">6y</text>
 <text x="404" y="364" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">France</text>
-<rect x="420" y="342" width="56" height="26" rx="2" fill="#D8D2C6"/>
+<rect x="420" y="342" width="56" height="26" rx="2" fill="#A99885" stroke="#8B8C8F" stroke-width="1"/>
+<rect x="420" y="342" width="56" height="26" rx="2" fill="url(#diagonal-stripes-m)" opacity="0.5"/>
 <rect x="476" y="342" width="280" height="26" rx="2" fill="#5D5E63"/>
 <text x="776" y="364" font-size="24" font-weight="700" fill="#5D5E63">6y</text>
 <text x="404" y="448" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Germany</text>
-<rect x="420" y="426" width="56" height="26" rx="2" fill="#D8D2C6"/>
+<rect x="420" y="426" width="56" height="26" rx="2" fill="#A99885" stroke="#8B8C8F" stroke-width="1"/>
+<rect x="420" y="426" width="56" height="26" rx="2" fill="url(#diagonal-stripes-m)" opacity="0.5"/>
 <rect x="476" y="426" width="280" height="26" rx="2" fill="#5D5E63"/>
 <text x="776" y="448" font-size="24" font-weight="700" fill="#5D5E63">6y</text>
 <text x="404" y="532" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">UK</text>
-<rect x="420" y="510" width="112" height="26" rx="2" fill="#D8D2C6"/>
+<rect x="420" y="510" width="112" height="26" rx="2" fill="#A99885" stroke="#8B8C8F" stroke-width="1"/>
+<rect x="420" y="510" width="112" height="26" rx="2" fill="url(#diagonal-stripes-m)" opacity="0.5"/>
 <rect x="532" y="510" width="280" height="26" rx="2" fill="#5D5E63"/>
 <text x="832" y="532" font-size="24" font-weight="700" fill="#5D5E63">7y</text>
 <text x="404" y="616" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Austria</text>
-<rect x="420" y="594" width="56" height="26" rx="2" fill="#D8D2C6"/>
+<rect x="420" y="594" width="56" height="26" rx="2" fill="#A99885" stroke="#8B8C8F" stroke-width="1"/>
+<rect x="420" y="594" width="56" height="26" rx="2" fill="url(#diagonal-stripes-m)" opacity="0.5"/>
 <rect x="476" y="594" width="560" height="26" rx="2" fill="#5D5E63"/>
 <text x="1056" y="616" font-size="24" font-weight="700" fill="#5D5E63">11y</text>
 </svg>

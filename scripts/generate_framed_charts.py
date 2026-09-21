@@ -22,7 +22,7 @@ POST_VISUALS_DIR = Path.home() / ".claude" / "skills" / "synced" / "57179235-8ab
 PIXELS_PER_YEAR = 56
 COLORS = {
     "ireland": "#148708",
-    "grey_light": "#D8D2C6",
+    "grey_light": "#A99885",  # Increased contrast (was #D8D2C6) for WCAG AA 3:1 ratio
     "grey_dark": "#5D5E63",
     "text_dark": "#0B0C0E",
     "text_light": "#5D5E63",
@@ -85,11 +85,18 @@ def generate_phd_chart_svg(data, chart_title):
     """Generate PhD timeline SVG with internal title and chart content."""
     svg = []
 
+    # Add pattern definition for colorblind accessibility
+    svg.append('<defs>')
+    svg.append('<pattern id="diagonal-stripes" patternUnits="userSpaceOnUse" width="8" height="8">')
+    svg.append('<path d="M-2,2 l4,-4 M0,8 l8,-8 M6,10 l4,-4" stroke="#8B8C8F" stroke-width="1.5" opacity="0.7"/>')
+    svg.append('</pattern>')
+    svg.append('</defs>')
+
     # Internal chart title (visual hierarchy)
     svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y}" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">{chart_title}</text>')
 
-    # Color key
-    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="16" fill="#5D5E63">Green: counted toward citizenship. Pale: not counted. Dashed box: expedited or proposed alternative timeline.</text>')
+    # Color key with improved accessibility
+    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="18" fill="#5D5E63">Green: counted toward citizenship. Striped: not counted. Dashed box: expedited or proposed alternative timeline (*).</text>')
 
     # Add vertical reference lines at 5 and 10 years
     line_y_start = CHART_TOP + 10
@@ -122,21 +129,28 @@ def generate_phd_chart_svg(data, chart_title):
             # For UK: first 2 years discarded, last 2 count
             partial_years = phd_years // 2
             partial_width = partial_years * PIXELS_PER_YEAR
-            svg.append(f'<rect x="420" y="{y_pos - 22}" width="{partial_width}" height="26" rx="2" fill="#D8D2C6"/>')
+            svg.append(f'<rect x="420" y="{y_pos - 22}" width="{partial_width}" height="26" rx="2" fill="{COLORS["grey_light"]}" stroke="#8B8C8F" stroke-width="1"/>')
+            svg.append(f'<rect x="420" y="{y_pos - 22}" width="{partial_width}" height="26" rx="2" fill="url(#diagonal-stripes)" opacity="0.5"/>')
             svg.append(f'<rect x="{420 + partial_width}" y="{y_pos - 22}" width="{partial_width}" height="26" rx="2" fill="{color}"/>')
             phd_width = phd_width  # Keep full width for offset calculation
             svg.append(f'<rect x="{420 + phd_width}" y="{y_pos - 22}" width="{req_width}" height="26" rx="2" fill="{color}"/>')
             total = phd_years + requirement_years
             svg.append(f'<text x="{420 + phd_width + req_width + 20}" y="{y_pos}" font-size="24" font-weight="700" fill="{color}">{total}y</text>')
-            svg.append(f'<text x="1500" text-anchor="end" y="{y_pos - 1}" font-size="18" fill="#5D5E63">{notes}</text>')
+            svg.append(f'<text x="1500" text-anchor="end" y="{y_pos - 1}" font-size="20" fill="#5D5E63">{notes}</text>')
             if proc_min and proc_max:
-                svg.append(f'<text x="1500" text-anchor="end" y="{y_pos + 17}" font-size="14" fill="#8B8C8F">Processing: {proc_min}–{proc_max} months</text>')
+                svg.append(f'<text x="1500" text-anchor="end" y="{y_pos + 18}" font-size="16" fill="#8B8C8F">Processing: {proc_min}–{proc_max} months</text>')
             y_pos += CHART_ROW_PITCH
             continue
         else:
-            phd_bar_color = "#D8D2C6"  # Pale if not counted
+            phd_bar_color = COLORS["grey_light"]  # Pale if not counted
 
-        svg.append(f'<rect x="420" y="{y_pos - 22}" width="{phd_width}" height="26" rx="2" fill="{phd_bar_color}"/>')
+        # Add pale bar with pattern overlay for colorblind accessibility
+        if phd_bar_color == COLORS["grey_light"]:
+            svg.append(f'<rect x="420" y="{y_pos - 22}" width="{phd_width}" height="26" rx="2" fill="{phd_bar_color}" stroke="#8B8C8F" stroke-width="1"/>')
+            svg.append(f'<rect x="420" y="{y_pos - 22}" width="{phd_width}" height="26" rx="2" fill="url(#diagonal-stripes)" opacity="0.5"/>')
+        else:
+            svg.append(f'<rect x="420" y="{y_pos - 22}" width="{phd_width}" height="26" rx="2" fill="{phd_bar_color}"/>')
+
         svg.append(f'<rect x="{420 + phd_width}" y="{y_pos - 22}" width="{req_width}" height="26" rx="2" fill="{color}"/>')
 
         total = phd_years + requirement_years
@@ -158,10 +172,10 @@ def generate_phd_chart_svg(data, chart_title):
             expedited_label = f"{expedited}y*" if country == "Ireland" else f"{expedited}y"
             svg.append(f'<text x="{box_x + 8}" y="{y_pos + 2}" font-size="11" font-weight="700" fill="#333333">{expedited_label}</text>')
 
-        svg.append(f'<text x="1500" text-anchor="end" y="{y_pos - 1}" font-size="18" fill="#5D5E63">{notes}</text>')
+        svg.append(f'<text x="1500" text-anchor="end" y="{y_pos - 1}" font-size="20" fill="#5D5E63">{notes}</text>')
 
         if proc_min and proc_max:
-            svg.append(f'<text x="1500" text-anchor="end" y="{y_pos + 17}" font-size="14" fill="#8B8C8F">Processing: {proc_min}–{proc_max} months</text>')
+            svg.append(f'<text x="1500" text-anchor="end" y="{y_pos + 18}" font-size="16" fill="#8B8C8F">Processing: {proc_min}–{proc_max} months</text>')
 
         y_pos += CHART_ROW_PITCH
 
@@ -171,10 +185,17 @@ def generate_workers_chart_svg(data, chart_title):
     """Generate workers timeline SVG with internal title."""
     svg = []
 
+    # Add pattern definition for colorblind accessibility
+    svg.append('<defs>')
+    svg.append('<pattern id="diagonal-stripes-w" patternUnits="userSpaceOnUse" width="8" height="8">')
+    svg.append('<path d="M-2,2 l4,-4 M0,8 l8,-8 M6,10 l4,-4" stroke="#8B8C8F" stroke-width="1.5" opacity="0.7"/>')
+    svg.append('</pattern>')
+    svg.append('</defs>')
+
     svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y}" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">{chart_title}</text>')
 
     # Color key
-    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="16" fill="#5D5E63">Dark: counted toward citizenship. Dashed line: processing time after application.</text>')
+    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="18" fill="#5D5E63">Dark: counted toward citizenship.</text>')
 
     y_pos = CHART_TOP + 30
     for row in data:
@@ -195,10 +216,17 @@ def generate_masters_chart_svg(data, chart_title):
     """Generate masters timeline SVG with internal title."""
     svg = []
 
+    # Add pattern definition for colorblind accessibility
+    svg.append('<defs>')
+    svg.append('<pattern id="diagonal-stripes-m" patternUnits="userSpaceOnUse" width="8" height="8">')
+    svg.append('<path d="M-2,2 l4,-4 M0,8 l8,-8 M6,10 l4,-4" stroke="#8B8C8F" stroke-width="1.5" opacity="0.7"/>')
+    svg.append('</pattern>')
+    svg.append('</defs>')
+
     svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y}" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">{chart_title}</text>')
 
     # Color key
-    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="16" fill="#5D5E63">Dark: counted toward citizenship. Pale: not counted. Dashed line: processing time after application.</text>')
+    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="18" fill="#5D5E63">Dark: counted toward citizenship. Striped: not counted.</text>')
 
     y_pos = CHART_TOP + 30
     for row in data:
@@ -211,7 +239,8 @@ def generate_masters_chart_svg(data, chart_title):
         svg.append(f'<text x="404" y="{y_pos}" font-size="24" font-weight="700" fill="{country_color}" text-anchor="end">{country}</text>')
 
         if master_years:
-            svg.append(f'<rect x="420" y="{y_pos - 22}" width="{master_years * PIXELS_PER_YEAR}" height="26" rx="2" fill="#D8D2C6"/>')
+            svg.append(f'<rect x="420" y="{y_pos - 22}" width="{master_years * PIXELS_PER_YEAR}" height="26" rx="2" fill="{COLORS["grey_light"]}" stroke="#8B8C8F" stroke-width="1"/>')
+            svg.append(f'<rect x="420" y="{y_pos - 22}" width="{master_years * PIXELS_PER_YEAR}" height="26" rx="2" fill="url(#diagonal-stripes-m)" opacity="0.5"/>')
             svg.append(f'<rect x="{420 + master_years * PIXELS_PER_YEAR}" y="{y_pos - 22}" width="{requirement * PIXELS_PER_YEAR}" height="26" rx="2" fill="#5D5E63"/>')
         else:
             svg.append(f'<rect x="420" y="{y_pos - 22}" width="{requirement * PIXELS_PER_YEAR}" height="26" rx="2" fill="#5D5E63"/>')
@@ -228,7 +257,7 @@ def generate_spouses_chart_svg(data, chart_title):
     svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y}" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">{chart_title}</text>')
 
     # Color key
-    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="16" fill="#5D5E63">Green: Ireland. Dark: other countries. Dashed line: processing time after application.</text>')
+    svg.append(f'<text x="{CONTENT_LEFT}" y="{CHART_TITLE_Y + 28}" font-size="18" fill="#5D5E63">Green: Ireland. Dark: other countries.</text>')
 
     y_pos = CHART_TOP + 30
     for row in data:

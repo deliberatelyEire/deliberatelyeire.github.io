@@ -13,12 +13,18 @@
 <text x="88" y="880.0" font-size="24.0" fill="#5D5E63">Is ar scáth a chéile a mhaireann na daoine</text>
 <text x="1512" y="845.0" font-size="34.0" font-weight="700" fill="#0B0C0E" text-anchor="end">@DeliberatelyÉire</text>
 <text x="1512" y="878.0" font-size="20.0" fill="#5D5E63" text-anchor="end">Sources: DFA, MEA, BAMF, UK Home Office, BMI (2026)</text>
+<defs>
+<pattern id="diagonal-stripes" patternUnits="userSpaceOnUse" width="8" height="8">
+<path d="M-2,2 l4,-4 M0,8 l8,-8 M6,10 l4,-4" stroke="#8B8C8F" stroke-width="1.5" opacity="0.7"/>
+</pattern>
+</defs>
 <text x="88" y="200" font-size="22" font-weight="700" fill="#5D5E63" letter-spacing="1.4">PhD STUDENTS: TIME TO CITIZENSHIP</text>
-<text x="88" y="228" font-size="16" fill="#5D5E63">Green: counted toward citizenship. Pale: not counted. Dashed box: expedited or proposed alternative timeline.</text>
+<text x="88" y="228" font-size="18" fill="#5D5E63">Green: counted toward citizenship. Striped: not counted. Dashed box: expedited or proposed alternative timeline (*).</text>
 <line x1="700" y1="260" x2="700" y2="700" stroke="#D8D2C6" stroke-width="1" stroke-dasharray="2,3"/>
 <line x1="980" y1="260" x2="980" y2="700" stroke="#D8D2C6" stroke-width="1" stroke-dasharray="2,3"/>
 <text x="404" y="280" font-size="24" font-weight="700" fill="#148708" text-anchor="end">Ireland</text>
-<rect x="420" y="258" width="224" height="26" rx="2" fill="#D8D2C6"/>
+<rect x="420" y="258" width="224" height="26" rx="2" fill="#A99885" stroke="#8B8C8F" stroke-width="1"/>
+<rect x="420" y="258" width="224" height="26" rx="2" fill="url(#diagonal-stripes)" opacity="0.5"/>
 <rect x="644" y="258" width="280" height="26" rx="2" fill="#148708"/>
 <text x="944" y="280" font-size="24" font-weight="700" fill="#148708">9y</text>
 <line x1="420" y1="258" x2="1092" y2="258" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
@@ -26,8 +32,8 @@
 <line x1="1092" y1="284" x2="420" y2="284" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
 <line x1="420" y1="284" x2="420" y2="258" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
 <text x="428" y="282" font-size="11" font-weight="700" fill="#333333">12y*</text>
-<text x="1500" text-anchor="end" y="279" font-size="18" fill="#5D5E63">All 4 years on Stamp 2 discarded</text>
-<text x="1500" text-anchor="end" y="297" font-size="14" fill="#8B8C8F">Processing: 12–19 months</text>
+<text x="1500" text-anchor="end" y="279" font-size="20" fill="#5D5E63">All 4 years on Stamp 2 discarded</text>
+<text x="1500" text-anchor="end" y="298" font-size="16" fill="#8B8C8F">Processing: 12–19 months</text>
 <text x="404" y="364" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">France</text>
 <rect x="420" y="342" width="224" height="26" rx="2" fill="#5D5E63"/>
 <rect x="644" y="342" width="280" height="26" rx="2" fill="#5D5E63"/>
@@ -37,23 +43,25 @@
 <line x1="532" y1="368" x2="420" y2="368" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
 <line x1="420" y1="368" x2="420" y2="342" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
 <text x="428" y="366" font-size="11" font-weight="700" fill="#333333">2y</text>
-<text x="1500" text-anchor="end" y="363" font-size="18" fill="#5D5E63">All 4 doctoral years count</text>
-<text x="1500" text-anchor="end" y="381" font-size="14" fill="#8B8C8F">Processing: 18–24 months</text>
+<text x="1500" text-anchor="end" y="363" font-size="20" fill="#5D5E63">All 4 doctoral years count</text>
+<text x="1500" text-anchor="end" y="382" font-size="16" fill="#8B8C8F">Processing: 18–24 months</text>
 <text x="404" y="448" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Germany</text>
 <rect x="420" y="426" width="224" height="26" rx="2" fill="#5D5E63"/>
 <rect x="644" y="426" width="280" height="26" rx="2" fill="#5D5E63"/>
 <text x="944" y="448" font-size="24" font-weight="700" fill="#5D5E63">9y</text>
-<text x="1500" text-anchor="end" y="447" font-size="18" fill="#5D5E63">All 4 years count via settlement permit</text>
-<text x="1500" text-anchor="end" y="465" font-size="14" fill="#8B8C8F">Processing: 4–8 months</text>
+<text x="1500" text-anchor="end" y="447" font-size="20" fill="#5D5E63">All 4 years count via settlement permit</text>
+<text x="1500" text-anchor="end" y="466" font-size="16" fill="#8B8C8F">Processing: 4–8 months</text>
 <text x="404" y="532" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">UK</text>
-<rect x="420" y="510" width="112" height="26" rx="2" fill="#D8D2C6"/>
+<rect x="420" y="510" width="112" height="26" rx="2" fill="#A99885" stroke="#8B8C8F" stroke-width="1"/>
+<rect x="420" y="510" width="112" height="26" rx="2" fill="url(#diagonal-stripes)" opacity="0.5"/>
 <rect x="532" y="510" width="112" height="26" rx="2" fill="#5D5E63"/>
 <rect x="644" y="510" width="280" height="26" rx="2" fill="#5D5E63"/>
 <text x="944" y="532" font-size="24" font-weight="700" fill="#5D5E63">9y</text>
-<text x="1500" text-anchor="end" y="531" font-size="18" fill="#5D5E63">First 2 years discarded; last 2 count</text>
-<text x="1500" text-anchor="end" y="549" font-size="14" fill="#8B8C8F">Processing: 6–12 months</text>
+<text x="1500" text-anchor="end" y="531" font-size="20" fill="#5D5E63">First 2 years discarded; last 2 count</text>
+<text x="1500" text-anchor="end" y="550" font-size="16" fill="#8B8C8F">Processing: 6–12 months</text>
 <text x="404" y="616" font-size="24" font-weight="700" fill="#0B0C0E" text-anchor="end">Austria</text>
-<rect x="420" y="594" width="224" height="26" rx="2" fill="#D8D2C6"/>
+<rect x="420" y="594" width="224" height="26" rx="2" fill="#A99885" stroke="#8B8C8F" stroke-width="1"/>
+<rect x="420" y="594" width="224" height="26" rx="2" fill="url(#diagonal-stripes)" opacity="0.5"/>
 <rect x="644" y="594" width="560" height="26" rx="2" fill="#5D5E63"/>
 <text x="1224" y="616" font-size="24" font-weight="700" fill="#5D5E63">14y</text>
 <line x1="420" y1="594" x2="756" y2="594" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
@@ -61,6 +69,6 @@
 <line x1="756" y1="620" x2="420" y2="620" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
 <line x1="420" y1="620" x2="420" y2="594" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,3"/>
 <text x="428" y="618" font-size="11" font-weight="700" fill="#333333">6y</text>
-<text x="1500" text-anchor="end" y="615" font-size="18" fill="#5D5E63">All 4 years discarded; no special provision</text>
-<text x="1500" text-anchor="end" y="633" font-size="14" fill="#8B8C8F">Processing: 6–12 months</text>
+<text x="1500" text-anchor="end" y="615" font-size="20" fill="#5D5E63">All 4 years discarded; no special provision</text>
+<text x="1500" text-anchor="end" y="634" font-size="16" fill="#8B8C8F">Processing: 6–12 months</text>
 </svg>
