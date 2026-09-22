@@ -243,7 +243,7 @@ File: `tests.svg`
 `![The two new tests, and the one thing that can never be waived](./tests.svg)`
 
 ## 7. Reckonable residence — figure 1200×675
-Canvas: figure | Layout: single column of pale-marked rows
+Canvas: figure | Layout: single column of muted-marked rows
 Position: in "4. Cleaner Reckonable Residence", replacing the bullet list.
 File: `reckonable.svg`
 - Subtitle: "Time the Scheme stops counting"
@@ -251,9 +251,8 @@ File: `reckonable.svg`
   or the article enumerates what remains included. A "counts" column would have to be
   inferred, and an inferred column on an image that travels alone is exactly the kind
   of plausible fabrication the sourcing rules exist to stop.
-- The row marker is `muted`, the same colour the journey figure uses for time that
-  does not count. (The sibling pathway charts still use the older `#9C8B76` pale,
-  which is outside the token set.)
+- The row marker is `muted`, the same colour the journey figure and the sibling
+  pathway charts use for time that does not count.
 - Footer: the transitional protection — applications made before commencement are
   assessed under the old rules.
 - Source: "Head 9; s. 16A; International Protection Act 2015 s. 60(6)"
