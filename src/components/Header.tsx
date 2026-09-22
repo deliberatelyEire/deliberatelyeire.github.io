@@ -30,23 +30,23 @@ const Header = () => {
               <img src={logoImg} alt="Deliberately Éire Diya Mark" className="h-full w-full object-cover" />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg md:text-xl font-bold tracking-tight text-foreground font-serif leading-none">
+              <span className="type-h4 !leading-none font-bold text-foreground">
                 Deliberately <span className="text-primary font-bold">Éire</span>
               </span>
-              <span className="text-[10px] text-muted-foreground font-sans-ui tracking-wider uppercase font-semibold">
+              <span className="type-label font-semibold text-muted-foreground">
                 Ireland &amp; India Ties
               </span>
             </div>
           </Link>
           
-          <nav className="hidden md:flex items-center gap-6 font-sans-ui">
+          <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item) => {
               const isActive = location.pathname === item.href;
               return (
                 <Link
                   key={item.label}
                   to={item.href}
-                  className={`text-sm font-medium transition-colors ${
+                  className={`type-ui font-medium transition-colors ${
                     isActive
                       ? "text-primary font-semibold"
                       : "text-muted-foreground hover:text-foreground"
@@ -69,7 +69,7 @@ const Header = () => {
           <ModeToggle />
           <a
             href="#newsletter"
-            className="hidden sm:inline-flex items-center rounded-md bg-primary px-3.5 py-1.5 text-xs md:text-sm font-semibold text-primary-foreground font-sans-ui shadow-sm transition-transform hover:scale-105 active:scale-95"
+            className="hidden sm:inline-flex items-center rounded-md bg-primary px-3.5 py-1.5 type-ui font-semibold text-primary-foreground shadow-sm transition-transform hover:scale-105 active:scale-95"
           >
             Subscribe
           </a>
@@ -91,13 +91,13 @@ const Header = () => {
             exit={{ height: 0, opacity: 0 }}
             className="overflow-hidden border-t border-border md:hidden bg-card"
           >
-            <nav className="container flex flex-col gap-3 py-4 font-sans-ui">
+            <nav className="container flex flex-col gap-3 py-4">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   to={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm font-medium text-foreground hover:text-primary py-1"
+                  className="type-ui font-medium text-foreground hover:text-primary py-1"
                 >
                   {item.label}
                 </Link>
@@ -105,7 +105,7 @@ const Header = () => {
               <a
                 href="#newsletter"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 text-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground"
+                className="mt-2 text-center rounded-md bg-primary px-4 py-2 type-ui font-semibold text-primary-foreground"
               >
                 Subscribe to Dispatch
               </a>

@@ -84,13 +84,13 @@ const Podcasts = () => {
               <Headphones className="h-7 w-7 text-primary" />
             </div>
             <div>
-              <span className="text-xs uppercase tracking-wider font-sans-ui font-bold text-primary">
+              <span className="type-label font-bold text-primary">
                 Audio Archive &amp; Scholarly Interviews
               </span>
-              <h1 className="text-3xl md:text-5xl font-bold text-foreground font-serif">
+              <h1 className="type-display font-bold text-foreground">
                 The Deliberately Éire Conversations
               </h1>
-              <p className="mt-1 text-muted-foreground font-serif text-sm md:text-base">
+              <p className="mt-1 type-body text-muted-foreground">
                 In-depth dialogues with historians, diplomats, legal scholars, and diaspora leaders examining Ireland–India connections.
               </p>
             </div>
@@ -130,26 +130,26 @@ const Podcasts = () => {
                   
                   <div className="flex-1 min-w-0 space-y-2 flex flex-col justify-between">
                     <div className="space-y-1.5">
-                      <div className="flex flex-wrap items-center gap-3 text-xs font-sans-ui text-muted-foreground">
+                      <div className="flex flex-wrap items-center gap-3 type-meta text-muted-foreground">
                         <span className="font-bold text-primary">Episode {ep.id}</span>
                         <span>·</span>
                         <span>{ep.date}</span>
                         <span>·</span>
                         <span className="flex items-center gap-1"><Clock className="h-3 w-3" />{ep.duration}</span>
                       </div>
-                      <h2 className="text-base md:text-lg font-bold text-foreground group-hover:text-primary transition-colors font-serif leading-snug">
+                      <h2 className="type-title font-bold text-foreground group-hover:text-primary transition-colors">
                         {ep.title}
                       </h2>
-                      <p className="text-xs font-semibold font-sans-ui text-primary/90 flex items-center gap-1">
+                      <p className="type-meta font-semibold text-primary/90 flex items-center gap-1">
                         <Mic className="h-3.5 w-3.5" /> Featuring: {ep.guest}
                       </p>
-                      <p className="text-xs md:text-sm text-muted-foreground line-clamp-2 font-serif leading-relaxed">
+                      <p className="type-caption text-muted-foreground line-clamp-2">
                         {ep.description}
                       </p>
                     </div>
 
                     {isPlaying && (
-                      <div className="pt-2 flex items-center gap-2 text-xs font-sans-ui text-primary font-semibold animate-pulse">
+                      <div className="pt-2 flex items-center gap-2 type-meta text-primary font-semibold animate-pulse">
                         <span>▶ Audio stream playing · Deliberately Éire Audio Player</span>
                       </div>
                     )}

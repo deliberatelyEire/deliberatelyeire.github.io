@@ -8,18 +8,18 @@ const Footer = () => {
         {/* Bilingual Mottos Band */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-8 border-b border-border">
           <div className="space-y-1">
-            <p className="font-deva text-xl md:text-2xl font-bold text-foreground tracking-wide">
+            <p className="type-deva font-bold text-foreground">
               सर्वे भवन्तु सुखिनः
             </p>
-            <p className="text-xs text-muted-foreground font-sans-ui italic">
+            <p className="type-meta italic text-muted-foreground">
               "May all beings be happy, healthy, and free from harm"
             </p>
           </div>
           <div className="space-y-1 md:text-right">
-            <p className="text-lg md:text-xl font-bold text-foreground font-serif italic text-primary">
+            <p className="type-h4 font-bold italic text-primary">
               Is ar scáth a chéile a mhaireann na daoine
             </p>
-            <p className="text-xs text-muted-foreground font-sans-ui italic">
+            <p className="type-meta italic text-muted-foreground">
               "Under each other's shelter, the people flourish"
             </p>
           </div>
@@ -32,16 +32,16 @@ const Footer = () => {
               <img src={logoImg} alt="Deliberately Éire Logo" className="h-full w-full object-cover" />
             </div>
             <div>
-              <span className="text-base font-bold text-foreground font-serif">
+              <span className="type-title font-bold text-foreground">
                 Deliberately <span className="text-primary">Éire</span>
               </span>
-              <span className="text-xs text-muted-foreground font-sans-ui block">
+              <span className="type-meta block text-muted-foreground">
                 @delibratelyEire · Ties older than either republic
               </span>
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 text-sm font-sans-ui text-muted-foreground">
+          <div className="flex flex-wrap justify-center gap-6 type-ui text-muted-foreground">
             <Link to="/blog" className="hover:text-primary transition-colors">Articles</Link>
             <Link to="/about" className="hover:text-primary transition-colors">About</Link>
             {/* Hidden until they hold real content; pages and routes are intact.
@@ -51,7 +51,7 @@ const Footer = () => {
             <a href="https://x.com/delibratelyEire" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">X (@delibratelyEire)</a>
           </div>
 
-          <p className="text-xs text-muted-foreground font-sans-ui">
+          <p className="type-meta text-muted-foreground">
             © {new Date().getFullYear()} Deliberately Éire. Independent &amp; Open Research.
           </p>
         </div>

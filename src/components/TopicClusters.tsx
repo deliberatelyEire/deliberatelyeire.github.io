@@ -10,14 +10,14 @@ const TopicClusters = () => {
     <section className="container py-8">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-xl md:text-2xl font-bold text-foreground font-serif">
+          <h2 className="type-h3 font-bold text-foreground">
             Thematic Focus Areas
           </h2>
-          <p className="text-sm text-muted-foreground font-sans-ui mt-0.5">
+          <p className="type-ui text-muted-foreground mt-0.5">
             Explore research across four primary pillars of Ireland–India connection
           </p>
         </div>
-        <Link to="/blog" className="text-xs font-semibold font-sans-ui text-primary hover:underline">
+        <Link to="/blog" className="type-meta font-semibold text-primary hover:underline">
           View All →
         </Link>
       </div>
@@ -42,10 +42,10 @@ const TopicClusters = () => {
                   <Icon className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-foreground font-serif group-hover:text-primary transition-colors">
+                  <h3 className="type-caption font-bold text-foreground group-hover:text-primary transition-colors">
                     {topic.name}
                   </h3>
-                  <span className="text-xs text-muted-foreground font-sans-ui mt-1 block">
+                  <span className="type-meta text-muted-foreground mt-1 block">
                     {topic.count} documents &amp; essays
                   </span>
                 </div>

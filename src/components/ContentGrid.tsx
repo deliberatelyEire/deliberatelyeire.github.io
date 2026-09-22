@@ -14,9 +14,9 @@ const ContentGrid = () => {
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 mx-auto text-primary">
             <BookOpen className="h-6 w-6" />
           </div>
-          <h3 className="text-xl font-bold font-serif text-foreground">Archival Publications in Preparation</h3>
-          <p className="text-sm font-serif text-muted-foreground max-w-md mx-auto">
-            Our upcoming research chronicles and demographic briefs will appear here. Add Markdown files to <code className="text-xs bg-muted px-1.5 py-0.5 rounded font-mono">src/content/posts/</code> to publish.
+          <h3 className="type-h3 font-bold text-foreground">Archival Publications in Preparation</h3>
+          <p className="type-caption text-muted-foreground max-w-md mx-auto">
+            Our upcoming research chronicles and demographic briefs will appear here. Add Markdown files to <code className="bg-muted px-1.5 py-0.5 rounded font-mono text-[0.9em]">src/content/posts/</code> to publish.
           </p>
         </div>
       </section>
@@ -27,10 +27,10 @@ const ContentGrid = () => {
     <section className="container py-8">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-xl md:text-2xl font-bold text-foreground font-serif">
+          <h2 className="type-h3 font-bold text-foreground">
             Recent Publications &amp; Chronicles
           </h2>
-          <p className="text-sm text-muted-foreground font-sans-ui mt-0.5">
+          <p className="type-ui text-muted-foreground mt-0.5">
             Archival explorations, biographical sketches, and socio-economic briefs
           </p>
         </div>
@@ -58,18 +58,18 @@ const ContentGrid = () => {
                   />
                 </div>
                 <div className="mt-3 space-y-1.5">
-                  <span className="text-[11px] font-sans-ui font-semibold text-primary uppercase tracking-wide">
+                  <span className="type-label font-semibold text-primary">
                     {article.category}
                   </span>
-                  <h3 className="text-sm font-bold leading-snug text-foreground group-hover:text-primary transition-colors font-serif line-clamp-2">
+                  <h3 className="type-caption font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2">
                     {article.title}
                   </h3>
-                  <p className="text-xs text-muted-foreground line-clamp-2 font-serif">
+                  <p className="type-caption text-muted-foreground line-clamp-2">
                     {article.excerpt}
                   </p>
                 </div>
               </div>
-              <div className="flex items-center justify-between text-xs font-sans-ui text-muted-foreground pt-3 mt-2 border-t border-border/50">
+              <div className="flex items-center justify-between type-meta text-muted-foreground pt-3 mt-2 border-t border-border/50">
                 <span className="font-medium">{article.author}</span>
                 <span>{article.date}</span>
               </div>

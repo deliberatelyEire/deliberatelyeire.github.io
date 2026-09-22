@@ -97,27 +97,190 @@
 }
 
 @layer base {
+  :root {
+    /* The three families, declared once. tailwind.config.ts reads these, so a
+       family is never spelled out in two places. Source Serif 4 is quoted
+       because an unquoted family must be a sequence of CSS identifiers and `4`
+       is not one -- unquoted, the whole declaration is invalid and discarded. */
+    --font-serif: "Source Serif 4", "Bitstream Charter", Charter, Georgia, serif;
+    --font-ui: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    --font-deva: "Noto Serif Devanagari", "Lohit Devanagari", serif;
+  }
+
   * {
     @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Source Serif 4', 'Bitstream Charter', Charter, Georgia, serif;
+    font-family: var(--font-serif);
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Source Serif 4', 'Bitstream Charter', Charter, Georgia, serif;
+    font-family: var(--font-serif);
     font-weight: 700;
     letter-spacing: -0.015em;
   }
 
   .font-deva {
-    font-family: 'Noto Serif Devanagari', 'Lohit Devanagari', serif;
+    font-family: var(--font-deva);
   }
 
   .font-sans-ui {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    font-family: var(--font-ui);
+  }
+}
+
+/* ---------------------------------------------------------------- type scale
+
+   One class per role. Each sets family, size and line-height together, which is
+   the point: `text-base md:text-lg leading-relaxed` looks like it asks for
+   1.625 everywhere, but `md:text-lg` re-declares line-height inside the media
+   block and wins, so the prose quietly rendered at 1.556 above 768px while the
+   list items beside it stayed at 1.625. A size and its leading cannot drift
+   apart if one rule sets both.
+
+   Weight, colour and alignment stay as ordinary utilities -- the same role is
+   drawn at several weights. Roles carry tracking only where it is intrinsic:
+   the optical tightening on display type, the opening-out on small caps.
+
+   Sizes are the ones the citizenship article already used; see TYPOGRAPHY.md
+   for the table and for which role belongs where. */
+@layer utilities {
+  .type-display,
+  .type-h1,
+  .type-h2,
+  .type-h3,
+  .type-h4,
+  .type-title,
+  .type-body,
+  .type-caption {
+    font-family: var(--font-serif);
+  }
+
+  .type-ui,
+  .type-meta,
+  .type-label {
+    font-family: var(--font-ui);
+  }
+
+  .type-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 1.4;
+    letter-spacing: 0.025em;
+  }
+
+  /* Display -- page and article titles. One per page. */
+  .type-display {
+    font-size: 1.875rem;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+  }
+
+  /* Headings, in descending order. h4 is the smallest that still reads as a
+     heading rather than as bold body copy. */
+  .type-h1 {
+    font-size: 1.875rem;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+  }
+
+  .type-h2 {
+    font-size: 1.5rem;
+    line-height: 1.33;
+    letter-spacing: -0.015em;
+  }
+
+  .type-h3 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    letter-spacing: -0.015em;
+  }
+
+  .type-h4 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+    letter-spacing: -0.015em;
+  }
+
+  /* Card and list-item titles -- a link, not a section break. */
+  .type-title {
+    font-size: 1rem;
+    line-height: 1.375;
+  }
+
+  /* Running prose. The one role tuned for reading length rather than for fit. */
+  .type-body {
+    font-size: 1rem;
+    line-height: 1.625;
+  }
+
+  .type-caption {
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+
+  /* Interface text: buttons, nav, filters, table cells. Does not grow with the
+     viewport -- a button label is the same size on a phone as on a desktop. */
+  .type-ui {
+    font-size: 0.875rem;
+    line-height: 1.43;
+  }
+
+  /* Bylines, dates, read times, source lines. The floor: nothing smaller. */
+  .type-meta {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  /* Kickers, category chips, eyebrow labels. Always small caps. */
+  .type-label {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* One step up at md. Interface roles are deliberately absent. */
+  @media (min-width: 768px) {
+    .type-display {
+      font-size: 3rem;
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+    }
+
+    .type-h1 {
+      font-size: 2.25rem;
+      line-height: 1.15;
+    }
+
+    .type-h2 {
+      font-size: 1.875rem;
+      line-height: 1.2;
+    }
+
+    .type-h3 {
+      font-size: 1.5rem;
+      line-height: 1.33;
+    }
+
+    .type-h4 {
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+
+    .type-title {
+      font-size: 1.125rem;
+    }
+
+    .type-body {
+      font-size: 1.125rem;
+    }
+
+    .type-deva {
+      font-size: 1.5rem;
+    }
   }
 }
 

@@ -64,13 +64,13 @@ const Resources = () => {
       <main>
         <section className="container py-12">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-2">
-            <span className="text-xs uppercase tracking-wider font-sans-ui font-bold text-primary">
+            <span className="type-label font-bold text-primary">
               Open Research &amp; Archival Tools
             </span>
-            <h1 className="text-3xl md:text-5xl font-bold text-foreground font-serif">
+            <h1 className="type-display font-bold text-foreground">
               Resources &amp; Data Packs
             </h1>
-            <p className="mt-2 text-muted-foreground text-base max-w-2xl font-serif">
+            <p className="mt-2 type-body text-muted-foreground max-w-2xl">
               Freely available datasets, constitutional concordances, policy briefs, and historical chronicles compiled by Deliberately Éire.
             </p>
           </motion.div>
@@ -93,21 +93,21 @@ const Resources = () => {
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                         <Icon className="h-5 w-5 text-primary" />
                       </div>
-                      <span className="text-xs font-semibold font-sans-ui text-primary bg-primary/10 px-2.5 py-1 rounded-full">
+                      <span className="type-meta font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-full">
                         {resource.type}
                       </span>
                     </div>
-                    <h2 className="text-lg font-bold text-foreground font-serif leading-snug">{resource.title}</h2>
-                    <p className="text-xs md:text-sm text-muted-foreground font-serif leading-relaxed">{resource.description}</p>
+                    <h2 className="type-h4 font-bold text-foreground">{resource.title}</h2>
+                    <p className="type-caption text-muted-foreground">{resource.description}</p>
                   </div>
                   
-                  <div className="flex items-center justify-between pt-3 border-t border-border/50 font-sans-ui">
-                    <span className="text-xs text-muted-foreground flex items-center gap-1">
+                  <div className="flex items-center justify-between pt-3 border-t border-border/50">
+                    <span className="type-meta text-muted-foreground flex items-center gap-1">
                       <Download className="h-3.5 w-3.5" />{resource.downloads} downloads
                     </span>
                     <button
                       onClick={() => handleDownload(resource.title)}
-                      className={`rounded-md px-3.5 py-1.5 text-xs font-semibold transition-all ${
+                      className={`rounded-md px-3.5 py-1.5 type-meta font-semibold transition-all ${
                         isDownloaded
                           ? "bg-primary/20 text-primary border border-primary/30 flex items-center gap-1"
                           : "bg-primary text-primary-foreground hover:scale-105 active:scale-95 shadow-sm"

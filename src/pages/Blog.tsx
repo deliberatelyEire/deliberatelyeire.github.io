@@ -43,27 +43,27 @@ const Blog = () => {
       <main>
         <section className="container py-12">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-2">
-            <span className="text-xs uppercase tracking-wider font-sans-ui font-bold text-primary">
+            <span className="type-label font-bold text-primary">
               Archival Essays &amp; Contemporary Studies
             </span>
-            <h1 className="text-3xl md:text-5xl font-bold text-foreground font-serif">
+            <h1 className="type-display font-bold text-foreground">
               Articles &amp; Chronicles
             </h1>
-            <p className="mt-2 text-muted-foreground text-base max-w-2xl font-serif">
+            <p className="mt-2 type-body text-muted-foreground max-w-2xl">
               Explore primary sources, constitutional lineages, diplomatic records, and living diaspora narratives between Ireland and India.
             </p>
           </motion.div>
 
           {/* Category Filter Pills */}
-          <div className="mt-8 flex flex-wrap items-center gap-2 pb-4 border-b border-border font-sans-ui">
-            <div className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground mr-2">
+          <div className="mt-8 flex flex-wrap items-center gap-2 pb-4 border-b border-border">
+            <div className="flex items-center gap-1.5 type-meta font-semibold text-muted-foreground mr-2">
               <Filter className="h-3.5 w-3.5" /> Filter:
             </div>
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => handleSelectCategory(cat)}
-                className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all ${
+                className={`rounded-full px-3.5 py-1.5 type-meta font-semibold transition-all ${
                   activeCategory.toLowerCase() === cat.toLowerCase()
                     ? "bg-primary text-primary-foreground shadow-sm"
                     : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
@@ -78,8 +78,8 @@ const Blog = () => {
           <div className="mt-10">
             {filteredArticles.length === 0 ? (
               <div className="rounded-xl border border-dashed border-border p-12 text-center space-y-3 bg-card/40 my-8">
-                <h3 className="text-xl font-bold font-serif text-foreground">No Articles Published Yet</h3>
-                <p className="text-sm font-serif text-muted-foreground max-w-md mx-auto">
+                <h3 className="type-h3 font-bold text-foreground">No Articles Published Yet</h3>
+                <p className="type-caption text-muted-foreground max-w-md mx-auto">
                   {activeCategory === "All"
                     ? "Chronicles, archival essays, and demographic studies are in preparation. Drop your Markdown files in src/content/posts/ to publish."
                     : `No articles currently published under "${activeCategory}". Select another category or check back soon.`}
@@ -87,7 +87,7 @@ const Blog = () => {
                 {activeCategory !== "All" && (
                   <button
                     onClick={() => handleSelectCategory("All")}
-                    className="inline-block mt-2 text-xs font-semibold text-primary underline"
+                    className="inline-block mt-2 type-meta font-semibold text-primary underline"
                   >
                     View All Categories
                   </button>
@@ -117,7 +117,7 @@ const Blog = () => {
                           />
                         </div>
                         <div className="mt-4 space-y-2">
-                          <div className="flex items-center justify-between font-sans-ui text-xs">
+                          <div className="flex items-center justify-between type-meta">
                             <span className="font-semibold text-primary">{post.category}</span>
                             {post.readTime && (
                               <span className="text-muted-foreground flex items-center gap-1">
@@ -125,15 +125,15 @@ const Blog = () => {
                               </span>
                             )}
                           </div>
-                          <h2 className="text-base md:text-lg font-bold leading-snug text-foreground group-hover:text-primary transition-colors font-serif line-clamp-2">
+                          <h2 className="type-title font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2">
                             {post.title}
                           </h2>
-                          <p className="text-xs md:text-sm text-muted-foreground line-clamp-3 font-serif">
+                          <p className="type-caption text-muted-foreground line-clamp-3">
                             {post.excerpt}
                           </p>
                         </div>
                       </Link>
-                      <div className="flex items-center justify-between text-xs font-sans-ui text-muted-foreground pt-4 mt-3 border-t border-border/60">
+                      <div className="flex items-center justify-between type-meta text-muted-foreground pt-4 mt-3 border-t border-border/60">
                         <span className="font-semibold text-foreground">{post.author}</span>
                         <span>{post.date}</span>
                       </div>

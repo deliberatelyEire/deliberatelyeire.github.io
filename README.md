@@ -151,6 +151,7 @@ This is configured as a GitHub Pages site. The `postbuild` script in `package.js
 - **Styling**: Tailwind CSS 3.4 with oklch color scheme
 - **UI components**: shadcn/ui (Radix UI primitives)
 - **Animations**: Framer Motion 12
+- **Typography**: Semantic type scale — 3 families, 12 roles, one breakpoint. See [TYPOGRAPHY.md](TYPOGRAPHY.md)
 - **Data viz**: Custom Python SVG generation, with the site's serifs (Source Serif 4, Noto Serif Devanagari) subset into each SVG
 - **Content**: Markdown with YAML frontmatter
 - **Query**: @tanstack/react-query

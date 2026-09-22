@@ -64,8 +64,8 @@ const Newsletters = () => {
                   <Mail className="h-7 w-7" />
                 </div>
               </div>
-              <h1 className="text-3xl md:text-5xl font-bold font-serif">Curated Research Dispatches</h1>
-              <p className="mt-3 text-primary-foreground/85 text-base md:text-lg font-serif">
+              <h1 className="type-display font-bold">Curated Research Dispatches</h1>
+              <p className="mt-3 type-body text-primary-foreground/85">
                 Deliberately Éire publications delivered directly to your inbox. Select the research streams most relevant to your interests.
               </p>
             </motion.div>
@@ -91,11 +91,11 @@ const Newsletters = () => {
                         <Icon className="h-6 w-6 text-primary" />
                       </div>
                       <div>
-                        <h2 className="text-lg md:text-xl font-bold text-foreground font-serif">{nl.name}</h2>
-                        <p className="mt-1 text-xs md:text-sm text-muted-foreground font-serif leading-relaxed">{nl.description}</p>
+                        <h2 className="type-h4 font-bold text-foreground">{nl.name}</h2>
+                        <p className="mt-1 type-caption text-muted-foreground">{nl.description}</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-4 text-xs font-sans-ui text-muted-foreground pt-1 border-t border-border/50">
+                    <div className="flex items-center gap-4 type-meta text-muted-foreground pt-1 border-t border-border/50">
                       <span className="flex items-center gap-1"><Calendar className="h-3.5 w-3.5" />{nl.frequency}</span>
                       <span className="flex items-center gap-1"><Users className="h-3.5 w-3.5" />{nl.subscribers} subscribers</span>
                     </div>
@@ -103,7 +103,7 @@ const Newsletters = () => {
                   
                   <button
                     onClick={() => handleSubscribe(nl.name)}
-                    className={`w-full rounded-md px-4 py-2.5 text-sm font-semibold font-sans-ui transition-all ${
+                    className={`w-full rounded-md px-4 py-2.5 type-ui font-semibold transition-all ${
                       isSubscribed
                         ? "bg-primary/20 text-primary border border-primary/30 flex items-center justify-center gap-1.5"
                         : "bg-primary text-primary-foreground hover:scale-[1.01] active:scale-95 shadow-sm"
@@ -125,8 +125,8 @@ const Newsletters = () => {
 
         <section className="container pb-16">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-foreground font-serif">Archived Issues &amp; Deep Dives</h2>
-            <span className="text-xs font-sans-ui text-muted-foreground">Updated Weekly</span>
+            <h2 className="type-h2 font-bold text-foreground">Archived Issues &amp; Deep Dives</h2>
+            <span className="type-meta text-muted-foreground">Updated Weekly</span>
           </div>
           <div className="divide-y divide-border rounded-xl border border-border bg-card shadow-sm overflow-hidden">
             {pastIssues.map((issue, i) => (
@@ -138,12 +138,12 @@ const Newsletters = () => {
                 className="flex items-center justify-between gap-4 px-6 py-4 hover:bg-secondary/40 transition-colors"
               >
                 <div>
-                  <p className="text-sm md:text-base font-semibold text-foreground font-serif hover:text-primary transition-colors cursor-pointer">
+                  <p className="type-title font-semibold text-foreground hover:text-primary transition-colors cursor-pointer">
                     {issue.title}
                   </p>
-                  <p className="text-xs text-muted-foreground font-sans-ui mt-0.5">{issue.newsletter}</p>
+                  <p className="type-meta text-muted-foreground mt-0.5">{issue.newsletter}</p>
                 </div>
-                <span className="text-xs font-sans-ui text-muted-foreground shrink-0">{issue.date}</span>
+                <span className="type-meta text-muted-foreground shrink-0">{issue.date}</span>
               </motion.div>
             ))}
           </div>

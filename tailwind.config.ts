@@ -13,13 +13,12 @@ export default {
       },
     },
     extend: {
+      // The stacks themselves live on :root in src/index.css, so a family is
+      // spelled out once. See TYPOGRAPHY.md.
       fontFamily: {
-        // Quoted: an unquoted family must be a sequence of CSS identifiers, and `4` is
-        // not one, so `font-family: Source Serif 4, ...` is an invalid declaration and
-        // the browser drops the whole stack, fallbacks included.
-        serif: ["'Source Serif 4'", "Bitstream Charter", "Charter", "Georgia", "serif"],
-        sans: ["Plus Jakarta Sans", "Satoshi", "system-ui", "sans-serif"],
-        deva: ["Noto Serif Devanagari", "Lohit Devanagari", "serif"],
+        serif: "var(--font-serif)",
+        sans: "var(--font-ui)",
+        deva: "var(--font-deva)",
       },
       colors: {
         border: "hsl(var(--border))",
