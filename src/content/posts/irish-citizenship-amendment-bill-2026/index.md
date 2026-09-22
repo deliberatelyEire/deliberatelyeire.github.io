@@ -105,10 +105,7 @@ The Minister will set the exact income threshold and the lists of "prescribed" w
 
 Two entirely new requirements:
 
-| Requirement | Applies to | Standard set by |
-|-------------|------------|-----------------|
-| **Language proficiency** | All naturalisation applicants (Sections 15 & 15A) | Minister — Irish, English, or Irish Sign Language |
-| **Civics knowledge** | All naturalisation applicants (Sections 15 & 15A) | Minister — "Irish civics, society and politics" / "how Irish society, government, and the Constitution operate" |
+![The two new tests, and the one thing that can never be waived](./tests.svg)
 
 **Waiver possible (Head 8, new Section 16(1A)):** The Minister *may* waive language/civics requirements for "particular categories of applicants" via regulations — intended to protect vulnerable groups. But **good character can never be waived** (new Section 16(1B)).
 
@@ -118,11 +115,7 @@ Two entirely new requirements:
 
 The Bill explicitly excludes from "reckonable residence" any time spent on **temporary or inherently transitory permissions**, including:
 
-- Temporary Protection permissions under section 60(6) of the 2015 Act (the mass-influx route, e.g. Ukraine)
-- Permissions while awaiting EU treaty rights determinations (where subsequently refused)
-- Permissions during reviews/appeals of refused EU treaty rights claims
-- Periods where residence was based on **fraud or abuse of rights**
-- Any other temporary/limited permission the Minister prescribes
+![Time the Scheme stops counting toward reckonable residence](./reckonable.svg)
 
 **Transitional protection:** Applications submitted *before* commencement are assessed under old rules (mirroring the 2004 Act transition).
 
@@ -142,10 +135,7 @@ This sits alongside existing grounds (fraud, concealment, disloyalty, etc.). The
 
 A new Schedule lists specific offences that **automatically preclude** a grant of citizenship, whether committed before or during the application process. These include offences under:
 
-- Immigration Acts (1999, 2004)
-- International Protection Acts (2015, 2026)
-- EU Free Movement Regulations (2015)
-- EU Withdrawal Agreement Regulations (2020)
+![What bars a grant of citizenship, and what revokes one](./barriers.svg)
 
 > **Why it matters:** Codifies "good character" with a defined list of immigration-related offences. No discretion — if the offence is on the list, naturalisation is blocked.
 
@@ -175,13 +165,7 @@ A new Schedule lists specific offences that **automatically preclude** a grant o
 
 ## What Happens Next?
 
-| Stage | Status |
-|-------|--------|
-| **General Scheme published** | ✅ Done (July 2026) |
-| **Pre-legislative scrutiny (Oireachtas Committee)** | ⏳ Upcoming — public submissions invited |
-| **Bill drafted & introduced** | ⏳ After scrutiny |
-| **Oireachtas passage (Dáil + Seanad)** | ⏳ Months to a year+ |
-| **Commencement orders (phased)** | ⏳ Minister decides — different provisions can start different days |
+![Where the Bill actually is, and what is still left to regulation](./passage.svg)
 
 **The General Scheme is not law.** It is a detailed policy proposal. The actual Bill may change during scrutiny. The most consequential details — **income threshold, welfare/housing lists, language/civics standards, waiver categories** — will be set in **regulations after enactment**, not in the Act itself.
 

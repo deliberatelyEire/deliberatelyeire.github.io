@@ -253,6 +253,194 @@ def process(x0, y0, x1, y1):
     return out
 
 
+# -------------------------------------------------------------- reckonable
+
+# Head 9 lists what is taken OUT of reckonable residence. It does not enumerate
+# what stays in, and neither does anything else in the article, so this figure is
+# one-sided on purpose: an invented "counts" column would be the exact kind of
+# plausible-looking fabrication a figure that travels alone must not carry.
+EXCLUDED = [
+    ("Temporary Protection", "s. 60(6) of the 2015 Act, the mass-influx route"),
+    ("Awaiting EU treaty rights", "where the claim is afterwards refused"),
+    ("Reviews and appeals", "of a refused EU treaty rights claim"),
+    ("Residence obtained by fraud", "or by abuse of rights"),
+    ("Any other temporary permission", "that the Minister prescribes"),
+]
+
+
+def reckonable(x0, y0, x1, y1):
+    out = []
+    head_y = y0 + 22
+    out.append(text(x0, head_y, "Time spent on these permissions will not count", 21, 600, INK))
+    rows_top = head_y + 52
+    # Stop the rows well clear of the footer rule; at y1 - 46 the last baseline
+    # sat 8px above it and the descenders touched.
+    pitch = (y1 - 92 - rows_top) / (len(EXCLUDED) - 1)
+    bar_w, bar_h = 26, 14
+    for i, (label, hook) in enumerate(EXCLUDED):
+        y = rows_top + pitch * i
+        # A pale block, the same token the pathway charts use for time that is
+        # discarded -- the figures should agree with each other on what pale means.
+        out.append(f'<rect x="{round(x0,1)}" y="{round(y - bar_h + 2,1)}" width="{bar_w}" '
+                   f'height="{bar_h}" fill="{PALE}" rx="2"/>')
+        tx = x0 + bar_w + 18
+        fits(label, 20, True, 420, f"reckonable {i} label")
+        fits(hook, 17, False, x1 - (tx + 440), f"reckonable {i} hook")
+        out.append(text(tx, y, label, 20, 600, INK))
+        out.append(text(tx + 440, y, hook, 17, 400, MUTED))
+    foot = y1 - 6
+    out.append(f'<line x1="{x0}" y1="{round(foot - 40,1)}" x2="{x1}" y2="{round(foot - 40,1)}" '
+               f'stroke="{HAIRLINE}" stroke-width="1"/>')
+    note = "Applications made before commencement are assessed under the old rules."
+    fits(note, 17, False, x1 - x0, "reckonable note")
+    out.append(text(x0, foot, note, 17, 400, MUTED))
+    return out
+
+
+# ----------------------------------------------------------------- passage
+
+# Deliberately not the numbered green chips process.svg uses: that figure is the
+# applicant's path and this one is the Bill's, they sit in the same article, and a
+# forwarded image carries only its subtitle to tell them apart.
+# Names are given as lines: "pre-legislative scrutiny" is the term of art and will
+# not fit a fifth of the content width on one line, and shortening it to something
+# that fits would be renaming a statutory stage for layout reasons.
+STAGES = [
+    (["General Scheme"], "published July 2026", True),
+    (["Pre-legislative", "scrutiny"], "submissions invited", False),
+    (["Bill drafted"], "after scrutiny", False),
+    (["Oireachtas passage"], "months to a year or more", False),
+    (["Commencement"], "phased, Minister decides", False),
+]
+
+
+def passage(x0, y0, x1, y1):
+    out = []
+    n = len(STAGES)
+    track_y = y0 + 96
+    step = (x1 - x0) / n
+    out.append(f'<line x1="{round(x0 + step / 2,1)}" y1="{round(track_y,1)}" '
+               f'x2="{round(x1 - step / 2,1)}" y2="{round(track_y,1)}" '
+               f'stroke="{HAIRLINE}" stroke-width="2"/>')
+    for i, (name, status, done) in enumerate(STAGES):
+        cx = x0 + step * i + step / 2
+        if done:
+            out.append(f'<circle cx="{round(cx,1)}" cy="{round(track_y,1)}" r="11" fill="{GREEN}"/>')
+        else:
+            out.append(f'<circle cx="{round(cx,1)}" cy="{round(track_y,1)}" r="10" fill="{PAPER}" '
+                       f'stroke="{PALE}" stroke-width="2"/>')
+        fits(status, 15, False, step - 12, f"passage {i} status")
+        for k, line in enumerate(reversed(name)):
+            fits(line, 18, True, step - 12, f"passage {i} name {k}")
+            out.append(text(cx, track_y - 34 - k * 24, line, 18, 600,
+                            INK if done else MUTED, "middle"))
+        out.append(text(cx, track_y + 38, status, 15, 400, MUTED, "middle"))
+    band_top = track_y + 78
+    out.append(f'<rect x="{x0}" y="{round(band_top,1)}" width="{round(x1 - x0,1)}" '
+               f'height="{round(y1 - band_top - 2,1)}" fill="{SURFACE}" rx="6"/>')
+    lead = "The General Scheme is not law."
+    fits(lead, 26, True, x1 - x0 - 48, "passage lead")
+    out.append(text(x0 + 24, band_top + 46, lead, 26, 700, INK))
+    for j, line in enumerate([
+        "It is a policy proposal. The Bill may change during scrutiny, and the numbers that",
+        "matter most \u2014 income threshold, welfare and housing lists, language and civics",
+        "standards, waiver categories \u2014 are set by regulation after enactment, not in the Act.",
+    ]):
+        fits(line, 17, False, x1 - x0 - 48, f"passage line {j}")
+        out.append(text(x0 + 24, band_top + 80 + j * 25, line, 17, 400, MUTED))
+    return out
+
+
+# ---------------------------------------------------------------- barriers
+
+# Each item is a list of lines. A wrapped item keeps a single bullet, so three
+# points do not read as five.
+BARS = ("Bars a grant", "Schedule 1 \u2014 no discretion", [
+    ["Immigration Acts 1999 and 2004"],
+    ["International Protection Acts 2015, 2026"],
+    ["EU Free Movement Regulations 2015"],
+    ["EU Withdrawal Agreement Regulations 2020"],
+])
+REVOKES = ("Revokes a grant", "Head 10, section 19", [
+    ["New ground: public policy, public order", "or national security"],
+    ["Sits alongside fraud, concealment, disloyalty"],
+    ["Duty to consult the Committee of Inquiry", "Chairperson is removed"],
+])
+
+
+def barriers(x0, y0, x1, y1):
+    out = []
+    gap = 36
+    w = (x1 - x0 - gap) / 2
+    line_h, item_gap, head_h = 32, 14, 122
+    # One height for both tiles, sized to whichever column holds more.
+    tall = max(sum(len(it) for it in items) * line_h + (len(items) - 1) * item_gap
+               for _, _, items in (BARS, REVOKES))
+    h = head_h + tall + 34
+    top = y0 + max(0.0, (y1 - y0 - h) / 2)
+    for i, (title, hook, items) in enumerate((BARS, REVOKES)):
+        cx = x0 + (w + gap) * i
+        y0 = top
+        out.append(f'<rect x="{round(cx,1)}" y="{round(top,1)}" width="{round(w,1)}" '
+                   f'height="{round(h,1)}" fill="{SURFACE if i == 0 else "#F6F1E6"}" rx="6"/>')
+        pad = 24
+        fits(title, 24, True, w - pad * 2, f"barriers {i} title")
+        fits(hook, 16, False, w - pad * 2, f"barriers {i} hook")
+        out.append(text(cx + pad, top + 46, title, 24, 700, INK))
+        out.append(text(cx + pad, top + 76, hook, 16, 400, MUTED))
+        out.append(f'<line x1="{round(cx + pad,1)}" y1="{round(top + 96,1)}" '
+                   f'x2="{round(cx + w - pad,1)}" y2="{round(top + 96,1)}" '
+                   f'stroke="{HAIRLINE}" stroke-width="1"/>')
+        iy = top + head_h
+        for j, lines in enumerate(items):
+            for k, line in enumerate(lines):
+                fits(line, 18, False, w - pad * 2 - 18, f"barriers {i} item {j}.{k}")
+                if k == 0:
+                    out.append(f'<rect x="{round(cx + pad,1)}" y="{round(iy - 9,1)}" '
+                               f'width="6" height="6" fill="{MUTED}" rx="1"/>')
+                out.append(text(cx + pad + 18, iy, line, 18, 400, INK))
+                iy += line_h
+            iy += item_gap
+    return out
+
+
+# ------------------------------------------------------------------- tests
+
+TESTS = [
+    ("LANGUAGE", "Irish, English or", "Irish Sign Language"),
+    ("CIVICS", "Irish civics, society", "and politics"),
+]
+
+
+def tests(x0, y0, x1, y1):
+    out = []
+    gap = 32
+    w = (x1 - x0 - gap) / 2
+    h = 262.0
+    for i, (label, s1, s2) in enumerate(TESTS):
+        cx = x0 + (w + gap) * i
+        out.append(f'<rect x="{round(cx,1)}" y="{round(y0,1)}" width="{round(w,1)}" '
+                   f'height="{h}" fill="{SURFACE if i == 0 else "#F6F1E6"}" rx="6"/>')
+        pad = 26
+        for s, size, bold in ((label, 15, True), (s1, 19, False), (s2, 19, False)):
+            fits(s, size, bold, w - pad * 2, f"tests {i} {s[:12]}")
+        out.append(text(cx + pad, y0 + 50, label, 15, 600, MUTED, spacing="1.1"))
+        out.append(text(cx + pad, y0 + 114, "Every applicant", 30, 700, INK))
+        out.append(text(cx + pad, y0 + 158, s1, 19, 400, MUTED))
+        out.append(text(cx + pad, y0 + 186, s2, 19, 400, MUTED))
+        out.append(text(cx + pad, y0 + 228, "Standard set by the Minister", 16, 400, MUTED))
+    band_top = y0 + h + 30
+    out.append(f'<line x1="{x0}" y1="{round(band_top,1)}" x2="{x1}" y2="{round(band_top,1)}" '
+               f'stroke="{HAIRLINE}" stroke-width="1"/>')
+    for j, (line, weight) in enumerate([
+        ("The Minister may waive both for prescribed categories of applicant (Head 8, s. 16(1A)).", 400),
+        ("Good character can never be waived (s. 16(1B)).", 600),
+    ]):
+        fits(line, 19, weight == 600, x1 - x0, f"tests band {j}")
+        out.append(text(x0, band_top + 38 + j * 30, line, 19, weight, MUTED if weight == 400 else INK))
+    return out
+
+
 # ---------------------------------------------------------------- statement
 
 # Years of residence required before an application can be made, by applicant
@@ -325,6 +513,17 @@ def main():
          SCHEME + ", Head 7; s. 15(3)(a)-(c), s. 15(4)", metrics)
     emit("process.svg", "What a standard applicant must clear",
          SCHEME + ", Heads 5 and 7; ss. 15, 15F", process)
+    emit("tests.svg", "Two new tests, standards set later",
+         SCHEME + ", Heads 5, 6 and 8; ss. 15, 15A, 16(1A)-(1B)", tests)
+    emit("reckonable.svg", "Time the Scheme stops counting",
+         SCHEME + ", Head 9; s. 16A; International Protection Act 2015 s. 60(6)",
+         reckonable)
+    emit("barriers.svg", "Two ways citizenship can be refused or withdrawn",
+         SCHEME + ", Head 10 and Schedule 1; Act of 1956 s. 19", barriers)
+    # The stages are Oireachtas procedure, not text in the Scheme, so they are cited
+    # as such rather than attributed to it.
+    emit("passage.svg", "The Bill's own path, not the applicant's",
+         "Oireachtas legislative process; " + SCHEME + ", published July 2026", passage)
     emit("cover.svg", "Arriving January 2026: when can she apply?",
          SCHEME + ", Heads 5, 6, 9; Act of 1956 ss. 15, 15A, 16A", cover,
          canvas=COVER_CANVAS)

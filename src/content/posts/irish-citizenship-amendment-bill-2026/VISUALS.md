@@ -211,3 +211,71 @@ In `index.md` under "For Future Applicants". File: `process.svg`
 - Source: "Sections 15, 15A, 15F, 16A"
 
 `![Steps to citizenship under the proposed law](./process.svg)`
+
+## 6. Language and civics — figure 1200×675
+Canvas: figure | Layout: two tiles + a rule-separated band
+Position: in "3. Language and Civics Tests", replacing the requirements table.
+File: `tests.svg`
+- Subtitle: "Two new tests, standards set later"
+- Tiles: "LANGUAGE" — Every applicant — "Irish, English or Irish Sign Language";
+  "CIVICS" — Every applicant — "Irish civics, society and politics". Both close with
+  "Standard set by the Minister", which is the point of the figure: the requirement is
+  in the Scheme, the bar is not.
+- Band: the waiver (Head 8, s. 16(1A)) in muted, then **good character can never be
+  waived** (s. 16(1B)) in ink. The second line is the one that should survive a crop.
+- Source: "Heads 5, 6 and 8; ss. 15, 15A, 16(1A)-(1B)"
+
+`![The two new tests, and the one thing that can never be waived](./tests.svg)`
+
+## 7. Reckonable residence — figure 1200×675
+Canvas: figure | Layout: single column of pale-marked rows
+Position: in "4. Cleaner Reckonable Residence", replacing the bullet list.
+File: `reckonable.svg`
+- Subtitle: "Time the Scheme stops counting"
+- **One-sided on purpose.** Head 9 enumerates what is excluded; nothing in the Scheme
+  or the article enumerates what remains included. A "counts" column would have to be
+  inferred, and an inferred column on an image that travels alone is exactly the kind
+  of plausible fabrication the sourcing rules exist to stop.
+- The row marker uses `PALE`, the same token the pathway charts use for time that does
+  not count, so the two articles agree on what pale means.
+- Footer: the transitional protection — applications made before commencement are
+  assessed under the old rules.
+- Source: "Head 9; s. 16A; International Protection Act 2015 s. 60(6)"
+
+`![Time the Scheme stops counting toward reckonable residence](./reckonable.svg)`
+
+## 8. Bars and revocation — figure 1200×675
+Canvas: figure | Layout: two tiles, bulleted line-groups
+Position: at the end of "6. Offences That Bar Naturalisation", covering sections 5 and 6.
+File: `barriers.svg`
+- Subtitle: "Two ways citizenship can be refused or withdrawn"
+- Left "Bars a grant / Schedule 1 — no discretion": the four instruments.
+- Right "Revokes a grant / Head 10, section 19": the new public policy, public order or
+  national security ground; that it sits alongside fraud, concealment and disloyalty;
+  and the removal of the duty to consult the Committee of Inquiry Chairperson.
+- Items are lists of lines with a single bullet each, so a wrapped point does not read
+  as two.
+- Source: "Head 10 and Schedule 1; Act of 1956 s. 19"
+
+`![What bars a grant of citizenship, and what revokes one](./barriers.svg)`
+
+## 9. Legislative passage — figure 1200×675
+Canvas: figure | Layout: horizontal track with status nodes + a statement band
+Position: in "What Happens Next?", replacing the stage table.
+File: `passage.svg`
+- Subtitle: "The Bill's own path, not the applicant's" — deliberately unmissable,
+  because `process.svg` is also a step-flow in the same article under the same kicker,
+  and a forwarded image carries only its subtitle to tell them apart. For the same
+  reason this one uses track nodes rather than `process.svg`'s numbered green chips.
+- Nodes: General Scheme (filled green, done, published July 2026); pre-legislative
+  scrutiny; Bill drafted; Oireachtas passage; commencement — all hollow and pale.
+- Band: **"The General Scheme is not law."** then the regulation-after-enactment
+  caveat. This is the single most important thing the figure carries once separated
+  from the article.
+- No status glyphs. The article's table used ✅ and ⏳; neither codepoint is in Source
+  Serif 4 or Noto Serif Devanagari, so in an isolated SVG document they would fall back
+  or go to tofu. Colour and fill carry the status instead.
+- Source: the stages are Oireachtas procedure, not text in the Scheme, and are cited as
+  such rather than attributed to it.
+
+`![Where the Bill actually is, and what is still left to regulation](./passage.svg)`
