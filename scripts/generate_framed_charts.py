@@ -26,6 +26,24 @@ POST_VISUALS_DIR = Path.home() / ".claude" / "skills" / "synced" / "57179235-8ab
 sys.path.insert(0, str(SCRIPTS_DIR))
 from embed_font import embed as embed_site_faces  # noqa: E402
 
+# PROCESSING TIMES -- read before regenerating.
+#
+# The UK row must read "Processing: usually within 6 months", not a min-max range.
+# That is the Home Office's own wording ("You'll usually get a decision within 6
+# months - some applications can take longer", gov.uk/apply-citizenship-indefinite
+# -leave-to-remain/decision); there is no published upper bound, and the 6-12 range
+# the charts previously carried was not attributable to any source.
+#
+# The four SVGs were edited directly to correct this, because data/citizenship/*.csv
+# is gitignored (.gitignore:29) and absent from a clean checkout, so this script
+# cannot run here. Whoever holds the CSVs must either blank Processing_Max_Months
+# for the UK row and teach the renderer a single-value form, or reapply the edit --
+# a plain regeneration will silently restore the wrong figure.
+#
+# Still unattributed, and left unchanged rather than quietly altered: the French
+# (18-24), German (6-36) and Austrian (6-12) ranges. Ireland's 12-19 is sourced to
+# Immigration Service Delivery in the article body.
+
 PIXELS_PER_YEAR = 56
 BAR_X = 420
 BAR_H = 26
