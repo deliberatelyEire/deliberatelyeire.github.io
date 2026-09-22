@@ -4,7 +4,7 @@
 Every chart is one bar per country on a shared scale (PIXELS_PER_YEAR), so the
 four pathways can be compared against each other. A bar is:
 
-    [ pale: years discarded ][ solid: years the clock actually runs ]
+    [ grey: years discarded ][ black: years the clock actually runs ]
 
 and the total label is discarded + requirement. Years that *count* toward the
 requirement are not additive -- a country that counts doctoral time shows a
@@ -50,17 +50,20 @@ BAR_H = 26
 LABEL_X = 404          # country names, right-anchored
 NOTE_X = 1500          # notes and processing, right-anchored
 
-# #9C8B76 measures 3.08:1 against the #FAF7F0 paper; #D8D2C6 was 1.41:1 and
-# #A99885 was 2.61:1, both below the 3:1 floor for non-text contrast.
+# Post-visuals tokens only, and the same mapping as the Bill 2026 figures: time that
+# does not count is muted, time that counts is ink, Ireland is green. Muted is 6.2:1
+# on the #FAF7F0 paper and ~3:1 against the ink segment beside it, above the 3:1
+# floor for non-text contrast. The earlier #9C8B76 pale, #8B8C8F faint and #333333
+# dashed were off-token.
 COLORS = {
     "ireland": "#148708",
-    "pale": "#9C8B76",
-    "dark": "#5D5E63",
+    "pale": "#5D5E63",
+    "dark": "#0B0C0E",
     "ink": "#0B0C0E",
     "muted": "#5D5E63",
-    "faint": "#8B8C8F",
+    "faint": "#5D5E63",
     "hairline": "#D8D2C6",
-    "dashed": "#333333",
+    "dashed": "#0B0C0E",
 }
 
 CHART_TITLE_Y = 200
@@ -76,7 +79,7 @@ CONTENT_LEFT = 88
 
 SOURCES = "Naturalisation law: IE INCA 1956 · DE StAG · FR Code civil 21-18 · UK Imm. Rules · AT StbG"
 
-LEGEND = ("Pale: years discarded. Solid: years that count. Green: Ireland. "
+LEGEND = ("Grey: years discarded. Black: years that count. Green: Ireland. "
           "Dashed: alternative route, with its change in years (* = 2026 proposal).")
 
 PATHWAYS = {
