@@ -25,6 +25,7 @@ src/
 scripts/
   ├─ generate_citizenship_charts.py  # CSV → SVG chart generation
   ├─ generate_framed_charts.py       # Post-visuals framed chart generation
+  ├─ generate_bill_visuals.py        # Citizenship Bill 2026 post figures
   ├─ embed_font.py                   # Inline the site serif into figure SVGs
   ├─ fonts/                          # Source Serif 4 v14 latin variable woff2, as Google Fonts serves it (OFL)
   └─ prerender.mjs                    # Static site prerendering
@@ -101,6 +102,16 @@ npm i        # or: bun install
 ```sh
 npm run dev   # starts Vite dev server at http://localhost:8080
 ```
+
+### Regenerate the Citizenship Bill 2026 figures
+```sh
+python3 scripts/generate_bill_visuals.py
+```
+
+Writes `journey.svg`, `comparison.svg`, `metrics.svg`, `process.svg` and `cover.svg` into
+`src/content/posts/irish-citizenship-amendment-bill-2026/`. Art direction, sourcing
+notes and the PNG-preview command live in that folder's `VISUALS.md`. The script
+prints an OVERFLOW warning if a label no longer fits its box.
 
 ### Regenerate Charts
 If CSV data changes, regenerate SVGs:
