@@ -1,6 +1,6 @@
 # Art direction — Citizenship (Amendment) Bill 2026 explainer
 
-Source of truth for the four figures in `index.md`. Regenerate them with:
+Source of truth for the cover and the eight figures in `index.md`. Regenerate them with:
 
 ```sh
 python3 scripts/generate_bill_visuals.py
@@ -14,9 +14,9 @@ content area. It also carries a width estimator that prints an OVERFLOW warning
 when a string will not fit its box, so a text change that breaks a layout is caught
 before rendering.
 
-All four are `figure` (1200×675), not the `card` size the original notes suggested.
-These are diagrams inside an article, not link previews, and the article column is a
-fixed width, so the smallest canvas gives the largest effective type.
+The body figures are `figure` (1200×675), not the `card` size the original notes
+suggested. They are diagrams inside an article, not link previews, and the article
+column is a fixed width, so the smallest canvas gives the largest effective type.
 
 **Held to the post-visuals standard.** Colour is the token set only: content uses
 `ink`, `muted`, `hairline` and `paper`, and panels are paper with a hairline edge
@@ -94,19 +94,16 @@ embedding; they are lazily loaded.
 
 ## Sourcing
 
-Every figure traces to the General Scheme itself or to the 1956 Act as in force.
-Two things were changed from the original notes because the primary source did not
-support them:
+Every figure traces to the General Scheme itself or to the 1956 Act as in force,
+with two procedural exceptions cited to their own primary sources: the Bill's stages
+(Houses of the Oireachtas, "Stages of a Bill") and Stamp 2 not being reckonable (ISD,
+Immigration permission/stamps). One thing was changed from the original notes because
+the primary source did not support it:
 
 - **The €40–45k income estimate is gone.** The Scheme fixes no figure: section
   15(3)(a) leaves the threshold to Ministerial regulation, "having taken into account
   of the CSO data on annual earnings and labour costs, the cost of living". The tile
   reads "Not set" and names the mechanism.
-- **The chronicle rows were re-checked.** The original 1987 and 2024 rows could not
-  be pinned to an amending Act and were dropped. What replaced them: 2001 (the Act
-  that inserted section 15A), 2011 (Civil Law (Misc. Provisions) Act, s. 33, which
-  extended 15A to civil partners), and the International Protection Act 2026, which
-  the Scheme itself cites at Head 7 and Head 9.
 
 ## Rendering to PNG
 
@@ -183,47 +180,48 @@ the row labels: the four-year doctorate, and the spouse arriving already married
 three years. "Stamp 2 not reckonable" is cited to ISD's Immigration permission/stamps
 page, which says so in terms; bars for now are `muted`, bars for the Scheme `ink`.
 
-## 3. Comparison table graphic — 1200×628
-Canvas: card | Layout: comparison
-In `index.md` under the At a Glance table. File: `comparison.svg`
-- Kicker: "OLD vs NEW" | Subtitle: "Naturalisation requirements side by side"
-- Columns: Requirement | Current Law | Proposed (Bill 2026)
-- Rows: as in the markdown table in that section
-- Accent: none. The brief's saffron/green split was not built: no row belongs to one
-  side of a pairing. The proposed column is set in ink, the others in muted, and a
-  hairline closes the table under the last row.
-- Source: "General Scheme, Sections 15, 15A, 16A, 19"
+## 3. Comparison — figure 1200×675
+Canvas: figure | Layout: `comparison`, three columns
+Position: under the At a Glance table. File: `comparison.svg`
+- Subtitle: "What the Scheme would change"
+- Columns: Requirement | Current law | General Scheme 2026. The Scheme column is set in
+  ink and bold; the other two headers are muted. No saffron or green: no row belongs
+  to one side of a pairing.
+- Rows: standard residency (5 yrs: 1 + 4 of prior 8 → 8 yrs: 2 + 6 of prior 10);
+  spouse marriage (3 → 5 years); spouse residence (3 yrs: 1 + 2 of prior 4 → 5 yrs:
+  2 + 3 of prior 5); self-sufficiency (none → income, welfare and debt tests);
+  language and civics (not required → both required).
+- A hairline sits under the header, between rows, and closes the table.
+- Source: "Heads 5-6; Act of 1956 ss. 15, 15A as in force"
 
 `![Current versus proposed naturalisation requirements](./comparison.svg)`
 
-## 4. Metrics cards — 1200×628
-Canvas: card | Layout: metrics
-Position: in "2. Self-Sufficiency", after "three objective tests (Section 15(3))".
-File: `metrics.svg`
-- Kicker: "SELF-SUFFICIENCY TEST" | Subtitle: "Three gates to citizenship"
+## 4. Self-sufficiency — figure 1200×675
+Canvas: figure | Layout: `metrics`, three tiles
+Position: in "2. Self-Sufficiency". File: `metrics.svg`
+- Subtitle: "The three self-sufficiency tests"
 - Tiles:
-  1. "MINIMUM INCOME" — "€40–45k (est.)" — "CSO earnings + cost of living"
-  2. "NO WELFARE/HOUSING" — "2-year lookback" — "6-month grace at Minister's discretion"
-  3. "NO STATE DEBTS" — "Revenue, DSP, courts" — "Zero tolerance"
-- Source: "Section 15(3), Section 15F"
+  1. "MINIMUM INCOME" — **Not set** — "To be prescribed by Ministerial regulation"
+  2. "WELFARE AND HOUSING" — **2 yrs** — "No prescribed support; 6 months may be excused"
+  3. "DEBT TO THE STATE" — **None** — "Revenue, social welfare, or an unpaid court fine"
+- No income estimate (see Sourcing). "Not set" is one character over the catalog's
+  six-character limit for a display figure; every shorter wording tried was less clear.
+- Source: "Head 7; s. 15(3)(a)-(c), s. 15(4)"
 
 `![The three self-sufficiency tests](./metrics.svg)`
 
-## 5. Process flow diagram — 1200×675
-Canvas: figure | Layout: process
-In `index.md` under "For Future Applicants". File: `process.svg`
-- Kicker: "PATH TO CITIZENSHIP 2026" | Subtitle: "New steps under proposed law"
-- Steps:
-  1. "Enter legally & maintain continuous residence (2yrs)"
-  2. "Accumulate 6yrs total in 10yr window"
-  3. "Meet income threshold (no welfare/housing 2yrs)"
-  4. "Pass language test (Irish/English/ISL)"
-  5. "Pass civics test (Constitution, government, society)"
-  6. "Maintain all conditions until Minister decides"
-- Connectors: arrows. Accent: none — the brief's green/saffron split was not built,
-  and the step numbers are muted, not green. Six hairline-edged panels fill the
-  content height; each sub-line is two lines at 16px, since one will not fit.
-- Source: "Sections 15, 15A, 15F, 16A"
+## 5. Standard applicant — figure 1200×675
+Canvas: figure | Layout: `process`, six panels
+Position: under "For Future Applicants". File: `process.svg`
+- Subtitle: "What a standard applicant must clear"
+- Steps: Reside **8 yrs** (total reckonable); Of which **2 yrs** (continuous, the
+  latest); Earn **Income** (threshold set by regulation); Off supports **2 yrs** (no
+  welfare or housing support); Language **Pass** (Irish, English or ISL); Civics
+  **Test** (standard set by Minister).
+- Six hairline-edged panels fill the content height, joined by muted arrows. Step
+  numbers are muted, not green. Each sub-line is two lines at 16px, since a sixth of
+  the content width will not hold one.
+- Source: "Heads 5 and 7; ss. 15, 15F"
 
 `![Steps to citizenship under the proposed law](./process.svg)`
 

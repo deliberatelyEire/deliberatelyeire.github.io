@@ -54,16 +54,13 @@ NOTE_X = 1500          # notes and processing, right-anchored
 # does not count is muted, time that counts is ink, Ireland is green. Muted is 6.2:1
 # on the #FAF7F0 paper and ~3:1 against the ink segment beside it, above the 3:1
 # floor for non-text contrast. The earlier #9C8B76 pale, #8B8C8F faint and #333333
-# dashed were off-token.
+# dashed were off-token; discarded years, secondary text and the notes now share
+# muted, and counting years and the alternative-route outline share ink.
 COLORS = {
-    "ireland": "#148708",
-    "pale": "#5D5E63",
-    "dark": "#0B0C0E",
+    "green": "#148708",
     "ink": "#0B0C0E",
     "muted": "#5D5E63",
-    "faint": "#5D5E63",
     "hairline": "#D8D2C6",
-    "dashed": "#0B0C0E",
 }
 
 CHART_TITLE_Y = 200
@@ -169,7 +166,7 @@ def generate_chart_svg(data, config):
         x_pos = BAR_X + year_mark * PIXELS_PER_YEAR
         svg.append(f'<line x1="{x_pos}" y1="{AXIS_TOP}" x2="{x_pos}" y2="{last_bar_bottom + 4}" '
                    f'stroke="{COLORS["hairline"]}" stroke-width="1" stroke-dasharray="2,3"/>')
-        svg.append(f'<text x="{x_pos}" y="{AXIS_LABEL_Y}" font-size="14" fill="{COLORS["faint"]}" '
+        svg.append(f'<text x="{x_pos}" y="{AXIS_LABEL_Y}" font-size="14" fill="{COLORS["muted"]}" '
                    f'text-anchor="middle">{year_mark} years</text>')
 
     for index, r in enumerate(rows):
@@ -177,20 +174,20 @@ def generate_chart_svg(data, config):
         bar_top = baseline - 22
         is_ireland = r["country"] == "Ireland"
 
-        name_color = COLORS["ireland"] if is_ireland else COLORS["ink"]
+        name_color = COLORS["green"] if is_ireland else COLORS["ink"]
         svg.append(f'<text x="{LABEL_X}" y="{baseline}" font-size="24" font-weight="700" '
                    f'fill="{name_color}" text-anchor="end">{esc(r["country"])}</text>')
 
-        solid_color = COLORS["ireland"] if is_ireland else COLORS["dark"]
+        solid_color = COLORS["green"] if is_ireland else COLORS["ink"]
         pale_width = r["discarded"] * PIXELS_PER_YEAR
         solid_width = r["requirement"] * PIXELS_PER_YEAR
 
         if pale_width:
             svg.append(f'<rect x="{BAR_X}" y="{bar_top}" width="{pale_width}" height="{BAR_H}" '
-                       f'rx="2" fill="{COLORS["pale"]}"/>')
+                       f'rx="2" fill="{COLORS["muted"]}"/>')
 
-        # Green and grey sit only 1.40:1 apart in luminance, so Ireland carries an
-        # outline as a redundant cue that survives greyscale printing.
+        # Green and the muted discarded segment sit only ~1.4:1 apart in luminance, so
+        # Ireland carries an outline as a redundant cue that survives greyscale printing.
         outline = f' stroke="{COLORS["ink"]}" stroke-width="1.5"' if is_ireland else ""
         svg.append(f'<rect x="{BAR_X + pale_width}" y="{bar_top}" width="{solid_width}" '
                    f'height="{BAR_H}" rx="2" fill="{solid_color}"{outline}/>')
@@ -205,7 +202,7 @@ def generate_chart_svg(data, config):
             alt_w = r["expedited"] * PIXELS_PER_YEAR
             alt_top = bar_top + BAR_H + 5
             svg.append(f'<rect x="{BAR_X}" y="{alt_top}" width="{alt_w}" height="12" '
-                       f'fill="none" stroke="{COLORS["dashed"]}" stroke-width="1.25" '
+                       f'fill="none" stroke="{COLORS["ink"]}" stroke-width="1.25" '
                        f'stroke-dasharray="5,3"/>')
             # Signed delta rather than colour. Red/green would collide with green
             # meaning Ireland, and is the worst pair for colour blindness; the
@@ -215,7 +212,7 @@ def generate_chart_svg(data, config):
             sign = "+" if delta > 0 else "\u2212"
             label = f'{r["expedited"]}y{star} ({sign}{abs(delta)})'
             svg.append(f'<text x="{BAR_X + alt_w + 10}" y="{alt_top + 11}" font-size="16" '
-                       f'font-weight="700" fill="{COLORS["dashed"]}">{label}</text>')
+                       f'font-weight="700" fill="{COLORS["ink"]}">{label}</text>')
             if r["condition"]:
                 off = 10 + 0.55 * 16 * len(label) + 10
                 cond_x = BAR_X + alt_w + off
@@ -226,7 +223,7 @@ def generate_chart_svg(data, config):
                         print(f'  ! {r["country"]}: condition "{r["condition"]}" runs into '
                               f'the processing column; shorten it in the CSV')
                 svg.append(f'<text x="{cond_x:.0f}" y="{alt_top + 11}" font-size="14" '
-                           f'fill="{COLORS["faint"]}">{esc(r["condition"])}</text>')
+                           f'fill="{COLORS["muted"]}">{esc(r["condition"])}</text>')
 
         if r["notes"]:
             svg.append(f'<text x="{NOTE_X}" y="{baseline - 1}" font-size="20" '
@@ -234,12 +231,12 @@ def generate_chart_svg(data, config):
 
         if r["proc_min"] and r["proc_max"]:
             svg.append(f'<text x="{NOTE_X}" y="{baseline + 18}" font-size="16" '
-                       f'fill="{COLORS["faint"]}" text-anchor="end">'
+                       f'fill="{COLORS["muted"]}" text-anchor="end">'
                        f'Processing: {esc(r["proc_min"])}–{esc(r["proc_max"])} months</text>')
 
     for i, note in enumerate(config["footnotes"]):
         svg.append(f'<text x="{CONTENT_LEFT}" y="{FOOTNOTE_Y + i * FOOTNOTE_PITCH}" font-size="17" '
-                   f'fill="{COLORS["faint"]}">{esc(note)}</text>')
+                   f'fill="{COLORS["muted"]}">{esc(note)}</text>')
 
     return "\n".join(svg)
 

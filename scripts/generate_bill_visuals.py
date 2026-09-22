@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Generate the four Citizenship (Amendment) Bill 2026 visuals with post-visuals chrome.
+"""Generate the Citizenship (Amendment) Bill 2026 visuals with post-visuals chrome.
 
 Every figure is traceable to the General Scheme itself (the Heads and the sections
 they amend) or to the 1956 Act as currently in force. Where the Scheme deliberately
 leaves a number to later regulation -- the income threshold is the only one -- the
 tile says so rather than carrying an invented figure.
 
-All four are `figure` (1200x675): they are diagrams inside an article, not link
+The body figures are `figure` (1200x675): diagrams inside an article, not link
 previews, and the article column is a fixed width, so the smallest canvas gives the
-largest effective type. Layout is computed from the content bounds frame.py reports
+largest effective type. The cover is a `card`, since it doubles as the OG image. Layout is computed from the content bounds frame.py reports
 rather than from the catalog's hero coordinates -- those are quoted for a 1600x900
 frame and overflow when scaled down (the six-step process row is wider than hero's
 own content area).
@@ -39,7 +39,6 @@ PAPER = "#FAF7F0"
 # Every colour above is a post-visuals token. Time that does not count, or the rule
 # being replaced, is drawn in MUTED; the proposal is drawn in INK. Neither saffron
 # nor green appears in the content: nothing here belongs to one side of a pairing.
-PALE = MUTED
 
 KICKER = "CITIZENSHIP BILL 2026"
 # 0.50 x font-size x chars for regular, 0.55 for bold -- the catalog's estimate.
@@ -142,7 +141,7 @@ def journey(x0, y0, x1, y1):
         for k, yrs in enumerate((now_y, new_y)):
             by = top + 4 + k * (bar_h + 8)
             tag = "now" if k == 0 else "new"
-            fill = PALE if k == 0 else INK
+            fill = MUTED if k == 0 else INK
             if yrs is None:
                 # Nothing to draw: the permission never starts the clock.
                 out.append(f'<line x1="{round(ax0,1)}" y1="{round(by,1)}" x2="{round(ax0,1)}" '
@@ -302,7 +301,7 @@ def reckonable(x0, y0, x1, y1):
         # A muted block: the same colour the journey figure uses for time that does
         # not count, so the figures in this article agree on what it means.
         out.append(f'<rect x="{round(x0,1)}" y="{round(y - bar_h + 2,1)}" width="{bar_w}" '
-                   f'height="{bar_h}" fill="{PALE}" rx="2"/>')
+                   f'height="{bar_h}" fill="{MUTED}" rx="2"/>')
         tx = x0 + bar_w + 18
         fits(label, 20, True, 420, f"reckonable {i} label")
         fits(hook, 18, False, x1 - (tx + 440), f"reckonable {i} hook")
