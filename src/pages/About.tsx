@@ -33,7 +33,7 @@ const About = () => {
               <p className="text-muted-foreground text-lg font-serif">Ties older than either republic.</p>
             </div>
 
-            <div className="prose prose-invert max-w-none space-y-6 text-foreground/90 font-serif">
+            <div className="max-w-none space-y-6 text-foreground/90 font-serif">
               <p className="text-lg">
                 Deliberately Éire is an independent publication dedicated to exploring the historical, constitutional, diplomatic, and cultural connections between Ireland and India. We produce research-driven analysis on immigration policy, comparative law, diaspora demographics, and the lived experience of cross-border communities.
               </p>

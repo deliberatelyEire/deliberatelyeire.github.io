@@ -23,8 +23,7 @@ src/
   ├─ data/citizenship/  # CSV data sources for chart generation
   └─ lib/posts.ts     # Post discovery & content loader
 scripts/
-  ├─ generate_citizenship_charts.py  # CSV → SVG chart generation
-  ├─ generate_framed_charts.py       # Post-visuals framed chart generation
+  ├─ generate_framed_charts.py       # CSV → framed SVG charts for the citizenship post
   ├─ generate_bill_visuals.py        # Citizenship Bill 2026 post figures
   ├─ embed_font.py                   # Inline the site's serif faces into figure SVGs
   ├─ fonts/                          # Source Serif 4 + Noto Serif Devanagari woff2, as Google Fonts serves them (OFL)
@@ -113,14 +112,18 @@ Writes `journey.svg`, `comparison.svg`, `metrics.svg`, `process.svg` and `cover.
 notes and the PNG-preview command live in that folder's `VISUALS.md`. The script
 prints an OVERFLOW warning if a label no longer fits its box.
 
-### Regenerate Charts
-If CSV data changes, regenerate SVGs:
+### Regenerate the citizenship pathway charts
+If CSV data changes, regenerate the SVGs:
 
 ```sh
-python3 scripts/generate_citizenship_charts.py
+python3 scripts/generate_framed_charts.py
 ```
 
-This reads `data/citizenship/*.csv` and writes SVG files to `src/content/posts/ireland-citizenship/`.
+This reads `data/citizenship/*.csv` and writes `{workers,phd,masters,spouses}_framed.svg`
+into `src/content/posts/ireland-citizenship/`, embedding the site's faces in each. The
+CSVs are kept locally and gitignored, so this only runs where they are present; to
+refresh the faces in SVGs that already exist, run `python3 scripts/embed_font.py` over
+them instead.
 
 ### Build
 ```sh
