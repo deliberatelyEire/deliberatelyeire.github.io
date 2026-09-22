@@ -18,6 +18,20 @@ All four are `figure` (1200×675), not the `card` size the original notes sugges
 These are diagrams inside an article, not link previews, and the article column is a
 fixed width, so the smallest canvas gives the largest effective type.
 
+**Held to the post-visuals standard.** Colour is the token set only: content uses
+`ink`, `muted`, `hairline` and `paper`, and panels are paper with a hairline edge
+rather than a tint. Time that does not count, and the rule being replaced, is
+`muted`; the proposal is `ink`. Saffron and green appear only in the frame's
+tricolour bar: nothing in these figures belongs to one side of an Irish–Indian
+pairing, so no content element carries a national colour. No text in a figure is
+below 16px (hero's 20px caption at the figure's 0.8 scale); `text()` asserts it. The
+source line is checked against the margin width, calibrated to Source Serif 4's
+measured ~0.46em per character. The two deliberate departures from the skill are the
+typeface (below) and headless Chrome for PNG export.
+
+The embedder needs `fonttools` and `brotli` (`pip install fonttools brotli`, in a
+virtualenv if the system Python is managed).
+
 This file is inert: `getAllPosts()` globs `*/index.md` and `getPostImages()` globs
 image extensions only, so a non-`index.md` file neither publishes nor bundles.
 
@@ -107,35 +121,28 @@ Chrome does the same job and is already a build dependency via `scripts/prerende
 
 ---
 
-## 1. Cover — card 1200x628, paired bars
+## 1. Cover — card 1200x628, statement
 
-Canvas: card | Layout: adapted from `comparison`
+Canvas: card | Layout: `statement`
 
-The original note specified a 1600x900 `hero` `statement` with the headline "The
-Biggest Citizenship Shift in 20 Years". Both are superseded: the claim has no source
-behind it, and the applicant-category contrast is the stronger hook.
+**Built** as `cover.svg` and rendered to `cover.png`, which the post's `cover:`
+frontmatter points at. Not a body image.
 
-**Built** as `cover.svg` (a `card` 1200x628) and rendered to `cover.png`, which the
-post's `cover:` frontmatter points at. Not a body image.
+The catalog's layout for a card is `statement`, `quote` or `metrics`: dense layouts do
+not survive a link preview at ~500px wide. An earlier version carried three rows of
+paired bars from the journey figure; it held the 26px floor but read as a chart
+squeezed into a thumbnail. The cover is now one figure:
 
-It carries the applicant-category contrast rather than the original note's headline,
-"The Biggest Citizenship Shift in 20 Years" — that is an editorial claim with no
-source behind it, and a cover travels without the article attached. Three categories
-from the At a Glance table, paired bars, pale for the current rule and solid ink for
-the proposed one:
+- Eyebrow: "RESIDENCE BEFORE YOU CAN APPLY" (26px, muted)
+- Figure: **8 yrs** (140px, ink)
+- Line: "Up from 5 today, for most applicants" (30px, muted)
+- Subtitle: "Most applicants would wait three years longer"
+- Source: Head 5; Act of 1956 s. 15(1)(c). Current s. 15(1)(c) is 1 year continuous +
+  4 of the prior 8, five in all; Head 5 makes it 2 + 6 of the prior 10, eight in all.
 
-| Category | Now | Under the Scheme | Source |
-|---|---|---|---|
-| Worker / long-term resident | 4 yrs in a window of 8 | 6 yrs in a window of 10 | Head 5; s. 15(1)(c) |
-| Spouse of an Irish citizen | 2 yrs in a window of 4 | 3 yrs in a window of 5 | Head 6; s. 15A(1)(f) |
-| Temporary permission (incl. Temporary Protection) | counted as reckonable | excluded entirely | Head 9; s. 16A; s. 60(6) of the 2015 Act |
-
-The Temporary Protection row is not a year figure. That time was reckonable and Head 9
-excludes it outright, so it is drawn at the same length as the worker row's "now" bar —
-one scale across all three rows — and then reduced to a stub, which is what the change
-does. Head 9 reaches Temporary Protection under s. 60(6) of the 2015 Act (the mass-influx
-route), **not** a refugee or subsidiary-protection declaration. The spouse marriage requirement (3 → 5 years) is left to the body;
-three bar groups is what a card holds legibly.
+The original note's headline, "The Biggest Citizenship Shift in 20 Years", stays out:
+it is an editorial claim with no source behind it, and a cover travels without the
+article attached.
 
 Two layout constraints, both learned from renders that failed:
 
@@ -144,6 +151,9 @@ Two layout constraints, both learned from renders that failed:
   first characters in the blog card. The frame's chrome may clip; the data may not.
 - **PNG, not SVG**, because this doubles as the Open Graph image and social
   scrapers do not render SVG.
+- The frame's own chrome on a card (subtitle, source line, Irish motto) is set by
+  `frame.py` at 18–22px, below the skill's 26px card floor. That is the skill
+  script's output, not this layout's, and is left as the script emits it.
 
 ## 2. Journey — figure 1200x675
 
@@ -170,7 +180,8 @@ period" — so Head 5's 2 + 6 is **8 years**, not 6. Stating only the second lim
 (4 to 6) undersells the wait by three years and contradicts the sibling article's
 own title. Two assumptions are the author's, not the Scheme's, and are printed in
 the row labels: the four-year doctorate, and the spouse arriving already married
-three years.
+three years. "Stamp 2 not reckonable" is cited to ISD's Immigration permission/stamps
+page, which says so in terms; bars for now are `muted`, bars for the Scheme `ink`.
 
 ## 3. Comparison table graphic — 1200×628
 Canvas: card | Layout: comparison
@@ -178,7 +189,9 @@ In `index.md` under the At a Glance table. File: `comparison.svg`
 - Kicker: "OLD vs NEW" | Subtitle: "Naturalisation requirements side by side"
 - Columns: Requirement | Current Law | Proposed (Bill 2026)
 - Rows: as in the markdown table in that section
-- Accent: saffron for Indian-context rows, green for Irish-side rows
+- Accent: none. The brief's saffron/green split was not built: no row belongs to one
+  side of a pairing. The proposed column is set in ink, the others in muted, and a
+  hairline closes the table under the last row.
 - Source: "General Scheme, Sections 15, 15A, 16A, 19"
 
 `![Current versus proposed naturalisation requirements](./comparison.svg)`
@@ -207,7 +220,9 @@ In `index.md` under "For Future Applicants". File: `process.svg`
   4. "Pass language test (Irish/English/ISL)"
   5. "Pass civics test (Constitution, government, society)"
   6. "Maintain all conditions until Minister decides"
-- Connectors: arrows. Accent: green for residency, saffron for tests.
+- Connectors: arrows. Accent: none — the brief's green/saffron split was not built,
+  and the step numbers are muted, not green. Six hairline-edged panels fill the
+  content height; each sub-line is two lines at 16px, since one will not fit.
 - Source: "Sections 15, 15A, 15F, 16A"
 
 `![Steps to citizenship under the proposed law](./process.svg)`
@@ -236,8 +251,9 @@ File: `reckonable.svg`
   or the article enumerates what remains included. A "counts" column would have to be
   inferred, and an inferred column on an image that travels alone is exactly the kind
   of plausible fabrication the sourcing rules exist to stop.
-- The row marker uses `PALE`, the same token the pathway charts use for time that does
-  not count, so the two articles agree on what pale means.
+- The row marker is `muted`, the same colour the journey figure uses for time that
+  does not count. (The sibling pathway charts still use the older `#9C8B76` pale,
+  which is outside the token set.)
 - Footer: the transitional protection — applications made before commencement are
   assessed under the old rules.
 - Source: "Head 9; s. 16A; International Protection Act 2015 s. 60(6)"
@@ -263,19 +279,23 @@ File: `barriers.svg`
 Canvas: figure | Layout: horizontal track with status nodes + a statement band
 Position: in "What Happens Next?", replacing the stage table.
 File: `passage.svg`
-- Subtitle: "The Bill's own path, not the applicant's" — deliberately unmissable,
+- Subtitle: "The Bill’s own path, not the applicant’s" — deliberately unmissable,
   because `process.svg` is also a step-flow in the same article under the same kicker,
   and a forwarded image carries only its subtitle to tell them apart. For the same
-  reason this one uses track nodes rather than `process.svg`'s numbered green chips.
-- Nodes: General Scheme (filled green, done, published July 2026); pre-legislative
-  scrutiny; Bill drafted; Oireachtas passage; commencement — all hollow and pale.
+  reason this one uses track nodes rather than `process.svg`'s numbered panels.
+- Nodes: General Scheme (filled ink, done, published July 2026); pre-legislative
+  scrutiny (by Oireachtas committee); Bill drafted; Oireachtas passage (five Stages in
+  each House); commencement — all hollow, muted. Progress is not an Irish-side
+  attribution, so the reached node is ink, not green. No duration is given for
+  passage: no official source states one.
 - Band: **"The General Scheme is not law."** then the regulation-after-enactment
   caveat. This is the single most important thing the figure carries once separated
   from the article.
 - No status glyphs. The article's table used ✅ and ⏳; neither codepoint is in Source
   Serif 4 or Noto Serif Devanagari, so in an isolated SVG document they would fall back
   or go to tofu. Colour and fill carry the status instead.
-- Source: the stages are Oireachtas procedure, not text in the Scheme, and are cited as
-  such rather than attributed to it.
+- Source: the stages are Oireachtas procedure, not text in the Scheme, and are cited to
+  the Houses of the Oireachtas "Stages of a Bill" procedure guide rather than
+  attributed to the Scheme.
 
 `![Where the Bill actually is, and what is still left to regulation](./passage.svg)`

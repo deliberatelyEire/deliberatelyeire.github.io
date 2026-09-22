@@ -14,21 +14,21 @@
 <text x="1134" y="631.0" font-size="27.2" font-weight="700" fill="#0B0C0E" text-anchor="end">@DeliberatelyÉire</text>
 <text x="66" y="575.0" font-size="16.0" fill="#5D5E63">Sources: General Scheme, Irish Nationality and Citizenship (Amendment) Bill 2026, Head 9; s. 16A; International Protection Act 2015 s. 60(6)</text>
 <text x="66.0" y="169.2" font-size="21" font-weight="600" fill="#0B0C0E">Time spent on these permissions will not count</text>
-<rect x="66.0" y="209.2" width="26" height="14" fill="#9C8B76" rx="2"/>
+<rect x="66.0" y="209.2" width="26" height="14" fill="#5D5E63" rx="2"/>
 <text x="110.0" y="221.2" font-size="20" font-weight="600" fill="#0B0C0E">Temporary Protection</text>
-<text x="550.0" y="221.2" font-size="17" fill="#5D5E63">s. 60(6) of the 2015 Act, the mass-influx route</text>
-<rect x="66.0" y="266.2" width="26" height="14" fill="#9C8B76" rx="2"/>
+<text x="550.0" y="221.2" font-size="18" fill="#5D5E63">s. 60(6) of the 2015 Act, the mass-influx route</text>
+<rect x="66.0" y="266.2" width="26" height="14" fill="#5D5E63" rx="2"/>
 <text x="110.0" y="278.2" font-size="20" font-weight="600" fill="#0B0C0E">Awaiting EU treaty rights</text>
-<text x="550.0" y="278.2" font-size="17" fill="#5D5E63">where the claim is afterwards refused</text>
-<rect x="66.0" y="323.3" width="26" height="14" fill="#9C8B76" rx="2"/>
+<text x="550.0" y="278.2" font-size="18" fill="#5D5E63">where the claim is afterwards refused</text>
+<rect x="66.0" y="323.3" width="26" height="14" fill="#5D5E63" rx="2"/>
 <text x="110.0" y="335.3" font-size="20" font-weight="600" fill="#0B0C0E">Reviews and appeals</text>
-<text x="550.0" y="335.3" font-size="17" fill="#5D5E63">of a refused EU treaty rights claim</text>
-<rect x="66.0" y="380.3" width="26" height="14" fill="#9C8B76" rx="2"/>
+<text x="550.0" y="335.3" font-size="18" fill="#5D5E63">of a refused EU treaty rights claim</text>
+<rect x="66.0" y="380.3" width="26" height="14" fill="#5D5E63" rx="2"/>
 <text x="110.0" y="392.3" font-size="20" font-weight="600" fill="#0B0C0E">Residence obtained by fraud</text>
-<text x="550.0" y="392.3" font-size="17" fill="#5D5E63">or by abuse of rights</text>
-<rect x="66.0" y="437.4" width="26" height="14" fill="#9C8B76" rx="2"/>
+<text x="550.0" y="392.3" font-size="18" fill="#5D5E63">or by abuse of rights</text>
+<rect x="66.0" y="437.4" width="26" height="14" fill="#5D5E63" rx="2"/>
 <text x="110.0" y="449.4" font-size="20" font-weight="600" fill="#0B0C0E">Any other temporary permission</text>
-<text x="550.0" y="449.4" font-size="17" fill="#5D5E63">that the Minister prescribes</text>
+<text x="550.0" y="449.4" font-size="18" fill="#5D5E63">that the Minister prescribes</text>
 <line x1="66.0" y1="495.4" x2="1134.0" y2="495.4" stroke="#D8D2C6" stroke-width="1"/>
-<text x="66.0" y="535.4" font-size="17" fill="#5D5E63">Applications made before commencement are assessed under the old rules.</text>
+<text x="66.0" y="535.4" font-size="18" fill="#5D5E63">Applications made before commencement are assessed under the old rules.</text>
 </svg>

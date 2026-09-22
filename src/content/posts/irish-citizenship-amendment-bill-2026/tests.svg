@@ -13,14 +13,14 @@
 <text x="66" y="659.0" font-size="19.2" fill="#5D5E63">Is ar scáth a chéile a mhaireann na daoine</text>
 <text x="1134" y="631.0" font-size="27.2" font-weight="700" fill="#0B0C0E" text-anchor="end">@DeliberatelyÉire</text>
 <text x="66" y="575.0" font-size="16.0" fill="#5D5E63">Sources: General Scheme, Irish Nationality and Citizenship (Amendment) Bill 2026, Heads 5, 6 and 8; ss. 15, 15A, 16(1A)-(1B)</text>
-<rect x="66.0" y="147.2" width="518.0" height="262.0" fill="#F1ECE1" rx="6"/>
-<text x="92.0" y="197.2" font-size="15" font-weight="600" fill="#5D5E63" letter-spacing="1.1">LANGUAGE</text>
+<rect x="66.0" y="147.2" width="518.0" height="262.0" fill="#FAF7F0" stroke="#D8D2C6" stroke-width="1.5" rx="6"/>
+<text x="92.0" y="197.2" font-size="16" font-weight="600" fill="#5D5E63" letter-spacing="1.1">LANGUAGE</text>
 <text x="92.0" y="261.2" font-size="30" font-weight="700" fill="#0B0C0E">Every applicant</text>
 <text x="92.0" y="305.2" font-size="19" fill="#5D5E63">Irish, English or</text>
 <text x="92.0" y="333.2" font-size="19" fill="#5D5E63">Irish Sign Language</text>
 <text x="92.0" y="375.2" font-size="16" fill="#5D5E63">Standard set by the Minister</text>
-<rect x="616.0" y="147.2" width="518.0" height="262.0" fill="#F6F1E6" rx="6"/>
-<text x="642.0" y="197.2" font-size="15" font-weight="600" fill="#5D5E63" letter-spacing="1.1">CIVICS</text>
+<rect x="616.0" y="147.2" width="518.0" height="262.0" fill="#FAF7F0" stroke="#D8D2C6" stroke-width="1.5" rx="6"/>
+<text x="642.0" y="197.2" font-size="16" font-weight="600" fill="#5D5E63" letter-spacing="1.1">CIVICS</text>
 <text x="642.0" y="261.2" font-size="30" font-weight="700" fill="#0B0C0E">Every applicant</text>
 <text x="642.0" y="305.2" font-size="19" fill="#5D5E63">Irish civics, society</text>
 <text x="642.0" y="333.2" font-size="19" fill="#5D5E63">and politics</text>
