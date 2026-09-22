@@ -71,7 +71,7 @@ const ContentGrid = () => {
               </div>
               <div className="flex items-center justify-between type-meta text-muted-foreground pt-3 mt-2 border-t border-border/50">
                 <span className="font-medium">{article.author}</span>
-                <span>{article.date}</span>
+                <span>{article.dateModified ? `Last updated ${article.dateModified}` : article.date}</span>
               </div>
             </motion.article>
           </Link>

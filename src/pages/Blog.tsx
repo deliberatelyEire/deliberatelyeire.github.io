@@ -135,7 +135,7 @@ const Blog = () => {
                       </Link>
                       <div className="flex items-center justify-between type-meta text-muted-foreground pt-4 mt-3 border-t border-border/60">
                         <span className="font-semibold text-foreground">{post.author}</span>
-                        <span>{post.date}</span>
+                        <span>{post.dateModified ? `Last updated ${post.dateModified}` : post.date}</span>
                       </div>
                     </motion.article>
                   ))}

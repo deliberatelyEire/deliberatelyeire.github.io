@@ -169,7 +169,7 @@ const Article = () => {
                 <span className="text-muted-foreground">{article.role}</span>
               </div>
               <div className="flex items-center gap-4">
-                <span className="flex items-center gap-1"><Calendar className="h-3.5 w-3.5" />{article.date}</span>
+                <span className="flex items-center gap-1"><Calendar className="h-3.5 w-3.5" />{article.dateModified ? `Last updated ${article.dateModified}` : article.date}</span>
                 <span className="flex items-center gap-1"><Clock className="h-3.5 w-3.5" />{article.readTime}</span>
               </div>
             </div>
