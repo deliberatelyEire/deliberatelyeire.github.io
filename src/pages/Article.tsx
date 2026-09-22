@@ -187,13 +187,20 @@ const Article = () => {
                 remarkPlugins={[remarkGfm]}
                 components={{
                   img: ({ src, alt }) => {
-                    // Resolve relative image paths - src should already be resolved by posts.ts
+                    // src is already resolved to a bundled asset URL by posts.ts.
+                    //
+                    // Not lazy. These figures render at w-full with no height, so before
+                    // they load their box is 0x0 -- and a zero-area element never
+                    // intersects the viewport, so the lazy observer never fires and the
+                    // image never loads at all. Every figure in every article was silently
+                    // blank. The card images elsewhere lazy-load fine because they sit in
+                    // an aspect-ratio container and have a real box to observe.
                     return (
                       <img
                         src={src || ""}
                         alt={alt || ""}
                         className="w-full rounded-lg my-6 border border-border"
-                        loading="lazy"
+                        decoding="async"
                       />
                     );
                   },
