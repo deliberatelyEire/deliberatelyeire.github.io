@@ -5,7 +5,7 @@ excerpt: "The General Scheme would add two years to the residency requirement, i
 author: "Deliberately Éire Research"
 role: "Immigration Policy Analysis"
 date: "2026-07-15"
-dateModified: "2026-09-21"
+dateModified: "2026-09-22"
 category: "Modern Diaspora"
 readTime: "9 min read"
 cover: "cover.png"
@@ -28,10 +28,11 @@ Take someone who lands in Dublin in **January 2026**. The permission in her pass
 
 ![When each category can first apply, for someone arriving January 2026](./journey.svg)
 
-The bars run to the first date an application may be *made*. A grant is at the Minister's discretion, and processing time sits on top of every bar here.
+The bars run to the first date an application may be *made*. A grant is at the Minister's discretion. The dashes add processing on top: Immigration Service Delivery says [most but not all applications are processed within 12 months](https://www.irishimmigration.ie/how-to-become-a-citizen/become-an-irish-citizen-by-naturalisation/).
 
 - **On an employment permit**, she reaches five years of reckonable residence in **2031**. Under the Scheme she needs eight, so she waits until **2034**.
 - **Married to an Irish citizen** for three years already, she can apply in **2029** today; the Scheme's five-year residence rule pushes her to **2031**.
+- **On Stamp 2 for a one-year taught master's**, that year does not count. Her clock starts with Stamp 1G in 2027, so **2032** becomes **2035**.
 - **On Stamp 2 for a four-year doctorate**, none of that time counts. Her clock starts with Stamp 1G in 2030, so **2035** becomes **2038** — twelve years after she arrived.
 - **On Temporary Protection**, she could count that time today and apply in 2031. Head 9 excludes it outright, so the clock does not run at all while she holds that permission.
 

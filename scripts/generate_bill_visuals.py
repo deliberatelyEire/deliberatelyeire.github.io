@@ -103,11 +103,19 @@ def emit(name, subtitle, sources, body_fn, canvas=CANVAS):
 # Current law: s. 15(1)(c) is 1 year continuous + 4 in the prior 8. ISD states this
 # "totals 5 years of reckonable residence over a 9-year period", so the limbs stack.
 # Head 5 makes it 2 + 6 = 8. Spouse: s. 15A(1)(e)+(f), 1 + 2 = 3, Head 6 makes it 5.
+# Students: Stamp 2 is not reckonable and Stamp 1G is (ISD, Immigration permission
+# stamps), so a one-year taught master's adds one year and a four-year doctorate four.
+#
+# The dashes add processing on top of each bar. ISD's naturalisation guide says "most
+# but not all applications ... are processed within 12 months"; a year is that
+# figure, not a guarantee.
 START = 2026
 AXIS_END = 2040
+PROCESSING_YEARS = 1
 JOURNEY = [
     ("Employment permit", "arrives Jan 2026", 5, 8, None),
     ("Spouse of Irish citizen", "married 3 yrs on arrival", 3, 5, None),
+    ("Master\u2019s graduate, Stamp 2", "1-year master\u2019s, then Stamp 1G", 6, 9, None),
     ("PhD researcher, Stamp 2", "4-year doctorate, then Stamp 1G", 9, 12, None),
     ("Temporary Protection", "s. 60(6) of the 2015 Act", 5, None,
      "clock does not run on this permission"),
@@ -151,15 +159,19 @@ def journey(x0, y0, x1, y1):
             end = px(START + yrs)
             out.append(f'<rect x="{round(ax0,1)}" y="{round(by,1)}" width="{round(end - ax0,1)}" '
                        f'height="{bar_h}" fill="{fill}" rx="2"/>')
+            dash_end = px(START + yrs + PROCESSING_YEARS)
+            out.append(f'<line x1="{round(end + 3,1)}" y1="{round(by + bar_h / 2,1)}" '
+                       f'x2="{round(dash_end,1)}" y2="{round(by + bar_h / 2,1)}" stroke="{fill}" '
+                       f'stroke-width="2" stroke-dasharray="5,4"/>')
             cap = f"{tag}   {START + yrs}"
-            if end + 10 + len(cap) * 16 * WIDTH_BOLD > x1:
+            if dash_end + 10 + len(cap) * 16 * WIDTH_BOLD > x1:
                 # Long bar: set the label inside it rather than off the canvas.
                 out.append(text(end - 10, by + 13, cap, 16, 600, PAPER, "end"))
             else:
-                out.append(text(end + 10, by + 13, cap, 16, 600 if k else 400,
+                out.append(text(dash_end + 10, by + 13, cap, 16, 600 if k else 400,
                                 INK if k else MUTED))
-    note = ("Bars end at the first date an application may be made. The decision and "
-            "processing time come after.")
+    note = ("Bars end when an application may first be made. Dashes add processing: "
+            "ISD decides most within 12 months.")
     fits(note, 16, False, x1 - x0, "journey note")
     out.append(text(x0, y1 - 2, note, 16, 400, MUTED))
     return out
@@ -496,8 +508,8 @@ SCHEME = "General Scheme, Irish Nationality and Citizenship (Amendment) Bill 202
 
 def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    emit("journey.svg", "One arrival, January 2026, four permissions",
-         SCHEME + ", Heads 5, 6, 9; 1956 Act ss. 15, 15A; ISD stamps guide",
+    emit("journey.svg", "One arrival, January 2026, five permissions",
+         SCHEME + ", Heads 5, 6, 9; 1956 Act ss. 15, 15A; ISD guides",
          journey)
     emit("comparison.svg", "What the Scheme would change",
          SCHEME + ", Heads 5-6; Act of 1956 ss. 15, 15A as in force", comparison)

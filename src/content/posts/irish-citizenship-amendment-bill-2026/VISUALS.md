@@ -160,7 +160,7 @@ Replaces the 1956-2026 legal chronicle that was here. The history is not the sto
 what the Scheme does to a person is. File: `journey.svg`, in `index.md` under
 "What It Means for One Arrival".
 
-One arrival, January 2026, four permissions. Bars run to the **first date an
+One arrival, January 2026, five permissions. Bars run to the **first date an
 application may be made** — not a date of citizenship. A grant is at the Minister's
 discretion and processing sits on top, which the figure states on its face.
 
@@ -168,8 +168,18 @@ discretion and processing sits on top, which the figure states on its face.
 |---|---|---|---|
 | Employment permit | 2031 | 2034 | 5 yrs (s. 15(1)(c)) to 8 yrs (Head 5) |
 | Spouse, married 3 yrs on arrival | 2029 | 2031 | 3 yrs (s. 15A(1)(e),(f)) to 5 yrs (Head 6) |
+| Master's graduate, 1-yr taught master's | 2032 | 2035 | Stamp 2 not reckonable; clock starts at Stamp 1G in 2027 |
 | PhD on Stamp 2, 4-yr doctorate | 2035 | 2038 | Stamp 2 not reckonable; clock starts at Stamp 1G in 2030 |
 | Temporary Protection | 2031 | clock does not run | Head 9 excludes s. 60(6) of the 2015 Act |
+
+**Processing dashes.** Each bar carries a dashed one-year tail for processing, drawn
+in the bar's own colour. The year is ISD's naturalisation guide: "most but not all
+applications for citizenship by naturalisation are processed within 12 months". It
+is a typical figure, not a maximum, and the note under the chart says so.
+
+A bachelor's + master's + PhD row was considered and left out: 4 + 1 + 4 years is
+nine on Stamp 2, over ISD's seven-year cap on student permission (eight after a
+level 9 award), so the path as posed is not available.
 
 **The limbs stack.** Current s. 15(1)(c) is 1 year continuous + 4 in the prior 8, and
 ISD describes that as totalling "5 years of reckonable residence over a 9-year
