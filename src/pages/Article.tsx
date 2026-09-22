@@ -7,7 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NewsletterSection from "@/components/NewsletterSection";
 import { getPostByIdOrSlug, getFeaturedPost } from "@/lib/posts";
-import { ArrowLeft, Clock, Calendar, Bookmark, ShieldCheck, Share2 } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, Bookmark, ShieldCheck, Share2, Download } from "lucide-react";
 
 const Article = () => {
   const { id } = useParams();
@@ -142,20 +142,27 @@ const Article = () => {
         <article className="container max-w-3xl mx-auto py-12 px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <div className="flex items-center justify-between mb-6">
-              <Link to="/blog" className="inline-flex items-center gap-1.5 text-xs font-sans-ui font-semibold text-muted-foreground hover:text-foreground transition-colors">
+              <Link to="/blog" className="back-link inline-flex items-center gap-1.5 text-xs font-sans-ui font-semibold text-muted-foreground hover:text-foreground transition-colors no-print">
                 <ArrowLeft className="h-4 w-4" /> Back to All Articles
               </Link>
               <div className="flex items-center gap-2">
-                <button aria-label="Share" className="p-1.5 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary">
+                <button aria-label="Share" className="p-1.5 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary no-print">
                   <Share2 className="h-4 w-4" />
                 </button>
-                <button aria-label="Bookmark" className="p-1.5 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary">
+                <button aria-label="Bookmark" className="p-1.5 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary no-print">
                   <Bookmark className="h-4 w-4" />
+                </button>
+                <button
+                  aria-label="Download PDF"
+                  className="p-1.5 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary no-print"
+                  onClick={() => window.print()}
+                >
+                  <Download className="h-4 w-4" />
                 </button>
               </div>
             </div>
 
-            <span className="text-xs uppercase tracking-wider font-sans-ui font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-md inline-block">
+            <span className="category-badge text-xs uppercase tracking-wider font-sans-ui font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-md inline-block">
               {article.category}
             </span>
             <h1 className="mt-3 text-3xl md:text-5xl font-bold text-foreground leading-[1.15] font-serif">
@@ -163,26 +170,26 @@ const Article = () => {
             </h1>
 
             {/* Author & Meta Bar */}
-            <div className="mt-6 flex flex-wrap items-center justify-between gap-4 py-4 border-y border-border font-sans-ui text-xs text-muted-foreground">
-              <div>
-                <span className="font-bold text-foreground block text-sm">{article.author}</span>
-                <span className="text-muted-foreground">{article.role}</span>
+            <div className="meta-bar mt-6 flex flex-wrap items-center justify-between gap-4 py-4 border-y border-border font-sans-ui text-xs text-muted-foreground">
+              <div className="author-block">
+                <span className="author-name font-bold text-foreground block text-sm">{article.author}</span>
+                <span className="author-role text-muted-foreground">{article.role}</span>
               </div>
-              <div className="flex items-center gap-4">
-                <span className="flex items-center gap-1"><Calendar className="h-3.5 w-3.5" />{article.dateModified ? `Last updated ${article.dateModified}` : article.date}</span>
-                <span className="flex items-center gap-1"><Clock className="h-3.5 w-3.5" />{article.readTime}</span>
+              <div className="meta-items flex items-center gap-4">
+                <span className="meta-item flex items-center gap-1"><Calendar className="h-3.5 w-3.5" />{article.dateModified ? `Last updated ${article.dateModified}` : article.date}</span>
+                <span className="meta-item flex items-center gap-1"><Clock className="h-3.5 w-3.5" />{article.readTime}</span>
               </div>
             </div>
 
             {/* Cover Image */}
             {article.cover && (
               <div className="mt-8 overflow-hidden rounded-xl border border-border shadow-sm bg-card">
-                <img src={article.cover} alt={article.title} className="w-full aspect-[16/9] object-cover" />
+                <img src={article.cover} alt={article.title} className="cover-image w-full aspect-[16/9] object-cover" />
               </div>
             )}
 
             {/* Markdown Content Renderer */}
-            <div className="mt-10 font-serif text-lg leading-relaxed text-foreground/90 markdown-body">
+            <div className="markdown-body mt-10 font-serif text-lg leading-relaxed text-foreground/90 markdown-body">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
@@ -261,18 +268,34 @@ const Article = () => {
 
             {/* Primary Sources & Citations Box */}
             {article.sources && (
-              <div className="mt-12 rounded-xl border border-border bg-card p-6 space-y-2 shadow-sm">
-                <div className="flex items-center gap-2 text-xs font-sans-ui font-bold text-primary uppercase tracking-wider">
+              <div className="sources-box mt-12 rounded-xl border border-border bg-card p-6 space-y-2 shadow-sm">
+                <div className="sources-header flex items-center gap-2 text-xs font-sans-ui font-bold text-primary uppercase tracking-wider">
                   <ShieldCheck className="h-4 w-4" /> Primary Official Sourcing
                 </div>
-                <p className="text-xs font-sans-ui text-muted-foreground leading-normal">
+                <p className="sources-text text-xs font-sans-ui text-muted-foreground leading-normal">
                   <span className="font-semibold text-foreground">Verified Document Record:</span> {article.sources}
                 </p>
               </div>
             )}
 
+            {/* Print Footer - only visible in PDF */}
+            <div className="print-footer screen-hidden" aria-hidden="true">
+              <div className="tricolour-bar" />
+              <p>
+                Published by <strong>Deliberately Éire</strong> — {article.title}
+              </p>
+              <p className="mt-1">
+                {article.dateModified ? `Last updated ${article.dateModified}` : `Published ${article.date}`} · {article.author}
+              </p>
+              <p className="mt-1">
+                <a href={typeof window !== 'undefined' ? window.location.href : ''} className="text-primary underline">
+                  deliberatelyeire.github.io/article/{article.slug || article.id}
+                </a>
+              </p>
+            </div>
+
             {/* Dispatch Subscription Box */}
-            <div className="mt-10 rounded-xl bg-card border-2 border-primary/25 p-8 text-center space-y-3">
+            <div className="mt-10 rounded-xl bg-card border-2 border-primary/25 p-8 text-center space-y-3 no-print">
               <span className="text-xs uppercase tracking-wider font-sans-ui font-semibold text-primary">
                 Deliberately Éire Community
               </span>

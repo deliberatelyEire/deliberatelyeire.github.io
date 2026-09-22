@@ -138,4 +138,370 @@
       #148708 100%
     );
   }
+  
+  /* Screen-only / print-only utilities */
+  .screen-hidden {
+    display: none !important;
+  }
+  
+  @media print {
+    .screen-hidden {
+      display: block !important;
+    }
+  }
+  
+  /* Print styles for PDF export */
+  @media print {
+    /* Hide non-content elements */
+    header,
+    footer,
+    nav,
+    .fixed,
+    .reading-progress,
+    .no-print,
+    [data-no-print],
+    button,
+    .share-button,
+    .bookmark-button,
+    .newsletter-section,
+    #newsletter,
+    .subscription-box,
+    .back-link {
+      display: none !important;
+    }
+    
+    /* Page setup */
+    @page {
+      margin: 2.5cm 2cm;
+      size: A4;
+    }
+    
+    /* Root styles for print */
+    html {
+      font-size: 12pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    body {
+      background: #FAF7F0 !important;
+      color: #0B0C0E !important;
+      font-family: 'Source Serif 4', 'Bitstream Charter', Charter, Georgia, serif !important;
+      line-height: 1.7;
+    }
+    
+    /* Article container */
+    article {
+      max-width: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    
+    main {
+      padding: 0 !important;
+    }
+    
+    .container {
+      max-width: none !important;
+      padding: 0 !important;
+    }
+    
+    /* Category badge */
+    .category-badge {
+      display: inline-block;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+      font-size: 0.7rem !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.1em !important;
+      color: #148708 !important;
+      background: rgba(20, 135, 8, 0.1) !important;
+      padding: 0.25rem 0.625rem !important;
+      border-radius: 0.375rem !important;
+      margin-bottom: 1rem !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    /* Title */
+    article h1 {
+      font-family: 'Source Serif 4', 'Bitstream Charter', Charter, Georgia, serif !important;
+      font-size: 2.5rem !important;
+      font-weight: 700 !important;
+      line-height: 1.15 !important;
+      color: #0B0C0E !important;
+      margin: 0.75rem 0 1.5rem !important;
+      letter-spacing: -0.015em !important;
+    }
+    
+    /* Meta bar */
+    .meta-bar {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 1rem !important;
+      padding: 1.5rem 0 !important;
+      border-top: 1px solid #D8D2C6 !important;
+      border-bottom: 1px solid #D8D2C6 !important;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+      font-size: 0.75rem !important;
+      color: #5D5E63 !important;
+      margin-bottom: 2rem !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    .meta-bar .author-block {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    
+    .meta-bar .author-name {
+      font-weight: 700 !important;
+      font-size: 0.875rem !important;
+      color: #0B0C0E !important;
+      margin-bottom: 0.125rem !important;
+    }
+    
+    .meta-bar .author-role {
+      color: #5D5E63 !important;
+    }
+    
+    .meta-bar .meta-items {
+      display: flex !important;
+      align-items: center !important;
+      gap: 1.5rem !important;
+    }
+    
+    .meta-bar .meta-item {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.375rem !important;
+    }
+    
+    .meta-bar svg {
+      width: 14px !important;
+      height: 14px !important;
+      color: #5D5E63 !important;
+    }
+    
+    /* Cover image */
+    .cover-image {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      aspect-ratio: 16/9 !important;
+      object-fit: cover !important;
+      border-radius: 0.75rem !important;
+      border: 1px solid #D8D2C6 !important;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+      margin: 0 0 2.5rem !important;
+      page-break-inside: avoid !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    /* Content */
+    .markdown-body {
+      font-family: 'Source Serif 4', 'Bitstream Charter', Charter, Georgia, serif !important;
+      font-size: 1.125rem !important;
+      line-height: 1.8 !important;
+      color: #1a1c1f !important;
+    }
+    
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3 {
+      font-family: 'Source Serif 4', 'Bitstream Charter', Charter, Georgia, serif !important;
+      font-weight: 700 !important;
+      color: #0B0C0E !important;
+      letter-spacing: -0.015em !important;
+      page-break-after: avoid !important;
+    }
+    
+    .markdown-body h1 {
+      font-size: 2rem !important;
+      margin: 2.5rem 0 1rem !important;
+      padding-bottom: 0.5rem !important;
+      border-bottom: 1px solid rgba(216, 210, 198, 0.6) !important;
+    }
+    
+    .markdown-body h2 {
+      font-size: 1.75rem !important;
+      margin: 2rem 0 0.75rem !important;
+      padding-bottom: 0.25rem !important;
+      border-bottom: 1px solid rgba(216, 210, 198, 0.4) !important;
+    }
+    
+    .markdown-body h3 {
+      font-size: 1.5rem !important;
+      margin: 1.75rem 0 0.5rem !important;
+    }
+    
+    .markdown-body p {
+      margin: 1.25rem 0 !important;
+      text-align: justify !important;
+      hyphens: auto !important;
+    }
+    
+    .markdown-body blockquote {
+      border-left: 4px solid #148708 !important;
+      padding-left: 1.5rem !important;
+      margin: 2rem 0 !important;
+      font-style: italic !important;
+      font-weight: 500 !important;
+      color: #0B0C0E !important;
+      background: rgba(241, 236, 225, 0.4) !important;
+      border-radius: 0 0.5rem 0.5rem 0 !important;
+      padding: 1rem 1.5rem !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    .markdown-body ul,
+    .markdown-body ol {
+      margin: 1.5rem 0 !important;
+      padding-left: 1.5rem !important;
+    }
+    
+    .markdown-body li {
+      margin: 0.5rem 0 !important;
+      line-height: 1.8 !important;
+    }
+    
+    .markdown-body a {
+      color: #148708 !important;
+      text-decoration: underline !important;
+      text-decoration-color: rgba(20, 135, 8, 0.4) !important;
+    }
+    
+    .markdown-body img {
+      max-width: 100% !important;
+      height: auto !important;
+      border-radius: 0.5rem !important;
+      border: 1px solid #D8D2C6 !important;
+      margin: 2rem 0 !important;
+      page-break-inside: avoid !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    .markdown-body table {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      margin: 2rem 0 !important;
+      font-size: 0.875rem !important;
+      page-break-inside: avoid !important;
+    }
+    
+    .markdown-body th,
+    .markdown-body td {
+      border: 1px solid #D8D2C6 !important;
+      padding: 0.625rem 1rem !important;
+      text-align: left !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    .markdown-body th {
+      background: rgba(241, 236, 225, 0.6) !important;
+      font-weight: 700 !important;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+    }
+    
+    .markdown-body code {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+      font-size: 0.875em !important;
+      background: #F1ECE1 !important;
+      padding: 0.125rem 0.375rem !important;
+      border-radius: 0.25rem !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    .markdown-body pre {
+      background: #141D2B !important;
+      color: #FAF7F0 !important;
+      padding: 1rem !important;
+      border-radius: 0.5rem !important;
+      overflow-x: auto !important;
+      page-break-inside: avoid !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    .markdown-body pre code {
+      background: transparent !important;
+      padding: 0 !important;
+      color: inherit !important;
+    }
+    
+    /* Sources box */
+    .sources-box {
+      margin: 3rem 0 !important;
+      padding: 1.5rem !important;
+      border: 1px solid #D8D2C6 !important;
+      border-radius: 0.75rem !important;
+      background: #FCFAF6 !important;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+      page-break-inside: avoid !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    .sources-box .sources-header {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.5rem !important;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+      font-size: 0.7rem !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.1em !important;
+      color: #148708 !important;
+      margin-bottom: 0.75rem !important;
+    }
+    
+    .sources-box .sources-text {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+      font-size: 0.75rem !important;
+      line-height: 1.6 !important;
+      color: #5D5E63 !important;
+    }
+    
+    .sources-box .sources-text strong {
+      color: #0B0C0E !important;
+      font-weight: 600 !important;
+    }
+    
+    /* Footer note */
+    .print-footer {
+      margin-top: 3rem !important;
+      padding-top: 1.5rem !important;
+      border-top: 1px solid #D8D2C6 !important;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+      font-size: 0.75rem !important;
+      color: #5D5E63 !important;
+      text-align: center !important;
+    }
+    
+    .print-footer .tricolour-bar {
+      width: 60px !important;
+      height: 3px !important;
+      margin: 0.75rem auto !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    /* Ensure good page breaks */
+    h1, h2, h3, .sources-box, .cover-image, pre, table {
+      page-break-inside: avoid !important;
+    }
+    
+    p, li, blockquote {
+      orphans: 3;
+      widows: 3;
+    }
+  }
 }
