@@ -58,7 +58,7 @@ There is a tension here worth naming plainly. Ireland recruits doctoral research
 
 ## Master's Graduates: Six Years
 
-![Master's graduates: time to citizenship, showing Ireland at six years against five in France and Germany, eight in the UK and ten in Austria](./masters_framed.svg)
+![Master's graduates: time to citizenship, showing Ireland at six years against five in France and Germany, seven in the UK and ten in Austria](./masters_framed.svg)
 
 The master's route shows the same rule at a smaller scale. A taught master's is usually one year on Stamp 2. That year is discarded; the Stamp 1G graduate year that follows counts in full. Five countable years plus one discarded year comes to six.
 

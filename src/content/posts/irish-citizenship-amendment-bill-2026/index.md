@@ -14,7 +14,7 @@ featured: false
 order: 2
 ---
 
-**A plain-language guide to the General Scheme published by the Department of Justice, Home Affairs and Migration**
+A plain-language guide to the General Scheme published by the Department of Justice, Home Affairs and Migration
 
 ## The Headline
 
@@ -103,7 +103,10 @@ The Minister will set the exact income threshold and the lists of "prescribed" w
 
 ### 3. Language and Civics Tests (Heads 5 & 6)
 
-Two entirely new requirements:
+Two entirely new requirements, both applying to every naturalisation applicant under Sections 15 and 15A:
+
+- **Language proficiency** — Irish, English, or Irish Sign Language, to a standard the Minister sets
+- **Civics knowledge** — "Irish civics, society and politics", to a standard the Minister sets
 
 ![The two new tests, and the one thing that can never be waived](./tests.svg)
 
@@ -114,6 +117,12 @@ Two entirely new requirements:
 ### 4. Cleaner Reckonable Residence: Temporary Permissions Don't Count (Head 9, Section 16A)
 
 The Bill explicitly excludes from "reckonable residence" any time spent on **temporary or inherently transitory permissions**, including:
+
+- Temporary Protection permissions under section 60(6) of the 2015 Act (the mass-influx route, e.g. Ukraine)
+- Permissions while awaiting EU treaty rights determinations (where subsequently refused)
+- Permissions during reviews/appeals of refused EU treaty rights claims
+- Periods where residence was based on **fraud or abuse of rights**
+- Any other temporary/limited permission the Minister prescribes
 
 ![Time the Scheme stops counting toward reckonable residence](./reckonable.svg)
 
@@ -134,6 +143,11 @@ This sits alongside existing grounds (fraud, concealment, disloyalty, etc.). The
 ### 6. Offences That Bar Naturalisation (Schedule 1)
 
 A new Schedule lists specific offences that **automatically preclude** a grant of citizenship, whether committed before or during the application process. These include offences under:
+
+- Immigration Acts (1999, 2004)
+- International Protection Acts (2015, 2026)
+- EU Free Movement Regulations (2015)
+- EU Withdrawal Agreement Regulations (2020)
 
 ![What bars a grant of citizenship, and what revokes one](./barriers.svg)
 
