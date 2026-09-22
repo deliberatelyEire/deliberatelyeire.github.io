@@ -28,7 +28,7 @@ Take someone who lands in Dublin in **January 2026**. The permission in her pass
 
 ![When each category can first apply, for someone arriving January 2026](./journey.svg)
 
-The bars run to the first date an application may be *made*. A grant is at the Minister's discretion. The dashes add processing on top: Immigration Service Delivery says [most but not all applications are processed within 12 months](https://www.irishimmigration.ie/how-to-become-a-citizen/become-an-irish-citizen-by-naturalisation/).
+The bars run to the first date an application may be *made*. A grant is at the Minister's discretion. The dashed boxes add processing on top: Immigration Service Delivery says [most but not all applications are processed within 12 months](https://www.irishimmigration.ie/how-to-become-a-citizen/become-an-irish-citizen-by-naturalisation/). The total beside each bar counts from arrival to a likely decision, so a PhD researcher who lands in 2026 is looking at about thirteen years under the Scheme.
 
 - **On an employment permit**, she reaches five years of reckonable residence in **2031**. Under the Scheme she needs eight, so she waits until **2034**.
 - **Married to an Irish citizen** for three years already, she can apply in **2029** today; the Scheme's five-year residence rule pushes her to **2031**.

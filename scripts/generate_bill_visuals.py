@@ -159,19 +159,22 @@ def journey(x0, y0, x1, y1):
             end = px(START + yrs)
             out.append(f'<rect x="{round(ax0,1)}" y="{round(by,1)}" width="{round(end - ax0,1)}" '
                        f'height="{bar_h}" fill="{fill}" rx="2"/>')
+            # Processing: a hollow dashed box at the bar's height, so it reads as more
+            # of the same wait rather than as a separate mark.
             dash_end = px(START + yrs + PROCESSING_YEARS)
-            out.append(f'<line x1="{round(end + 3,1)}" y1="{round(by + bar_h / 2,1)}" '
-                       f'x2="{round(dash_end,1)}" y2="{round(by + bar_h / 2,1)}" stroke="{fill}" '
-                       f'stroke-width="2" stroke-dasharray="5,4"/>')
-            cap = f"{tag}   {START + yrs}"
+            out.append(f'<rect x="{round(end + 1,1)}" y="{round(by + 0.75,1)}" '
+                       f'width="{round(dash_end - end - 1.75,1)}" height="{bar_h - 1.5}" fill="none" '
+                       f'stroke="{fill}" stroke-width="1.5" stroke-dasharray="4,3"/>')
+            # Total runs from arrival to a likely decision: the bar plus processing.
+            cap = f"{tag}   {START + yrs} \u00b7 ~{yrs + PROCESSING_YEARS} yrs"
             if dash_end + 10 + len(cap) * 16 * WIDTH_BOLD > x1:
                 # Long bar: set the label inside it rather than off the canvas.
                 out.append(text(end - 10, by + 13, cap, 16, 600, PAPER, "end"))
             else:
                 out.append(text(dash_end + 10, by + 13, cap, 16, 600 if k else 400,
                                 INK if k else MUTED))
-    note = ("Bars end when an application may first be made. Dashes add processing: "
-            "ISD decides most within 12 months.")
+    note = ("Bars end when an application may first be made; dashed boxes add processing "
+            "(ISD: most within 12 months). Totals include both.")
     fits(note, 16, False, x1 - x0, "journey note")
     out.append(text(x0, y1 - 2, note, 16, 400, MUTED))
     return out

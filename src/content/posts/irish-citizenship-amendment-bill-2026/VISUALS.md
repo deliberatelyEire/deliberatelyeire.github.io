@@ -172,8 +172,10 @@ discretion and processing sits on top, which the figure states on its face.
 | PhD on Stamp 2, 4-yr doctorate | 2035 | 2038 | Stamp 2 not reckonable; clock starts at Stamp 1G in 2030 |
 | Temporary Protection | 2031 | clock does not run | Head 9 excludes s. 60(6) of the 2015 Act |
 
-**Processing dashes.** Each bar carries a dashed one-year tail for processing, drawn
-in the bar's own colour. The year is ISD's naturalisation guide: "most but not all
+**Processing and totals.** Each bar carries a hollow dashed box, the bar's height and
+colour, for one year of processing, and its label adds the total from arrival to a
+likely decision (bar + processing), e.g. "new 2034 · ~9 yrs"; the tilde marks that
+the processing year is typical, not fixed. The year is ISD's naturalisation guide: "most but not all
 applications for citizenship by naturalisation are processed within 12 months". It
 is a typical figure, not a maximum, and the note under the chart says so.
 
