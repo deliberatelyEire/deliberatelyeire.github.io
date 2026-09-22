@@ -23,6 +23,9 @@ OUTPUT_DIR = PROJECT_DIR / "src" / "content" / "posts" / "ireland-citizenship"
 TEMP_DIR = Path("/tmp/citizenship-charts")
 POST_VISUALS_DIR = Path.home() / ".claude" / "skills" / "synced" / "57179235-8abd-44f1-933a-6ad93664feb8_da48fdcd-c46a-415c-ac7b-9f1904cf05f6" / "post-visuals"
 
+sys.path.insert(0, str(SCRIPTS_DIR))
+from embed_font import embed as embed_site_faces  # noqa: E402
+
 PIXELS_PER_YEAR = 56
 BAR_X = 420
 BAR_H = 26
@@ -242,6 +245,9 @@ def generate_frame_and_chart(pathway_key, config):
 
     chart_svg = generate_chart_svg(data, config)
     framed = frame_svg_path.read_text().replace("<!-- CONTENT -->", chart_svg)
+    # The frame's stacks are neither of the site's faces, and an SVG in an <img>
+    # cannot pull the page's webfonts. Carry both faces in the file.
+    framed = embed_site_faces(framed)
 
     out = OUTPUT_DIR / f"{pathway_key}_framed.svg"
     out.write_text(framed)
