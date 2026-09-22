@@ -10,8 +10,8 @@ category: "Modern Diaspora"
 readTime: "8 min read"
 cover: "cover.png"
 sources: "Immigration Service Delivery (IE), Legifrance (FR), BAMF and BMI (DE), Home Office (UK), oesterreich.gv.at (AT), 2026"
-featured: true
-order: 1
+featured: false
+order: 2
 ---
 
 Two people land at Dublin Airport in the same week. One holds a critical skills employment permit. The other holds a letter of offer from a university. Five years later, the worker can post a naturalisation application. The researcher cannot, and if the doctorate ran the usual four years, has four more years to wait.

@@ -7,7 +7,6 @@ import { BookOpen, ArrowRight, Clock, Feather, Sparkles, Share2 } from "lucide-r
 const HeroSection = () => {
   const allPosts = getAllPosts();
   const featuredArticle = getFeaturedPost() || allPosts[0];
-  const featuredPosts = allPosts.filter((p) => p.id !== featuredArticle?.id).slice(0, 5);
 
   // If no posts exist yet, render a mission & welcome hero
   if (!featuredArticle) {

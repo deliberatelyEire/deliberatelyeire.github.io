@@ -10,8 +10,8 @@ category: "Modern Diaspora"
 readTime: "9 min read"
 cover: "cover.png"
 sources: "General Scheme of the Irish Nationality and Citizenship (Amendment) Bill 2026, Department of Justice, Home Affairs and Migration (gov.ie), July 2026"
-featured: false
-order: 2
+featured: true
+order: 1
 ---
 
 A plain-language guide to the General Scheme published by the Department of Justice, Home Affairs and Migration
