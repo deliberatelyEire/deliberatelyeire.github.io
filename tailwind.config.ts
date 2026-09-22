@@ -14,7 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ["Source Serif 4", "Bitstream Charter", "Charter", "Georgia", "serif"],
+        // Quoted: an unquoted family must be a sequence of CSS identifiers, and `4` is
+        // not one, so `font-family: Source Serif 4, ...` is an invalid declaration and
+        // the browser drops the whole stack, fallbacks included.
+        serif: ["'Source Serif 4'", "Bitstream Charter", "Charter", "Georgia", "serif"],
         sans: ["Plus Jakarta Sans", "Satoshi", "system-ui", "sans-serif"],
         deva: ["Noto Serif Devanagari", "Lohit Devanagari", "serif"],
       },

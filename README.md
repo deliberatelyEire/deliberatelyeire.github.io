@@ -26,8 +26,8 @@ scripts/
   ├─ generate_citizenship_charts.py  # CSV → SVG chart generation
   ├─ generate_framed_charts.py       # Post-visuals framed chart generation
   ├─ generate_bill_visuals.py        # Citizenship Bill 2026 post figures
-  ├─ embed_font.py                   # Inline the site serif into figure SVGs
-  ├─ fonts/                          # Source Serif 4 v14 latin variable woff2, as Google Fonts serves it (OFL)
+  ├─ embed_font.py                   # Inline the site's serif faces into figure SVGs
+  ├─ fonts/                          # Source Serif 4 + Noto Serif Devanagari woff2, as Google Fonts serves them (OFL)
   └─ prerender.mjs                    # Static site prerendering
 public/
   └─ article/                     # Sitemap & Open Graph assets
@@ -148,7 +148,7 @@ This is configured as a GitHub Pages site. The `postbuild` script in `package.js
 - **Styling**: Tailwind CSS 3.4 with oklch color scheme
 - **UI components**: shadcn/ui (Radix UI primitives)
 - **Animations**: Framer Motion 12
-- **Data viz**: Custom Python SVG generation, with the site serif (Source Serif 4) subset into each SVG
+- **Data viz**: Custom Python SVG generation, with the site's serifs (Source Serif 4, Noto Serif Devanagari) subset into each SVG
 - **Content**: Markdown with YAML frontmatter
 - **Query**: @tanstack/react-query
 - **Form handling**: React Hook Form + Zod validation

@@ -23,18 +23,20 @@ image extensions only, so a non-`index.md` file neither publishes nor bundles.
 
 ## Typeface
 
-The figures carry the site's body serif, **Source Serif 4**, embedded as a subset
-`@font-face` inside each SVG by `scripts/embed_font.py`. The generator calls it
+The figures carry the site's two faces — **Source Serif 4** for the latin text and
+**Noto Serif Devanagari** for the footer motto — embedded as subset `@font-face`
+blocks inside each SVG by `scripts/embed_font.py`. The generator calls it
 automatically; it can also be run standalone over existing files, and re-running it
-refreshes the face rather than skipping.
+refreshes the faces rather than skipping. Its output is byte-stable, so a rerun that
+changes nothing leaves the files alone.
 
 The post-visuals frame declares `Bitstream Charter, Charter, Georgia, Times New
-Roman, serif`, which omits Source Serif 4, so figures placed beside the article read
-as a visibly different serif from the prose. An SVG referenced from an `<img>` is an
-isolated document and cannot load the page's webfonts, so the face has to travel
-inside the file.
+Roman, serif` for latin and `Lohit Devanagari, Noto Serif Devanagari, serif` for
+Devanagari. Neither resolves the way the page does, and an SVG referenced from an
+`<img>` is an isolated document that cannot load the page's webfonts, so both faces
+have to travel inside the file.
 
-Two details decide whether that actually works, and both fail silently:
+Four details decide whether that actually works, and all four fail silently:
 
 - **The family name is quoted** — `'Source Serif 4', …`. An unquoted CSS family must
   be a sequence of identifiers, and `4` is not one, so the unquoted form is an invalid
@@ -50,19 +52,31 @@ Two details decide whether that actually works, and both fail silently:
   type; renderers that ignore optical sizing land on that same default anyway, so
   keeping the axis is never worse. `wght` is clamped to 400–700, the only weights
   drawn, which costs nothing and takes about a third off the subset.
+- **Which characters get embedded comes from each face's own cmap**, not from a
+  codepoint range. A range test meant to skip Devanagari also skips the punctuation
+  these figures lean on: en and em dashes, curly apostrophes, the minus sign. Those
+  sit above the Devanagari block, the latin font covers them, and dropping them put
+  Georgia glyphs in the middle of a Source Serif 4 line (`Fastest here — tied with
+  France`, `Processing: 12–19 months`). Because the two cmaps overlap on latin, the
+  split follows each `<text>` node's own `font-family` rather than the codepoints.
+- **The Devanagari face keeps every layout feature.** Conjuncts and matra reordering
+  need the Indic GSUB features — `akhn`, `rphf`, `blwf`, `half`, `rkrf`, `cjct`,
+  `nukt`, `abvs`, `blws`, `psts`, `pres` — so subsetting it with the latin feature
+  list (`kern`, `liga`, `calt`) yields a face that renders without error and shapes
+  wrong.
 
-Which characters get embedded is decided by the source font's own cmap, not by a
-codepoint range. Devanagari is deliberately left out — its own stack already resolves,
-and subsetting conjuncts safely is a separate problem — but a range test that excludes
-it also excludes the punctuation these figures lean on: en and em dashes, curly
-apostrophes, the minus sign. Those sit above the Devanagari block, the latin font
-covers them, and dropping them put Georgia glyphs in the middle of a Source Serif 4
-line (`Fastest here — tied with France`, `Processing: 12–19 months`).
+Leaving Devanagari to its own stack, as an earlier version of this did, looks safe and
+is not: neither Lohit nor Noto Serif Devanagari is installed by default on macOS or
+Windows, so the motto fell through to whatever Devanagari face the viewer's OS
+happened to ship — a sans on this machine, something else elsewhere, never the site's
+face. Verified by rendering the motto three ways at 27.6px and comparing ink extents:
+embedded 169px, the page's Noto Serif Devanagari webfont 171px, the macOS fallback
+162px, with the embedded and webfont renders visually identical.
 
-The source file is the exact latin woff2 that `fonts.googleapis.com` serves the site
-(Source Serif 4 v14), so the figures and the prose are the same build — see
-`scripts/fonts/README.md` for provenance. Each figure lands around 70KB, up from ~28KB
-before embedding; they are lazily loaded.
+The source files are the exact woff2 builds `fonts.googleapis.com` serves the site, so
+the figures and the prose are the same fonts — see `scripts/fonts/README.md` for
+provenance and licences. Each figure lands around 80KB, up from ~28KB before
+embedding; they are lazily loaded.
 
 ## Sourcing
 
