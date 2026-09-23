@@ -294,10 +294,10 @@ def process(x0, y0, x1, y1):
 # one-sided on purpose: an invented "counts" column would be the exact kind of
 # plausible-looking fabrication a figure that travels alone must not carry.
 EXCLUDED = [
-    ("Temporary Protection", "s. 60(6) of the 2015 Act, the mass-influx route"),
+    ("Temporary Protection", "2015 Act s. 60(6); 2026 Act s. 237(8)"),
     ("Awaiting EU treaty rights", "where the claim is afterwards refused"),
     ("Reviews and appeals", "of a refused EU treaty rights claim"),
-    ("Residence obtained by fraud", "or by abuse of rights"),
+    ("Residence obtained by fraud", "or abuse, or later found not entitled"),
     ("Any other temporary permission", "that the Minister prescribes"),
 ]
 
@@ -325,7 +325,9 @@ def reckonable(x0, y0, x1, y1):
     foot = y1 - 6
     out.append(f'<line x1="{x0}" y1="{round(foot - 40,1)}" x2="{x1}" y2="{round(foot - 40,1)}" '
                f'stroke="{HAIRLINE}" stroke-width="1"/>')
-    note = "Applications made before commencement are assessed under the old rules."
+    # Head 9 subhead 2 saves applications already made from these exclusions only;
+    # the Scheme has no such saving for the longer residence period or the tests.
+    note = "These exclusions do not apply to applications made before commencement."
     fits(note, 18, False, x1 - x0, "reckonable note")
     out.append(text(x0, foot, note, 18, 400, MUTED))
     return out
@@ -341,7 +343,7 @@ def reckonable(x0, y0, x1, y1):
 # scrutiny is by committee on the General Scheme, and a Bill passes five Stages in
 # each House. No duration is given, because no official source gives one.
 STAGES = [
-    ("General Scheme", "published July 2026", True),
+    ("General Scheme", "published September 2026", True),
     ("Pre-legislative scrutiny", "by Oireachtas committee", False),
     ("Bill drafted", "after scrutiny", False),
     ("Oireachtas passage", "five Stages in each House", False),
@@ -397,6 +399,7 @@ def passage(x0, y0, x1, y1):
 # Each item is a list of lines. A wrapped item keeps a single bullet, so three
 # points do not read as five.
 BARS = ("Bars a grant", "Schedule 1 \u2014 no discretion", [
+    ["Citizenship Act 1956, s. 29A"],
     ["Immigration Acts 1999 and 2004"],
     ["International Protection Acts 2015, 2026"],
     ["EU Free Movement Regulations 2015"],
@@ -523,7 +526,7 @@ def main():
     emit("tests.svg", "Two new tests, standards set later",
          SCHEME + ", Heads 5, 6 and 8; ss. 15, 15A, 16(1A)-(1B)", tests)
     emit("reckonable.svg", "Time the Scheme stops counting",
-         SCHEME + ", Head 9; s. 16A; International Protection Act 2015 s. 60(6)",
+         SCHEME + ", Head 9; s. 16A; IP Acts 2015 s. 60(6), 2026 s. 237(8)",
          reckonable)
     emit("barriers.svg", "Two ways citizenship can be refused or withdrawn",
          SCHEME + ", Head 10 and Schedule 1; Act of 1956 s. 19", barriers)

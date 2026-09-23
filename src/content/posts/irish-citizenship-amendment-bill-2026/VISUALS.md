@@ -263,8 +263,9 @@ File: `reckonable.svg`
   of plausible fabrication the sourcing rules exist to stop.
 - The row marker is `muted`, the same colour the journey figure and the sibling
   pathway charts use for time that does not count.
-- Footer: the transitional protection — applications made before commencement are
-  assessed under the old rules.
+- Footer: the transitional protection. Head 9 subhead 2 saves applications made before
+  commencement from these exclusions only, so the note says "these exclusions", not "the
+  old rules".
 - Source: "Head 9; s. 16A; International Protection Act 2015 s. 60(6)"
 
 `![Time the Scheme stops counting toward reckonable residence](./reckonable.svg)`
@@ -274,7 +275,7 @@ Canvas: figure | Layout: two tiles, bulleted line-groups
 Position: at the end of "6. Offences That Bar Naturalisation", covering sections 5 and 6.
 File: `barriers.svg`
 - Subtitle: "Two ways citizenship can be refused or withdrawn"
-- Left "Bars a grant / Schedule 1 — no discretion": the four instruments.
+- Left "Bars a grant / Schedule 1 — no discretion": the five instruments, starting with the 1956 Act itself (s. 29A).
 - Right "Revokes a grant / Head 10, section 19": the new public policy, public order or
   national security ground; that it sits alongside fraud, concealment and disloyalty;
   and the removal of the duty to consult the Committee of Inquiry Chairperson.
@@ -292,7 +293,7 @@ File: `passage.svg`
   because `process.svg` is also a step-flow in the same article under the same kicker,
   and a forwarded image carries only its subtitle to tell them apart. For the same
   reason this one uses track nodes rather than `process.svg`'s numbered panels.
-- Nodes: General Scheme (filled ink, done, published July 2026); pre-legislative
+- Nodes: General Scheme (filled ink, done, published September 2026); pre-legislative
   scrutiny (by Oireachtas committee); Bill drafted; Oireachtas passage (five Stages in
   each House); commencement — all hollow, muted. Progress is not an Irish-side
   attribution, so the reached node is ink, not green. No duration is given for

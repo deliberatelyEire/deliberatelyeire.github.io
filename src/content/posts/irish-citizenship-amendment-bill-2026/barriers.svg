@@ -13,28 +13,30 @@
 <text x="66" y="659.0" font-size="19.2" fill="#5D5E63">Is ar scáth a chéile a mhaireann na daoine</text>
 <text x="1134" y="631.0" font-size="27.2" font-weight="700" fill="#0B0C0E" text-anchor="end">@DeliberatelyÉire</text>
 <text x="66" y="575.0" font-size="16.0" fill="#5D5E63">Sources: General Scheme, Irish Nationality and Citizenship (Amendment) Bill 2026, Head 10 and Schedule 1; Act of 1956 s. 19</text>
-<rect x="66.0" y="172.3" width="516.0" height="344" fill="#FAF7F0" stroke="#D8D2C6" stroke-width="1.5" rx="6"/>
-<text x="90.0" y="218.3" font-size="24" font-weight="700" fill="#0B0C0E">Bars a grant</text>
-<text x="90.0" y="248.3" font-size="16" fill="#5D5E63">Schedule 1 — no discretion</text>
-<line x1="90.0" y1="268.3" x2="558.0" y2="268.3" stroke="#D8D2C6" stroke-width="1"/>
-<rect x="90.0" y="285.3" width="6" height="6" fill="#5D5E63" rx="1"/>
-<text x="108.0" y="294.3" font-size="18" fill="#0B0C0E">Immigration Acts 1999 and 2004</text>
-<rect x="90.0" y="331.3" width="6" height="6" fill="#5D5E63" rx="1"/>
-<text x="108.0" y="340.3" font-size="18" fill="#0B0C0E">International Protection Acts 2015, 2026</text>
-<rect x="90.0" y="377.3" width="6" height="6" fill="#5D5E63" rx="1"/>
-<text x="108.0" y="386.3" font-size="18" fill="#0B0C0E">EU Free Movement Regulations 2015</text>
-<rect x="90.0" y="423.3" width="6" height="6" fill="#5D5E63" rx="1"/>
-<text x="108.0" y="432.3" font-size="18" fill="#0B0C0E">EU Withdrawal Agreement Regulations 2020</text>
-<rect x="618.0" y="172.3" width="516.0" height="344" fill="#FAF7F0" stroke="#D8D2C6" stroke-width="1.5" rx="6"/>
-<text x="642.0" y="218.3" font-size="24" font-weight="700" fill="#0B0C0E">Revokes a grant</text>
-<text x="642.0" y="248.3" font-size="16" fill="#5D5E63">Head 10, section 19</text>
-<line x1="642.0" y1="268.3" x2="1110.0" y2="268.3" stroke="#D8D2C6" stroke-width="1"/>
-<rect x="642.0" y="285.3" width="6" height="6" fill="#5D5E63" rx="1"/>
-<text x="660.0" y="294.3" font-size="18" fill="#0B0C0E">New ground: public policy, public order</text>
-<text x="660.0" y="326.3" font-size="18" fill="#0B0C0E">or national security</text>
-<rect x="642.0" y="363.3" width="6" height="6" fill="#5D5E63" rx="1"/>
-<text x="660.0" y="372.3" font-size="18" fill="#0B0C0E">Sits alongside fraud, concealment, disloyalty</text>
-<rect x="642.0" y="409.3" width="6" height="6" fill="#5D5E63" rx="1"/>
-<text x="660.0" y="418.3" font-size="18" fill="#0B0C0E">Duty to consult the Committee of Inquiry</text>
-<text x="660.0" y="450.3" font-size="18" fill="#0B0C0E">Chairperson is removed</text>
+<rect x="66.0" y="158.3" width="516.0" height="372" fill="#FAF7F0" stroke="#D8D2C6" stroke-width="1.5" rx="6"/>
+<text x="90.0" y="204.3" font-size="24" font-weight="700" fill="#0B0C0E">Bars a grant</text>
+<text x="90.0" y="234.3" font-size="16" fill="#5D5E63">Schedule 1 — no discretion</text>
+<line x1="90.0" y1="254.3" x2="558.0" y2="254.3" stroke="#D8D2C6" stroke-width="1"/>
+<rect x="90.0" y="271.3" width="6" height="6" fill="#5D5E63" rx="1"/>
+<text x="108.0" y="280.3" font-size="18" fill="#0B0C0E">Citizenship Act 1956, s. 29A</text>
+<rect x="90.0" y="317.3" width="6" height="6" fill="#5D5E63" rx="1"/>
+<text x="108.0" y="326.3" font-size="18" fill="#0B0C0E">Immigration Acts 1999 and 2004</text>
+<rect x="90.0" y="363.3" width="6" height="6" fill="#5D5E63" rx="1"/>
+<text x="108.0" y="372.3" font-size="18" fill="#0B0C0E">International Protection Acts 2015, 2026</text>
+<rect x="90.0" y="409.3" width="6" height="6" fill="#5D5E63" rx="1"/>
+<text x="108.0" y="418.3" font-size="18" fill="#0B0C0E">EU Free Movement Regulations 2015</text>
+<rect x="90.0" y="455.3" width="6" height="6" fill="#5D5E63" rx="1"/>
+<text x="108.0" y="464.3" font-size="18" fill="#0B0C0E">EU Withdrawal Agreement Regulations 2020</text>
+<rect x="618.0" y="158.3" width="516.0" height="372" fill="#FAF7F0" stroke="#D8D2C6" stroke-width="1.5" rx="6"/>
+<text x="642.0" y="204.3" font-size="24" font-weight="700" fill="#0B0C0E">Revokes a grant</text>
+<text x="642.0" y="234.3" font-size="16" fill="#5D5E63">Head 10, section 19</text>
+<line x1="642.0" y1="254.3" x2="1110.0" y2="254.3" stroke="#D8D2C6" stroke-width="1"/>
+<rect x="642.0" y="271.3" width="6" height="6" fill="#5D5E63" rx="1"/>
+<text x="660.0" y="280.3" font-size="18" fill="#0B0C0E">New ground: public policy, public order</text>
+<text x="660.0" y="312.3" font-size="18" fill="#0B0C0E">or national security</text>
+<rect x="642.0" y="349.3" width="6" height="6" fill="#5D5E63" rx="1"/>
+<text x="660.0" y="358.3" font-size="18" fill="#0B0C0E">Sits alongside fraud, concealment, disloyalty</text>
+<rect x="642.0" y="395.3" width="6" height="6" fill="#5D5E63" rx="1"/>
+<text x="660.0" y="404.3" font-size="18" fill="#0B0C0E">Duty to consult the Committee of Inquiry</text>
+<text x="660.0" y="436.3" font-size="18" fill="#0B0C0E">Chairperson is removed</text>
 </svg>
