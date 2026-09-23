@@ -16,7 +16,7 @@ order: 1
 
 A plain-language guide to the General Scheme published by the Department of Justice, Home Affairs and Migration
 
-## The Headline
+## Five Years to Eight: What Ireland Is Proposing
 
 The Irish government has published the **[General Scheme of the Irish Nationality and Citizenship (Amendment) Bill 2026](https://assets.gov.ie/static/documents/cadca21c/General_Scheme_of_the_Irish_Nationality_and_Citizenship_Amendment_Bill_2026.pdf)** — a legislative blueprint that, if enacted, would represent the most significant tightening of naturalisation requirements in decades.
 
