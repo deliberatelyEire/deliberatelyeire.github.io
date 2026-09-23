@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect } from "react";
+import React from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -7,7 +8,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NewsletterSection from "@/components/NewsletterSection";
 import { getPostByIdOrSlug, getFeaturedPost } from "@/lib/posts";
-import { ArrowLeft, Clock, Calendar, Bookmark, ShieldCheck, Share2 } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, Bookmark, ShieldCheck, Share2, Download } from "lucide-react";
 
 const Article = () => {
   const { id } = useParams();
@@ -140,22 +141,67 @@ const Article = () => {
       
       <main>
         <article className="container max-w-3xl mx-auto py-12 px-6">
+          
+          {/* Title Page - only visible in PDF */}
+          <section className="title-page print-only" aria-hidden="true">
+            <div className="publisher-mark">
+              Deliberately <span>Éire</span>
+            </div>
+            <img 
+              src="/logo.png" 
+              alt="Deliberately Éire Diya Mark" 
+              className="diya-mark" 
+            />
+            <span className="category-tag">{article.category}</span>
+            <h1>{article.title}</h1>
+            {article.excerpt && (
+              <p className="subtitle">{article.excerpt}</p>
+            )}
+            <div className="author-block">
+              <div className="author-name">{article.author}</div>
+              <div className="author-role">{article.role}</div>
+            </div>
+            <div className="meta-line">
+              {article.dateModified ? `Last updated ${article.dateModified}` : `Published ${article.date}`}
+            </div>
+            <div className="meta-line">
+              {article.readTime}
+            </div>
+            {article.cover && (
+              <img src={article.cover} alt={article.title} className="cover-full" />
+            )}
+            <div className="colophon">
+              <a href={typeof window !== 'undefined' ? window.location.href : ''}>
+                deliberatelyeire.github.io/article/{article.slug || article.id}
+              </a>
+            </div>
+          </section>
+
+          {/* Content starts on next page in print */}
+          <div className="content-start">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <div className="flex items-center justify-between mb-6">
-              <Link to="/blog" className="inline-flex items-center gap-1.5 type-meta font-semibold text-muted-foreground hover:text-foreground transition-colors">
+              <Link to="/blog" className="back-link no-print inline-flex items-center gap-1.5 type-meta font-semibold text-muted-foreground hover:text-foreground transition-colors">
                 <ArrowLeft className="h-4 w-4" /> Back to All Articles
               </Link>
               <div className="flex items-center gap-2">
-                <button aria-label="Share" className="p-1.5 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary">
+                <button aria-label="Share" className="p-1.5 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary no-print">
                   <Share2 className="h-4 w-4" />
                 </button>
-                <button aria-label="Bookmark" className="p-1.5 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary">
+                <button aria-label="Bookmark" className="p-1.5 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary no-print">
                   <Bookmark className="h-4 w-4" />
+                </button>
+                <button
+                  aria-label="Download PDF"
+                  className="p-1.5 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary no-print"
+                  onClick={() => window.print()}
+                >
+                  <Download className="h-4 w-4" />
                 </button>
               </div>
             </div>
 
-            <span className="type-label font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-md inline-block">
+            <span className="category-badge type-label font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-md inline-block">
               {article.category}
             </span>
             <h1 className="mt-3 type-display font-bold text-foreground">
@@ -163,21 +209,21 @@ const Article = () => {
             </h1>
 
             {/* Author & Meta Bar */}
-            <div className="mt-6 flex flex-wrap items-center justify-between gap-4 py-4 border-y border-border type-meta text-muted-foreground">
-              <div>
-                <span className="type-ui font-bold text-foreground block">{article.author}</span>
-                <span className="text-muted-foreground">{article.role}</span>
+            <div className="meta-bar mt-6 flex flex-wrap items-center justify-between gap-4 py-4 border-y border-border type-meta text-muted-foreground">
+              <div className="author-block">
+                <span className="author-name type-ui font-bold text-foreground block">{article.author}</span>
+                <span className="author-role text-muted-foreground">{article.role}</span>
               </div>
-              <div className="flex items-center gap-4">
-                <span className="flex items-center gap-1"><Calendar className="h-3.5 w-3.5" />{article.dateModified ? `Last updated ${article.dateModified}` : article.date}</span>
-                <span className="flex items-center gap-1"><Clock className="h-3.5 w-3.5" />{article.readTime}</span>
+              <div className="meta-items flex items-center gap-4">
+                <span className="meta-item flex items-center gap-1"><Calendar className="h-3.5 w-3.5" />{article.dateModified ? `Last updated ${article.dateModified}` : article.date}</span>
+                <span className="meta-item flex items-center gap-1"><Clock className="h-3.5 w-3.5" />{article.readTime}</span>
               </div>
             </div>
 
             {/* Cover Image */}
             {article.cover && (
               <div className="mt-8 overflow-hidden rounded-xl border border-border shadow-sm bg-card">
-                <img src={article.cover} alt={article.title} className="w-full aspect-[16/9] object-cover" />
+                <img src={article.cover} alt={article.title} className="cover-image w-full aspect-[16/9] object-cover" />
               </div>
             )}
 
@@ -224,11 +270,21 @@ const Article = () => {
                       {children}
                     </p>
                   ),
-                  blockquote: ({ children }) => (
-                    <blockquote className="border-l-4 border-primary pl-5 py-3 my-6 italic text-foreground font-medium bg-secondary/40 rounded-r-lg">
-                      {children}
-                    </blockquote>
-                  ),
+                  blockquote: ({ children }) => {
+                    // Check if this is a Key Takeaways blockquote
+                    const isKeyTakeaways = React.Children.toArray(children).some(child => 
+                      typeof child === 'object' && child !== null && 
+                      'props' in child && child.props.children &&
+                      typeof child.props.children === 'string' && 
+                      child.props.children.includes('Key Takeaways')
+                    ) || (typeof children === 'string' && children.includes('Key Takeaways'));
+                    
+                    return (
+                      <blockquote className={`border-l-4 border-primary pl-5 py-3 my-6 italic text-foreground font-medium bg-secondary/40 rounded-r-lg ${isKeyTakeaways ? 'key-takeaways' : ''}`}>
+                        {children}
+                      </blockquote>
+                    );
+                  },
                   ul: ({ children }) => (
                     <ul className="list-disc list-inside space-y-1.5 my-4 type-body">
                       {children}
@@ -268,18 +324,34 @@ const Article = () => {
 
             {/* Primary Sources & Citations Box */}
             {article.sources && (
-              <div className="mt-12 rounded-xl border border-border bg-card p-6 space-y-2 shadow-sm">
-                <div className="flex items-center gap-2 type-label font-bold text-primary">
+              <div className="sources-box mt-12 rounded-xl border border-border bg-card p-6 space-y-2 shadow-sm">
+                <div className="sources-header flex items-center gap-2 type-label font-bold text-primary">
                   <ShieldCheck className="h-4 w-4" /> Primary Official Sourcing
                 </div>
-                <p className="type-meta text-muted-foreground">
+                <p className="sources-text type-meta text-muted-foreground">
                   <span className="font-semibold text-foreground">Verified Document Record:</span> {article.sources}
                 </p>
               </div>
             )}
 
+            {/* Print Footer - only visible in PDF */}
+            <div className="print-footer screen-hidden" aria-hidden="true">
+              <div className="tricolour-bar" />
+              <p>
+                Published by <strong>Deliberately Éire</strong> — {article.title}
+              </p>
+              <p className="mt-1">
+                {article.dateModified ? `Last updated ${article.dateModified}` : `Published ${article.date}`} · {article.author}
+              </p>
+              <p className="mt-1">
+                <a href={typeof window !== 'undefined' ? window.location.href : ''} className="text-primary underline">
+                  deliberatelyeire.github.io/article/{article.slug || article.id}
+                </a>
+              </p>
+            </div>
+
             {/* Dispatch Subscription Box */}
-            <div className="mt-10 rounded-xl bg-card border-2 border-primary/25 p-8 text-center space-y-3">
+            <div className="mt-10 rounded-xl bg-card border-2 border-primary/25 p-8 text-center space-y-3 no-print">
               <span className="type-label font-semibold text-primary">
                 Deliberately Éire Community
               </span>
@@ -294,6 +366,7 @@ const Article = () => {
               </div>
             </div>
           </motion.div>
+        </div>
         </article>
         <NewsletterSection />
       </main>
