@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect } from "react";
+import React from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -140,6 +141,44 @@ const Article = () => {
       
       <main>
         <article className="container max-w-3xl mx-auto py-12 px-6">
+          
+          {/* Title Page - only visible in PDF */}
+          <section className="title-page print-only" aria-hidden="true">
+            <div className="publisher-mark">
+              Deliberately <span>Éire</span>
+            </div>
+            <img 
+              src="/logo.png" 
+              alt="Deliberately Éire Diya Mark" 
+              className="diya-mark" 
+            />
+            <span className="category-tag">{article.category}</span>
+            <h1>{article.title}</h1>
+            {article.excerpt && (
+              <p className="subtitle">{article.excerpt}</p>
+            )}
+            <div className="author-block">
+              <div className="author-name">{article.author}</div>
+              <div className="author-role">{article.role}</div>
+            </div>
+            <div className="meta-line">
+              {article.dateModified ? `Last updated ${article.dateModified}` : `Published ${article.date}`}
+            </div>
+            <div className="meta-line">
+              {article.readTime}
+            </div>
+            {article.cover && (
+              <img src={article.cover} alt={article.title} className="cover-full" />
+            )}
+            <div className="colophon">
+              <a href={typeof window !== 'undefined' ? window.location.href : ''}>
+                deliberatelyeire.github.io/article/{article.slug || article.id}
+              </a>
+            </div>
+          </section>
+
+          {/* Content starts on next page in print */}
+          <div className="content-start">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <div className="flex items-center justify-between mb-6">
               <Link to="/blog" className="back-link inline-flex items-center gap-1.5 text-xs font-sans-ui font-semibold text-muted-foreground hover:text-foreground transition-colors no-print">
@@ -224,11 +263,21 @@ const Article = () => {
                       {children}
                     </p>
                   ),
-                  blockquote: ({ children }) => (
-                    <blockquote className="border-l-4 border-primary pl-5 py-3 my-6 italic text-foreground font-medium bg-secondary/40 rounded-r-lg">
-                      {children}
-                    </blockquote>
-                  ),
+                  blockquote: ({ children }) => {
+                    // Check if this is a Key Takeaways blockquote
+                    const isKeyTakeaways = React.Children.toArray(children).some(child => 
+                      typeof child === 'object' && child !== null && 
+                      'props' in child && child.props.children &&
+                      typeof child.props.children === 'string' && 
+                      child.props.children.includes('Key Takeaways')
+                    ) || (typeof children === 'string' && children.includes('Key Takeaways'));
+                    
+                    return (
+                      <blockquote className={`border-l-4 border-primary pl-5 py-3 my-6 italic text-foreground font-medium bg-secondary/40 rounded-r-lg ${isKeyTakeaways ? 'key-takeaways' : ''}`}>
+                        {children}
+                      </blockquote>
+                    );
+                  },
                   ul: ({ children }) => (
                     <ul className="list-disc list-inside space-y-1.5 my-4 text-base md:text-lg">
                       {children}
@@ -310,6 +359,7 @@ const Article = () => {
               </div>
             </div>
           </motion.div>
+        </div>
         </article>
         <NewsletterSection />
       </main>
