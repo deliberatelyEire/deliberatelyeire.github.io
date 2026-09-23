@@ -174,13 +174,6 @@ A new Schedule lists specific offences that **automatically preclude** a grant o
 | **Temporary Protection beneficiary** | Significant — Temporary Protection time no longer counts | All above + reckonable residence reset |
 | **Student / Stamp 2** | Student time already non-reckonable; no change to that | Must meet all new conditions post-graduation |
 
-### For the Indian Community in Ireland
-- **45,449 Indian citizens were resident** in April 2022 ([CSO Census 2022, Profile 5](https://www.cso.ie/en/releasesandpublications/ep/p-cpp5/censusofpopulation2022profile5-diversitymigrationethnicityirishtravellersreligion/citizenship/)), many on work permits, spouse visas, or student visas.
-- **Spouse route** (married to an Irish citizen): **+2 years** of residence, and the marriage itself must be **2 years longer** before an application can be made.
-- **Work-permit route**: The income threshold is not in the General Scheme. It will be set by Ministerial regulation, taking account of CSO annual earnings and labour costs data and the cost of living (Section 15(3)(a)). Applicants must also avoid any prescribed welfare or housing support for 2 years.
-- **Language test**: English proficiency likely straightforward for most; civics test new for everyone.
-- **Dependent family members**: Not directly addressed in the Bill — but self-sufficiency assessment considers "applicant and his or her family members" (Section 15F(5)(b)).
-
 ## What Happens Next?
 
 ![Where the Bill actually is, and what is still left to regulation](./passage.svg)
