@@ -1,6 +1,6 @@
 ---
 id: "irish-citizenship-amendment-bill-2026"
-title: "What's Changing: The Irish Nationality and Citizenship (Amendment) Bill 2026"
+title: "Ireland's Citizenship Bill 2026: What Changes and When"
 excerpt: "Ireland's citizenship Bill would raise residence from five years to eight and add income, language and civics tests. It is not law yet. Here is what it says."
 author: "Deliberately Éire Research"
 role: "Immigration Policy Analysis"
@@ -42,24 +42,18 @@ The bars run to the first date an application may be *made*. A grant is at the M
 
 | Requirement | Current Law | Proposed (Bill 2026) |
 |-------------|-------------|----------------------|
-| **Applicant Category** | | |
-| Standard naturalisation applicants (workers, long-term residents) | **5 years** reckonable (1 continuous + 4 in the prior 8); no income/language/civics tests | **8 years** reckonable (2 continuous + 6 in the prior 10); income test; language & civics exams |
-| Spouses / civil partners of Irish citizens | 3 yrs marriage; **3 years** residence (1 continuous + 2 in the prior 4) | **5 yrs marriage; 5 years residence (2 continuous + 3 in the prior 5); language, civics and offence bar. Head 6 does not add the self-sufficiency test** |
-| Children born in Ireland to non-nationals (Section 6A, via Section 6B) | Reckonable residence per current Section 16A | **Reckonable residence per new stricter Section 16A, for children born after commencement** (Head 4 amends Section 6B) |
-| Persons on Temporary Protection or pending EU treaty rights | Time counts toward reckonable residence | **Time explicitly excluded from reckonable residence (Head 9)** |
-| Students (Stamp 2) | Time on Stamp 2 does not count toward reckonable residence | **The Scheme is silent on Stamp 2; that exclusion sits outside it. Students must still meet all the new conditions post-graduation** |
-| Dependent family members (of primary applicant) | No separate track; assessed with primary applicant | **Self-sufficiency assessment explicitly includes "applicant and his or her family members" (Section 15F(5)(b))** |
-| Refugees / beneficiaries of subsidiary protection | No distinct naturalisation track; apply via standard or spouse route | **Unchanged. The Scheme does not mention them, and declaration-based permission is not in the Head 9 exclusion list — only Temporary Protection is, under s. 60(6) of the 2015 Act and s. 237(8) of the 2026 Act** |
-| Existing naturalised citizens (revocation) | Fraud, concealment, disloyalty, etc. | **Adds: "public policy, public order, or national security"** |
-| **Residency & Conditions** | | |
-| Standard residency | **5 years** total: 1 year continuous + 4 years in the previous 8 | **8 years total: 2 years continuous + 6 years in the previous 10** |
-| Spouse of Irish citizen: marriage | Married/civil partners 3 years | **Married/civil partners 5 years** |
-| Spouse of Irish citizen: residence | **3 years** total: 1 year continuous + 2 years in the previous 4 | **5 years total: 2 years continuous + 3 years in the previous 5** |
-| Self-sufficiency | Not an explicit statutory condition | **New for standard applicants (Section 15): minimum income threshold; no prescribed welfare/housing for 2 years; no state debts** |
-| Language proficiency | Not required | **New: Irish, English, or Irish Sign Language — standard set by Minister** |
-| Civics knowledge | Not required | **New: understanding of Irish society, government, Constitution — standard set by Minister** |
-| Good character | Required | **Required — and explicitly non-waivable** |
-| Reckonable residence | Includes most permissions | **Excludes temporary permissions (protection, EU treaty rights pending, etc.)** |
+| Standard residency | **5 years**: 1 continuous + 4 in the previous 8 | **8 years: 2 continuous + 6 in the previous 10** |
+| Spouse of Irish citizen: marriage | Married or in a civil partnership **3 years** | **5 years** |
+| Spouse of Irish citizen: residence | **3 years**: 1 continuous + 2 in the previous 4 | **5 years: 2 continuous + 3 in the previous 5** |
+| Self-sufficiency | Not an explicit statutory condition | **New for standard applicants (Section 15): minimum income; no prescribed welfare or housing support for 2 years; no state debts. Head 6 does not add it for spouses** |
+| Family members | No separate test | **The welfare and housing lists weigh the "applicant and his or her family members" (Section 15F(5)(b))** |
+| Language proficiency | Not required | **New for all applicants: Irish, English or Irish Sign Language, standard set by the Minister** |
+| Civics knowledge | Not required | **New for all applicants: Irish society, government and Constitution, standard set by the Minister** |
+| Good character | Required | **Required, and explicitly non-waivable** |
+| Listed offences | No statutory list | **Schedule 1 offences bar a grant outright** |
+| Reckonable residence | Temporary Protection and pending EU treaty rights time counts; Stamp 2 does not | **Temporary Protection, refused EU treaty rights claims and fraud excluded (Head 9). Stamp 2 unchanged: still does not count** |
+| Children born in Ireland (Section 6A, via 6B) | Parent's residence reckoned per current Section 16A | **Per the new, stricter Section 16A, for children born after commencement (Head 4)** |
+| Refugees and subsidiary protection | Standard or spouse route | **Unchanged. Only Temporary Protection is in the Head 9 exclusion list (2015 Act s. 60(6); 2026 Act s. 237(8))** |
 | Revocation grounds | Fraud, concealment, disloyalty, etc. | **Adds: "public policy, public order, or national security"** |
 
 ![Current versus proposed naturalisation requirements](./comparison.svg)
