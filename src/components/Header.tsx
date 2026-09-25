@@ -34,7 +34,7 @@ const Header = () => {
                 Deliberately <span className="text-primary font-bold">Éire</span>
               </span>
               <span className="type-label font-semibold text-muted-foreground">
-                Ireland &amp; India Ties
+                Evidence over noise
               </span>
             </div>
           </Link>

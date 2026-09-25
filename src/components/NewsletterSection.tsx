@@ -81,7 +81,7 @@ const NewsletterSection = () => {
             Deliberately Éire Dispatch
           </span>
           <h2 className="type-h1 font-bold">
-            Ties older than either republic.
+            Evidence over noise.
           </h2>
           <p className="type-body text-primary-foreground/85 max-w-xl mx-auto">
             Leave your address to hear when new archival findings, CSO data analysis, and legal comparative studies are published.

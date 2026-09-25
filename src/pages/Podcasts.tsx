@@ -3,69 +3,16 @@ import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Headphones, Play, Pause, Clock, Mic } from "lucide-react";
-import delibratelyImg from "@/assets/DelibratelyEire.jpg";
-import lampImg from "@/assets/lamp.jpg";
-import tiesImg from "@/assets/ireland-india-ties.jpg";
-import article1 from "@/assets/article-1.jpg";
-import article2 from "@/assets/article-2.jpg";
-import article3 from "@/assets/article-3.jpg";
 
-const episodes = [
-  {
-    id: 1,
-    title: "The 1947 Dublin Meetings: Sir B.N. Rau, de Valera, and Part IV of the Indian Constitution",
-    guest: "Prof. Dermot Keogh & Dr. Niraja Gopal Jayal",
-    duration: "48 min",
-    date: "Feb 24, 2026",
-    description: "An in-depth historical exploration into the declassified telegrams and notes of B.N. Rau's December 1947 mission to Dublin to consult with Irish drafters.",
-    image: tiesImg,
-  },
-  {
-    id: 2,
-    title: "Healthcare Pioneers: The Oral History of Indian Doctors in Rural Ireland",
-    guest: "Dr. Ramesh Nair (Irish Medical Organisation) & Dr. Sheila O'Connor",
-    duration: "41 min",
-    date: "Feb 17, 2026",
-    description: "Personal accounts from physicians who moved from Kerala, Punjab, and Maharashtra to serve in Irish county hospitals in Mayo, Donegal, and Kerry.",
-    image: article1,
-  },
-  {
-    id: 3,
-    title: "Renaissances in Dialogue: Tagore, Yeats, and the 1913 Abbey Theatre Staging",
-    guest: "Prof. Declan Kiberd & Dr. Sukanta Chaudhuri",
-    duration: "54 min",
-    date: "Feb 10, 2026",
-    description: "Tracing the literary currents between Dublin and Calcutta: how the Irish Celtic Revival and Bengal Renaissance shared symbols of anti-colonial yearning.",
-    image: lampImg,
-  },
-  {
-    id: 4,
-    title: "Sister Nivedita's Journey: From Dungannon Schoolteacher to National Icon in Bengal",
-    guest: "Dr. Liz Curtis & Reba Som (Biographers of Margaret Noble)",
-    duration: "46 min",
-    date: "Feb 3, 2026",
-    description: "How Margaret Elizabeth Noble's upbringing in Northern Ireland shaped her fiery anti-imperial advocacy, plague relief work, and girls' education in Calcutta.",
-    image: article2,
-  },
-  {
-    id: 5,
-    title: "Aircraft Leasing & Silicon Docks: Ireland–India's Modern Economic Spine",
-    guest: "Sean Flannery (Aviation Finance Ireland) & Priya Venkatesh (IDA)",
-    duration: "39 min",
-    date: "Jan 27, 2026",
-    description: "Unpacking the €5.8B economic corridor: why Indian airlines finance their fleets through Dublin and how Indian engineering talent powers Irish tech.",
-    image: article3,
-  },
-  {
-    id: 6,
-    title: "Two Tricolours, Two Republics: Vexillology, Sacrifice, and Communal Peace",
-    guest: "Dr. Matthew Kelly & Prof. Sugata Bose",
-    duration: "52 min",
-    date: "Jan 20, 2026",
-    description: "Comparing the philosophical and revolutionary origins of the Irish and Indian flags, the symbolism of the white band, and shared republican aspirations.",
-    image: delibratelyImg,
-  },
-];
+const episodes: {
+  id: number;
+  title: string;
+  guest: string;
+  duration: string;
+  date: string;
+  description: string;
+  image: string;
+}[] = [];
 
 const Podcasts = () => {
   const [playingId, setPlayingId] = useState<number | null>(null);
@@ -91,7 +38,7 @@ const Podcasts = () => {
                 The Deliberately Éire Conversations
               </h1>
               <p className="mt-1 type-body text-muted-foreground">
-                In-depth dialogues with historians, diplomats, legal scholars, and diaspora leaders examining Ireland–India connections.
+                In-depth dialogues with historians, diplomats, legal scholars, and diaspora leaders on Irish law, policy, and history.
               </p>
             </div>
           </motion.div>

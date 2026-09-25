@@ -14,7 +14,7 @@ const TopicClusters = () => {
             Thematic Focus Areas
           </h2>
           <p className="type-ui text-muted-foreground mt-0.5">
-            Explore research across four primary pillars of Ireland–India connection
+            Explore research across four primary pillars
           </p>
         </div>
         <Link to="/blog" className="type-meta font-semibold text-primary hover:underline">

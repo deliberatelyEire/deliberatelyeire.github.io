@@ -5,17 +5,9 @@ const Footer = () => {
   return (
     <footer className="border-t border-border bg-card/60">
       <div className="container py-12">
-        {/* Bilingual Mottos Band */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-8 border-b border-border">
+        {/* Motto Band */}
+        <div className="pb-8 border-b border-border">
           <div className="space-y-1">
-            <p className="type-deva font-bold text-foreground">
-              सर्वे भवन्तु सुखिनः
-            </p>
-            <p className="type-meta italic text-muted-foreground">
-              "May all beings be happy, healthy, and free from harm"
-            </p>
-          </div>
-          <div className="space-y-1 md:text-right">
             <p className="type-h4 font-bold italic text-primary">
               Is ar scáth a chéile a mhaireann na daoine
             </p>
@@ -36,7 +28,7 @@ const Footer = () => {
                 Deliberately <span className="text-primary">Éire</span>
               </span>
               <span className="type-meta block text-muted-foreground">
-                @delibratelyEire · Ties older than either republic
+                @delibratelyEire · Evidence over noise
               </span>
             </div>
           </div>

@@ -7,23 +7,9 @@ import { FileText, Download, BookOpen, BarChart3, Scale, GraduationCap, CheckCir
 
 const resources = [
   {
-    title: "Constitutional Concordance: Bunreacht na hÉireann & Part IV",
-    type: "Legal Treatise",
-    description: "Side-by-side comparative legal analysis of Article 45 (Directive Principles of Social Policy) and India's Articles 36–51, including Constituent Assembly debate transcripts.",
-    downloads: "2,450+",
-    icon: Scale,
-  },
-  {
-    title: "Timeline of Ireland–India Relations (1857–2026)",
-    type: "Chronicle Pack",
-    description: "Chronological reference of diplomatic, literary, and political milestones from the 1857 revolt and 1913 Dublin Lockout to 2026 bilateral agreements.",
-    downloads: "4,300+",
-    icon: BookOpen,
-  },
-  {
     title: "CSO Demographic & Healthcare Workforce Report",
     type: "Statistical Brief",
-    description: "Compiled CSO Census data, Medical Council registrations, and NMBI statistics detailing the Indian diaspora's footprint across Irish counties and hospitals.",
+    description: "Compiled CSO Census data, Medical Council registrations, and NMBI statistics detailing the migrant workforce across Irish counties and hospitals.",
     downloads: "3,800+",
     icon: BarChart3,
   },
@@ -33,20 +19,6 @@ const resources = [
     description: "Comprehensive guide for non-EU students navigating postgraduate degrees, 24-month graduate work permissions, and Critical Skills Employment Permits in Ireland.",
     downloads: "6,200+",
     icon: GraduationCap,
-  },
-  {
-    title: "Bilateral Trade & Aviation Finance Data Pack (2020–2026)",
-    type: "Trade Brief",
-    description: "Key metrics on Ireland–India trade in pharmaceuticals, tech services, and Dublin-managed aircraft leasing portfolios serving Indian airlines.",
-    downloads: "1,950+",
-    icon: FileText,
-  },
-  {
-    title: "Vexillology & Republican Symbols Guide",
-    type: "Visual Guide",
-    description: "High-resolution graphic assets, historical notes on flag evolution, and comparative heraldry of the Irish and Indian tricolours.",
-    downloads: "3,100+",
-    icon: BookOpen,
   },
 ];
 
