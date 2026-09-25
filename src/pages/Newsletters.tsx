@@ -2,16 +2,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Mail, Users, Calendar, ScrollText, Landmark, Globe, Feather, CheckCircle2 } from "lucide-react";
+import { Mail, Users, Calendar, Globe, CheckCircle2 } from "lucide-react";
 
 const newsletters = [
-  {
-    name: "The Celtic-Vedic Dispatch",
-    description: "Weekly archival analysis exploring comparative constitutional design (Bunreacht & Part IV), anti-imperial solidarity, and early diplomatic treaties.",
-    frequency: "Every Monday",
-    subscribers: "8,400+",
-    icon: ScrollText,
-  },
   {
     name: "The Diaspora Monitor",
     description: "Bi-weekly demographic intelligence tracking CSO census data, HSE medical staffing, third-level student mobility, and Silicon Docks tech employment.",
@@ -19,28 +12,9 @@ const newsletters = [
     subscribers: "12,200+",
     icon: Globe,
   },
-  {
-    name: "Diplomatic & Trade Chronicles",
-    description: "Monthly strategic brief on Ireland–India bilateral policy, aviation leasing finance, pharma supply chains, and EU–India trade developments.",
-    frequency: "First Thursday of the month",
-    subscribers: "6,700+",
-    icon: Landmark,
-  },
-  {
-    name: "Literary & Cultural Echoes",
-    description: "Bi-monthly essays on the cross-pollination of Celtic and Bengal Renaissances—Tagore, Yeats, Margaret Noble, and contemporary collaborative arts.",
-    frequency: "Bi-monthly",
-    subscribers: "5,300+",
-    icon: Feather,
-  },
 ];
 
 const pastIssues = [
-  { title: "B.N. Rau's Dublin Diary: Notes from the 1947 Meeting with de Valera", newsletter: "The Celtic-Vedic Dispatch", date: "Feb 24, 2026" },
-  { title: "CSO Census 2022 Deep-Dive: Indian Healthcare Workers in Regional Irish Hospitals", newsletter: "The Diaspora Monitor", date: "Feb 18, 2026" },
-  { title: "Aircraft Leasing in 2026: Why 450+ New Commercial Jets in India Are Financed from Dublin", newsletter: "Diplomatic & Trade Chronicles", date: "Feb 12, 2026" },
-  { title: "The Abbey Theatre's 1913 Staging of Tagore's 'The Post Office'", newsletter: "Literary & Cultural Echoes", date: "Feb 6, 2026" },
-  { title: "From Brixton to Lahore: How Terence MacSwiney's 1920 Strike Reverberated in India", newsletter: "The Celtic-Vedic Dispatch", date: "Jan 29, 2026" },
   { title: "Stamp 1G Graduate Visa Trends: Retention Rates of Non-EU STEM Graduates in Ireland", newsletter: "The Diaspora Monitor", date: "Jan 21, 2026" },
 ];
 

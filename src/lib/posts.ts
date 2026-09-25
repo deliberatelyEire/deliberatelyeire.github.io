@@ -1,6 +1,5 @@
 import delibratelyImg from "@/assets/DelibratelyEire.jpg";
 import lampImg from "@/assets/lamp.jpg";
-import tiesImg from "@/assets/ireland-india-ties.jpg";
 import article1 from "@/assets/article-1.jpg";
 import article2 from "@/assets/article-2.jpg";
 import article3 from "@/assets/article-3.jpg";
@@ -27,7 +26,6 @@ export interface MarkdownPost {
 const imageMap: Record<string, string> = {
   "DelibratelyEire.jpg": delibratelyImg,
   "lamp.jpg": lampImg,
-  "ireland-india-ties.jpg": tiesImg,
   "article-1.jpg": article1,
   "article-2.jpg": article2,
   "article-3.jpg": article3,
@@ -123,7 +121,7 @@ export function getAllPosts(): MarkdownPost[] {
 
     // Resolve cover image
     const rawCover = metadata.cover || "";
-    const resolvedCover = postImages[rawCover] || imageMap[rawCover] || rawCover || tiesImg;
+    const resolvedCover = postImages[rawCover] || imageMap[rawCover] || rawCover || delibratelyImg;
 
     posts.push({
       id: metadata.id || slug,

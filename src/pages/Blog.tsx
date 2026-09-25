@@ -50,7 +50,7 @@ const Blog = () => {
               Articles &amp; Chronicles
             </h1>
             <p className="mt-2 type-body text-muted-foreground max-w-2xl">
-              Explore primary sources, constitutional lineages, diplomatic records, and living diaspora narratives between Ireland and India.
+              Explore primary sources, legal frameworks, official data, and policy analysis on Ireland.
             </p>
           </motion.div>
 

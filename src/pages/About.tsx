@@ -30,22 +30,21 @@ const About = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
             <div className="space-y-2">
               <h1 className="type-display font-bold text-foreground">About Deliberately Éire</h1>
-              <p className="type-h4 font-normal text-muted-foreground">Ties older than either republic.</p>
+              <p className="type-h4 font-normal text-muted-foreground">Evidence Over Noise.</p>
             </div>
 
             <div className="max-w-none space-y-6 type-body text-foreground/90">
               <p className="type-body">
-                Deliberately Éire is an independent publication dedicated to exploring the historical, constitutional, diplomatic, and cultural connections between Ireland and India. We produce research-driven analysis on immigration policy, comparative law, diaspora demographics, and the lived experience of cross-border communities.
+                Deliberately Éire is an independent publication dedicated to exploring Ireland's law, policy, history, and culture. We produce research-driven analysis on immigration policy, comparative law, diaspora demographics, and the lived experience of cross-border communities.
               </p>
 
               <div className="space-y-4">
                 <h2 className="type-h2 font-bold text-foreground">Our Focus</h2>
                 <ul className="space-y-2 type-body">
                   <li>📋 <strong>Immigration & Citizenship Policy</strong> — comparative analysis of naturalisation timelines, visa routes, and legal frameworks across jurisdictions</li>
-                  <li>📚 <strong>Constitutional & Legal Lineage</strong> — the historical roots of Irish and Indian law and governance</li>
-                  <li>🤝 <strong>Diplomatic History</strong> — Ireland–India relations from independence onward</li>
-                  <li>👥 <strong>Diaspora & Demographics</strong> — data-driven research on Irish and Indian communities abroad</li>
-                  <li>🎭 <strong>Literature, Art & Thought</strong> — cultural and intellectual exchanges across the Irish and Indian traditions</li>
+                  <li>📚 <strong>Constitutional & Legal Lineage</strong> — the historical roots of Irish law and governance</li>
+                  <li>👥 <strong>Diaspora & Demographics</strong> — data-driven research on migration to and from Ireland</li>
+                  <li>🎭 <strong>Literature, Art & Thought</strong> — Irish cultural and intellectual traditions</li>
                 </ul>
               </div>
 
@@ -55,7 +54,7 @@ const About = () => {
                   We rely on official sources — government documents, census data, legal frameworks, and peer-reviewed research. Every article is written from verified data; we do not fabricate statistics or anecdotes. We are transparent about our sources and acknowledge uncertainty where policy is still evolving.
                 </p>
                 <p>
-                  We are independent and editorially separate from any government, institution, or advocacy organisation. We publish work that serves readers who want to understand Ireland–India connections more deeply.
+                  We are independent and editorially separate from any government, institution, or advocacy organisation. We publish work that serves readers who want to understand Irish policy more deeply.
                 </p>
               </div>
 

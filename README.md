@@ -2,7 +2,7 @@
 
 Comparative Irish immigration policy research & analysis.
 
-An independent publication dedicated to comparative constitutional statecraft, archival chronicles, diaspora statistics, and literary kindred spirits between Ireland and India.
+An independent publication dedicated to evidence-led research on Irish citizenship, immigration policy, and law.
 
 ---
 

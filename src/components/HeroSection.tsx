@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { getAllPosts, getFeaturedPost } from "@/lib/posts";
-import heroImg from "@/assets/ireland-india-ties.jpg";
+import heroImg from "@/assets/DelibratelyEire.jpg";
 import { BookOpen, ArrowRight, Clock, Feather, Sparkles, Share2 } from "lucide-react";
 
 const HeroSection = () => {
@@ -20,13 +20,13 @@ const HeroSection = () => {
             className="space-y-4"
           >
             <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 type-meta font-semibold text-primary border border-primary/20">
-              <Sparkles className="h-3.5 w-3.5" /> Ties older than either republic
+              <Sparkles className="h-3.5 w-3.5" /> Evidence Over Noise
             </div>
             <h1 className="type-display font-bold text-foreground">
-              Unearthing the Shared History, Policy &amp; Culture of Ireland &amp; India
+              Irish Citizenship, Immigration &amp; Policy, Read from the Sources
             </h1>
             <p className="type-body text-muted-foreground max-w-xl">
-              Welcome to <strong className="text-foreground">Deliberately Éire</strong>. An independent publication dedicated to comparative constitutional statecraft, archival chronicles, diaspora statistics, and literary kindred spirits.
+              Welcome to <strong className="text-foreground">Deliberately Éire</strong>. An independent publication dedicated to evidence-led research on Irish citizenship, immigration policy, and law.
             </p>
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <a
@@ -52,7 +52,7 @@ const HeroSection = () => {
           >
             <img
               src={heroImg}
-              alt="Deliberately Éire - Ireland and India Ties"
+              alt="Deliberately Éire"
               className="w-full aspect-[16/10] object-cover"
             />
           </motion.div>

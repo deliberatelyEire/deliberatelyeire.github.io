@@ -33,8 +33,8 @@ const Header = () => {
               <span className="type-h4 !leading-none font-bold text-foreground">
                 Deliberately <span className="text-primary font-bold">Éire</span>
               </span>
-              <span className="type-label font-semibold text-muted-foreground">
-                Ireland &amp; India Ties
+              <span className="type-label !normal-case !tracking-normal font-semibold text-muted-foreground">
+                Evidence Over Noise
               </span>
             </div>
           </Link>

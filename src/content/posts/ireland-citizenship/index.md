@@ -116,4 +116,4 @@ Chart data drawn from:
 
 Processing times as published in September 2026; Germany sets them locally and has no single national figure. All timelines assume continuous residence and fulfilment of ancillary requirements (language proficiency, civic knowledge, genuine residence, etc.).
 
-*Figures throughout are drawn from the comparison charts above. Ireland's 2026 reform is a Cabinet proposal rather than enacted law, and the charts mark that uncertainty rather than resolving it. More writing on Ireland and India is on the [blog](/blog).*
+*Figures throughout are drawn from the comparison charts above. Ireland's 2026 reform is a Cabinet proposal rather than enacted law, and the charts mark that uncertainty rather than resolving it. More writing is on the [blog](/blog).*
