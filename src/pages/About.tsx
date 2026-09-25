@@ -30,7 +30,7 @@ const About = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
             <div className="space-y-2">
               <h1 className="type-display font-bold text-foreground">About Deliberately Éire</h1>
-              <p className="type-h4 font-normal text-muted-foreground">Evidence over noise.</p>
+              <p className="type-h4 font-normal text-muted-foreground">Evidence Over Noise.</p>
             </div>
 
             <div className="max-w-none space-y-6 type-body text-foreground/90">

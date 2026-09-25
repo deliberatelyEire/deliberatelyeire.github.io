@@ -20,7 +20,7 @@ const HeroSection = () => {
             className="space-y-4"
           >
             <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 type-meta font-semibold text-primary border border-primary/20">
-              <Sparkles className="h-3.5 w-3.5" /> Evidence over noise
+              <Sparkles className="h-3.5 w-3.5" /> Evidence Over Noise
             </div>
             <h1 className="type-display font-bold text-foreground">
               Irish Citizenship, Immigration &amp; Policy, Read from the Sources

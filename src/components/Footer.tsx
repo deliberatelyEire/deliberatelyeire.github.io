@@ -28,7 +28,7 @@ const Footer = () => {
                 Deliberately <span className="text-primary">Éire</span>
               </span>
               <span className="type-meta block text-muted-foreground">
-                @delibratelyEire · Evidence over noise
+                @delibratelyEire · Evidence Over Noise
               </span>
             </div>
           </div>

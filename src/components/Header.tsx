@@ -34,7 +34,7 @@ const Header = () => {
                 Deliberately <span className="text-primary font-bold">Éire</span>
               </span>
               <span className="type-label font-semibold text-muted-foreground">
-                Evidence over noise
+                Evidence Over Noise
               </span>
             </div>
           </Link>
