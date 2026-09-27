@@ -2,9 +2,23 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SchemaOrg } from "@/components/SchemaOrg";
 
 const About = () => {
   const [email, setEmail] = useState("");
+  const baseUrl = "https://deliberatelyeire.github.io";
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": `${baseUrl}/about#webpage`,
+    "url": `${baseUrl}/about`,
+    "name": "About Deliberately Éire",
+    "description": "Independent publication dedicated to exploring Ireland's law, policy, history, and culture.",
+    "isPartOf": { "@id": `${baseUrl}/#website` },
+    "about": { "@id": `${baseUrl}/#organization` },
+    "inLanguage": "en-IE",
+    "mainEntity": { "@id": `${baseUrl}/#organization` },
+  };
 
   useEffect(() => {
     const obfuscated = "krkyvq.rzvu@tznvy.pbz";
@@ -23,6 +37,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SchemaOrg schemas={aboutSchema} />
       <Header />
 
       <main>

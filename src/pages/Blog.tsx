@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import NewsletterSection from "@/components/NewsletterSection";
 import { getAllPosts } from "@/lib/posts";
 import { Clock, Filter } from "lucide-react";
+import { SchemaOrg } from "@/components/SchemaOrg";
 
 const categories = [
   "All",
@@ -20,6 +21,19 @@ const categories = [
 ];
 
 const Blog = () => {
+  const baseUrl = "https://deliberatelyeire.github.io";
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${baseUrl}/blog#webpage`,
+    "url": `${baseUrl}/blog`,
+    "name": "Articles & Chronicles — Deliberately Éire",
+    "description": "Explore primary sources, legal frameworks, official data, and policy analysis on Ireland.",
+    "isPartOf": { "@id": `${baseUrl}/#website` },
+    "about": { "@id": `${baseUrl}/#organization` },
+    "inLanguage": "en-IE",
+  };
+
   const [searchParams, setSearchParams] = useSearchParams();
   const activeCategory = searchParams.get("category") || "All";
   const allArticles = getAllPosts();
@@ -39,6 +53,7 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SchemaOrg schemas={blogSchema} />
       <Header />
       <main>
         <section className="container py-12">

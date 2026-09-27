@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import NewsletterSection from "@/components/NewsletterSection";
 import { getPostByIdOrSlug, getFeaturedPost } from "@/lib/posts";
 import { ArrowLeft, Clock, Calendar, Bookmark, ShieldCheck, Share2, Download } from "lucide-react";
+import { SchemaOrg } from "@/components/SchemaOrg";
 
 const Article = () => {
   const { id } = useParams();
@@ -16,11 +17,12 @@ const Article = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
-  // Update meta tags and schema markup for SEO
+  const baseUrl = "https://deliberatelyeire.github.io";
+
+  // Update meta tags for SEO (keep client-side for dynamic updates)
   useEffect(() => {
     if (!article) return;
 
-    const baseUrl = "https://deliberatelyeire.github.io";
     const articleUrl = `${baseUrl}/article/${article.slug || article.id}`;
 
     // Update document title
@@ -62,60 +64,44 @@ const Article = () => {
       document.head.appendChild(canonical);
     }
     canonical.href = articleUrl;
-
-    // Add BlogPosting schema markup
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": article.title,
-      "description": article.excerpt,
-      "image": coverUrl,
-      "datePublished": new Date(article.date).toISOString(),
-      ...(article.dateModified
-        ? { dateModified: new Date(article.dateModified).toISOString() }
-        : {}),
-      "author": {
-        "@type": "Organization",
-        "name": article.author,
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Deliberately Éire",
-        "url": baseUrl,
-        "logo": {
-          "@type": "ImageObject",
-          "url": `${baseUrl}/logo.png`,
-        },
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": articleUrl,
-      },
-    };
-
-    let schemaScript = document.querySelector("script[type='application/ld+json'][data-article-schema]") as HTMLScriptElement;
-    if (!schemaScript) {
-      schemaScript = document.createElement("script");
-      schemaScript.type = "application/ld+json";
-      schemaScript.setAttribute("data-article-schema", "true");
-      document.head.appendChild(schemaScript);
-    }
-    const breadcrumb = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": baseUrl },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${baseUrl}/blog` },
-        { "@type": "ListItem", "position": 3, "name": article.title, "item": articleUrl },
-      ],
-    };
-    schemaScript.textContent = JSON.stringify([schema, breadcrumb]);
-
-    return () => {
-      // Cleanup: remove article-specific meta tags when component unmounts
-      // Keep them for now as they'll be overwritten on next article load
-    };
   }, [article]);
+
+  // Schema objects (rendered declaratively for prerenderer)
+  const articleUrl = article ? `${baseUrl}/article/${article.slug || article.id}` : baseUrl;
+  const coverUrl = article?.cover ? new URL(article.cover, baseUrl).href : `${baseUrl}/DelibratelyEire.jpg`;
+
+  const articleSchema = article ? {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${articleUrl}#blogposting`,
+    "headline": article.title,
+    "description": article.excerpt,
+    "image": coverUrl,
+    "datePublished": new Date(article.date).toISOString(),
+    ...(article.dateModified
+      ? { dateModified: new Date(article.dateModified).toISOString() }
+      : {}),
+    "author": {
+      "@type": "Organization",
+      "name": article.author,
+      "@id": `${baseUrl}/#organization`,
+    },
+    "publisher": { "@id": `${baseUrl}/#organization` },
+    "mainEntityOfPage": { "@id": articleUrl },
+    "isPartOf": { "@id": `${baseUrl}/blog#webpage` },
+    "inLanguage": "en-IE",
+    "keywords": article.category,
+  } : null;
+
+  const breadcrumbSchema = article ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": baseUrl },
+      { "@type": "ListItem", "position": 2, "name": "Articles", "item": `${baseUrl}/blog` },
+      { "@type": "ListItem", "position": 3, "name": article.title, "item": articleUrl },
+    ],
+  } : null;
 
   if (!article) {
     return (
@@ -133,8 +119,11 @@ const Article = () => {
     );
   }
 
+  const schemas = [articleSchema, breadcrumbSchema].filter(Boolean);
+
   return (
     <div className="min-h-screen bg-background">
+      <SchemaOrg schemas={schemas} />
       {/* Reading Progress Indicator */}
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-primary z-[60] origin-left" style={{ scaleX }} />
       <Header />

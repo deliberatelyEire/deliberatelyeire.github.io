@@ -22,6 +22,51 @@
     <meta name="twitter:title" content="Deliberately Éire — Irish Citizenship, Immigration &amp; Policy Research">
     <meta property="og:description" content="Evidence Over Noise: deep dives into Irish citizenship, immigration policy, and law.">
     <meta name="twitter:description" content="Evidence Over Noise: deep dives into Irish citizenship, immigration policy, and law.">
+
+    <!-- Organization + WebSite structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://deliberatelyeire.github.io/#organization",
+          "name": "Deliberately Éire",
+          "alternateName": "Deliberately Eire",
+          "url": "https://deliberatelyeire.github.io/",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://deliberatelyeire.github.io/#logo",
+            "url": "https://deliberatelyeire.github.io/logo.png",
+            "width": 512,
+            "height": 512,
+            "caption": "Deliberately Éire Diya Mark"
+          },
+          "sameAs": [
+            "https://x.com/delibratelyEire"
+          ],
+          "description": "Independent, evidence-led research on Irish citizenship, immigration policy, and law."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://deliberatelyeire.github.io/#website",
+          "url": "https://deliberatelyeire.github.io/",
+          "name": "Deliberately Éire",
+          "publisher": { "@id": "https://deliberatelyeire.github.io/#organization" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://deliberatelyeire.github.io/blog?search={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          },
+          "inLanguage": "en-IE"
+        }
+      ]
+    }
+    </script>
+
     <script>
       (function () {
         try {
