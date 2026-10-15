@@ -9,8 +9,8 @@ category: "Modern Diaspora"
 readTime: "8 min read"
 cover: "cover.png"
 sources: "NMBI State of the Register 2024 and 2025; Medical Council Medical Workforce Intelligence Report 2025; DETE Employment Permit Statistics 2024 and 2025; Immigration Service Delivery"
-featured: false
-order: 3
+featured: true
+order: 1
 ---
 
 **Half of Ireland's nurses and more than four in ten of its doctors trained abroad, and the health service is stretched even with them. As recruitment falls and a proposed citizenship bill would make settling harder, the rules for these clinicians have become health workforce policy.**
