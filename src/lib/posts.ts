@@ -12,6 +12,7 @@ export interface MarkdownPost {
   excerpt: string;
   summary?: string;
   coverAlt?: string;
+  keywords?: string;
   author: string;
   role?: string;
   date: string;
@@ -132,6 +133,7 @@ export function getAllPosts(): MarkdownPost[] {
       excerpt: metadata.excerpt || "",
       summary: metadata.summary || undefined,
       coverAlt: metadata.coverAlt || undefined,
+      keywords: metadata.keywords || undefined,
       author: metadata.author || "Deliberately Éire Research",
       role: metadata.role || "Research & Analysis",
       date: metadata.date || "2026",

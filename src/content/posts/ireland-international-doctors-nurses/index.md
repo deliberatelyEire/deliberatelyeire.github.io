@@ -1,12 +1,13 @@
 ---
 id: "ireland-international-doctors-nurses"
 title: "Ireland's Health Service Relies on Staff Trained Abroad"
-excerpt: "Nearly half of Ireland's practising nurses were educated outside the EU, and 30% of its doctors outside Ireland, the EU and the UK. What the registers show."
+excerpt: "Half of Ireland's nurses and over four in ten of its doctors trained abroad. What the registers show, what losing them would mean, and the rules they work under."
 author: "Deliberately Éire Research"
 role: "Immigration Policy Analysis"
 date: "2026-10-15"
 summary: "Half of Ireland's nurses and more than four in ten of its doctors trained abroad, and the health service is stretched even with them. As recruitment falls and a proposed citizenship bill would make settling harder, the rules for these clinicians have become health workforce policy."
 category: "Modern Diaspora"
+keywords: "Ireland health workforce, international nurses, international medical graduates, Indian nurses in Ireland, NMBI, Medical Council, employment permits, Citizenship Bill 2026"
 readTime: "8 min read"
 cover: "cover.png"
 coverAlt: "Bar chart: 52% of Ireland's practising nurses and midwives and 43% of its clinically active doctors trained abroad, 2025"
@@ -25,7 +26,7 @@ order: 1
 
 ## Who Is at the Bedside
 
-Ask who is at the bedside in Ireland and the answer is as likely to be someone who trained abroad as someone who trained here. That is not an impression. It is what the two professional registers say. For nurses, the largest single source is India: more than one in five nurses and midwives on the register is an Indian national.
+Ask who is at the bedside in Ireland and the answer is as likely to be someone who trained abroad as someone who trained here. That is not an impression. It is what the two professional registers say. For nurses, the largest single source is India: more than one in five nurses and midwives on the register is an Indian national (NMBI, State of the Register 2025).
 
 This article covers what the registers and permit data show, and what the health service would look like without these clinicians. It then sets out the immigration rules they work under and what the proposed citizenship changes would mean for them.
 
@@ -84,6 +85,8 @@ In practice, Irish graduates are concentrated on the track that leads to a consu
 
 ![Where Ireland's clinicians trained: new nurse registrants led by India (3,717) and the Philippines (828); international doctors led by Pakistan (2,741) and Sudan (1,336)](./origins.svg)
 
+Among nurses and midwives registering for the first time in 2023–24, India (3,717) far outnumbered the Philippines (828), the United Kingdom (281) and Ghana (191); 1,569 trained in Ireland. Among clinically active doctors in 2025, Pakistan (2,741) and Sudan (1,336) led, followed by South Africa (686), India (314) and Egypt (240), while 3,090 qualified in the EU or UK.
+
 The two registers publish different measures, so the chart shows each on its own scale. For nurses, NMBI breaks down new registrants by country of education; for doctors, the Medical Council breaks down the whole clinically active workforce by country of qualification.
 
 ## What It Would Mean
@@ -116,7 +119,7 @@ The Department of Enterprise publishes permits issued by economic sector. The re
 
 *Source: DETE Employment Permit Statistics, [2021](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2021.html), [2022](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2022.html), [2023](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2023.html), [2024](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2024.html), [2025](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2025.html), permits issued by sector.*
 
-For four years, health-sector permits rose every year, more than doubling from 5,793 in 2021 to 12,501 in 2024. In 2025 they fell 36%, against 21% across all sectors, to below the 2022 level. Throughout, health took between a quarter and a third of all permits issued. 2021 was an unusually low year for permits overall, with fewer than half the 2022 total, so it is a weak baseline for measuring growth. These count permits issued, not people arriving. Separately, NMBI recorded a 38% fall in new non-EU-educated registrants in the twelve months to 31 May 2025. The periods differ, and neither dataset explains the fall, so this article does not guess.
+For four years, health-sector permits rose every year, more than doubling from 5,793 in 2021 to 12,501 in 2024. In 2025 they fell 36%, to 7,948, against 21% across all sectors. That is below the 2022 level. Throughout, health took between a quarter and a third of all permits issued. 2021 was an unusually low year for permits overall, with fewer than half the 2022 total, so it is a weak baseline for measuring growth. These count permits issued, not people arriving. Separately, NMBI recorded a 38% fall in new non-EU-educated registrants in the twelve months to 31 May 2025. The periods differ, and neither dataset explains the fall, so this article does not guess.
 
 ## What the Citizenship Bill Would Change for Them
 

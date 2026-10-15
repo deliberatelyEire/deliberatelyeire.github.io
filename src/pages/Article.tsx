@@ -91,7 +91,7 @@ const Article = () => {
     "mainEntityOfPage": { "@id": articleUrl },
     "isPartOf": { "@id": `${baseUrl}/blog#webpage` },
     "inLanguage": "en-IE",
-    "keywords": article.category,
+    "keywords": article.keywords || article.category,
   } : null;
 
   const breadcrumbSchema = article ? {
