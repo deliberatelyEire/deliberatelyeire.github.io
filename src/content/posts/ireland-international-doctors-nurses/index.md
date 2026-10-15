@@ -10,7 +10,7 @@ category: "Modern Diaspora"
 readTime: "8 min read"
 cover: "cover.png"
 coverAlt: "Bar chart: 52% of Ireland's practising nurses and midwives and 43% of its clinically active doctors trained abroad, 2025"
-sources: "NMBI State of the Register 2024 and 2025; Medical Council Medical Workforce Intelligence Report 2025; CSO Population and Migration Estimates, April 2025; NTPF waiting list open data, September 2026; Department of Health; DETE Employment Permit Statistics 2024 and 2025; Immigration Service Delivery; General Scheme of the Citizenship (Amendment) Bill 2026"
+sources: "NMBI State of the Register 2024 and 2025; Medical Council Medical Workforce Intelligence Report 2025; CSO Population and Migration Estimates, April 2025; NTPF waiting list open data, September 2026; Department of Health; DETE Employment Permit Statistics 2021 to 2025; Immigration Service Delivery; General Scheme of the Citizenship (Amendment) Bill 2026"
 featured: true
 order: 1
 ---
@@ -114,12 +114,15 @@ The Department of Enterprise publishes permits issued by economic sector. The re
 
 | Year | Health & Social Work permits | All permits | Health share |
 |---|---|---|---|
+| 2021 | 5,793 | 16,275 | 35.6% |
+| 2022 | 9,791 | 39,955 | 24.5% |
+| 2023 | 10,037 | 30,981 | 32.4% |
 | 2024 | 12,501 | 39,390 | 31.7% |
 | 2025 | 7,948 | 31,044 | 25.6% |
 
-*Source: DETE Employment Permit Statistics [2025](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2025.html) and [2024](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2024.html), permits issued by sector.*
+*Source: DETE Employment Permit Statistics, [2021](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2021.html), [2022](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2022.html), [2023](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2023.html), [2024](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2024.html), [2025](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2025.html), permits issued by sector.*
 
-Health-sector permits fell 36% in calendar 2025, against 21% across all sectors. These count permits issued, not people arriving. Separately, NMBI recorded a 38% fall in new non-EU-educated registrants in the twelve months to 31 May 2025. The periods differ, and neither dataset explains the fall, so this article does not guess.
+For four years, health-sector permits rose every year, more than doubling from 5,793 in 2021 to 12,501 in 2024. In 2025 they fell 36%, against 21% across all sectors, to below the 2022 level. Throughout, health took between a quarter and a third of all permits issued. 2021 was an unusually low year for permits overall, with fewer than half the 2022 total, so it is a weak baseline for measuring growth. These count permits issued, not people arriving. Separately, NMBI recorded a 38% fall in new non-EU-educated registrants in the twelve months to 31 May 2025. The periods differ, and neither dataset explains the fall, so this article does not guess.
 
 ## What the Citizenship Bill Would Change for Them
 
