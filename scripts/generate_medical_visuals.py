@@ -240,6 +240,73 @@ def queue(x0, y0, x1, y1):
     return out
 
 
+# ----------------------------------------------------------------- origins
+
+# Where the clinicians trained, by the measure each register publishes.
+# Nurses: new first-time registrants, 1 June 2023 to 31 May 2024, by country of
+# education (NMBI State of the Register 2024, p. 6 and Table 5). "Other" is the
+# rest of the 5,551 educated outside Ireland (5,426 non-EU + 125 EU).
+# Doctors: clinically active doctors in 2024 by country of basic medical
+# qualification (Medical Council Workforce Intelligence Report 2024, Table 1).
+# "Other international" is 5,830 less the top five; EU/UK is not broken down.
+# WHO marks countries on the 2023 Health Workforce Support and Safeguards List.
+ORIGIN_SUBTITLE = "Where Ireland’s clinicians trained"
+ORIGIN_SOURCES = ("NMBI State of the Register 2024, p. 6 and Table 5; "
+                  "Medical Council Workforce Report 2024, Table 1; "
+                  "WHO safeguards list 2023")
+WHO_LIST = {"Pakistan", "Sudan", "Ghana"}
+ORIGIN_PANELS = [
+    ("Nurses & midwives", "New registrants by country of education, Jun 2023–May 2024",
+     [("India", 3717, SAFFRON), ("Philippines", 828, SAFFRON),
+      ("United Kingdom", 281, SAFFRON), ("Ghana", 191, SAFFRON),
+      ("Other countries", 5426 + 125 - 3717 - 828 - 281 - 191, MUTED),
+      ("Ireland", 1569, GREEN)]),
+    ("Doctors", "Clinically active, by country of qualification, 2024",
+     [("Pakistan", 2314, SAFFRON), ("Sudan", 1240, SAFFRON),
+      ("South Africa", 605, SAFFRON), ("India", 310, SAFFRON), ("Egypt", 243, SAFFRON),
+      ("Other international", 5830 - 2314 - 1240 - 605 - 310 - 243, MUTED),
+      ("EU and UK", 2902, MUTED)]),
+]
+
+
+def origins(x0, y0, x1, y1):
+    out = []
+    gutter = 96
+    col_w = (x1 - x0 - gutter) / 2
+    label_w = 236
+    value_w = 110          # value plus the WHO tag after the bar
+    pitch, bar_h = 58, 30
+    head_h = 32 + 12 + 22 + 28
+    rows = max(len(r) for _, _, r in ORIGIN_PANELS)
+    block = head_h + rows * pitch + 40
+    top = y0 + (y1 - y0 - block) / 2
+    for i, (head, sub, rows_) in enumerate(ORIGIN_PANELS):
+        x = x0 + i * (col_w + gutter)
+        out.append(text(x, top + 32, head, 32, 700, INK))
+        fits(sub, 22, False, col_w, "origin sub")
+        out.append(text(x, top + 32 + 12 + 22, sub, 22, 400, MUTED))
+        biggest = max(v for _, v, _ in rows_)
+        bar_max = col_w - label_w - value_w
+        for j, (name, v, fill) in enumerate(rows_):
+            y = top + head_h + j * pitch
+            fits(name, 22, False, label_w - 16, "origin label")
+            out.append(text(x, y + bar_h - 7, name, 22, 400, INK))
+            w = bar_max * v / biggest
+            out.append(rect(x + label_w, y, w, bar_h, fill))
+            out.append(text(x + label_w + w + 10, y + bar_h - 7, f"{v:,}", 22, 700, INK))
+            if name in WHO_LIST:
+                vx = x + label_w + w + 10 + fits(f"{v:,}", 22, True, col_w, "v") + 12
+                out.append(f'<circle cx="{round(vx + 6,1)}" cy="{round(y + bar_h / 2,1)}" r="6" fill="{INK}"/>')
+        if i == 0:
+            out.append(f'<line x1="{round(x + col_w + gutter / 2,1)}" y1="{round(top,1)}" '
+                       f'x2="{round(x + col_w + gutter / 2,1)}" y2="{round(top + head_h + rows * pitch,1)}" '
+                       f'stroke="{HAIRLINE}" stroke-width="1.5"/>')
+    ly = top + head_h + rows * pitch + 30
+    out.append(f'<circle cx="{round(x0 + 6,1)}" cy="{round(ly - 7,1)}" r="6" fill="{INK}"/>')
+    out.append(text(x0 + 22, ly, "On the WHO health workforce safeguards list, 2023", 20, 400, MUTED))
+    return out
+
+
 def emit(name, canvas, subtitle, sources, body_fn, min_size):
     global MIN_SIZE
     MIN_SIZE = min_size
@@ -266,6 +333,8 @@ def main():
     emit("per-person.svg", "hero", RATIO_SUBTITLE, RATIO_SOURCES, ratio, 20)
     fits("Sources: " + QUEUE_SOURCES, 20, False, 1424 * 0.50 / 0.46, "queue sources")
     emit("waiting-lists.svg", "hero", QUEUE_SUBTITLE, QUEUE_SOURCES, queue, 20)
+    fits("Sources: " + ORIGIN_SOURCES, 20, False, 1424 * 0.50 / 0.46, "origin sources")
+    emit("origins.svg", "hero", ORIGIN_SUBTITLE, ORIGIN_SOURCES, origins, 20)
 
 
 if __name__ == "__main__":

@@ -69,7 +69,7 @@ The Medical Council's [Medical Workforce Intelligence Report 2024](https://www.m
 
 The Council calls the last group "international". It changed that definition in this report: earlier editions counted any qualification from outside Ireland. On that older measure, 41.7% of clinically active doctors qualified abroad. The share of international graduates has climbed each year, from 23.3% in 2022 to 25.7% in 2023 and 27.8% in 2024.
 
-Two countries dominate. **Pakistan** accounts for 2,314 of those doctors (39.7%), up 25% in a single year from 1,851. **Sudan** accounts for 1,240 (21.3%). Together they trained 61% of Ireland's international medical graduates.
+Two countries dominate. **Pakistan** accounts for 2,314 of those doctors (39.7%), up 25% in a single year from 1,851. **Sudan** accounts for 1,240 (21.3%). Together they trained 61% of Ireland's international medical graduates. South Africa (605), India (310) and Egypt (243) complete the top five.
 
 ### The training-scheme divide
 
@@ -112,6 +112,10 @@ Health-sector permits fell 36% in calendar 2025, against 21% across all sectors.
 There is a second side to these numbers. The WHO publishes a [Health Workforce Support and Safeguards List](https://www.who.int/publications/i/item/9789240069787) of countries where the density of doctors, nurses and midwives is below the global median and universal health coverage is weakest. The 2023 edition lists 55 countries; WHO scheduled the next update for 2026.
 
 **Pakistan and Sudan are both on it.** So are **Nigeria, Ghana and Zimbabwe**, which appear among the top nationalities on the nursing register. **India and the Philippines are not.**
+
+![Where Ireland's clinicians trained: new nurse registrants led by India (3,717) and the Philippines (828); international doctors led by Pakistan (2,314) and Sudan (1,240), with WHO safeguards-list countries marked](./origins.svg)
+
+The two registers publish different measures, so the chart shows each on its own scale. For nurses, NMBI breaks down new registrants by country of education; for doctors, the Medical Council breaks down the whole clinically active workforce by country of qualification.
 
 The list does not prohibit migration. Health workers are free to move, and WHO's safeguards are aimed at *active* international recruitment from listed countries, not at individuals who choose to emigrate. Nothing in the data here shows how any individual doctor came to Ireland.
 
