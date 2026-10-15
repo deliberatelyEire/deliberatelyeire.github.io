@@ -29,9 +29,9 @@ This article sets out what the registers and the permit data show about internat
 
 Divide the population by the workforce and the scale becomes clear. With the CSO's [April 2025 population estimate](https://www.cso.ie/en/releasesandpublications/ep/p-pme/populationandmigrationestimatesapril2025/) of 5,458,600, there is one practising nurse or midwife for every 63 people. Leave only the Irish-educated, and it is one for every 130. For doctors, using the April 2024 population of 5,380,300 to match the 2024 register, one for every 257 people becomes one for every 440. This is a thought experiment, not a forecast: it shows the share of care that rests on clinicians trained abroad.
 
-That workforce is already stretched. On 24 September 2026, [NTPF open data](https://www.ntpf.ie/waiting-list-data/open-data/) counted 850,534 people waiting for a first outpatient appointment, inpatient or day-case treatment, or a GI endoscopy. Of these, 149,573 had waited more than a year. The Department of Health puts the [average wait across lists at 7.0 months](https://www.gov.ie/en/department-of-health/press-releases/monthly-waiting-list-figures-september-2026/).
+That workforce is already stretched. On 24 September 2026, [NTPF open data](https://www.ntpf.ie/waiting-list-data/open-data/) counted 692,524 patients waiting for a first outpatient appointment, 124,709 of them for more than a year. Another 114,722 were waiting for inpatient or day-case treatment, and 43,288 for a GI endoscopy. The Department of Health puts the [weighted average wait across lists at 7.0 months](https://www.gov.ie/en/department-of-health/press-releases/monthly-waiting-list-figures-september-2026/).
 
-![850,534 people on three hospital waiting lists in September 2026, 149,573 of them waiting more than a year](./waiting-lists.svg)
+![Hospital waiting lists in September 2026: 692,524 waiting for a first outpatient appointment, 18% of them for more than a year, and a weighted average wait of 7.0 months](./waiting-lists.svg)
 
 No one can say how long these waits would become without the staff trained abroad. When capacity falls well below demand, a waiting list does not settle at a longer wait; it keeps growing until patients go elsewhere or go without care.
 

@@ -192,26 +192,25 @@ QUEUE_ROWS = [
     ("Inpatient or day-case treatment", 114722, 67682, 26364, 10872 + 9810),
     ("GI endoscopy", 43288, 30419, 8697, 3373 + 809),
 ]
-QUEUE_AVG_WAIT = "7.0 months"
+QUEUE_AVG_WAIT = "7.0 months"  # the release's Weighted Average Wait Time
 
 
 def queue(x0, y0, x1, y1):
     out = []
-    total = sum(r[1] for r in QUEUE_ROWS)
-    over_year = sum(r[4] for r in QUEUE_ROWS)
+    # No total across lists: a patient on two lists is counted on each, so a sum
+    # overstates the number of people. Every figure here is per list or an average.
+    op_total, op_over = QUEUE_ROWS[0][1], QUEUE_ROWS[0][4]
     left_w = 470
-    # left: the statement
     top = y0 + 24
     out.append(text(x0, top + 20, "WAITING FOR HOSPITAL CARE", 20, 600, MUTED))
-    out.append(text(x0, top + 20 + 112, f"{total:,}", 104, 700, INK))
-    out.append(text(x0, top + 20 + 112 + 40, "people on three hospital lists", 24, 400, MUTED))
-    y2 = top + 20 + 112 + 40 + 104
-    out.append(text(x0, y2, f"{over_year:,}", 64, 700, INK))
-    out.append(text(x0, y2 + 36, "of them waiting more than a year", 24, 400, MUTED))
-    y3 = y2 + 36 + 88
-    out.append(text(x0, y3, QUEUE_AVG_WAIT, 64, 700, INK))
-    out.append(text(x0, y3 + 36, "average wait across lists", 24, 400, MUTED))
-    fits("of them waiting more than a year", 24, False, left_w, "queue left")
+    out.append(text(x0, top + 20 + 112, QUEUE_AVG_WAIT, 104, 700, INK))
+    out.append(text(x0, top + 20 + 112 + 40, "weighted average wait across lists", 24, 400, MUTED))
+    y2 = top + 20 + 112 + 40 + 120
+    out.append(text(x0, y2, f"{round(100 * op_over / op_total)}%", 88, 700, INK))
+    out.append(text(x0, y2 + 40, "of patients waiting for a first", 24, 400, MUTED))
+    out.append(text(x0, y2 + 72, "outpatient visit have waited", 24, 400, MUTED))
+    out.append(text(x0, y2 + 104, "more than a year", 24, 400, MUTED))
+    fits("weighted average wait across lists", 24, False, left_w, "queue left")
     # right: one stacked bar per list, scaled to the largest
     rx = x0 + left_w + 80
     rw = x1 - rx
