@@ -112,13 +112,7 @@ In March 2022, the Government changed it. NCHDs in public hospitals now receive 
 
 The Department of Enterprise publishes permits issued by economic sector. The relevant sector is "Health & Social Work Activities", which covers healthcare assistants and care workers as well as doctors and nurses.
 
-| Year | Health & Social Work permits | All permits | Health share |
-|---|---|---|---|
-| 2021 | 5,793 | 16,275 | 35.6% |
-| 2022 | 9,791 | 39,955 | 24.5% |
-| 2023 | 10,037 | 30,981 | 32.4% |
-| 2024 | 12,501 | 39,390 | 31.7% |
-| 2025 | 7,948 | 31,044 | 25.6% |
+![Line chart of health and social work employment permits issued: 5,793 in 2021, 9,791 in 2022, 10,037 in 2023, 12,501 in 2024, then down 36% to 7,948 in 2025](./permits.svg)
 
 *Source: DETE Employment Permit Statistics, [2021](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2021.html), [2022](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2022.html), [2023](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2023.html), [2024](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2024.html), [2025](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2025.html), permits issued by sector.*
 

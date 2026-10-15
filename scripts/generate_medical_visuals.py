@@ -297,6 +297,58 @@ def origins(x0, y0, x1, y1):
     return out
 
 
+# ----------------------------------------------------------------- permits
+
+# Employment permits issued by year, from each year's DETE permits-by-sector file
+# (yearly totals checked against the sum of the twelve months). Health is sector
+# "Q - Health & Social Work Activities", which includes healthcare assistants and
+# care workers as well as doctors and nurses.
+PERMIT_SUBTITLE = "Employment permits issued, 2021–2025"
+PERMIT_SOURCES = ("Department of Enterprise, Employment Permit Statistics 2021–2025, "
+                  "permits issued by economic sector")
+PERMIT_YEARS = [2021, 2022, 2023, 2024, 2025]
+PERMIT_ALL = [16275, 39955, 30981, 39390, 31044]
+PERMIT_HEALTH = [5793, 9791, 10037, 12501, 7948]
+
+
+def permits(x0, y0, x1, y1):
+    """Health permits alone on their own axis, so the rise and the 2025 fall read
+    clearly; each year's all-sector total sits under the year as context. A shared
+    0-40,000 axis flattened the health line until the doubling barely showed."""
+    out = []
+    axis_w = 90
+    px0, px1 = x0 + axis_w + 100, x1 - 120  # inset so end labels clear the axis and margin
+    py0, py1 = y0 + 40, y1 - 96            # room under the plot for two label rows
+    ymax = 14000
+
+    def X(i):
+        return px0 + (px1 - px0) * i / (len(PERMIT_YEARS) - 1)
+
+    def Y(v):
+        return py1 - (py1 - py0) * v / ymax
+
+    out.append(text(x0, y0 + 8, "HEALTH & SOCIAL WORK PERMITS ISSUED", 20, 600, MUTED))
+    for v in range(0, ymax + 1, 2000):
+        y = Y(v)
+        out.append(f'<line x1="{x0 + axis_w}" y1="{round(y,1)}" x2="{x1}" y2="{round(y,1)}" '
+                   f'stroke="{HAIRLINE}" stroke-width="{2 if v == 0 else 1}"/>')
+        out.append(text(x0 + axis_w - 16, y + 7, f"{v:,}", 20, 400, MUTED, "end"))
+    for i, (yr, tot) in enumerate(zip(PERMIT_YEARS, PERMIT_ALL)):
+        out.append(text(X(i), py1 + 36, str(yr), 22, 700 if yr == 2025 else 400, INK, "middle"))
+        out.append(text(X(i), py1 + 66, f"of {tot:,} in all sectors", 20, 400, MUTED, "middle"))
+    pts = " ".join(f"{round(X(i),1)},{round(Y(v),1)}" for i, v in enumerate(PERMIT_HEALTH))
+    out.append(f'<polyline points="{pts}" fill="none" stroke="{SAFFRON}" stroke-width="6" '
+               f'stroke-linejoin="round" stroke-linecap="round"/>')
+    for i, v in enumerate(PERMIT_HEALTH):
+        out.append(f'<circle cx="{round(X(i),1)}" cy="{round(Y(v),1)}" r="9" fill="{SAFFRON}"/>')
+        out.append(text(X(i), Y(v) - 22, f"{v:,}", 26, 700, INK, "middle"))
+    drop = round(100 * (PERMIT_HEALTH[-1] / PERMIT_HEALTH[-2] - 1))
+    ax = (X(3) + X(4)) / 2 - 40           # below the falling segment, clear of both labels
+    ay = Y((PERMIT_HEALTH[-1] + PERMIT_HEALTH[-2]) / 2) + 110
+    out.append(text(ax, ay, f"−{abs(drop)}% in 2025", 26, 700, INK, "middle"))
+    return out
+
+
 def emit(name, canvas, subtitle, sources, body_fn, min_size):
     global MIN_SIZE
     MIN_SIZE = min_size
@@ -325,6 +377,8 @@ def main():
     emit("waiting-lists.svg", "hero", QUEUE_SUBTITLE, QUEUE_SOURCES, queue, 20)
     fits("Sources: " + ORIGIN_SOURCES, 20, False, 1424 * 0.50 / 0.46, "origin sources")
     emit("origins.svg", "hero", ORIGIN_SUBTITLE, ORIGIN_SOURCES, origins, 20)
+    fits("Sources: " + PERMIT_SOURCES, 20, False, 1424 * 0.50 / 0.46, "permit sources")
+    emit("permits.svg", "hero", PERMIT_SUBTITLE, PERMIT_SOURCES, permits, 20)
 
 
 if __name__ == "__main__":
