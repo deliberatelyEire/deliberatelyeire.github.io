@@ -28,7 +28,7 @@ order: 1
 
 Ask who is at the bedside in Ireland and the answer is as likely to be someone who trained abroad as someone who trained here. That is not an impression. It is what the two professional registers say. For nurses, the largest single source is India: more than one in five nurses and midwives on the register is an Indian national (NMBI, State of the Register 2025).
 
-This article covers what the registers and permit data show, and what the health service would look like without these clinicians. It then sets out the immigration rules they work under and what the proposed citizenship changes would mean for them.
+This article sets out what the nursing and medical registers show and what the health service would look like without these clinicians. It then covers the permits they arrive on, which are now falling, and what the proposed citizenship changes would mean for them.
 
 ## Nurses: Half the Workforce Was Educated Abroad
 
@@ -42,7 +42,7 @@ Sorted by where they were educated, the practising workforce splits almost exact
 
 The patient-facing figures are the ones to read. Of the 79,194 registrants who say they work directly with patients, those educated outside the EU are the largest group: 39,760 (50%), against 37,041 (47%) educated in Ireland.
 
-By nationality, which is a different measure, Indian nationals are the second-largest group on the register after Irish nationals. There were **20,419** in 2025, or 22% of all registrants, nearly three times the next group of **7,324** Filipino nationals. Nationality is recorded at registration and is not the same as where someone trained, so the two tables should not be added together.
+By nationality, which is a different measure, Indian nationals are the second-largest group on the register after Irish nationals. There were **20,419** in 2025, or 22% of all registrants, nearly three times the next group of **7,324** Filipino nationals. Nationality is recorded at registration and is not the same as where someone trained, so the two measures should not be added together.
 
 ### Where new nurses come from
 
@@ -81,8 +81,6 @@ In practice, Irish graduates are concentrated on the track that leads to a consu
 
 ![Where Ireland's clinicians trained: new nurse registrants led by India (3,717) and the Philippines (828); international doctors led by Pakistan (2,741) and Sudan (1,336)](./origins.svg)
 
-Among nurses and midwives registering for the first time in 2023–24, India (3,717) far outnumbered the Philippines (828), the United Kingdom (281) and Ghana (191); 1,569 trained in Ireland. Among clinically active doctors in 2025, Pakistan (2,741) and Sudan (1,336) led, followed by South Africa (686), India (314) and Egypt (240), while 3,090 qualified in the EU or UK.
-
 The two registers publish different measures, so the chart shows each on its own scale. For nurses, NMBI breaks down new registrants by country of education; for doctors, the Medical Council breaks down the whole clinically active workforce by country of qualification.
 
 ## What It Would Mean
@@ -115,7 +113,9 @@ The Department of Enterprise publishes permits issued by economic sector. The re
 
 *Source: DETE Employment Permit Statistics, [2021](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2021.html), [2022](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2022.html), [2023](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2023.html), [2024](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2024.html), [2025](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2025.html), permits issued by sector.*
 
-For four years, health-sector permits rose every year, more than doubling from 5,793 in 2021 to 12,501 in 2024. In 2025 they fell 36%, to 7,948, against 21% across all sectors. That is below the 2022 level. Throughout, health took between a quarter and a third of all permits issued. 2021 was an unusually low year for permits overall, with fewer than half the 2022 total, so it is a weak baseline for measuring growth. These count permits issued, not people arriving. Separately, NMBI recorded a 38% fall in new non-EU-educated registrants in the twelve months to 31 May 2025. The periods differ, and neither dataset explains the fall, so this article does not guess.
+Health-sector permits rose every year from 2021 to 2024, more than doubling from 5,793 to 12,501, and health took between a quarter and a third of all permits throughout. In 2025 they fell 36%, to 7,948, against 21% across all sectors. That is below the 2022 level. NMBI saw the same direction: new non-EU-educated registrants fell 38% in the twelve months to 31 May 2025.
+
+Three caveats apply. These figures count permits issued, not people arriving. 2021 was an unusually low year for permits overall, with fewer than half the 2022 total, so it is a weak baseline for measuring growth. And the permit and NMBI periods differ; neither dataset explains the fall, so this article does not guess.
 
 ## What the Citizenship Bill Would Change for Them
 
@@ -127,7 +127,7 @@ The Citizenship Bill 2026, if enacted as drafted, would change that. The [Genera
 - **Language and civics tests become mandatory**, to standards the Minister has not yet set.
 - **A minimum income test applies**, at a threshold not yet set. Its welfare and housing look-back is unlikely to bite for people in salaried clinical jobs, but the figure matters for lower-paid healthcare assistants.
 
-The Bill is not law, and the details that matter most are left to regulations. But it lands on a workforce in which half of patient-facing nurses were educated outside the EU and more than one in five registered nurses is Indian. Over a quarter of its doctors qualified outside Ireland, the EU and the UK. The rules that decide whether they settle permanently are, in effect, health workforce policy.
+The Bill is not law, and the details that matter most are left to regulations. But it lands on a workforce in which half of patient-facing nurses were educated outside the EU and more than one in five registered nurses is Indian. Over a quarter of its doctors qualified outside Ireland, the EU and the UK. With fewer new clinicians arriving, keeping the ones already here matters more. The rules that decide whether they settle permanently are, in effect, health workforce policy.
 
 ---
 
