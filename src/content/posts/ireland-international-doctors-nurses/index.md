@@ -119,7 +119,7 @@ Three caveats apply. These figures count permits issued, not people arriving. 20
 
 ## What the Citizenship Bill Would Change for Them
 
-Time on an employment permit (Stamp 1) and on Stamp 4 counts as reckonable residence for naturalisation; time on a student permission (Stamp 2) does not ([ISD](https://www.irishimmigration.ie/how-to-become-an-irish-citizen-guide/)). Unlike a PhD researcher on Stamp 2, a doctor or nurse who arrives on a work permit starts the citizenship clock on day one. Our [comparison of citizenship pathways](/article/ireland-citizenship) shows that this puts a skilled worker in Ireland's fastest group today, at five years.
+Time on an employment permit (Stamp 1) and on Stamp 4 counts as reckonable residence for naturalisation ([ISD](https://www.irishimmigration.ie/how-to-become-an-irish-citizen-guide/)), so a doctor or nurse who arrives on a work permit starts the citizenship clock on day one. Our [comparison of citizenship pathways](/article/ireland-citizenship) shows that this puts a skilled worker in Ireland's fastest group today, at five years.
 
 The Citizenship Bill 2026, if enacted as drafted, would change that. The [General Scheme](https://assets.gov.ie/static/documents/cadca21c/General_Scheme_of_the_Irish_Nationality_and_Citizenship_Amendment_Bill_2026.pdf) sets out the changes, and our [guide to the Citizenship Bill](/article/irish-citizenship-amendment-bill-2026) explains them in full:
 
