@@ -86,7 +86,7 @@ def cover(x0, y0, x1, y1):
     for i, (label, irish, abroad) in enumerate(ROWS):
         total = irish + abroad
         y = top + i * (row_h + row_gap)
-        change = f"{total:,} → {irish:,}"
+        change = f"{total:,} in total"
         fits(label, 28, True, width - fits(change, 28, True, width, "change") - 24, label)
         out.append(text(left, y + label_h, label, 28, 700, INK))
         out.append(text(right, y + label_h, change, 28, 700, INK, "end"))
