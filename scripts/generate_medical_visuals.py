@@ -107,21 +107,96 @@ def cover(x0, y0, x1, y1):
     return out
 
 
-def main():
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    out = OUTPUT_DIR / "cover.svg"
-    fits("Sources: " + SOURCES, 16, False, 1068 * 0.50 / 0.46, "sources")
-    r = subprocess.run([sys.executable, str(FRAME), "--canvas", "card",
-                        "--kicker", KICKER, "--subtitle", SUBTITLE,
-                        "--sources", SOURCES, "--out", str(out)],
+# ---------------------------------------------------------------- per person
+
+# People per clinician: the CSO usually resident population divided by each
+# register's workforce, matched by year. April 2025 is 5,458,600; April 2024 is
+# 5,380,300 (the April 2025 release gives the year's rise as 78,300). One dot is one
+# person; saffron dots are the people each clinician would gain without those
+# trained outside Ireland.
+POP_2025, POP_2024 = 5458600, 5380300
+RATIO_SUBTITLE = "If every clinician trained abroad left Ireland"
+RATIO_SOURCES = ("CSO Population and Migration Estimates, April 2025; "
+                 "NMBI Register 2025, Table 2; "
+                 "Medical Council Workforce Report 2024, Table 1")
+RATIO_COLS = [
+    ("One nurse or midwife for every", "Practising nurses & midwives, 2025",
+     POP_2025, 41938 + 42432 + 2578, 41938),
+    ("One doctor for every", "Clinically active doctors, 2024",
+     POP_2024, 20962, 12230),
+]
+
+
+def dots(x, y, n, base, per_row, pitch, r):
+    out = []
+    for k in range(n):
+        cx = x + (k % per_row) * pitch + r
+        cy = y + (k // per_row) * pitch + r
+        fill = INK if k < base else SAFFRON
+        out.append(f'<circle cx="{round(cx,1)}" cy="{round(cy,1)}" r="{r}" fill="{fill}"/>')
+    return out
+
+
+def ratio(x0, y0, x1, y1):
+    out = []
+    gutter = 80
+    col_w = (x1 - x0 - gutter) / 2
+    num_w = 220            # the big number and its caption
+    pitch, r = 13, 4.5
+    per_row = int((col_w - num_w) // pitch)
+    with_rows = max(-(-round(pop / total) // per_row) for _, _, pop, total, _ in RATIO_COLS)
+    without_rows = max(-(-round(pop / irish) // per_row) for _, _, pop, _, irish in RATIO_COLS)
+    head_h = 32 + 12 + 22
+    row1_h = max(with_rows * pitch, 128)
+    row2_h = max(without_rows * pitch, 128)
+    gap = 40
+    block = head_h + 36 + row1_h + gap + row2_h
+    top = y0 + (y1 - y0 - block) / 2
+    for i, (head, sub, pop, total, irish) in enumerate(RATIO_COLS):
+        x = x0 + i * (col_w + gutter)
+        with_n, without_n = round(pop / total), round(pop / irish)
+        fits(head, 32, True, col_w, "ratio head")
+        out.append(text(x, top + 32, head, 32, 700, INK))
+        out.append(text(x, top + 32 + 12 + 22, sub, 22, 400, MUTED))
+        for j, (n, lines, y_row) in enumerate([
+                (with_n, ["people, all staff"], top + head_h + 36),
+                (without_n, ["people, Irish-trained", "staff only"],
+                 top + head_h + 36 + row1_h + gap)]):
+            out.append(text(x, y_row + 68, f"{n:,}", 76, 700, SAFFRON if j else INK))
+            for k, line in enumerate(lines):
+                out.append(text(x, y_row + 68 + 30 + 24 * k, line, 20, 400, MUTED))
+            out.extend(dots(x + num_w, y_row, n, with_n, per_row, pitch, r))
+        if i == 0:
+            out.append(f'<line x1="{round(x + col_w + gutter / 2,1)}" y1="{round(top,1)}" '
+                       f'x2="{round(x + col_w + gutter / 2,1)}" y2="{round(top + block,1)}" '
+                       f'stroke="{HAIRLINE}" stroke-width="1.5"/>')
+    return out
+
+
+def emit(name, canvas, subtitle, sources, body_fn, min_size):
+    global MIN_SIZE
+    MIN_SIZE = min_size
+    out = OUTPUT_DIR / name
+    r = subprocess.run([sys.executable, str(FRAME), "--canvas", canvas,
+                        "--kicker", KICKER, "--subtitle", subtitle,
+                        "--sources", sources, "--out", str(out)],
                        check=True, capture_output=True, text=True)
     m = re.search(r"content area: x ([\d.]+) to ([\d.]+), y ([\d.]+) to ([\d.]+)", r.stdout)
     x0, x1, y0, y1 = (float(m.group(i)) for i in (1, 2, 3, 4))
-    print(f"cover.svg: bounds x {x0}-{x1} y {y0}-{y1}")
+    print(f"{name}: bounds x {x0}-{x1} y {y0}-{y1}")
     svg = out.read_text(encoding="utf8")
-    svg = svg.replace("<!-- CONTENT -->", "\n".join(cover(x0, y0, x1, y1)))
+    svg = svg.replace("<!-- CONTENT -->", "\n".join(body_fn(x0, y0, x1, y1)))
     svg = embed_site_serif(svg)
     out.write_text(svg, encoding="utf8")
+
+
+def main():
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    fits("Sources: " + SOURCES, 16, False, 1068 * 0.50 / 0.46, "sources")
+    fits("Sources: " + RATIO_SOURCES, 20, False, 1424 * 0.50 / 0.46, "ratio sources")
+    emit("cover.svg", "card", SUBTITLE, SOURCES, cover, 26)
+    # hero's caption size is 20, its floor
+    emit("per-person.svg", "hero", RATIO_SUBTITLE, RATIO_SOURCES, ratio, 20)
 
 
 if __name__ == "__main__":

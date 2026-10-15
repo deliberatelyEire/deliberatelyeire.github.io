@@ -25,6 +25,10 @@ This article sets out what the registers and the permit data show about internat
 > - Two-thirds of hospital doctors outside formal training schemes are international graduates.
 > - Health-sector employment permits fell from 12,501 in 2024 to 7,948 in 2025, a sharper fall than permits overall.
 
+![People per nurse or midwife rise from 63 to 130, and people per doctor from 257 to 440, without clinicians trained outside Ireland](./per-person.svg)
+
+Divide the population by the workforce and the scale becomes clear. With the CSO's [April 2025 population estimate](https://www.cso.ie/en/releasesandpublications/ep/p-pme/populationandmigrationestimatesapril2025/) of 5,458,600, there is one practising nurse or midwife for every 63 people. Leave only the Irish-educated, and it is one for every 130. For doctors, using the April 2024 population of 5,380,300 to match the 2024 register, one for every 257 people becomes one for every 440. This is a thought experiment, not a forecast: it shows the share of care that rests on clinicians trained abroad.
+
 ## Nurses: Half the Workforce Was Educated Abroad
 
 The Nursing and Midwifery Board of Ireland (NMBI) publishes a census of its register every year. Its [State of the Register 2025](https://www.nmbi.ie/News/News/NMBI-State-of-the-Register-Reports-86,948-Nurses-a) counts **92,385** registered nurses and midwives on 1 June 2025, of whom **86,948** say they are practising.
