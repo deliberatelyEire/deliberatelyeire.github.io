@@ -249,12 +249,9 @@ def queue(x0, y0, x1, y1):
 # Doctors: clinically active doctors in 2024 by country of basic medical
 # qualification (Medical Council Workforce Intelligence Report 2024, Table 1).
 # "Other international" is 5,830 less the top five; EU/UK is not broken down.
-# WHO marks countries on the 2023 Health Workforce Support and Safeguards List.
 ORIGIN_SUBTITLE = "Where Ireland’s clinicians trained"
 ORIGIN_SOURCES = ("NMBI State of the Register 2024, p. 6 and Table 5; "
-                  "Medical Council Workforce Report 2024, Table 1; "
-                  "WHO safeguards list 2023")
-WHO_LIST = {"Pakistan", "Sudan", "Ghana"}
+                  "Medical Council Workforce Report 2024, Table 1")
 ORIGIN_PANELS = [
     ("Nurses & midwives", "New registrants by country of education, Jun 2023–May 2024",
      [("India", 3717, SAFFRON), ("Philippines", 828, SAFFRON),
@@ -274,11 +271,11 @@ def origins(x0, y0, x1, y1):
     gutter = 96
     col_w = (x1 - x0 - gutter) / 2
     label_w = 236
-    value_w = 110          # value plus the WHO tag after the bar
+    value_w = 110          # the value label after the bar
     pitch, bar_h = 58, 30
     head_h = 32 + 12 + 22 + 28
     rows = max(len(r) for _, _, r in ORIGIN_PANELS)
-    block = head_h + rows * pitch + 40
+    block = head_h + rows * pitch
     top = y0 + (y1 - y0 - block) / 2
     for i, (head, sub, rows_) in enumerate(ORIGIN_PANELS):
         x = x0 + i * (col_w + gutter)
@@ -294,16 +291,10 @@ def origins(x0, y0, x1, y1):
             w = bar_max * v / biggest
             out.append(rect(x + label_w, y, w, bar_h, fill))
             out.append(text(x + label_w + w + 10, y + bar_h - 7, f"{v:,}", 22, 700, INK))
-            if name in WHO_LIST:
-                vx = x + label_w + w + 10 + fits(f"{v:,}", 22, True, col_w, "v") + 12
-                out.append(f'<circle cx="{round(vx + 6,1)}" cy="{round(y + bar_h / 2,1)}" r="6" fill="{INK}"/>')
         if i == 0:
             out.append(f'<line x1="{round(x + col_w + gutter / 2,1)}" y1="{round(top,1)}" '
                        f'x2="{round(x + col_w + gutter / 2,1)}" y2="{round(top + head_h + rows * pitch,1)}" '
                        f'stroke="{HAIRLINE}" stroke-width="1.5"/>')
-    ly = top + head_h + rows * pitch + 30
-    out.append(f'<circle cx="{round(x0 + 6,1)}" cy="{round(ly - 7,1)}" r="6" fill="{INK}"/>')
-    out.append(text(x0 + 22, ly, "On the WHO health workforce safeguards list, 2023", 20, 400, MUTED))
     return out
 
 

@@ -13,54 +13,49 @@
 <text x="88" y="877.0" font-size="22.0" font-style="italic" fill="#5D5E63">People live in the shelter of each other</text>
 <text x="1512" y="845.0" font-size="34.0" font-weight="700" fill="#0B0C0E" text-anchor="end">@DeliberatelyÉire</text>
 <text x="1512" y="877.0" font-size="22.0" fill="#5D5E63" letter-spacing="0.6" text-anchor="end">Evidence Over Noise</text>
-<text x="88" y="779.0" font-size="20.0" fill="#5D5E63">Sources: NMBI State of the Register 2024, p. 6 and Table 5; Medical Council Workforce Report 2024, Table 1; WHO safeguards list 2023</text>
-<text x="88.0" y="228.5" font-size="32" font-weight="700" fill="#0B0C0E">Nurses &amp; midwives</text>
-<text x="88.0" y="262.5" font-size="22" fill="#5D5E63">New registrants by country of education, Jun 2023–May 2024</text>
-<text x="88.0" y="313.5" font-size="22" fill="#0B0C0E">India</text>
-<rect x="324.0" y="290.5" width="318.0" height="30" fill="#FD8932"/>
-<text x="652.0" y="313.5" font-size="22" font-weight="700" fill="#0B0C0E">3,717</text>
-<text x="88.0" y="371.5" font-size="22" fill="#0B0C0E">Philippines</text>
-<rect x="324.0" y="348.5" width="70.8" height="30" fill="#FD8932"/>
-<text x="404.8" y="371.5" font-size="22" font-weight="700" fill="#0B0C0E">828</text>
-<text x="88.0" y="429.5" font-size="22" fill="#0B0C0E">United Kingdom</text>
-<rect x="324.0" y="406.5" width="24.0" height="30" fill="#FD8932"/>
-<text x="358.0" y="429.5" font-size="22" font-weight="700" fill="#0B0C0E">281</text>
-<text x="88.0" y="487.5" font-size="22" fill="#0B0C0E">Ghana</text>
-<rect x="324.0" y="464.5" width="16.3" height="30" fill="#FD8932"/>
-<text x="350.3" y="487.5" font-size="22" font-weight="700" fill="#0B0C0E">191</text>
-<circle cx="404.6" cy="479.5" r="6" fill="#0B0C0E"/>
-<text x="88.0" y="545.5" font-size="22" fill="#0B0C0E">Other countries</text>
-<rect x="324.0" y="522.5" width="45.7" height="30" fill="#5D5E63"/>
-<text x="379.7" y="545.5" font-size="22" font-weight="700" fill="#0B0C0E">534</text>
-<text x="88.0" y="603.5" font-size="22" fill="#0B0C0E">Ireland</text>
-<rect x="324.0" y="580.5" width="134.2" height="30" fill="#148708"/>
-<text x="468.2" y="603.5" font-size="22" font-weight="700" fill="#0B0C0E">1,569</text>
-<line x1="800.0" y1="196.5" x2="800.0" y2="696.5" stroke="#D8D2C6" stroke-width="1.5"/>
-<text x="848.0" y="228.5" font-size="32" font-weight="700" fill="#0B0C0E">Doctors</text>
-<text x="848.0" y="262.5" font-size="22" fill="#5D5E63">Clinically active, by country of qualification, 2024</text>
-<text x="848.0" y="313.5" font-size="22" fill="#0B0C0E">Pakistan</text>
-<rect x="1084.0" y="290.5" width="253.6" height="30" fill="#FD8932"/>
-<text x="1347.6" y="313.5" font-size="22" font-weight="700" fill="#0B0C0E">2,314</text>
-<circle cx="1426.1" cy="305.5" r="6" fill="#0B0C0E"/>
-<text x="848.0" y="371.5" font-size="22" fill="#0B0C0E">Sudan</text>
-<rect x="1084.0" y="348.5" width="135.9" height="30" fill="#FD8932"/>
-<text x="1229.9" y="371.5" font-size="22" font-weight="700" fill="#0B0C0E">1,240</text>
-<circle cx="1308.4" cy="363.5" r="6" fill="#0B0C0E"/>
-<text x="848.0" y="429.5" font-size="22" fill="#0B0C0E">South Africa</text>
-<rect x="1084.0" y="406.5" width="66.3" height="30" fill="#FD8932"/>
-<text x="1160.3" y="429.5" font-size="22" font-weight="700" fill="#0B0C0E">605</text>
-<text x="848.0" y="487.5" font-size="22" fill="#0B0C0E">India</text>
-<rect x="1084.0" y="464.5" width="34.0" height="30" fill="#FD8932"/>
-<text x="1128.0" y="487.5" font-size="22" font-weight="700" fill="#0B0C0E">310</text>
-<text x="848.0" y="545.5" font-size="22" fill="#0B0C0E">Egypt</text>
-<rect x="1084.0" y="522.5" width="26.6" height="30" fill="#FD8932"/>
-<text x="1120.6" y="545.5" font-size="22" font-weight="700" fill="#0B0C0E">243</text>
-<text x="848.0" y="603.5" font-size="22" fill="#0B0C0E">Other international</text>
-<rect x="1084.0" y="580.5" width="122.5" height="30" fill="#5D5E63"/>
-<text x="1216.5" y="603.5" font-size="22" font-weight="700" fill="#0B0C0E">1,118</text>
-<text x="848.0" y="661.5" font-size="22" fill="#0B0C0E">EU and UK</text>
-<rect x="1084.0" y="638.5" width="318.0" height="30" fill="#5D5E63"/>
-<text x="1412.0" y="661.5" font-size="22" font-weight="700" fill="#0B0C0E">2,902</text>
-<circle cx="94.0" cy="719.5" r="6" fill="#0B0C0E"/>
-<text x="110.0" y="726.5" font-size="20" fill="#5D5E63">On the WHO health workforce safeguards list, 2023</text>
+<text x="88" y="779.0" font-size="20.0" fill="#5D5E63">Sources: NMBI State of the Register 2024, p. 6 and Table 5; Medical Council Workforce Report 2024, Table 1</text>
+<text x="88.0" y="248.5" font-size="32" font-weight="700" fill="#0B0C0E">Nurses &amp; midwives</text>
+<text x="88.0" y="282.5" font-size="22" fill="#5D5E63">New registrants by country of education, Jun 2023–May 2024</text>
+<text x="88.0" y="333.5" font-size="22" fill="#0B0C0E">India</text>
+<rect x="324.0" y="310.5" width="318.0" height="30" fill="#FD8932"/>
+<text x="652.0" y="333.5" font-size="22" font-weight="700" fill="#0B0C0E">3,717</text>
+<text x="88.0" y="391.5" font-size="22" fill="#0B0C0E">Philippines</text>
+<rect x="324.0" y="368.5" width="70.8" height="30" fill="#FD8932"/>
+<text x="404.8" y="391.5" font-size="22" font-weight="700" fill="#0B0C0E">828</text>
+<text x="88.0" y="449.5" font-size="22" fill="#0B0C0E">United Kingdom</text>
+<rect x="324.0" y="426.5" width="24.0" height="30" fill="#FD8932"/>
+<text x="358.0" y="449.5" font-size="22" font-weight="700" fill="#0B0C0E">281</text>
+<text x="88.0" y="507.5" font-size="22" fill="#0B0C0E">Ghana</text>
+<rect x="324.0" y="484.5" width="16.3" height="30" fill="#FD8932"/>
+<text x="350.3" y="507.5" font-size="22" font-weight="700" fill="#0B0C0E">191</text>
+<text x="88.0" y="565.5" font-size="22" fill="#0B0C0E">Other countries</text>
+<rect x="324.0" y="542.5" width="45.7" height="30" fill="#5D5E63"/>
+<text x="379.7" y="565.5" font-size="22" font-weight="700" fill="#0B0C0E">534</text>
+<text x="88.0" y="623.5" font-size="22" fill="#0B0C0E">Ireland</text>
+<rect x="324.0" y="600.5" width="134.2" height="30" fill="#148708"/>
+<text x="468.2" y="623.5" font-size="22" font-weight="700" fill="#0B0C0E">1,569</text>
+<line x1="800.0" y1="216.5" x2="800.0" y2="716.5" stroke="#D8D2C6" stroke-width="1.5"/>
+<text x="848.0" y="248.5" font-size="32" font-weight="700" fill="#0B0C0E">Doctors</text>
+<text x="848.0" y="282.5" font-size="22" fill="#5D5E63">Clinically active, by country of qualification, 2024</text>
+<text x="848.0" y="333.5" font-size="22" fill="#0B0C0E">Pakistan</text>
+<rect x="1084.0" y="310.5" width="253.6" height="30" fill="#FD8932"/>
+<text x="1347.6" y="333.5" font-size="22" font-weight="700" fill="#0B0C0E">2,314</text>
+<text x="848.0" y="391.5" font-size="22" fill="#0B0C0E">Sudan</text>
+<rect x="1084.0" y="368.5" width="135.9" height="30" fill="#FD8932"/>
+<text x="1229.9" y="391.5" font-size="22" font-weight="700" fill="#0B0C0E">1,240</text>
+<text x="848.0" y="449.5" font-size="22" fill="#0B0C0E">South Africa</text>
+<rect x="1084.0" y="426.5" width="66.3" height="30" fill="#FD8932"/>
+<text x="1160.3" y="449.5" font-size="22" font-weight="700" fill="#0B0C0E">605</text>
+<text x="848.0" y="507.5" font-size="22" fill="#0B0C0E">India</text>
+<rect x="1084.0" y="484.5" width="34.0" height="30" fill="#FD8932"/>
+<text x="1128.0" y="507.5" font-size="22" font-weight="700" fill="#0B0C0E">310</text>
+<text x="848.0" y="565.5" font-size="22" fill="#0B0C0E">Egypt</text>
+<rect x="1084.0" y="542.5" width="26.6" height="30" fill="#FD8932"/>
+<text x="1120.6" y="565.5" font-size="22" font-weight="700" fill="#0B0C0E">243</text>
+<text x="848.0" y="623.5" font-size="22" fill="#0B0C0E">Other international</text>
+<rect x="1084.0" y="600.5" width="122.5" height="30" fill="#5D5E63"/>
+<text x="1216.5" y="623.5" font-size="22" font-weight="700" fill="#0B0C0E">1,118</text>
+<text x="848.0" y="681.5" font-size="22" fill="#0B0C0E">EU and UK</text>
+<rect x="1084.0" y="658.5" width="318.0" height="30" fill="#5D5E63"/>
+<text x="1412.0" y="681.5" font-size="22" font-weight="700" fill="#0B0C0E">2,902</text>
 </svg>

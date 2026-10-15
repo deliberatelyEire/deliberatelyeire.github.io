@@ -8,7 +8,7 @@ date: "2026-10-06"
 category: "Modern Diaspora"
 readTime: "8 min read"
 cover: "cover.png"
-sources: "NMBI State of the Register 2024 and 2025; Medical Council Medical Workforce Intelligence Report 2024; DETE Employment Permit Statistics 2024 and 2025; Immigration Service Delivery; WHO Health Workforce Support and Safeguards List 2023"
+sources: "NMBI State of the Register 2024 and 2025; Medical Council Medical Workforce Intelligence Report 2024; DETE Employment Permit Statistics 2024 and 2025; Immigration Service Delivery"
 featured: false
 order: 3
 ---
@@ -21,7 +21,7 @@ This article sets out what the registers and the permit data show about internat
 > - On 1 June 2025, 49% of practising nurses and midwives on the NMBI Register were educated outside the EU. Irish-educated registrants were 48%.
 > - Among patient-facing nurses and midwives, non-EU-educated registrants outnumber Irish-educated ones, 50% to 47%.
 > - In 2024, 27.8% of Ireland's clinically active doctors qualified outside Ireland, the EU and the UK, up from 23.3% in 2022. A further 13.8% qualified in the EU or UK.
-> - Pakistan and Sudan account for 61% of those international medical graduates. Both are on the WHO's 2023 health workforce safeguards list.
+> - Pakistan and Sudan account for 61% of those international medical graduates.
 > - Two-thirds of hospital doctors outside formal training schemes are international graduates.
 > - Health-sector employment permits fell from 12,501 in 2024 to 7,948 in 2025, a sharper fall than permits overall.
 
@@ -107,19 +107,11 @@ The Department of Enterprise publishes permits issued by economic sector. The re
 
 Health-sector permits fell 36% in calendar 2025, against 21% across all sectors. These count permits issued, not people arriving. Separately, NMBI recorded a 38% fall in new non-EU-educated registrants in the twelve months to 31 May 2025. The periods differ, and neither dataset explains the fall, so this article does not guess.
 
-## Whose Workforce Is It?
+## Where They Trained
 
-There is a second side to these numbers. The WHO publishes a [Health Workforce Support and Safeguards List](https://www.who.int/publications/i/item/9789240069787) of countries where the density of doctors, nurses and midwives is below the global median and universal health coverage is weakest. The 2023 edition lists 55 countries; WHO scheduled the next update for 2026.
-
-**Pakistan and Sudan are both on it.** So are **Nigeria, Ghana and Zimbabwe**, which appear among the top nationalities on the nursing register. **India and the Philippines are not.**
-
-![Where Ireland's clinicians trained: new nurse registrants led by India (3,717) and the Philippines (828); international doctors led by Pakistan (2,314) and Sudan (1,240), with WHO safeguards-list countries marked](./origins.svg)
+![Where Ireland's clinicians trained: new nurse registrants led by India (3,717) and the Philippines (828); international doctors led by Pakistan (2,314) and Sudan (1,240)](./origins.svg)
 
 The two registers publish different measures, so the chart shows each on its own scale. For nurses, NMBI breaks down new registrants by country of education; for doctors, the Medical Council breaks down the whole clinically active workforce by country of qualification.
-
-The list does not prohibit migration. Health workers are free to move, and WHO's safeguards are aimed at *active* international recruitment from listed countries, not at individuals who choose to emigrate. Nothing in the data here shows how any individual doctor came to Ireland.
-
-The Medical Council itself points to the issue. It explains that it narrowed its definition of "international" to focus on "a specific cohort of doctors who are more likely to have graduated in developing countries", which "can provide valuable information given the commitments set in the WHO Global Code of Practice on the International Recruitment of Health Personnel." Most of Ireland's international medical graduates qualified in two countries the WHO considers short of health workers themselves.
 
 ## What the Citizenship Bill Would Change for Them
 
