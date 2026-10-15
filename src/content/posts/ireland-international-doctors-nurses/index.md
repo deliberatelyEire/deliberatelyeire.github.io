@@ -4,12 +4,13 @@ title: "Ireland's Health Service Relies on Staff Trained Abroad"
 excerpt: "Nearly half of Ireland's practising nurses were educated outside the EU, and 30% of its doctors outside Ireland, the EU and the UK. What the registers show."
 author: "Deliberately Éire Research"
 role: "Immigration Policy Analysis"
-date: "2026-10-06"
+date: "2026-10-15"
 summary: "Half of Ireland's nurses and more than four in ten of its doctors trained abroad, and the health service is stretched even with them. As recruitment falls and a proposed citizenship bill would make settling harder, the rules for these clinicians have become health workforce policy."
 category: "Modern Diaspora"
 readTime: "8 min read"
 cover: "cover.png"
-sources: "NMBI State of the Register 2024 and 2025; Medical Council Medical Workforce Intelligence Report 2025; DETE Employment Permit Statistics 2024 and 2025; Immigration Service Delivery"
+coverAlt: "Bar chart: 52% of Ireland's practising nurses and midwives and 43% of its clinically active doctors trained abroad, 2025"
+sources: "NMBI State of the Register 2024 and 2025; Medical Council Medical Workforce Intelligence Report 2025; CSO Population and Migration Estimates, April 2025; NTPF waiting list open data, September 2026; Department of Health; DETE Employment Permit Statistics 2024 and 2025; Immigration Service Delivery; General Scheme of the Citizenship (Amendment) Bill 2026"
 featured: true
 order: 1
 ---
@@ -24,9 +25,9 @@ order: 1
 
 ## Who Is at the Bedside
 
-Ask who is at the bedside in Ireland and the answer is as likely to be someone who trained abroad as someone who trained here. Slightly more patient-facing nurses and midwives were educated outside Ireland than in it, and more than four in ten clinically active doctors qualified outside Ireland. That is not an impression. It is what the two professional registers say. For nurses, the largest single source is India: more than one in five nurses and midwives on the register is an Indian national.
+Ask who is at the bedside in Ireland and the answer is as likely to be someone who trained abroad as someone who trained here. That is not an impression. It is what the two professional registers say. For nurses, the largest single source is India: more than one in five nurses and midwives on the register is an Indian national.
 
-This article sets out what the registers and the permit data show about internationally educated doctors and nurses in Ireland, what the health service would look like without them, the immigration rules they work under, and what the proposed citizenship changes would mean for them.
+This article covers what the registers and permit data show, and what the health service would look like without these clinicians. It then sets out the immigration rules they work under and what the proposed citizenship changes would mean for them.
 
 ## Nurses: Half the Workforce Was Educated Abroad
 
@@ -44,7 +45,7 @@ Sorted by where they were educated, the practising workforce splits almost exact
 
 The patient-facing column is the one to read. Among registrants who say they work directly with patients, those educated outside the EU are the largest group.
 
-By nationality, which is a different measure, Indian nationals are the second-largest group on the register after Irish nationals: **20,419** in 2025, or 22% of all registrants, and nearly three times the next group, **7,324** Filipino nationals. Nationality is recorded at registration and is not the same as where someone trained, so the two tables should not be added together.
+By nationality, which is a different measure, Indian nationals are the second-largest group on the register after Irish nationals. There were **20,419** in 2025, or 22% of all registrants, nearly three times the next group of **7,324** Filipino nationals. Nationality is recorded at registration and is not the same as where someone trained, so the two tables should not be added together.
 
 ### Where new nurses come from
 
@@ -101,7 +102,7 @@ No one can say how long these waits would become without the staff trained abroa
 
 A doctor or nurse from outside the EU needs an employment permit and an immigration permission, and the type of each shapes everything from family life to the citizenship clock.
 
-**Nurses** qualify for the **Critical Skills Employment Permit**, provided they hold "a third level degree or diploma accepted by the Nursing and Midwifery Board of Ireland" ([DETE](https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/critical-skills-employment-permit/)). Before 1 January 2020, diploma-qualified nurses could only get a General Employment Permit, which delayed family reunification by a year ([Department of Health](https://www.gov.ie/en/department-of-health/press-releases/minister-for-health-welcomes-changes-to-the-employment-permits-system-for-diploma-qualified-nursesmidwives/)). A Critical Skills permit allows immediate family reunification, and after 21 months of employment the holder can upgrade to Stamp 4, which removes the need for any further employment permit.
+**Nurses** qualify for the **Critical Skills Employment Permit**, provided they hold "a third level degree or diploma accepted by the Nursing and Midwifery Board of Ireland" ([DETE](https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/critical-skills-employment-permit/)). Before 1 January 2020, diploma-qualified nurses could only get a General Employment Permit, which delayed family reunification by a year ([Department of Health](https://www.gov.ie/en/department-of-health/press-releases/minister-for-health-welcomes-changes-to-the-employment-permits-system-for-diploma-qualified-nursesmidwives/)). A Critical Skills permit allows immediate family reunification. After 21 months of employment the holder can upgrade to Stamp 4, which removes the need for any further employment permit, under the Immigration Service Delivery rule quoted below.
 
 **Doctors** have had a harder path. A Critical Skills permit requires a two-year job offer, and NCHDs outside training schemes were historically hired on six-month or one-year contracts. They were placed on General Employment Permits instead, renewed with each move, while doctors on training schemes held Critical Skills permits. In 2021 the Irish Medical Organisation said Critical Skills permits [should be made more readily available to doctors](https://www.medicalindependent.ie/in-the-news/breaking-news/international-doctors-urge-access-to-critical-skills-permits).
 
@@ -124,13 +125,13 @@ Health-sector permits fell 36% in calendar 2025, against 21% across all sectors.
 
 Time on an employment permit (Stamp 1) and on Stamp 4 counts as reckonable residence for naturalisation; time on a student permission (Stamp 2) does not ([ISD](https://www.irishimmigration.ie/how-to-become-an-irish-citizen-guide/)). Unlike a PhD researcher on Stamp 2, a doctor or nurse who arrives on a work permit starts the citizenship clock on day one. Our [comparison of citizenship pathways](/article/ireland-citizenship) shows that this puts a skilled worker in Ireland's fastest group today, at five years.
 
-The [Citizenship Bill 2026](/article/irish-citizenship-amendment-bill-2026), if enacted as drafted, would change that:
+The Citizenship Bill 2026, if enacted as drafted, would change that. The [General Scheme](https://assets.gov.ie/static/documents/cadca21c/General_Scheme_of_the_Irish_Nationality_and_Citizenship_Amendment_Bill_2026.pdf) sets out the changes, and our [guide to the Citizenship Bill](/article/irish-citizenship-amendment-bill-2026) explains them in full:
 
 - **Residence rises from five years to eight.** A nurse arriving from India in January 2026 could apply in 2031 under current law. Under the General Scheme, they would wait until 2034.
 - **Language and civics tests become mandatory**, to standards the Minister has not yet set.
 - **A minimum income test applies**, at a threshold not yet set. Its welfare and housing look-back is unlikely to bite for people in salaried clinical jobs, but the figure matters for lower-paid healthcare assistants.
 
-The Bill is not law, and the details that matter most are left to regulations. But it lands on a workforce in which half of patient-facing nurses were educated outside the EU, more than one in five registered nurses is Indian, and over a quarter of doctors qualified outside Ireland, the EU and the UK. The rules that decide whether they settle permanently are, in effect, health workforce policy.
+The Bill is not law, and the details that matter most are left to regulations. But it lands on a workforce in which half of patient-facing nurses were educated outside the EU and more than one in five registered nurses is Indian. Over a quarter of its doctors qualified outside Ireland, the EU and the UK. The rules that decide whether they settle permanently are, in effect, health workforce policy.
 
 ---
 

@@ -47,6 +47,7 @@ const Article = () => {
     updateMeta("og:image", coverUrl, true);
     updateMeta("og:url", articleUrl, true);
     updateMeta("og:type", "article", true);
+    updateMeta("og:site_name", "Deliberately Éire", true);
     updateMeta("article:published_time", new Date(article.date).toISOString(), true);
     if (article.dateModified) {
       updateMeta("article:modified_time", new Date(article.dateModified).toISOString(), true);
@@ -157,7 +158,7 @@ const Article = () => {
               {article.readTime}
             </div>
             {article.cover && (
-              <img src={article.cover} alt={article.title} className="cover-full" />
+              <img src={article.cover} alt={article.coverAlt || article.title} className="cover-full" />
             )}
             <div className="colophon">
               <a href={typeof window !== 'undefined' ? window.location.href : ''}>
@@ -219,7 +220,7 @@ const Article = () => {
             {/* Cover Image */}
             {article.cover && (
               <div className="mt-8 overflow-hidden rounded-xl border border-border shadow-sm bg-card">
-                <img src={article.cover} alt={article.title} className="cover-image w-full aspect-[16/9] object-cover" />
+                <img src={article.cover} alt={article.coverAlt || article.title} className="cover-image w-full aspect-[16/9] object-cover" />
               </div>
             )}
 

@@ -168,6 +168,8 @@ A new Schedule lists specific offences that **automatically preclude** a grant o
 | **Temporary Protection beneficiary** | Significant — Temporary Protection time no longer counts | All above + reckonable residence reset |
 | **Student / Stamp 2** | Student time already non-reckonable; no change to that | Must meet all new conditions post-graduation |
 
+The first row includes much of the health service. Half of Ireland's practising nurses and more than four in ten of its doctors trained abroad, most of them on employment permits; see [Ireland's Health Service Relies on Staff Trained Abroad](/article/ireland-international-doctors-nurses).
+
 ## What Happens Next?
 
 ![Where the Bill actually is, and what is still left to regulation](./passage.svg)

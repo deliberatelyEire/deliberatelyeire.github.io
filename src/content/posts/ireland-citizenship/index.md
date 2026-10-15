@@ -88,7 +88,7 @@ It would also cost Ireland the position it currently holds. At five years the co
 
 ## Which Door Is Yours
 
-If you are arriving on an employment permit, your clock is five years, and Ireland is among the best options in this comparison, provided you budget for the processing wait at the end.
+If you are arriving on an employment permit, your clock is five years, and Ireland is among the best options in this comparison, provided you budget for the processing wait at the end. Many of the people on that clock are nurses and doctors: [Ireland's health service relies on staff trained abroad](/article/ireland-international-doctors-nurses).
 
 If you are arriving to study, the question to ask before accepting a place is how many of those years will sit on Stamp 2. One year costs you one year. Four years cost you four. The Stamp 1G graduate permission that follows does count, so switching into work promptly protects the time you have.
 
