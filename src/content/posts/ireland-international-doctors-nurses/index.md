@@ -34,17 +34,13 @@ This article covers what the registers and permit data show, and what the health
 
 The Nursing and Midwifery Board of Ireland (NMBI) publishes a census of its register every year. Its [State of the Register 2025](https://www.nmbi.ie/News/News/NMBI-State-of-the-Register-Reports-86,948-Nurses-a) counts **92,385** registered nurses and midwives on 1 June 2025, of whom **86,948** say they are practising.
 
-Sorted by where they were educated, the practising workforce splits almost exactly in two:
+Sorted by where they were educated, the practising workforce splits almost exactly in two. Of the 86,948 practising registrants, 41,938 (48%) were educated in Ireland, 42,432 (49%) outside the EU and 2,578 (3%) elsewhere in the EU.
 
-| Country of education | Practising | Share | Patient-facing | Share |
-|---|---|---|---|---|
-| Ireland | 41,938 | 48% | 37,041 | 47% |
-| Outside the EU | 42,432 | 49% | 39,760 | 50% |
-| EU | 2,578 | 3% | 2,393 | 3% |
+![Two donut charts of where nurses and midwives were educated in 2025: of all practising, 48% Ireland, 49% outside the EU, 3% elsewhere in the EU; of patient-facing, 47% Ireland, 50% outside the EU, 3% elsewhere in the EU](./education.svg)
 
 *Source: [NMBI State of the Register 2025](https://www.nmbi.ie/NMBI/media/NMBI/NMBI-State-of-the-Register-2025.pdf?ext=.pdf), Table 2.*
 
-The patient-facing column is the one to read. Among registrants who say they work directly with patients, those educated outside the EU are the largest group.
+The patient-facing figures are the ones to read. Of the 79,194 registrants who say they work directly with patients, those educated outside the EU are the largest group: 39,760 (50%), against 37,041 (47%) educated in Ireland.
 
 By nationality, which is a different measure, Indian nationals are the second-largest group on the register after Irish nationals. There were **20,419** in 2025, or 22% of all registrants, nearly three times the next group of **7,324** Filipino nationals. Nationality is recorded at registration and is not the same as where someone trained, so the two tables should not be added together.
 

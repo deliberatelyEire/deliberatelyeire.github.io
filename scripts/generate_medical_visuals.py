@@ -35,6 +35,7 @@ INK = "#0B0C0E"
 MUTED = "#5D5E63"
 HAIRLINE = "#D8D2C6"
 SAFFRON = "#FD8932"
+PAPER = "#FAF7F0"
 GREEN = "#148708"
 
 KICKER = "HEALTH WORKFORCE"
@@ -349,6 +350,68 @@ def permits(x0, y0, x1, y1):
     return out
 
 
+# ---------------------------------------------------------------- education
+
+# Where practising nurses and midwives were educated, from NMBI State of the
+# Register 2025, Table 2 (1 June 2025). Two donuts: all practising registrants and
+# those who report being patient-facing. Green is Ireland, saffron outside the EU,
+# muted the rest of the EU.
+EDU_SUBTITLE = "Where Ireland’s nurses and midwives were educated, 2025"
+EDU_SOURCES = "NMBI State of the Register 2025, Table 2, registrants at 1 June 2025"
+EDU_PARTS = [("Ireland", GREEN), ("Outside the EU", SAFFRON), ("Elsewhere in the EU", MUTED)]
+EDU_DONUTS = [
+    ("All practising", [41938, 42432, 2578]),
+    ("Patient-facing", [37041, 39760, 2393]),
+]
+
+
+def education(x0, y0, x1, y1):
+    import math
+    out = []
+    r, w = 150, 56
+    cy = y0 + 60 + r + 20
+    centres = [x0 + 40 + r + 30, x0 + 40 + r + 30 + 2 * r + 170]
+
+    def pt(cx, ang, rad):
+        return cx + rad * math.cos(ang), cy + rad * math.sin(ang)
+
+    for (title, vals), cx in zip(EDU_DONUTS, centres):
+        total = sum(vals)
+        ang = -math.pi / 2
+        for v, (_, colour) in zip(vals, EDU_PARTS):
+            sweep = 2 * math.pi * v / total
+            a0, a1 = ang + 0.006, ang + sweep - 0.006   # hairline gap between segments
+            sx, sy = pt(cx, a0, r)
+            ex, ey = pt(cx, a1, r)
+            large = 1 if (a1 - a0) > math.pi else 0
+            out.append(f'<path d="M {sx:.1f} {sy:.1f} A {r} {r} 0 {large} 1 {ex:.1f} {ey:.1f}" '
+                       f'fill="none" stroke="{colour}" stroke-width="{w}"/>')
+            mid = ang + sweep / 2
+            pct = f"{round(100 * v / total)}%"
+            if v / total > 0.1:      # big segments: label sits on the ring itself
+                lx, ly = pt(cx, mid, r)
+                out.append(text(lx, ly + 9, pct, 26, 700, PAPER, "middle"))
+            else:                    # slivers: label just outside, above the ring
+                lx, ly = pt(cx, mid, r + w / 2 + 24)
+                out.append(text(lx, ly + 4, pct, 22, 700, INK, "middle"))
+            ang += sweep
+        out.append(text(cx, cy - 4, f"{total:,}", 34, 700, INK, "middle"))
+        out.append(text(cx, cy + 28, "registrants", 20, 400, MUTED, "middle"))
+        out.append(text(cx, cy + r + w / 2 + 64, title, 26, 700, INK, "middle"))
+    # legend with both counts
+    lx = centres[1] + r + w / 2 + 130
+    out.append(text(lx, y0 + 70, "Educated in", 20, 600, MUTED))
+    for i, (name, colour) in enumerate(EDU_PARTS):
+        y = y0 + 130 + i * 118
+        out.append(rect(lx, y - 20, 22, 22, colour))
+        out.append(text(lx + 36, y, name, 26, 700, INK))
+        a, b = EDU_DONUTS[0][1][i], EDU_DONUTS[1][1][i]
+        out.append(text(lx + 36, y + 34, f"{a:,} practising", 22, 400, MUTED))
+        out.append(text(lx + 36, y + 62, f"{b:,} patient-facing", 22, 400, MUTED))
+        fits(f"{b:,} patient-facing", 22, False, x1 - lx - 36, "edu legend")
+    return out
+
+
 def emit(name, canvas, subtitle, sources, body_fn, min_size):
     global MIN_SIZE
     MIN_SIZE = min_size
@@ -379,6 +442,7 @@ def main():
     emit("origins.svg", "hero", ORIGIN_SUBTITLE, ORIGIN_SOURCES, origins, 20)
     fits("Sources: " + PERMIT_SOURCES, 20, False, 1424 * 0.50 / 0.46, "permit sources")
     emit("permits.svg", "hero", PERMIT_SUBTITLE, PERMIT_SOURCES, permits, 20)
+    emit("education.svg", "hero", EDU_SUBTITLE, EDU_SOURCES, education, 20)
 
 
 if __name__ == "__main__":
