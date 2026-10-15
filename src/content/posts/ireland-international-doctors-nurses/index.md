@@ -13,27 +13,20 @@ featured: false
 order: 3
 ---
 
-Ask who is at the bedside in Ireland and the answer is as likely to be someone who trained abroad as someone who trained here. Slightly more patient-facing nurses and midwives were educated outside Ireland than in it, and more than four in ten clinically active doctors qualified outside Ireland. That is not an impression. It is what the two professional registers say.
-
-This article sets out what the registers and the permit data show about internationally educated doctors and nurses in Ireland, the immigration rules they work under, and what the proposed citizenship changes would mean for them.
+**Half of Ireland's nurses and more than four in ten of its doctors trained abroad, and the health service is stretched even with them. As recruitment falls and a proposed citizenship bill would make settling harder, the rules for these clinicians have become health workforce policy.**
 
 > **Key Takeaways**
-> - On 1 June 2025, 49% of practising nurses and midwives on the NMBI Register were educated outside the EU. Irish-educated registrants were 48%.
-> - Among patient-facing nurses and midwives, non-EU-educated registrants outnumber Irish-educated ones, 50% to 47%.
-> - In 2025, 29.5% of Ireland's clinically active doctors qualified outside Ireland, the EU and the UK, up from 23.3% in 2022. A further 13.9% qualified in the EU or UK.
-> - Pakistan and Sudan account for 62% of those international medical graduates.
-> - Two-thirds of hospital doctors outside formal training schemes are international graduates.
-> - Health-sector employment permits fell from 12,501 in 2024 to 7,948 in 2025, a sharper fall than permits overall.
+> - 52% of practising nurses and midwives were educated outside Ireland (NMBI, June 2025). Among those working directly with patients, non-EU-educated nurses outnumber Irish-educated ones, 50% to 47%.
+> - 43.4% of clinically active doctors qualified outside Ireland, and 29.5% outside Ireland, the EU and the UK (Medical Council, 2025). Pakistan and Sudan trained 62% of that last group.
+> - The hospital workforce runs on two tracks: 68% of junior doctors on training schemes qualified in Ireland, while 67% of those outside training schemes are international graduates.
+> - Without clinicians trained abroad, each nurse or midwife would serve 130 people instead of 63, and each doctor 433 instead of 245.
+> - Recruitment is falling: health-sector employment permits dropped 36% in 2025, and new non-EU nurse registrants 38%. The citizenship Bill would raise the wait to apply from five years to eight.
 
-![People per nurse or midwife rise from 63 to 130, and people per doctor from 245 to 433, without clinicians trained outside Ireland](./per-person.svg)
+## Who Is at the Bedside
 
-Divide the population by the workforce and the scale becomes clear. With the CSO's [April 2025 population estimate](https://www.cso.ie/en/releasesandpublications/ep/p-pme/populationandmigrationestimatesapril2025/) of 5,458,600, there is one practising nurse or midwife for every 63 people. Leave only the Irish-educated, and it is one for every 130. For doctors, on the same population and the Medical Council's 2025 count, one for every 245 people becomes one for every 433. This is a thought experiment, not a forecast: it shows the share of care that rests on clinicians trained abroad.
+Ask who is at the bedside in Ireland and the answer is as likely to be someone who trained abroad as someone who trained here. Slightly more patient-facing nurses and midwives were educated outside Ireland than in it, and more than four in ten clinically active doctors qualified outside Ireland. That is not an impression. It is what the two professional registers say.
 
-That workforce is already stretched. On 24 September 2026, [NTPF open data](https://www.ntpf.ie/waiting-list-data/open-data/) counted 692,524 patients waiting for a first outpatient appointment, 124,709 of them for more than a year. Another 114,722 were waiting for inpatient or day-case treatment, and 43,288 for a GI endoscopy. The Department of Health puts the [weighted average wait across lists at 7.0 months](https://www.gov.ie/en/department-of-health/press-releases/monthly-waiting-list-figures-september-2026/).
-
-![Hospital waiting lists in September 2026: 692,524 waiting for a first outpatient appointment, 18% of them for more than a year, and a weighted average wait of 7.0 months](./waiting-lists.svg)
-
-No one can say how long these waits would become without the staff trained abroad. When capacity falls well below demand, a waiting list does not settle at a longer wait; it keeps growing until patients go elsewhere or go without care.
+This article sets out what the registers and the permit data show about internationally educated doctors and nurses in Ireland, what the health service would look like without them, the immigration rules they work under, and what the proposed citizenship changes would mean for them.
 
 ## Nurses: Half the Workforce Was Educated Abroad
 
@@ -86,6 +79,24 @@ The report notes a "continued reliance on doctors with international qualificati
 
 In practice, Irish graduates are concentrated on the track that leads to a consultant post. International graduates are concentrated on the track that keeps hospitals running.
 
+## Where They Trained
+
+![Where Ireland's clinicians trained: new nurse registrants led by India (3,717) and the Philippines (828); international doctors led by Pakistan (2,741) and Sudan (1,336)](./origins.svg)
+
+The two registers publish different measures, so the chart shows each on its own scale. For nurses, NMBI breaks down new registrants by country of education; for doctors, the Medical Council breaks down the whole clinically active workforce by country of qualification.
+
+## What It Would Mean
+
+![People per nurse or midwife rise from 63 to 130, and people per doctor from 245 to 433, without clinicians trained outside Ireland](./per-person.svg)
+
+Divide the population by the workforce and the scale becomes clear. With the CSO's [April 2025 population estimate](https://www.cso.ie/en/releasesandpublications/ep/p-pme/populationandmigrationestimatesapril2025/) of 5,458,600, there is one practising nurse or midwife for every 63 people. Leave only the Irish-educated, and it is one for every 130. For doctors, on the same population and the Medical Council's 2025 count, one for every 245 people becomes one for every 433. This is a thought experiment, not a forecast: it shows the share of care that rests on clinicians trained abroad.
+
+That workforce is already stretched. On 24 September 2026, [NTPF open data](https://www.ntpf.ie/waiting-list-data/open-data/) counted 692,524 patients waiting for a first outpatient appointment, 124,709 of them for more than a year. Another 114,722 were waiting for inpatient or day-case treatment, and 43,288 for a GI endoscopy. The Department of Health puts the [weighted average wait across lists at 7.0 months](https://www.gov.ie/en/department-of-health/press-releases/monthly-waiting-list-figures-september-2026/).
+
+![Hospital waiting lists in September 2026: 692,524 waiting for a first outpatient appointment, 18% of them for more than a year, and a weighted average wait of 7.0 months](./waiting-lists.svg)
+
+No one can say how long these waits would become without the staff trained abroad. When capacity falls well below demand, a waiting list does not settle at a longer wait; it keeps growing until patients go elsewhere or go without care.
+
 ## The Permits They Arrive On
 
 A doctor or nurse from outside the EU needs an employment permit and an immigration permission, and the type of each shapes everything from family life to the citizenship clock.
@@ -108,12 +119,6 @@ The Department of Enterprise publishes permits issued by economic sector. The re
 *Source: DETE Employment Permit Statistics [2025](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2025.html) and [2024](https://enterprise.gov.ie/en/publications/employment-permit-statistics-2024.html), permits issued by sector.*
 
 Health-sector permits fell 36% in calendar 2025, against 21% across all sectors. These count permits issued, not people arriving. Separately, NMBI recorded a 38% fall in new non-EU-educated registrants in the twelve months to 31 May 2025. The periods differ, and neither dataset explains the fall, so this article does not guess.
-
-## Where They Trained
-
-![Where Ireland's clinicians trained: new nurse registrants led by India (3,717) and the Philippines (828); international doctors led by Pakistan (2,741) and Sudan (1,336)](./origins.svg)
-
-The two registers publish different measures, so the chart shows each on its own scale. For nurses, NMBI breaks down new registrants by country of education; for doctors, the Medical Council breaks down the whole clinically active workforce by country of qualification.
 
 ## What the Citizenship Bill Would Change for Them
 
