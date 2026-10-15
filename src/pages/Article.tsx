@@ -197,6 +197,13 @@ const Article = () => {
               {article.title}
             </h1>
 
+            {/* Standfirst: an optional one- or two-sentence summary under the headline */}
+            {article.summary && (
+              <p className="standfirst mt-4 type-h3 font-normal italic text-muted-foreground">
+                {article.summary}
+              </p>
+            )}
+
             {/* Author & Meta Bar */}
             <div className="meta-bar mt-6 flex flex-wrap items-center justify-between gap-4 py-4 border-y border-border type-meta text-muted-foreground">
               <div className="author-block">

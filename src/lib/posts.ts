@@ -10,6 +10,7 @@ export interface MarkdownPost {
   slug: string;
   title: string;
   excerpt: string;
+  summary?: string;
   author: string;
   role?: string;
   date: string;
@@ -128,6 +129,7 @@ export function getAllPosts(): MarkdownPost[] {
       slug: slug,
       title: metadata.title || "Untitled Article",
       excerpt: metadata.excerpt || "",
+      summary: metadata.summary || undefined,
       author: metadata.author || "Deliberately Éire Research",
       role: metadata.role || "Research & Analysis",
       date: metadata.date || "2026",

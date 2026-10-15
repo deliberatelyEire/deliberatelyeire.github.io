@@ -5,6 +5,7 @@ excerpt: "Nearly half of Ireland's practising nurses were educated outside the E
 author: "Deliberately Éire Research"
 role: "Immigration Policy Analysis"
 date: "2026-10-06"
+summary: "Half of Ireland's nurses and more than four in ten of its doctors trained abroad, and the health service is stretched even with them. As recruitment falls and a proposed citizenship bill would make settling harder, the rules for these clinicians have become health workforce policy."
 category: "Modern Diaspora"
 readTime: "8 min read"
 cover: "cover.png"
@@ -13,7 +14,6 @@ featured: true
 order: 1
 ---
 
-**Half of Ireland's nurses and more than four in ten of its doctors trained abroad, and the health service is stretched even with them. As recruitment falls and a proposed citizenship bill would make settling harder, the rules for these clinicians have become health workforce policy.**
 
 > **Key Takeaways**
 > - 52% of practising nurses and midwives were educated outside Ireland (NMBI, June 2025). Among those working directly with patients, non-EU-educated nurses outnumber Irish-educated ones, 50% to 47%. India is the largest single source: in 2023–24, more new nurses trained there than in Ireland.
