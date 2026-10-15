@@ -13,7 +13,7 @@
 <text x="88" y="877.0" font-size="22.0" font-style="italic" fill="#5D5E63">People live in the shelter of each other</text>
 <text x="1512" y="845.0" font-size="34.0" font-weight="700" fill="#0B0C0E" text-anchor="end">@DeliberatelyÉire</text>
 <text x="1512" y="877.0" font-size="22.0" fill="#5D5E63" letter-spacing="0.6" text-anchor="end">Evidence Over Noise</text>
-<text x="88" y="779.0" font-size="20.0" fill="#5D5E63">Sources: NMBI State of the Register 2024, p. 6 and Table 5; Medical Council Workforce Report 2024, Table 1</text>
+<text x="88" y="779.0" font-size="20.0" fill="#5D5E63">Sources: NMBI State of the Register 2024, p. 6 and Table 5; Medical Council Workforce Report 2025, Table 1</text>
 <text x="88.0" y="248.5" font-size="32" font-weight="700" fill="#0B0C0E">Nurses &amp; midwives</text>
 <text x="88.0" y="282.5" font-size="22" fill="#5D5E63">New registrants by country of education, Jun 2023–May 2024</text>
 <text x="88.0" y="333.5" font-size="22" fill="#0B0C0E">India</text>
@@ -36,26 +36,26 @@
 <text x="468.2" y="623.5" font-size="22" font-weight="700" fill="#0B0C0E">1,569</text>
 <line x1="800.0" y1="216.5" x2="800.0" y2="716.5" stroke="#D8D2C6" stroke-width="1.5"/>
 <text x="848.0" y="248.5" font-size="32" font-weight="700" fill="#0B0C0E">Doctors</text>
-<text x="848.0" y="282.5" font-size="22" fill="#5D5E63">Clinically active, by country of qualification, 2024</text>
+<text x="848.0" y="282.5" font-size="22" fill="#5D5E63">Clinically active, by country of qualification, 2025</text>
 <text x="848.0" y="333.5" font-size="22" fill="#0B0C0E">Pakistan</text>
-<rect x="1084.0" y="310.5" width="253.6" height="30" fill="#FD8932"/>
-<text x="1347.6" y="333.5" font-size="22" font-weight="700" fill="#0B0C0E">2,314</text>
+<rect x="1084.0" y="310.5" width="282.1" height="30" fill="#FD8932"/>
+<text x="1376.1" y="333.5" font-size="22" font-weight="700" fill="#0B0C0E">2,741</text>
 <text x="848.0" y="391.5" font-size="22" fill="#0B0C0E">Sudan</text>
-<rect x="1084.0" y="368.5" width="135.9" height="30" fill="#FD8932"/>
-<text x="1229.9" y="391.5" font-size="22" font-weight="700" fill="#0B0C0E">1,240</text>
+<rect x="1084.0" y="368.5" width="137.5" height="30" fill="#FD8932"/>
+<text x="1231.5" y="391.5" font-size="22" font-weight="700" fill="#0B0C0E">1,336</text>
 <text x="848.0" y="449.5" font-size="22" fill="#0B0C0E">South Africa</text>
-<rect x="1084.0" y="426.5" width="66.3" height="30" fill="#FD8932"/>
-<text x="1160.3" y="449.5" font-size="22" font-weight="700" fill="#0B0C0E">605</text>
+<rect x="1084.0" y="426.5" width="70.6" height="30" fill="#FD8932"/>
+<text x="1164.6" y="449.5" font-size="22" font-weight="700" fill="#0B0C0E">686</text>
 <text x="848.0" y="507.5" font-size="22" fill="#0B0C0E">India</text>
-<rect x="1084.0" y="484.5" width="34.0" height="30" fill="#FD8932"/>
-<text x="1128.0" y="507.5" font-size="22" font-weight="700" fill="#0B0C0E">310</text>
+<rect x="1084.0" y="484.5" width="32.3" height="30" fill="#FD8932"/>
+<text x="1126.3" y="507.5" font-size="22" font-weight="700" fill="#0B0C0E">314</text>
 <text x="848.0" y="565.5" font-size="22" fill="#0B0C0E">Egypt</text>
-<rect x="1084.0" y="542.5" width="26.6" height="30" fill="#FD8932"/>
-<text x="1120.6" y="565.5" font-size="22" font-weight="700" fill="#0B0C0E">243</text>
+<rect x="1084.0" y="542.5" width="24.7" height="30" fill="#FD8932"/>
+<text x="1118.7" y="565.5" font-size="22" font-weight="700" fill="#0B0C0E">240</text>
 <text x="848.0" y="623.5" font-size="22" fill="#0B0C0E">Other international</text>
-<rect x="1084.0" y="600.5" width="122.5" height="30" fill="#5D5E63"/>
-<text x="1216.5" y="623.5" font-size="22" font-weight="700" fill="#0B0C0E">1,118</text>
+<rect x="1084.0" y="600.5" width="128.7" height="30" fill="#5D5E63"/>
+<text x="1222.7" y="623.5" font-size="22" font-weight="700" fill="#0B0C0E">1,251</text>
 <text x="848.0" y="681.5" font-size="22" fill="#0B0C0E">EU and UK</text>
 <rect x="1084.0" y="658.5" width="318.0" height="30" fill="#5D5E63"/>
-<text x="1412.0" y="681.5" font-size="22" font-weight="700" fill="#0B0C0E">2,902</text>
+<text x="1412.0" y="681.5" font-size="22" font-weight="700" fill="#0B0C0E">3,090</text>
 </svg>

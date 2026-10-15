@@ -1,14 +1,14 @@
 ---
 id: "ireland-international-doctors-nurses"
 title: "Trained Abroad, Working Here: Ireland's Doctors and Nurses"
-excerpt: "Nearly half of Ireland's practising nurses were educated outside the EU, and 28% of its doctors outside Ireland, the EU and the UK. What the registers show."
+excerpt: "Nearly half of Ireland's practising nurses were educated outside the EU, and 30% of its doctors outside Ireland, the EU and the UK. What the registers show."
 author: "Deliberately Éire Research"
 role: "Immigration Policy Analysis"
 date: "2026-10-06"
 category: "Modern Diaspora"
 readTime: "8 min read"
 cover: "cover.png"
-sources: "NMBI State of the Register 2024 and 2025; Medical Council Medical Workforce Intelligence Report 2024; DETE Employment Permit Statistics 2024 and 2025; Immigration Service Delivery"
+sources: "NMBI State of the Register 2024 and 2025; Medical Council Medical Workforce Intelligence Report 2025; DETE Employment Permit Statistics 2024 and 2025; Immigration Service Delivery"
 featured: false
 order: 3
 ---
@@ -20,14 +20,14 @@ This article sets out what the registers and the permit data show about internat
 > **Key Takeaways**
 > - On 1 June 2025, 49% of practising nurses and midwives on the NMBI Register were educated outside the EU. Irish-educated registrants were 48%.
 > - Among patient-facing nurses and midwives, non-EU-educated registrants outnumber Irish-educated ones, 50% to 47%.
-> - In 2024, 27.8% of Ireland's clinically active doctors qualified outside Ireland, the EU and the UK, up from 23.3% in 2022. A further 13.8% qualified in the EU or UK.
-> - Pakistan and Sudan account for 61% of those international medical graduates.
+> - In 2025, 29.5% of Ireland's clinically active doctors qualified outside Ireland, the EU and the UK, up from 23.3% in 2022. A further 13.9% qualified in the EU or UK.
+> - Pakistan and Sudan account for 62% of those international medical graduates.
 > - Two-thirds of hospital doctors outside formal training schemes are international graduates.
 > - Health-sector employment permits fell from 12,501 in 2024 to 7,948 in 2025, a sharper fall than permits overall.
 
-![People per nurse or midwife rise from 63 to 130, and people per doctor from 257 to 440, without clinicians trained outside Ireland](./per-person.svg)
+![People per nurse or midwife rise from 63 to 130, and people per doctor from 245 to 433, without clinicians trained outside Ireland](./per-person.svg)
 
-Divide the population by the workforce and the scale becomes clear. With the CSO's [April 2025 population estimate](https://www.cso.ie/en/releasesandpublications/ep/p-pme/populationandmigrationestimatesapril2025/) of 5,458,600, there is one practising nurse or midwife for every 63 people. Leave only the Irish-educated, and it is one for every 130. For doctors, using the April 2024 population of 5,380,300 to match the 2024 register, one for every 257 people becomes one for every 440. This is a thought experiment, not a forecast: it shows the share of care that rests on clinicians trained abroad.
+Divide the population by the workforce and the scale becomes clear. With the CSO's [April 2025 population estimate](https://www.cso.ie/en/releasesandpublications/ep/p-pme/populationandmigrationestimatesapril2025/) of 5,458,600, there is one practising nurse or midwife for every 63 people. Leave only the Irish-educated, and it is one for every 130. For doctors, on the same population and the Medical Council's 2025 count, one for every 245 people becomes one for every 433. This is a thought experiment, not a forecast: it shows the share of care that rests on clinicians trained abroad.
 
 That workforce is already stretched. On 24 September 2026, [NTPF open data](https://www.ntpf.ie/waiting-list-data/open-data/) counted 692,524 patients waiting for a first outpatient appointment, 124,709 of them for more than a year. Another 114,722 were waiting for inpatient or day-case treatment, and 43,288 for a GI endoscopy. The Department of Health puts the [weighted average wait across lists at 7.0 months](https://www.gov.ie/en/department-of-health/press-releases/monthly-waiting-list-figures-september-2026/).
 
@@ -61,26 +61,28 @@ A year later the picture shifted. In the twelve months to 31 May 2025, non-EU fi
 
 ## Doctors: More Than Four in Ten Qualified Outside Ireland
 
-The Medical Council's [Medical Workforce Intelligence Report 2024](https://www.medicalcouncil.ie/news-and-publications/reports/medical-workforce-intelligence-report-2024.pdf) counts **20,962** clinically active doctors in the Republic. By where they obtained their basic medical qualification:
+The Medical Council's [Medical Workforce Intelligence Report 2025](https://www.medicalcouncil.ie/news-and-publications/publications/medical-workforce-intelligence-report-2025.pdf) counts **22,257** clinically active doctors in the Republic. By where they obtained their basic medical qualification:
 
-- **12,230 (58.3%)** qualified in Ireland
-- **2,902 (13.8%)** qualified in the EU or UK
-- **5,830 (27.8%)** qualified outside Ireland, the EU and the UK
+- **12,599 (56.6%)** qualified in Ireland
+- **3,090 (13.9%)** qualified in the EU or UK
+- **6,568 (29.5%)** qualified outside Ireland, the EU and the UK
 
-The Council calls the last group "international". It changed that definition in this report: earlier editions counted any qualification from outside Ireland. On that older measure, 41.7% of clinically active doctors qualified abroad. The share of international graduates has climbed each year, from 23.3% in 2022 to 25.7% in 2023 and 27.8% in 2024.
+The Council calls the last group "international". It adopted that definition in its 2024 report: earlier editions counted any qualification from outside Ireland. On that older measure, 43.4% of clinically active doctors qualified abroad. The share of international graduates has climbed every year, from 23.3% in 2022 to 25.7% in 2023, 27.8% in 2024 and 29.5% in 2025. Citing 2024 research, the Council notes that Ireland has the fourth-highest proportion of foreign-educated doctors in the OECD.
 
-Two countries dominate. **Pakistan** accounts for 2,314 of those doctors (39.7%), up 25% in a single year from 1,851. **Sudan** accounts for 1,240 (21.3%). Together they trained 61% of Ireland's international medical graduates. South Africa (605), India (310) and Egypt (243) complete the top five.
+Two countries dominate. **Pakistan** accounts for 2,741 of those doctors (41.7%), up 18% in a year from 2,314. **Sudan** accounts for 1,336 (20.3%). Together they trained 62% of Ireland's international medical graduates. South Africa (686), India (314) and Egypt (240) complete the top five.
 
 ### The training-scheme divide
 
 The more revealing number sits inside the hospital grade structure. Non-consultant hospital doctors (NCHDs) are the junior and middle-grade doctors who staff wards and emergency departments under a consultant. Some are on a formal training scheme, the route toward specialist registration. Many are not.
 
-In 2024, **4,767** NCHDs (53.3%) were not on a formal training scheme, up 12.6% on 2023. The Council's report sets out who fills each track:
+In 2025, **5,034** of 9,568 NCHDs (52.6%) were not on a formal training scheme, up 5.6% on 2024. The Council's report sets out who fills each track:
 
-- **73.0%** of NCHDs on a formal training scheme qualified in Ireland.
-- **66.6%** of NCHDs not on a formal training scheme were international graduates.
+- **68.0%** of NCHDs on a formal training scheme qualified in Ireland.
+- **66.9%** of NCHDs not on a formal training scheme were international graduates.
 
-The report is direct about what this means: "The majority of these NCHDs are doctors who have trained overseas, and many have not been able to access specialist training in Ireland." It adds that many work in Model 2 and Model 3 hospitals, which are "heavily reliant on NCHDs not on a formal training scheme."
+The gap is narrowing slightly: international graduates made up 22.5% of NCHDs on training schemes in 2025, up from 17.1% in 2024.
+
+The report notes a "continued reliance on doctors with international qualifications, many of whom are on the General Division of the Register and are concentrated in Model 2 and Model 3 hospitals." Those hospitals, it adds, are "also more reliant on Non-Consultant Hospital Doctors (NCHDs) who are not on a formal training scheme."
 
 In practice, Irish graduates are concentrated on the track that leads to a consultant post. International graduates are concentrated on the track that keeps hospitals running.
 
@@ -109,7 +111,7 @@ Health-sector permits fell 36% in calendar 2025, against 21% across all sectors.
 
 ## Where They Trained
 
-![Where Ireland's clinicians trained: new nurse registrants led by India (3,717) and the Philippines (828); international doctors led by Pakistan (2,314) and Sudan (1,240)](./origins.svg)
+![Where Ireland's clinicians trained: new nurse registrants led by India (3,717) and the Philippines (828); international doctors led by Pakistan (2,741) and Sudan (1,336)](./origins.svg)
 
 The two registers publish different measures, so the chart shows each on its own scale. For nurses, NMBI breaks down new registrants by country of education; for doctors, the Medical Council breaks down the whole clinically active workforce by country of qualification.
 

@@ -8,8 +8,8 @@ trained outside Ireland. Every count is read from a primary table:
 - Nurses and midwives: NMBI State of the Register 2025, Table 2, practising
   registrants at 1 June 2025 -- Irish educated 41,938, non-EU educated 42,432,
   EU educated 2,578.
-- Doctors: Medical Council Medical Workforce Intelligence Report 2024, Table 1,
-  clinically active doctors -- Irish BMQ 12,230, EU/UK 2,902, international 5,830.
+- Doctors: Medical Council Medical Workforce Intelligence Report 2025, Table 1,
+  clinically active doctors -- Irish BMQ 12,599, EU/UK 3,090, international 6,568.
 
 Green is the Irish-trained share and saffron the share trained abroad: a genuine
 Irish/non-Irish pairing, which is what the post-visuals accent rule reserves them for.
@@ -40,14 +40,14 @@ GREEN = "#148708"
 KICKER = "HEALTH WORKFORCE"
 SUBTITLE = "Ireland’s clinicians, with and without those trained abroad"
 SOURCES = ("NMBI State of the Register 2025, Table 2; "
-           "Medical Council Workforce Intelligence Report 2024, Table 1")
+           "Medical Council Workforce Intelligence Report 2025, Table 1")
 WIDTH_REG, WIDTH_BOLD = 0.50, 0.55
 MIN_SIZE = 26  # the card floor
 
 # (label, Irish-trained, trained outside Ireland)
 ROWS = [
     ("Practising nurses & midwives, 2025", 41938, 42432 + 2578),
-    ("Clinically active doctors, 2024", 12230, 2902 + 5830),
+    ("Clinically active doctors, 2025", 12599, 3090 + 6568),
 ]
 
 
@@ -110,20 +110,19 @@ def cover(x0, y0, x1, y1):
 # ---------------------------------------------------------------- per person
 
 # People per clinician: the CSO usually resident population divided by each
-# register's workforce, matched by year. April 2025 is 5,458,600; April 2024 is
-# 5,380,300 (the April 2025 release gives the year's rise as 78,300). One dot is one
-# person; saffron dots are the people each clinician would gain without those
-# trained outside Ireland.
-POP_2025, POP_2024 = 5458600, 5380300
+# register's workforce, matched by year. Both registers are 2025, so both use the
+# April 2025 estimate of 5,458,600. One dot is one person; saffron dots are the
+# people each clinician would gain without those trained outside Ireland.
+POP_2025 = 5458600
 RATIO_SUBTITLE = "If every clinician trained abroad left Ireland"
 RATIO_SOURCES = ("CSO Population and Migration Estimates, April 2025; "
                  "NMBI Register 2025, Table 2; "
-                 "Medical Council Workforce Report 2024, Table 1")
+                 "Medical Council Workforce Report 2025, Table 1")
 RATIO_COLS = [
     ("One nurse or midwife for every", "Practising nurses & midwives, 2025",
      POP_2025, 41938 + 42432 + 2578, 41938),
-    ("One doctor for every", "Clinically active doctors, 2024",
-     POP_2024, 20962, 12230),
+    ("One doctor for every", "Clinically active doctors, 2025",
+     POP_2025, 22257, 12599),
 ]
 
 
@@ -246,23 +245,23 @@ def queue(x0, y0, x1, y1):
 # Nurses: new first-time registrants, 1 June 2023 to 31 May 2024, by country of
 # education (NMBI State of the Register 2024, p. 6 and Table 5). "Other" is the
 # rest of the 5,551 educated outside Ireland (5,426 non-EU + 125 EU).
-# Doctors: clinically active doctors in 2024 by country of basic medical
-# qualification (Medical Council Workforce Intelligence Report 2024, Table 1).
-# "Other international" is 5,830 less the top five; EU/UK is not broken down.
+# Doctors: clinically active doctors in 2025 by country of basic medical
+# qualification (Medical Council Workforce Intelligence Report 2025, Table 1).
+# "Other international" is 6,568 less the top five; EU/UK is not broken down.
 ORIGIN_SUBTITLE = "Where Ireland’s clinicians trained"
 ORIGIN_SOURCES = ("NMBI State of the Register 2024, p. 6 and Table 5; "
-                  "Medical Council Workforce Report 2024, Table 1")
+                  "Medical Council Workforce Report 2025, Table 1")
 ORIGIN_PANELS = [
     ("Nurses & midwives", "New registrants by country of education, Jun 2023–May 2024",
      [("India", 3717, SAFFRON), ("Philippines", 828, SAFFRON),
       ("United Kingdom", 281, SAFFRON), ("Ghana", 191, SAFFRON),
       ("Other countries", 5426 + 125 - 3717 - 828 - 281 - 191, MUTED),
       ("Ireland", 1569, GREEN)]),
-    ("Doctors", "Clinically active, by country of qualification, 2024",
-     [("Pakistan", 2314, SAFFRON), ("Sudan", 1240, SAFFRON),
-      ("South Africa", 605, SAFFRON), ("India", 310, SAFFRON), ("Egypt", 243, SAFFRON),
-      ("Other international", 5830 - 2314 - 1240 - 605 - 310 - 243, MUTED),
-      ("EU and UK", 2902, MUTED)]),
+    ("Doctors", "Clinically active, by country of qualification, 2025",
+     [("Pakistan", 2741, SAFFRON), ("Sudan", 1336, SAFFRON),
+      ("South Africa", 686, SAFFRON), ("India", 314, SAFFRON), ("Egypt", 240, SAFFRON),
+      ("Other international", 6568 - 2741 - 1336 - 686 - 314 - 240, MUTED),
+      ("EU and UK", 3090, MUTED)]),
 ]
 
 
