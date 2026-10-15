@@ -57,7 +57,7 @@ By nationality, which is a different measure, Indian nationals are the second-la
 
 The flow of new registrants shows how recent this dependence is. In the twelve months to 31 May 2024, NMBI added **7,120** first-time registrants. Of these, **5,426** qualified outside the EU and **1,569** in Ireland ([State of the Register 2024](https://www.nmbi.ie/NMBI/media/NMBI/NMBI-State-of-the-Register-2024.pdf?ext=.pdf), Table 5). The single largest country of education was India, with **3,717** new registrants, more than twice the number of new Irish graduates. The Philippines (828), the United Kingdom (281) and Ghana (191) followed.
 
-A year later the picture shifted. In the twelve months to 31 May 2025, non-EU first-time registrants fell to **3,345**, a drop of 38%, while Irish-educated registrants rose to **1,649**. NMBI's own summary notes "a decrease in the number of new registrants who were educated abroad" alongside steady growth in Irish graduates. India remained the top country of education for new registrants.
+A year later the picture shifted. In the twelve months to 31 May 2025, non-EU first-time registrants fell to **3,345**, a drop of 38%, while Irish-educated registrants rose to **1,649**. NMBI's own summary notes "a decrease in the number of new registrants who were educated abroad" alongside steady growth in Irish graduates. In NMBI's 2025 report, India remained the top country of education for new registrants.
 
 ## Doctors: More Than Four in Ten Qualified Outside Ireland
 
@@ -67,7 +67,7 @@ The Medical Council's [Medical Workforce Intelligence Report 2024](https://www.m
 - **2,902 (13.8%)** qualified in the EU or UK
 - **5,830 (27.8%)** qualified outside Ireland, the EU and the UK
 
-The Council calls the last group "international". It changed that definition in this report: earlier editions counted any qualification from outside Ireland. On that older measure, 41.6% of clinically active doctors qualified abroad. The share of international graduates has climbed each year, from 23.3% in 2022 to 25.7% in 2023 and 27.8% in 2024.
+The Council calls the last group "international". It changed that definition in this report: earlier editions counted any qualification from outside Ireland. On that older measure, 41.7% of clinically active doctors qualified abroad. The share of international graduates has climbed each year, from 23.3% in 2022 to 25.7% in 2023 and 27.8% in 2024.
 
 Two countries dominate. **Pakistan** accounts for 2,314 of those doctors (39.7%), up 25% in a single year from 1,851. **Sudan** accounts for 1,240 (21.3%). Together they trained 61% of Ireland's international medical graduates.
 
@@ -80,7 +80,7 @@ In 2024, **4,767** NCHDs (53.3%) were not on a formal training scheme, up 12.6% 
 - **73.0%** of NCHDs on a formal training scheme qualified in Ireland.
 - **66.6%** of NCHDs not on a formal training scheme were international graduates.
 
-The report is direct about what this means: "The majority of these NCHDs are doctors who have trained overseas, and many have not been able to access specialist training in Ireland." It adds that Model 2 and Model 3 hospitals, the smaller and regional ones, are "heavily reliant on NCHDs not on a formal training scheme."
+The report is direct about what this means: "The majority of these NCHDs are doctors who have trained overseas, and many have not been able to access specialist training in Ireland." It adds that many work in Model 2 and Model 3 hospitals, which are "heavily reliant on NCHDs not on a formal training scheme."
 
 In practice, Irish graduates are concentrated on the track that leads to a consultant post. International graduates are concentrated on the track that keeps hospitals running.
 
@@ -119,7 +119,7 @@ The Medical Council itself points to the issue. It explains that it narrowed its
 
 ## What the Citizenship Bill Would Change for Them
 
-Time on an employment permit (Stamp 1) and on Stamp 4 counts as reckonable residence for naturalisation; time on a student permission (Stamp 2) does not ([ISD](https://www.irishimmigration.ie/how-to-become-a-citizen/become-an-irish-citizen-by-naturalisation/)). Unlike a PhD researcher on Stamp 2, a doctor or nurse who arrives on a work permit starts the citizenship clock on day one. Our [comparison of citizenship pathways](/article/ireland-citizenship) shows that this puts a skilled worker in Ireland's fastest group today, at five years.
+Time on an employment permit (Stamp 1) and on Stamp 4 counts as reckonable residence for naturalisation; time on a student permission (Stamp 2) does not ([ISD](https://www.irishimmigration.ie/how-to-become-an-irish-citizen-guide/)). Unlike a PhD researcher on Stamp 2, a doctor or nurse who arrives on a work permit starts the citizenship clock on day one. Our [comparison of citizenship pathways](/article/ireland-citizenship) shows that this puts a skilled worker in Ireland's fastest group today, at five years.
 
 The [Citizenship Bill 2026](/article/irish-citizenship-amendment-bill-2026), if enacted as drafted, would change that:
 
