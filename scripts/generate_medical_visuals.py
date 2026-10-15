@@ -173,6 +173,74 @@ def ratio(x0, y0, x1, y1):
     return out
 
 
+# ------------------------------------------------------------------- queue
+
+# The queue that exists with today's workforce. Counts are the national totals of
+# NTPF open data at the 24 September 2026 archive date, summed across hospitals:
+# OpenData_OPNational01_2026 (outpatient), OpenData_IPDCNational01_2026 (inpatient
+# and day case) and OpenData_IPDCNational04_2026 (GI endoscopy). The 7.0-month
+# weighted average wait is the Department of Health's September 2026 release. The
+# headline 1,040,698 figure includes lists not in the open data, so it is not used.
+QUEUE_SUBTITLE = "Today’s queue, with staff trained abroad still here"
+QUEUE_SOURCES = ("NTPF open data, national waiting lists at 24 September 2026; "
+                 "Department of Health, waiting list figures, September 2026")
+# (list, published Total, under 6 months, 6-12 months, over 12 months). The
+# files' Total column differs from the sum of their bands by a few people, so the
+# printed counts use Total and the bands only draw the bar.
+QUEUE_ROWS = [
+    ("First outpatient appointment", 692524, 407177, 160653, 71251 + 53458),
+    ("Inpatient or day-case treatment", 114722, 67682, 26364, 10872 + 9810),
+    ("GI endoscopy", 43288, 30419, 8697, 3373 + 809),
+]
+QUEUE_AVG_WAIT = "7.0 months"
+
+
+def queue(x0, y0, x1, y1):
+    out = []
+    total = sum(r[1] for r in QUEUE_ROWS)
+    over_year = sum(r[4] for r in QUEUE_ROWS)
+    left_w = 470
+    # left: the statement
+    top = y0 + 24
+    out.append(text(x0, top + 20, "WAITING FOR HOSPITAL CARE", 20, 600, MUTED))
+    out.append(text(x0, top + 20 + 112, f"{total:,}", 104, 700, INK))
+    out.append(text(x0, top + 20 + 112 + 40, "people on three hospital lists", 24, 400, MUTED))
+    y2 = top + 20 + 112 + 40 + 104
+    out.append(text(x0, y2, f"{over_year:,}", 64, 700, INK))
+    out.append(text(x0, y2 + 36, "of them waiting more than a year", 24, 400, MUTED))
+    y3 = y2 + 36 + 88
+    out.append(text(x0, y3, QUEUE_AVG_WAIT, 64, 700, INK))
+    out.append(text(x0, y3 + 36, "average wait across lists", 24, 400, MUTED))
+    fits("of them waiting more than a year", 24, False, left_w, "queue left")
+    # right: one stacked bar per list, scaled to the largest
+    rx = x0 + left_w + 80
+    rw = x1 - rx
+    out.append(f'<line x1="{rx - 40}" y1="{round(y0 + 16,1)}" x2="{rx - 40}" '
+               f'y2="{round(y1 - 16,1)}" stroke="{HAIRLINE}" stroke-width="1.5"/>')
+    biggest = max(sum(r[2:]) for r in QUEUE_ROWS)
+    fills = [HAIRLINE, MUTED, INK]
+    row_top = y0 + 24
+    pitch = 152
+    for i, (label, n, a, b, c) in enumerate(QUEUE_ROWS):
+        y = row_top + i * pitch
+        out.append(text(rx, y + 28, label, 28, 700, INK))
+        out.append(text(x1, y + 28, f"{n:,}", 28, 700, INK, "end"))
+        bx, by, bh = rx, y + 44, 44
+        for v, f in zip((a, b, c), fills):
+            w = rw * v / biggest
+            out.append(rect(bx, by, w, bh, f))
+            bx += w
+        out.append(text(rx, by + bh + 30, f"{c:,} waiting more than a year", 20, 400, MUTED))
+    # legend
+    ly = row_top + 3 * pitch + 20
+    lx = rx
+    for label, f in zip(("Under 6 months", "6 to 12 months", "Over 12 months"), fills):
+        out.append(rect(lx, ly - 16, 18, 18, f))
+        out.append(text(lx + 28, ly, label, 20, 400, MUTED))
+        lx += 28 + fits(label, 20, False, rw, "legend") + 48
+    return out
+
+
 def emit(name, canvas, subtitle, sources, body_fn, min_size):
     global MIN_SIZE
     MIN_SIZE = min_size
@@ -197,6 +265,8 @@ def main():
     emit("cover.svg", "card", SUBTITLE, SOURCES, cover, 26)
     # hero's caption size is 20, its floor
     emit("per-person.svg", "hero", RATIO_SUBTITLE, RATIO_SOURCES, ratio, 20)
+    fits("Sources: " + QUEUE_SOURCES, 20, False, 1424 * 0.50 / 0.46, "queue sources")
+    emit("waiting-lists.svg", "hero", QUEUE_SUBTITLE, QUEUE_SOURCES, queue, 20)
 
 
 if __name__ == "__main__":
