@@ -1,6 +1,6 @@
 ---
 id: "ireland-international-doctors-nurses"
-title: "Trained Abroad, Working Here: Ireland's Doctors and Nurses"
+title: "Ireland's Health Service Relies on Staff Trained Abroad"
 excerpt: "Nearly half of Ireland's practising nurses were educated outside the EU, and 30% of its doctors outside Ireland, the EU and the UK. What the registers show."
 author: "Deliberately Éire Research"
 role: "Immigration Policy Analysis"
