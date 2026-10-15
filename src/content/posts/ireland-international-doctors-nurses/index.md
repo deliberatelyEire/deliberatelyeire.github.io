@@ -7,6 +7,7 @@ role: "Immigration Policy Analysis"
 date: "2026-10-06"
 category: "Modern Diaspora"
 readTime: "8 min read"
+cover: "cover.png"
 sources: "NMBI State of the Register 2024 and 2025; Medical Council Medical Workforce Intelligence Report 2024; DETE Employment Permit Statistics 2024 and 2025; Immigration Service Delivery; WHO Health Workforce Support and Safeguards List 2023"
 featured: false
 order: 3
