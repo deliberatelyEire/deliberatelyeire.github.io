@@ -16,7 +16,7 @@ order: 1
 **Half of Ireland's nurses and more than four in ten of its doctors trained abroad, and the health service is stretched even with them. As recruitment falls and a proposed citizenship bill would make settling harder, the rules for these clinicians have become health workforce policy.**
 
 > **Key Takeaways**
-> - 52% of practising nurses and midwives were educated outside Ireland (NMBI, June 2025). Among those working directly with patients, non-EU-educated nurses outnumber Irish-educated ones, 50% to 47%.
+> - 52% of practising nurses and midwives were educated outside Ireland (NMBI, June 2025). Among those working directly with patients, non-EU-educated nurses outnumber Irish-educated ones, 50% to 47%. India is the largest single source: in 2023–24, more new nurses trained there than in Ireland.
 > - 43.4% of clinically active doctors qualified outside Ireland, and 29.5% outside Ireland, the EU and the UK (Medical Council, 2025). Pakistan and Sudan trained 62% of that last group.
 > - The hospital workforce runs on two tracks: 68% of junior doctors on training schemes qualified in Ireland, while 67% of those outside training schemes are international graduates.
 > - Without clinicians trained abroad, each nurse or midwife would serve 130 people instead of 63, and each doctor 433 instead of 245.
@@ -24,7 +24,7 @@ order: 1
 
 ## Who Is at the Bedside
 
-Ask who is at the bedside in Ireland and the answer is as likely to be someone who trained abroad as someone who trained here. Slightly more patient-facing nurses and midwives were educated outside Ireland than in it, and more than four in ten clinically active doctors qualified outside Ireland. That is not an impression. It is what the two professional registers say.
+Ask who is at the bedside in Ireland and the answer is as likely to be someone who trained abroad as someone who trained here. Slightly more patient-facing nurses and midwives were educated outside Ireland than in it, and more than four in ten clinically active doctors qualified outside Ireland. That is not an impression. It is what the two professional registers say. For nurses, the largest single source is India: more than one in five nurses and midwives on the register is an Indian national.
 
 This article sets out what the registers and the permit data show about internationally educated doctors and nurses in Ireland, what the health service would look like without them, the immigration rules they work under, and what the proposed citizenship changes would mean for them.
 
@@ -44,7 +44,7 @@ Sorted by where they were educated, the practising workforce splits almost exact
 
 The patient-facing column is the one to read. Among registrants who say they work directly with patients, those educated outside the EU are the largest group.
 
-By nationality, which is a different measure, Indian nationals are the second-largest group on the register after Irish nationals: **20,419** in 2025, followed by **7,324** Filipino nationals. Nationality is recorded at registration and is not the same as where someone trained, so the two tables should not be added together.
+By nationality, which is a different measure, Indian nationals are the second-largest group on the register after Irish nationals: **20,419** in 2025, or 22% of all registrants, and nearly three times the next group, **7,324** Filipino nationals. Nationality is recorded at registration and is not the same as where someone trained, so the two tables should not be added together.
 
 ### Where new nurses come from
 
@@ -126,11 +126,11 @@ Time on an employment permit (Stamp 1) and on Stamp 4 counts as reckonable resid
 
 The [Citizenship Bill 2026](/article/irish-citizenship-amendment-bill-2026), if enacted as drafted, would change that:
 
-- **Residence rises from five years to eight.** A nurse arriving in January 2026 could apply in 2031 under current law. Under the General Scheme, they would wait until 2034.
+- **Residence rises from five years to eight.** A nurse arriving from India in January 2026 could apply in 2031 under current law. Under the General Scheme, they would wait until 2034.
 - **Language and civics tests become mandatory**, to standards the Minister has not yet set.
 - **A minimum income test applies**, at a threshold not yet set. Its welfare and housing look-back is unlikely to bite for people in salaried clinical jobs, but the figure matters for lower-paid healthcare assistants.
 
-The Bill is not law, and the details that matter most are left to regulations. But it lands on a workforce in which half of patient-facing nurses were educated outside the EU and over a quarter of doctors qualified outside Ireland, the EU and the UK. The rules that decide whether they settle permanently are, in effect, health workforce policy.
+The Bill is not law, and the details that matter most are left to regulations. But it lands on a workforce in which half of patient-facing nurses were educated outside the EU, more than one in five registered nurses is Indian, and over a quarter of doctors qualified outside Ireland, the EU and the UK. The rules that decide whether they settle permanently are, in effect, health workforce policy.
 
 ---
 
